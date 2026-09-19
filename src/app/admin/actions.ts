@@ -5,6 +5,7 @@ import { redirect } from "next/navigation";
 import { revalidatePath } from "next/cache";
 import type { ActionResult } from "@/lib/types";
 import { validateGameInput, detectImageMime, MAX_UPLOAD_BYTES, ALLOWED_UPLOAD_TYPES } from "@/lib/validation";
+import { saveCover, deleteCoverByUrl } from "@/lib/cover-store";
 import {
   createGame, updateGame, deleteGame, getGame, setGameFeatured, hashKey,
   getThrottle, recordFailedLogin, lockLogin, resetThrottle
@@ -63,12 +64,13 @@ export async function saveGameAction(_prev: ActionResult, formData: FormData): P
   const rawCover = String(formData.get("cover") ?? "");
 
   let cover = rawCover;
+  let oldCoverUrl = "";
   const removeCover = formData.get("removeCover") === "on";
   if (removeCover) {
     cover = "";
   } else if (coverFile instanceof File && coverFile.size > 0) {
-    // ✅ فایل کاور را مستقیم داخل دیتابیس (data-URL) ذخیره می‌کنیم تا
-    // هم لوکال و هم Vercel بدون نیاز به فایل‌سیستم ماندگار کار کند.
+    // ✅ عکس آپلودی داخل جدول covers دیتابیس ذخیره و از /api/covers/… با کش مرورگر سرو می‌شود؛
+    // به این ترتیب ردیف‌های بازی و لیست‌ها سبک می‌مانند و روی Vercel هم ماندگار است.
     if (coverFile.size > MAX_UPLOAD_BYTES) {
       return { error: "حجم فایل کاور باید کمتر از ۳ مگابایت باشد." };
     }
@@ -77,8 +79,15 @@ export async function saveGameAction(_prev: ActionResult, formData: FormData): P
     if (!mime || !(ALLOWED_UPLOAD_TYPES as readonly string[]).includes(mime)) {
       return { error: "فرمت فایل کاور باید JPEG، PNG یا WebP باشد." };
     }
-    const base64 = Buffer.from(buffer).toString("base64");
-    cover = `data:${mime};base64,${base64}`;
+    if (id) {
+      const existing = await getGame(id);
+      oldCoverUrl = existing?.cover ?? "";
+    }
+    try {
+      cover = await saveCover(mime, buffer);
+    } catch {
+      return { error: "ذخیره عکس با خطا مواجه شد. دوباره تلاش کنید." };
+    }
   } else if (id) {
     const existing = await getGame(id);
     if (existing && !cover) cover = existing.cover;
@@ -98,6 +107,10 @@ export async function saveGameAction(_prev: ActionResult, formData: FormData): P
   if (id) {
     const updated = await updateGame(id, parsed.value);
     if (!updated) return { error: "بازی مورد نظر پیدا نشد." };
+    // پاک‌سازی کاور قدیمی که دیگر استفاده نمی‌شود (تغییر عکس یا حذف عکس)
+    if (oldCoverUrl && oldCoverUrl !== parsed.value.cover) {
+      await deleteCoverByUrl(oldCoverUrl);
+    }
   } else {
     await createGame(parsed.value);
   }
@@ -117,6 +130,10 @@ export async function deleteGameAction(_prev: ActionResult, formData: FormData):
   const game = await getGame(id);
   if (!game) return { error: "بازی مورد نظر پیدا نشد." };
   await deleteGame(id);
+  // پاک‌سازی کاور آپلودی یتیم پس از حذف بازی
+  if (game.cover.startsWith("/api/covers/")) {
+    await deleteCoverByUrl(game.cover);
+  }
   revalidatePath("/");
   revalidatePath("/admin");
   return { success: `«${game.titleFa || game.title}» حذف شد.` };

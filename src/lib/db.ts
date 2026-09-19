@@ -1,4 +1,5 @@
 import type { Game, GameInput } from "./types";
+import { migrateDataUrlCovers } from "./cover-store";
 
 // روتر ذخیره‌سازی:
 //  - اگر DATABASE_URL ست شده → Postgres (ورسل/Neon) — ماندگار ✅
@@ -19,6 +20,7 @@ async function backend() {
 export type { Game, GameInput };
 
 export async function listGames(): Promise<Game[]> {
+  await migrateDataUrlCovers(); // مهاجرت یک‌باره کاورهای قدیمی data-URL به جدول covers
   return (await backend()).listGames();
 }
 

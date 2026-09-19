@@ -5,6 +5,8 @@ import { useActionState } from "react";
 import type { ActionResult, Game, Platform } from "@/lib/types";
 import { GENRES, persianNumber } from "@/lib/types";
 import { saveGameAction, deleteGameAction, toggleFeaturedAction, logoutAction } from "@/app/admin/actions";
+import AiGamePublisher from "@/components/AiGamePublisher";
+import { compressImageFile } from "@/lib/image-compress";
 import { persianDate } from "./GameCard";
 
 const PLATFORMS: Platform[] = ["PS5", "PS4", "Xbox Offline"];
@@ -27,6 +29,7 @@ export default function AdminPanel({ games }: { games: Game[] }) {
   const [listPlatform, setListPlatform] = useState<ListPlatform>("all");
   const [preview, setPreview] = useState("");
   const [previewError, setPreviewError] = useState(false);
+  const [compressing, setCompressing] = useState(false);
   const formRef = useRef<HTMLFormElement>(null);
   const fileRef = useRef<HTMLInputElement>(null);
 
@@ -57,12 +60,29 @@ export default function AdminPanel({ games }: { games: Game[] }) {
   }, [saveState]);
 
   // پیش‌نمایش زنده: اگر فایل انتخاب شده، همان را نشان بده؛ وگرنه لینک متنی
-  function refreshPreviewFromFile() {
+  async function refreshPreviewFromFile() {
     const file = fileRef.current?.files?.[0];
     if (file && file.size > 0) {
       if (preview.startsWith("blob:")) URL.revokeObjectURL(preview);
       setPreview(URL.createObjectURL(file));
       setPreviewError(false);
+      // فشرده‌سازی خودکار عکس قبل از آپلود (تا ۱۲۰۰ پیکسل، WebP)
+      setCompressing(true);
+      try {
+        const result = await compressImageFile(file);
+        if (result) {
+          const compressed = new File([result.bytes as unknown as BlobPart], file.name, { type: result.mime });
+          const dt = new DataTransfer();
+          dt.items.add(compressed);
+          if (fileRef.current) {
+            fileRef.current.files = dt.files;
+          }
+        }
+      } catch {
+        // اگر فشرده‌سازی نشد، همان فایل اصلی آپلود می‌شود
+      } finally {
+        setCompressing(false);
+      }
     } else {
       if (preview.startsWith("blob:")) URL.revokeObjectURL(preview);
       setPreviewError(false);
@@ -187,8 +207,21 @@ export default function AdminPanel({ games }: { games: Game[] }) {
           </div>
           <div className="field">
             <label htmlFor="cover">لینک کاور (اختیاری — می‌توانید خالی بگذارید)</label>
-            <input id="cover" name="cover" type="text" inputMode="url" dir="ltr" value={form.cover} onChange={(e) => update("cover", e.target.value)} placeholder="خالی = بدون عکس، یا https://…/cover.jpg" />
-            <p className="field-help">پر کردن کاور اجباری نیست. اگر لینک خراب باشد، بازی بدون عکس ذخیره می‌شود. فایل انتخاب‌شده بر لینک اولویت دارد.</p>
+            <input id="cover" name="cover" type="text" inputMode="url" dir="ltr" value={form.cover} onChange={(e) => {
+              // نرمال‌سازی خودکار: حذف فاصله‌ها و افزودن https:// اگر جا افتاده باشد
+              const raw = e.target.value;
+              const trimmed = raw.trim();
+              if (trimmed && !/^https?:\/\//i.test(trimmed) && !/^\//.test(trimmed) && /^(www\.)?[^/\s]+\.[a-z]{2,}(\/\S*)?$/i.test(trimmed)) {
+                update("cover", `https://${trimmed}`);
+              } else {
+                update("cover", raw);
+              }
+            }} placeholder="خالی = بدون عکس، یا https://…/cover.jpg" />
+            {form.cover.trim() && !/^https?:\/\//i.test(form.cover.trim()) && !form.cover.trim().startsWith("/api/covers/") ? (
+              <p className="field-help" style={{ color: "#ffb0b0" }}>⚠️ لینک باید با https:// شروع شود.</p>
+            ) : (
+              <p className="field-help">پر کردن کاور اجباری نیست. اگر لینک خراب باشد، بازی بدون عکس ذخیره می‌شود. فایل انتخاب‌شده بر لینک اولویت دارد.</p>
+            )}
           </div>
           <div className="field">
             <label htmlFor="coverFile">بارگذاری فایل کاور (اختیاری)</label>
@@ -200,7 +233,10 @@ export default function AdminPanel({ games }: { games: Game[] }) {
               accept="image/jpeg,image/png,image/webp"
               onChange={() => refreshPreviewFromFile()}
             />
-            <p className="field-help">فقط JPG / PNG / WebP تا ۳ مگابایت. خالی گذاشتن یعنی بدون عکس.</p>
+            <p className="field-help">
+              فقط JPG / PNG / WebP تا ۳ مگابایت. عکس به‌طور خودکار فشرده و به WebP تبدیل می‌شود تا سریع‌تر آپلود شود.
+              {compressing ? " ⏳ در حال فشرده‌سازی عکس…" : ""}
+            </p>
           </div>
           {preview && !previewError ? (
             <div className="field">
@@ -342,6 +378,7 @@ export default function AdminPanel({ games }: { games: Game[] }) {
           <p className="list-count">{persianNumber(filtered.length)} بازی در این نما از {persianNumber(games.length)} بازی</p>
         </div>
       </div>
+      <AiGamePublisher />
     </div>
   );
 }

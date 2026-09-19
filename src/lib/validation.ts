@@ -37,7 +37,7 @@ export function isSafeCoverUrl(value: string): boolean {
   // عکس آپلودشده که داخل دیتابیس به‌صورت data-URL ذخیره شده
   if (/^data:image\/(jpeg|png|webp|gif);base64,/i.test(trimmed)) return true;
   if (/^javascript:|^data:|^vbscript:|^blob:|^file:/i.test(trimmed)) return false;
-  // آدرس نسبی فایل‌های قدیمی آپلودشده داخل همین سایت (مثل /api/covers/xxx.jpg)
+  // آدرس نسبی کاور آپلودشده داخل همین سایت (جدول covers دیتابیس)
   if (trimmed.startsWith("/api/covers/")) {
     return /^\/api\/covers\/[a-f0-9-]{36}\.(jpg|png|webp)(\?[^#]*)?(#.*)?$/i.test(trimmed);
   }
