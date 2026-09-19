@@ -56,7 +56,7 @@ export default function HomeClient({ games }: { games: Game[] }) {
     return sorted;
   }, [games, platform, query, sort]);
 
-  const heading = platform === "PS5" ? "بازی‌های PS5" : platform === "PS4" ? "بازی‌های PS4" : platform === "Xbox Offline" ? "بازی‌های Xbox آفلاین" : "همه بازی‌ها";
+  const heading = platform === "PS5" ? "بازی‌های PS5 کپی‌خور" : platform === "PS4" ? "بازی‌های PS4 کپی‌خور" : platform === "Xbox Offline" ? "بازی‌های Xbox آفلاین" : "همه بازی‌ها";
 
   return (
     <div className="app-shell">
@@ -89,7 +89,7 @@ export default function HomeClient({ games }: { games: Game[] }) {
             <Logo size={128} />
           </div>
           <h1>فروشگاه دوستان</h1>
-          <p>مجموعه بازی‌های PlayStation 4، PlayStation 5 و Xbox آفلاین. بازی کن، به سبک خودت.</p>
+          <p>مجموعه بازی‌های کپی‌خور PS5 و PS4 و بازی آفلاین Xbox. بازی کن، به سبک خودت.</p>
           <p className="hero-address">📍 شیراز، بلوار رحمت، خیابان لشکری، کوچه ۱ — فروشگاه دوستان</p>
           <div className="hero-search-wrap">
             <SearchIcon />
@@ -133,10 +133,10 @@ export default function HomeClient({ games }: { games: Game[] }) {
         <div className="catalog-toolbar">
           <div className="view-switcher" role="tablist" aria-label="انتخاب پلتفرم">
             <button className={platform === "PS5" ? "active" : ""} onClick={() => setPlatform("PS5")}>
-              PS5 <span>{persianNumber(stats.ps5)}</span>
+              PS5 کپی‌خور <span>{persianNumber(stats.ps5)}</span>
             </button>
             <button className={platform === "PS4" ? "active" : ""} onClick={() => setPlatform("PS4")}>
-              PS4 <span>{persianNumber(stats.ps4)}</span>
+              PS4 کپی‌خور <span>{persianNumber(stats.ps4)}</span>
             </button>
             <button className={platform === "Xbox Offline" ? "active" : ""} onClick={() => setPlatform("Xbox Offline")}>
               Xbox آفلاین <span>{persianNumber(stats.xbox)}</span>
