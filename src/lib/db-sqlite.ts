@@ -14,7 +14,7 @@ export const UPLOADS_DIR = path.join(DATA_DIR, "uploads");
 
 let db: DatabaseSync | null = null;
 
-function getConnection(): DatabaseSync {
+export function getConnection(): DatabaseSync {
   if (db) return db;
   fs.mkdirSync(DATA_DIR, { recursive: true });
   fs.mkdirSync(UPLOADS_DIR, { recursive: true });
