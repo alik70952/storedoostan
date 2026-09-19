@@ -47,7 +47,7 @@ function rowToGame(row: Record<string, unknown>): Game {
     id: String(row.id),
     title: String(row.title),
     titleFa: String(row.titleFa),
-    platform: (row.platform === "PS4" ? "PS4" : "PS5") as Platform,
+        platform: (row.platform === "Xbox Offline" ? "Xbox Offline" : row.platform === "PS4" ? "PS4" : "PS5") as Platform,
     genre: String(row.genre),
     cover: String(row.cover),
     description: String(row.description),

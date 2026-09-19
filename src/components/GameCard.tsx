@@ -14,7 +14,7 @@ export default function GameCard({ game }: { game: Game }) {
   return (
     <article className="game-card">
       <div className="cover-wrap">
-        <span className={`platform-badge platform-${game.platform.toLowerCase()}`}>{game.platform}</span>
+        <span className={`platform-badge platform-${game.platform.toLowerCase().split(" ")[0]}`}>{game.platform}</span>
         {game.featured ? <span className="featured-badge" title="منتخب">★</span> : null}
         {game.cover ? (
           <img className="cover" src={game.cover} alt={game.titleFa || game.title} loading="lazy" />

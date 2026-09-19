@@ -7,8 +7,8 @@ import { GENRES, persianNumber } from "@/lib/types";
 import { saveGameAction, deleteGameAction, toggleFeaturedAction, logoutAction } from "@/app/admin/actions";
 import { persianDate } from "./GameCard";
 
-const PLATFORMS: Platform[] = ["PS5", "PS4"];
-type ListPlatform = "all" | "PS5" | "PS4";
+const PLATFORMS: Platform[] = ["PS5", "PS4", "Xbox Offline"];
+type ListPlatform = "all" | "PS5" | "PS4" | "Xbox Offline";
 
 const EMPTY_FORM = {
   title: "",
@@ -34,12 +34,13 @@ export default function AdminPanel({ games }: { games: Game[] }) {
   const [deleteState, deleteFormAction, deleting] = useActionState<ActionResult, FormData>(deleteGameAction, {});
   const [toggleState, toggleAction, toggling] = useActionState<ActionResult, FormData>(toggleFeaturedAction, {});
 
-  const stats = useMemo(() => {
+    const stats = useMemo(() => {
     const weekAgo = Date.now() - 7 * 86400000;
     return {
       total: games.length,
       ps5: games.filter((g) => g.platform === "PS5").length,
       ps4: games.filter((g) => g.platform === "PS4").length,
+      xbox: games.filter((g) => g.platform === "Xbox Offline").length,
       week: games.filter((g) => new Date(g.createdAt).getTime() >= weekAgo).length
     };
   }, [games]);
@@ -88,7 +89,7 @@ export default function AdminPanel({ games }: { games: Game[] }) {
   const counts = useMemo(() => {
     const q = listQuery.trim();
     const base = games.filter((g) => !q || g.titleFa.includes(q) || g.title.toLowerCase().includes(q.toLowerCase()) || g.genre.includes(q));
-    return { all: base.length, ps5: base.filter((g) => g.platform === "PS5").length, ps4: base.filter((g) => g.platform === "PS4").length };
+        return { all: base.length, ps5: base.filter((g) => g.platform === "PS5").length, ps4: base.filter((g) => g.platform === "PS4").length, xbox: base.filter((g) => g.platform === "Xbox Offline").length };
   }, [games, listQuery]);
 
   function update<K extends keyof typeof EMPTY_FORM>(key: K, value: (typeof EMPTY_FORM)[K]) {
@@ -149,7 +150,8 @@ export default function AdminPanel({ games }: { games: Game[] }) {
       <div className="admin-stats">
         <div className="stat-card"><strong>{persianNumber(stats.total)}</strong><span>کل بازی‌ها</span></div>
         <div className="stat-card"><strong>{persianNumber(stats.ps5)}</strong><span>بازی PS5</span></div>
-        <div className="stat-card"><strong>{persianNumber(stats.ps4)}</strong><span>بازی PS4</span></div>
+                <div className="stat-card"><strong>{persianNumber(stats.ps4)}</strong><span>بازی PS4</span></div>
+        <div className="stat-card"><strong>{persianNumber(stats.xbox)}</strong><span>بازی Xbox Offline</span></div>
         <div className="stat-card"><strong>{persianNumber(stats.week)}</strong><span>افزوده این هفته</span></div>
       </div>
 
@@ -262,7 +264,8 @@ export default function AdminPanel({ games }: { games: Game[] }) {
             <div className="list-tabs">
               <button className={listPlatform === "all" ? "active" : ""} onClick={() => setListPlatform("all")}>همه <span>{persianNumber(counts.all)}</span></button>
               <button className={listPlatform === "PS5" ? "active" : ""} onClick={() => setListPlatform("PS5")}>PS5 <span>{persianNumber(counts.ps5)}</span></button>
-              <button className={listPlatform === "PS4" ? "active" : ""} onClick={() => setListPlatform("PS4")}>PS4 <span>{persianNumber(counts.ps4)}</span></button>
+                            <button className={listPlatform === "PS4" ? "active" : ""} onClick={() => setListPlatform("PS4")}>PS4 <span>{persianNumber(counts.ps4)}</span></button>
+              <button className={listPlatform === "Xbox Offline" ? "active" : ""} onClick={() => setListPlatform("Xbox Offline")}>Xbox Offline <span>{persianNumber(counts.xbox)}</span></button>
             </div>
             <input
               className="list-search"
@@ -302,7 +305,7 @@ export default function AdminPanel({ games }: { games: Game[] }) {
                   <div className="admin-row-info" title="کلیک برای ویرایش">
                     <strong>{game.titleFa || game.title}</strong>
                     <small>
-                      <span className={`pill ${game.platform.toLowerCase()}`}>{game.platform}</span>
+                      <span className={`pill ${game.platform.toLowerCase().split(" ")[0]}`}>{game.platform}</span>
                       {game.genre ? <span>{game.genre}</span> : null}
                       {game.featured ? <span className="pill featured">منتخب</span> : null}
                       <span>{persianDate(game.createdAt)}</span>

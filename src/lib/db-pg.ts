@@ -62,7 +62,7 @@ function toGame(r: Row): Game {
     id: String(r.id),
     title: String(r.title ?? ""),
     titleFa: String(r.titleFa ?? ""),
-    platform: (r.platform === "PS4" ? "PS4" : "PS5") as Platform,
+        platform: (r.platform === "Xbox Offline" ? "Xbox Offline" : r.platform === "PS4" ? "PS4" : "PS5") as Platform,
     genre: String(r.genre ?? ""),
     cover: String(r.cover ?? ""),
     description: String(r.description ?? ""),

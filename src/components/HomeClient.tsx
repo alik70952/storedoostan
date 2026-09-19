@@ -6,7 +6,7 @@ import { persianNumber } from "@/lib/types";
 import GameCard from "./GameCard";
 import Logo from "./Logo";
 
-type PlatformFilter = "PS5" | "PS4" | "all";
+type PlatformFilter = "PS5" | "PS4" | "Xbox Offline" | "all";
 type SortKey = "newest" | "oldest" | "alpha" | "featured";
 
 const SORT_OPTIONS: { value: SortKey; label: string }[] = [
@@ -33,7 +33,8 @@ export default function HomeClient({ games }: { games: Game[] }) {
   const stats = useMemo(() => {
     const ps5 = games.filter((g) => g.platform === "PS5").length;
     const ps4 = games.filter((g) => g.platform === "PS4").length;
-    return { total: games.length, ps5, ps4 };
+    const xbox = games.filter((g) => g.platform === "Xbox Offline").length;
+    return { total: games.length, ps5, ps4, xbox };
   }, [games]);
 
   const visible = useMemo(() => {
@@ -55,7 +56,7 @@ export default function HomeClient({ games }: { games: Game[] }) {
     return sorted;
   }, [games, platform, query, sort]);
 
-  const heading = platform === "PS5" ? "بازی‌های PS5" : platform === "PS4" ? "بازی‌های PS4" : "همه بازی‌ها";
+  const heading = platform === "PS5" ? "بازی‌های PS5" : platform === "PS4" ? "بازی‌های PS4" : platform === "Xbox Offline" ? "بازی‌های Xbox آفلاین" : "همه بازی‌ها";
 
   return (
     <div className="app-shell">
@@ -74,7 +75,7 @@ export default function HomeClient({ games }: { games: Game[] }) {
             </span>
             <span className="brand-copy">
               <strong>فروشگاه دوستان</strong>
-              <small>PS4 / PS5</small>
+              <small>PS4 · PS5 · Xbox Offline</small>
             </span>
           </button>
         </div>
@@ -88,7 +89,7 @@ export default function HomeClient({ games }: { games: Game[] }) {
             <Logo size={128} />
           </div>
           <h1>فروشگاه دوستان</h1>
-          <p>مجموعه بازی‌های PlayStation 4 و PlayStation 5. بازی کن، به سبک خودت.</p>
+          <p>مجموعه بازی‌های PlayStation 4، PlayStation 5 و Xbox آفلاین. بازی کن، به سبک خودت.</p>
           <p className="hero-address">📍 شیراز، بلوار رحمت، خیابان لشکری، کوچه ۱ — فروشگاه دوستان</p>
           <div className="hero-search-wrap">
             <SearchIcon />
@@ -117,6 +118,10 @@ export default function HomeClient({ games }: { games: Game[] }) {
               <span>PS4</span>
             </div>
             <div>
+              <strong>{persianNumber(stats.xbox)}</strong>
+              <span>Xbox آفلاین</span>
+            </div>
+            <div>
               <strong>{persianNumber(new Set(games.map((g) => g.genre)).size)}</strong>
               <span>ژانر</span>
             </div>
@@ -132,6 +137,9 @@ export default function HomeClient({ games }: { games: Game[] }) {
             </button>
             <button className={platform === "PS4" ? "active" : ""} onClick={() => setPlatform("PS4")}>
               PS4 <span>{persianNumber(stats.ps4)}</span>
+            </button>
+            <button className={platform === "Xbox Offline" ? "active" : ""} onClick={() => setPlatform("Xbox Offline")}>
+              Xbox آفلاین <span>{persianNumber(stats.xbox)}</span>
             </button>
             <button className={platform === "all" ? "active" : ""} onClick={() => setPlatform("all")}>
               همه <span>{persianNumber(stats.total)}</span>

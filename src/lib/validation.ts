@@ -1,7 +1,7 @@
 import type { GameInput, Platform } from "./types";
 import { GENRES } from "./types";
 
-export const PLATFORMS: Platform[] = ["PS5", "PS4"];
+export const PLATFORMS: Platform[] = ["PS5", "PS4", "Xbox Offline"];
 export const MAX_TEXT = 120;
 export const MAX_DESCRIPTION = 800;
 export const MAX_URL = 1000;
@@ -72,6 +72,7 @@ export function normalizePlatform(value: string): Platform | null {
   const upper = value.trim().toUpperCase();
   if (upper === "PS5") return "PS5";
   if (upper === "PS4") return "PS4";
+  if (upper === "XBOX OFFLINE") return "Xbox Offline";
   return null;
 }
 
@@ -98,7 +99,7 @@ export function validateGameInput(raw: {
 
   if (!title) return { ok: false, error: "نام اصلی بازی الزامی است." };
   if (!titleFa) return { ok: false, error: "نام فارسی بازی الزامی است." };
-  if (!platform) return { ok: false, error: "پلتفرم باید PS4 یا PS5 باشد." };
+    if (!platform) return { ok: false, error: "پلتفرم نامعتبر است." };
   // کاور کاملاً اختیاری است: اگر خالی است یا لینک خراب/ناامن است،
   // به‌جای خطا و جلوگیری از ذخیره، فقط بدون عکس ذخیره می‌کنیم.
   if (cover && !isSafeCoverUrl(cover)) cover = "";

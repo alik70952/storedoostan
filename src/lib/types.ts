@@ -1,4 +1,4 @@
-export type Platform = "PS5" | "PS4";
+export type Platform = "PS5" | "PS4" | "Xbox Offline";
 
 export type Game = {
   id: string;
