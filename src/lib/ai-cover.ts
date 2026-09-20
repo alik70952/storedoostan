@@ -5,6 +5,7 @@
 // خروجی همیشه یک فایل واقعیِ دانلودشده است که در جدول covers ذخیره می‌شود (/api/covers/<uuid>.<ext>).
 
 import { saveCover } from "./cover-store";
+import type { Platform } from "./types";
 import { detectImageMime } from "./validation";
 
 const KNOWN_STEAM_APP_IDS: Record<string, number> = {
@@ -506,36 +507,66 @@ async function xboxStoreCover(title: string, seen: Set<string>): Promise<FoundCo
 /* ---------- API اصلی ---------- */
 
 /**
- * کاور رسمی بازی را به این ترتیب پیدا می‌کند: PlayStation Store → Xbox Store (API رسمی) →
- * Steam → RAWG → ویکی‌پدیا → جستجوی تصویر وب (DuckDuckGo / Bing / Google — شامل متاکریتیک).
+ * ترتیب منابع کاور بر اساس پلتفرم نهایی بازی (خالص و تست‌پذیر):
+ * - Xbox Offline → فقط Xbox Store (جستجوی وب حذف شده تا کاور اشتباهیِ وب/استیم برای Xbox نیاید)؛
+ *   اگر استور Xbox جواب نداد، کاور خالی می‌ماند (بازی بدون عکس ذخیره می‌شود).
+ * - PS5 / PS4 → استور PlayStation، بعد Steam، بعد RAWG، ویکی‌پدیا و جستجوی تصویر وب
+ *   (DuckDuckGo / Bing / Google) — چون این بازی‌ها انحصاری PS نیستند و کاورشان در منابع عمومی است.
+ */
+export type CoverStep =
+  | "playstation"
+  | "xbox"
+  | "steam-known"
+  | "steam-search"
+  | "rawg"
+  | "wikipedia"
+  | "duckduckgo"
+  | "bing"
+  | "google";
+
+export function coverStepsFor(platform: Platform): CoverStep[] {
+  if (platform === "Xbox Offline") return ["xbox"];
+  return ["playstation", "steam-known", "steam-search", "rawg", "wikipedia", "duckduckgo", "bing", "google"];
+}
+
+/**
+ * کاور رسمی بازی را فقط از منابعِ مجازِ پلتفرمِ نهایی پیدا می‌کند.
  * فایل واقعی دانلود، اعتبارسنجی (بوکس‌آرت عمودی، نه لوگو/بنر) و در دیتابیس ذخیره می‌شود و
  * آدرس دائمی آن برمی‌گردد. اگر هیچ منبعی جواب نداد null.
  */
 export async function findOfficialCover(
   coverQuery: string,
   steamAppId: number | null,
-  fallbackName: string
+  fallbackName: string,
+  platform: Platform = "PS5"
 ): Promise<FoundCover | null> {
   const title = (coverQuery || fallbackName || "").trim();
   if (!title) return null;
   const seen = new Set<string>();
+  const steps = coverStepsFor(platform);
 
   try {
-    // ۱) PlayStation Store: هنر رسمی پلی‌استیشن (تصاویر ایندکس‌شده استور)
-    const ps = await playstationStoreCover(title, seen);
-    if (ps) return ps;
+    // ۱) استور PlayStation: هنر رسمی پلی‌استیشن (تصاویر ایندکس‌شده استور)
+    if (steps.includes("playstation")) {
+      const ps = await playstationStoreCover(title, seen);
+      if (ps) return ps;
+    }
 
-    // ۲) Xbox Store: بوکس‌آرت عمودی رسمی از API مایکروسافت
-    const xbox = await xboxStoreCover(title, seen);
-    if (xbox) return xbox;
+    // ۲) استور Xbox: بوکس‌آرت عمودی رسمی از API مایکروسافت
+    // فقط و فقط برای بازی‌های Xbox Offline استفاده می‌شود — کاور استور ایکس‌باکس
+    // روی هیچ بازی PS5/PS4 نمی‌نشیند.
+    if (steps.includes("xbox")) {
+      const xbox = await xboxStoreCover(title, seen);
+      if (xbox) return xbox;
+    }
 
     // ۳) Steam: آیدی معلوم → جستجوی استور
     const knownId = steamAppId ?? steamAppIdFromName(title);
-    if (knownId) {
+    if (steps.includes("steam-known") && knownId) {
       const hit = await trySteamImages(knownId, seen);
       if (hit) return hit;
     }
-    if (!knownId) {
+    if (steps.includes("steam-search") && !knownId) {
       const searchedId = await steamSearchAppId(title);
       if (searchedId) {
         const hit = await trySteamImages(searchedId, seen);
@@ -544,22 +575,32 @@ export async function findOfficialCover(
     }
 
     // ۴) RAWG (اختیاری)
-    const rawg = await rawgCover(title, seen);
-    if (rawg) return rawg;
+    if (steps.includes("rawg")) {
+      const rawg = await rawgCover(title, seen);
+      if (rawg) return rawg;
+    }
 
     // ۵) ویکی‌پدیا
-    const wiki = await wikipediaCover(title, seen);
-    if (wiki) return wiki;
+    if (steps.includes("wikipedia")) {
+      const wiki = await wikipediaCover(title, seen);
+      if (wiki) return wiki;
+    }
 
     // ۶) جستجوی تصویر باز وب: DuckDuckGo → Bing → Google
-    const ddg = await duckduckgoCover(title, seen);
-    if (ddg) return ddg;
+    if (steps.includes("duckduckgo")) {
+      const ddg = await duckduckgoCover(title, seen);
+      if (ddg) return ddg;
+    }
 
-    const bing = await bingCover(title, seen);
-    if (bing) return bing;
+    if (steps.includes("bing")) {
+      const bing = await bingCover(title, seen);
+      if (bing) return bing;
+    }
 
-    const google = await googleCover(title, seen);
-    if (google) return google;
+    if (steps.includes("google")) {
+      const google = await googleCover(title, seen);
+      if (google) return google;
+    }
   } catch {
     // هیچ‌وقت کل مسیر را با استثنا نکُش؛ پایین null برمی‌گردد
   }

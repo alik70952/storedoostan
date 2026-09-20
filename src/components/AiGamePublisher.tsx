@@ -80,11 +80,11 @@ export default function AiGamePublisher() {
   return (
     <section className="form-card ai-publisher" aria-label="AI Game Publisher">
       <h2 className="ai-title">هوش مصنوعی — افزودن گروهی بازی</h2>
-      <p className="field-help">هر خط یک نام بازی (حداکثر ۳۰ بازی). مدل <code dir="ltr">glm-5.3-flash</code> اطلاعات فارسی می‌سازد و کاور رسمی به ترتیب از استور PlayStation، استور Xbox، Steam و کل اینترنت (ویکی‌پدیا، متاکریتیک، گوگل/Bing/DuckDuckGo) دانلود و ذخیره می‌شود.</p>
+      <p className="field-help">هر خط یک نام بازی (حداکثر ۳۰ بازی). اگر آخر نام بازی <code dir="ltr">xbox</code> بنویسید (مثل <code dir="ltr">Halo Infinite xbox</code>) بازی در دسته «Xbox Offline» ثبت و کاورش فقط از استور Xbox گرفته می‌شود؛ وگرنه PS5/PS4 ثبت و کاورش از استور PlayStation، استور Xbox، Steam و کل اینترنت (ویکی‌پدیا، متاکریتیک، گوگل/Bing/DuckDuckGo) دانلود و ذخیره می‌شود.</p>
       {noKey ? <div className="alert error">APINEX_API_KEY تنظیم نشده است؛ در Environment Variables بگذارید.</div> : null}
       <div className="field">
-        <label htmlFor="ai-games">لیست بازی‌ها (هر خط یک بازی)</label>
-        <textarea id="ai-games" dir="ltr" rows={5} value={raw} onChange={(e) => setRaw(e.target.value)} placeholder={"God of War Ragnarök\nResident Evil 4\nBlack Myth: Wukong"} />
+        <label htmlFor="ai-games">لیست بازی‌ها (هر خط یک بازی — آخر نام بازی‌های Xbox بنویسید <code dir="ltr">xbox</code>)</label>
+        <textarea id="ai-games" dir="ltr" rows={5} value={raw} onChange={(e) => setRaw(e.target.value)} placeholder={"God of War Ragnarök\nResident Evil 4\nBlack Myth: Wukong\nHalo Infinite xbox"} />
         <p className="field-help">{persianNumber(names.length)} بازی در لیست</p>
       </div>
       <div className="form-actions">
