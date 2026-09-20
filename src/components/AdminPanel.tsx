@@ -32,6 +32,7 @@ export default function AdminPanel({ games }: { games: Game[] }) {
   const [compressing, setCompressing] = useState(false);
   const formRef = useRef<HTMLFormElement>(null);
   const fileRef = useRef<HTMLInputElement>(null);
+  const listRef = useRef<HTMLDivElement>(null);
 
   const [saveState, saveAction, saving] = useActionState<ActionResult, FormData>(saveGameAction, {});
   const [deleteState, deleteFormAction, deleting] = useActionState<ActionResult, FormData>(deleteGameAction, {});
@@ -128,16 +129,40 @@ export default function AdminPanel({ games }: { games: Game[] }) {
     });
   }
 
+  function scrollToForm() {
+    const el = formRef.current;
+    if (!el) return;
+    const rect = el.getBoundingClientRect();
+    // اگر فرم از قبل جلوی چشم است، صفحه را جابه‌جا نکن
+    if (rect.top >= 0 && rect.top < window.innerHeight * 0.35) return;
+    el.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+
   function startEdit(game: Game) {
     setEditing(game);
     fillForm(game);
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    scrollToForm();
   }
 
   function startDuplicate(game: Game) {
     setEditing(null);
     fillForm(game);
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    scrollToForm();
+  }
+
+  // روی موبایل لیست بالا و فرم پایین است؛ این دکمه مستقیم به فرم می‌برد
+  function startNewGame() {
+    const el = formRef.current;
+    if ((isDirty || editing) && !window.confirm("فرم فعلی پاک شود و از نو شروع شود؟")) {
+      el?.scrollIntoView({ behavior: "smooth", block: "start" });
+      return;
+    }
+    resetForm();
+    el?.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+
+  function backToList() {
+    listRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
   }
 
   function resetForm() {
@@ -159,6 +184,7 @@ export default function AdminPanel({ games }: { games: Game[] }) {
           <p>افزودن، ویرایش و مدیریت بازی‌های فروشگاه</p>
         </div>
         <div className="admin-actions">
+          <button className="button add-mobile" type="button" onClick={startNewGame}>➕ افزودن بازی جدید</button>
           <a className="button ghost" href="/" target="_blank">مشاهده سایت</a>
           <a className="button ghost" href="/api/admin/backup" title="دریافت فایل پشتیبان JSON">⬇ پشتیبان</a>
           <form action={logoutAction}>
@@ -288,13 +314,19 @@ export default function AdminPanel({ games }: { games: Game[] }) {
             {isDirty || editing ? (
               <button className="button ghost" type="button" onClick={resetForm}>{editing ? "انصراف" : "پاک کردن"}</button>
             ) : null}
+            <button className="button ghost back-to-list" type="button" onClick={backToList}>↓ بازگشت به لیست بازی‌ها</button>
           </div>
         </form>
 
-        <div>
+        <div ref={listRef}>
           {deleteState?.error ? <div className="alert error">{deleteState.error}</div> : null}
           {deleteState?.success ? <div className="alert success">{deleteState.success}</div> : null}
           {toggleState?.success ? <div className="alert success">{toggleState.success}</div> : null}
+
+          <div className="list-head">
+            <h2>لیست بازی‌های فروشگاه</h2>
+            <span>{persianNumber(filtered.length)} از {persianNumber(games.length)}</span>
+          </div>
 
           <div className="list-toolbar">
             <div className="list-tabs">
@@ -347,7 +379,15 @@ export default function AdminPanel({ games }: { games: Game[] }) {
                       <span>{persianDate(game.createdAt)}</span>
                     </small>
                   </div>
-                  <div className="admin-row-actions" onClick={(e) => e.stopPropagation()} onKeyDown={(e) => e.stopPropagation()}>
+                  <div
+                    className="admin-row-actions"
+                    onClick={(e) => {
+                      const target = e.target as HTMLElement | null;
+                      // کلیک روی دکمه‌ها/فرم‌ها به ردیف نرسد؛ ولی ضربه روی فضای خالیِ این خط، مثل ضربه روی خود ردیف عمل کند (ورود به ویرایش)
+                      if (target && target.closest("button,input,label,select,textarea,a,form")) e.stopPropagation();
+                    }}
+                    onKeyDown={(e) => e.stopPropagation()}
+                  >
                     <form action={toggleAction}>
                       <input type="hidden" name="id" value={game.id} />
                       <button
