@@ -1,10 +1,12 @@
 // موتور پیدا کردن کاور رسمی هر بازی از کل اینترنت — بدون حدس و بدون ساخت تصویر AI.
 // منابع به ترتیب: PlayStation Store (هنر رسمی PS از جستجوی محدود به استور) →
-// Xbox Store (API رسمی مایکروسافت، بوکس‌آرت عمودی) → Steam → RAWG (اگر کلید باشد) →
+// سایت‌های ایرانی p30day/downloadha (کاور بازی‌های PS) → Steam → RAWG (اگر کلید باشد) →
 // ویکی‌پدیا → جستجوی تصویر وب: DuckDuckGo → Bing → Google (متاکریتیک/IGN و… هم از همین راه).
+// قانون فروشگاه: دسته Xbox Offline فقط و فقط از استور Xbox کاور می‌گیرد.
 // خروجی همیشه یک فایل واقعیِ دانلودشده است که در جدول covers ذخیره می‌شود (/api/covers/<uuid>.<ext>).
 
 import { saveCover } from "./cover-store";
+import type { Platform } from "./types";
 import { detectImageMime } from "./validation";
 
 const KNOWN_STEAM_APP_IDS: Record<string, number> = {
@@ -263,6 +265,84 @@ async function rawgCover(title: string, seen: Set<string>): Promise<FoundCover |
   return null;
 }
 
+/* ---------- منبع ۲/۳: سایت‌های ایرانی p30day / downloadha (فقط PS5/PS4) ---------- */
+
+/**
+ * این سایت‌ها بازی‌های پلی‌استیشن را با تصویر شاخص رسمی منتشر می‌کنند.
+ * روش: جستجوی داخلی سایت → برداشتن اولین تصویرِ واقعاً مرتبط با نام بازی از HTML.
+ */
+async function irSiteCover(
+  title: string,
+  seen: Set<string>,
+  which: "p30day" | "downloadha"
+): Promise<FoundCover | null> {
+  const path =
+    which === "p30day"
+      ? `https://www.p30day.ir/?s=${encodeURIComponent(title)}`
+      : `https://www.downloadha.com/?s=${encodeURIComponent(title)}`;
+  const html = await fetchText(path);
+  if (!html || html.length < 5000) return null;
+  const url = extractRelatedImage(html, seen, title);
+  if (!url) return null;
+  const dl = await downloadImage(url, { portrait: !url.includes(".avif") });
+  if (!dl) return null;
+  return { url: await saveCover(dl.mime, dl.bytes), source: which };
+}
+
+/**
+ * از بین همه تگ‌های img/source صفحه، تصویری را برمی‌دارد که واقعاً به نام بازی ربط دارد.
+ * لوگو/بنر/تبلیغ/آواتار خود سایت‌ها و تصاویر تکراری رد می‌شوند.
+ */
+function extractRelatedImage(html: string, seen: Set<string>, title: string): string | null {
+  const nameWords = title
+    .toLowerCase()
+    .replace(/[^a-z0-9 ]+/g, " ")
+    .split(/\s+/)
+    .filter((w) => w.length >= 3);
+  const titleKey = norm(title).slice(0, 4);
+  const picked = new Set<string>();
+  const cands: Array<{ url: string; ctx: string }> = [];
+  const tagRe = /<(img|source)\b[^>]*>/gi;
+  let m: RegExpExecArray | null;
+  while ((m = tagRe.exec(html)) !== null) {
+    const tag = m[0];
+    const attr =
+      tag.match(/(?:srcset|data-srcset|data-src|data-lazy-src|src)\s*=\s*["']([^"']+)/i)?.[1] ?? "";
+    if (!attr) continue;
+    // از srcset چندتایی، بزرگ‌ترین نسخه (آخرین)
+    const parts = attr
+      .split(",")
+      .map((s) => s.trim().split(/\s+/)[0])
+      .filter(Boolean);
+    let url = parts.length > 0 ? parts[parts.length - 1] : "";
+    if (!url) continue;
+    if (url.startsWith("//")) url = `https:${url}`;
+    if (!/^https?:\/\//i.test(url)) continue;
+    if (!/\.(jpe?g|png|webp|avif)(\?|#|$)/i.test(url)) continue;
+    const low = url.toLowerCase();
+    // لوگو/بنر/تبلیغ/آیکون خود سایت‌ها و فرمت‌های غیرعکسی
+    if (/logo|icon|sprite|banner|ads|tablig|tabligh|\.gif|svg|avatar|emoji|updateicon|metacritic|mtc\d|kk-star|magnet|placeholder|loading/.test(low)) continue;
+    if (picked.has(url) || seen.has(url)) continue;
+    picked.add(url);
+    cands.push({ url, ctx: `${low} ${tag.slice(0, 300).toLowerCase()}` });
+  }
+  if (cands.length === 0) return null;
+  const scored = cands
+    .map((c) => {
+      let score = 0;
+      if (titleKey && c.ctx.includes(titleKey)) score += 120;
+      for (const w of nameWords) {
+        if (c.ctx.includes(w)) score += w.length >= 6 ? 12 : 6;
+      }
+      return { ...c, score };
+    })
+    .sort((a, b) => b.score - a.score);
+  // آستانه شباهت تا بنر/عکس نامرتبط برداشته نشود
+  const need = titleKey.length >= 6 ? 100 : 55;
+  if (scored[0].score < need) return null;
+  return scored[0].url;
+}
+
 /* ---------- منبع ۳: ویکی‌پدیا (بوکس‌آرت رسمی مقاله بازی) ---------- */
 
 async function wikipediaCover(title: string, seen: Set<string>): Promise<FoundCover | null> {
@@ -506,36 +586,79 @@ async function xboxStoreCover(title: string, seen: Set<string>): Promise<FoundCo
 /* ---------- API اصلی ---------- */
 
 /**
- * کاور رسمی بازی را به این ترتیب پیدا می‌کند: PlayStation Store → Xbox Store (API رسمی) →
- * Steam → RAWG → ویکی‌پدیا → جستجوی تصویر وب (DuckDuckGo / Bing / Google — شامل متاکریتیک).
+ * ترتیب منابع کاور بر اساس پلتفرم نهایی بازی (خالص و تست‌پذیر):
+ * - Xbox Offline → فقط Xbox Store (جستجوی وب حذف شده تا کاور اشتباهیِ وب/استیم برای Xbox نیاید)؛
+ *   اگر استور Xbox جواب نداد، کاور خالی می‌ماند (بازی بدون عکس ذخیره می‌شود).
+ * - PS5 / PS4 → استور PlayStation، بعد Steam، بعد RAWG، ویکی‌پدیا و جستجوی تصویر وب
+ *   (DuckDuckGo / Bing / Google) — چون این بازی‌ها انحصاری PS نیستند و کاورشان در منابع عمومی است.
+ */
+export type CoverStep =
+  | "playstation"
+  | "p30day"
+  | "downloadha"
+  | "xbox"
+  | "steam-known"
+  | "steam-search"
+  | "rawg"
+  | "wikipedia"
+  | "duckduckgo"
+  | "bing"
+  | "google";
+
+export function coverStepsFor(platform: Platform): CoverStep[] {
+  if (platform === "Xbox Offline") return ["xbox"];
+  return ["playstation", "p30day", "downloadha", "steam-known", "steam-search", "rawg", "wikipedia", "duckduckgo", "bing", "google"];
+}
+
+/**
+ * کاور رسمی بازی را فقط از منابعِ مجازِ پلتفرمِ نهایی پیدا می‌کند.
  * فایل واقعی دانلود، اعتبارسنجی (بوکس‌آرت عمودی، نه لوگو/بنر) و در دیتابیس ذخیره می‌شود و
  * آدرس دائمی آن برمی‌گردد. اگر هیچ منبعی جواب نداد null.
  */
 export async function findOfficialCover(
   coverQuery: string,
   steamAppId: number | null,
-  fallbackName: string
+  fallbackName: string,
+  platform: Platform = "PS5"
 ): Promise<FoundCover | null> {
   const title = (coverQuery || fallbackName || "").trim();
   if (!title) return null;
   const seen = new Set<string>();
+  const steps = coverStepsFor(platform);
 
   try {
-    // ۱) PlayStation Store: هنر رسمی پلی‌استیشن (تصاویر ایندکس‌شده استور)
-    const ps = await playstationStoreCover(title, seen);
-    if (ps) return ps;
+    // ۱) استور PlayStation: هنر رسمی پلی‌استیشن (تصاویر ایندکس‌شده استور)
+    if (steps.includes("playstation")) {
+      const ps = await playstationStoreCover(title, seen);
+      if (ps) return ps;
+    }
 
-    // ۲) Xbox Store: بوکس‌آرت عمودی رسمی از API مایکروسافت
-    const xbox = await xboxStoreCover(title, seen);
-    if (xbox) return xbox;
+    // ۲) استور Xbox: بوکس‌آرت عمودی رسمی از API مایکروسافت
+    // فقط و فقط برای بازی‌های Xbox Offline استفاده می‌شود — کاور استور ایکس‌باکس
+    // روی هیچ بازی PS5/PS4 نمی‌نشیند.
+    if (steps.includes("xbox")) {
+      const xbox = await xboxStoreCover(title, seen);
+      if (xbox) return xbox;
+    }
+
+    // ۲/۳) سایت‌های ایرانی p30day و downloadha (فقط برای بازی‌های PS)
+    if (steps.includes("p30day")) {
+      const p30 = await irSiteCover(title, seen, "p30day");
+      if (p30) return p30;
+    }
+
+    if (steps.includes("downloadha")) {
+      const dlha = await irSiteCover(title, seen, "downloadha");
+      if (dlha) return dlha;
+    }
 
     // ۳) Steam: آیدی معلوم → جستجوی استور
     const knownId = steamAppId ?? steamAppIdFromName(title);
-    if (knownId) {
+    if (steps.includes("steam-known") && knownId) {
       const hit = await trySteamImages(knownId, seen);
       if (hit) return hit;
     }
-    if (!knownId) {
+    if (steps.includes("steam-search") && !knownId) {
       const searchedId = await steamSearchAppId(title);
       if (searchedId) {
         const hit = await trySteamImages(searchedId, seen);
@@ -544,22 +667,32 @@ export async function findOfficialCover(
     }
 
     // ۴) RAWG (اختیاری)
-    const rawg = await rawgCover(title, seen);
-    if (rawg) return rawg;
+    if (steps.includes("rawg")) {
+      const rawg = await rawgCover(title, seen);
+      if (rawg) return rawg;
+    }
 
     // ۵) ویکی‌پدیا
-    const wiki = await wikipediaCover(title, seen);
-    if (wiki) return wiki;
+    if (steps.includes("wikipedia")) {
+      const wiki = await wikipediaCover(title, seen);
+      if (wiki) return wiki;
+    }
 
     // ۶) جستجوی تصویر باز وب: DuckDuckGo → Bing → Google
-    const ddg = await duckduckgoCover(title, seen);
-    if (ddg) return ddg;
+    if (steps.includes("duckduckgo")) {
+      const ddg = await duckduckgoCover(title, seen);
+      if (ddg) return ddg;
+    }
 
-    const bing = await bingCover(title, seen);
-    if (bing) return bing;
+    if (steps.includes("bing")) {
+      const bing = await bingCover(title, seen);
+      if (bing) return bing;
+    }
 
-    const google = await googleCover(title, seen);
-    if (google) return google;
+    if (steps.includes("google")) {
+      const google = await googleCover(title, seen);
+      if (google) return google;
+    }
   } catch {
     // هیچ‌وقت کل مسیر را با استثنا نکُش؛ پایین null برمی‌گردد
   }

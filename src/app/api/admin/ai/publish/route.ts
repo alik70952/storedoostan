@@ -3,7 +3,7 @@ import { revalidatePath } from "next/cache";
 import { isAuthenticated } from "@/lib/auth";
 import { createGame, listGames, updateGame } from "@/lib/db";
 import { validateGameInput } from "@/lib/validation";
-import { normalizeAiJson } from "@/lib/ai-game";
+import { normalizeAiJson, splitPlatformSuffix } from "@/lib/ai-game";
 import { callGlmForGame } from "@/lib/ai-client";
 import { findOfficialCover } from "@/lib/ai-cover";
 
@@ -40,16 +40,26 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "نام بازی خالی است.", step: "info" as Step }, { status: 400 });
   }
 
-  // ۱) جلوگیری از تکراری: اگر همین عنوان (انگلیسی) از قبل هست، همان را برگردان
+  // ۰) قانون فروشگاه: پسوند پلتفرم آخر نام بازی («xbox» / «ps5» / «ps4»، مثل «Hi-Fi Rush ps5»)
+  // دسته نهایی را تعیین می‌کند. پسوند جدا می‌شود تا نام تمیز به مدل و جستجوی کاور برود.
+  // یک بازی می‌تواند هم‌زمان در دو دسته ثبت شود (مثلاً «Hi-Fi Rush xbox» و «Hi-Fi Rush ps5»)؛
+  // پس تشخیص تکراری با «نام + پلتفرم» انجام می‌شود، نه فقط نام.
+  const { cleanName, forced } = splitPlatformSuffix(name);
+  if (!cleanName) {
+    return NextResponse.json({ error: "نام بازی خالی است.", step: "info" as Step }, { status: 400 });
+  }
+
+  // ۱) جلوگیری از تکراری: اگر همین عنوان در همان دسته از قبل هست، همان را برگردان
   try {
-    const existing = (await listGames()).find(
-      (g) => g.title.trim().toLowerCase() === name.toLowerCase()
+    const all = await listGames();
+    const existing = all.find(
+      (g) => g.title.trim().toLowerCase() === cleanName.toLowerCase() && (forced === null || g.platform === forced)
     );
     if (existing) {
       // اگر بازی هست ولی کاور ندارد (مثلاً کاور قبلاً پیدا نشده بود)، همین حالا دنبالش بگرد
       if (!existing.cover) {
         try {
-          const cover = await findOfficialCover(name, null, name);
+          const cover = await findOfficialCover(name, null, name, existing.platform);
           if (cover) {
             const updated = await updateGame(existing.id, {
               title: existing.title,
@@ -88,17 +98,19 @@ export async function POST(request: Request) {
   // ۲) اطلاعات از GLM (server-side، کلید هرگز به مرورگر نمی‌رود)
   let resolved;
   try {
-    const raw = await callGlmForGame(name);
-    resolved = normalizeAiJson(raw, name);
+    const raw = await callGlmForGame(cleanName);
+    resolved = normalizeAiJson(raw, cleanName, { forced });
   } catch (err) {
     return NextResponse.json(
-      { error: err instanceof Error ? err.message : "خطای تولید اطلاعات.", step: "info" as Step, input: name },
+      { error: err instanceof Error ? err.message : "خطای تولید اطلاعات.", step: "info" as Step, input: cleanName },
       { status: 502 }
     );
   }
 
-  // ۳) کاور رسمی از کل اینترنت (Steam / RAWG / ویکی‌پدیا / DuckDuckGo / Bing / Google)
-  const cover = await findOfficialCover(resolved.coverQuery, resolved.steamAppId, name);
+  // ۳) کاور رسمی — فقط از منابعِ مجازِ پلتفرم نهایی:
+  // Xbox Offline → فقط استور Xbox؛ PS5/PS4 → اول استور PS، بعد سایت‌های ایرانی (p30day/downloadha)،
+  // بعد Steam، RAWG، ویکی‌پدیا و جستجوی تصویر وب (گوگل/Bing/DuckDuckGo).
+  const cover = await findOfficialCover(resolved.coverQuery, resolved.steamAppId, cleanName, resolved.platform);
   const warning = cover
     ? null
     : `کاور برای «${resolved.title}» پیدا نشد؛ بازی بدون عکس ذخیره شد. بعداً از پنل عکس دستی اضافه کنید یا Retry بزنید.`;

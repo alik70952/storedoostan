@@ -136,14 +136,14 @@ img{display:block;max-width:100%}
 .stat-card{background:var(--surface);border:1px solid #202731;border-radius:14px;padding:16px 18px}
 .stat-card strong{color:#eef1f4;font-variant-numeric:tabular-nums;font-size:22px;font-weight:800;display:block}
 .stat-card span{color:#697483;margin-top:4px;font-size:11px;font-weight:700;display:block}
-.admin-grid{align-items:start;gap:22px;display:grid;grid-template-columns:400px minmax(0,1fr)}
+.admin-grid{align-items:start;gap:22px;display:grid;grid-template-columns:minmax(0,400px) minmax(0,1fr)}
 .form-card{background:var(--surface);border:1px solid #202731;border-radius:16px;padding:20px;position:sticky;top:86px}
 .form-card.editing{border-color:#ffad3d59;box-shadow:0 0 0 3px #ffad3d14}
 .form-card.editing h2{color:#ffcf87}
 .form-card h2{color:#edf0f3;margin:0 0 16px;font-size:15px;font-weight:800}
 .field{margin-bottom:13px}
 .field label{color:#aeb6c2;margin-bottom:6px;font-size:11px;font-weight:700;display:block}
-.field input[type=text],.field input[type=url],.field input[type=file],.field select,.field textarea{
+.field input[type=text],.field input[type=url],.field input[type=file],.field input[type=password],.field input[type=search],.field input[type=email],.field input[type=tel],.field input[type=number],.field select,.field textarea{
   color:#fff;background:#0d1117;border:1px solid #303744;border-radius:10px;outline:0;width:100%;padding:10px 12px;font-size:13px;transition:border-color .15s
 }
 .field input:focus,.field select:focus,.field textarea:focus{border-color:#ffad3d8c;box-shadow:0 0 0 3px #ffad3d13}
@@ -197,6 +197,11 @@ img{display:block;max-width:100%}
 .list-search{flex:1;min-width:160px;color:#fff;background:#0d1117;border:1px solid #303744;border-radius:10px;outline:0;height:38px;padding:0 12px;font-size:12px}
 .list-search:focus{border-color:#ffad3d8c;box-shadow:0 0 0 3px #ffad3d13}
 .list-count{color:#59636f;margin:10px 2px 0;font-size:10px}
+/* فقط روی موبایل نمایش داده می‌شوند (در مدیای پایین فعال می‌شوند) */
+.add-mobile,.back-to-list{display:none}
+.list-head{display:none;align-items:baseline;justify-content:space-between;gap:10px;margin:0 2px 10px}
+.list-head h2{color:#edf0f3;margin:0;font-size:14px;font-weight:800}
+.list-head span{color:#66717f;font-size:11px;font-weight:700}
 .star-btn{cursor:pointer;color:#6f7a89;background:#10141b;border:1px solid #242b35;border-radius:9px;width:33px;height:33px;font-size:15px;display:grid;place-items:center;transition:color .15s,border-color .15s}
 .star-btn:hover{color:#ffcf87;border-color:#ffad3d59}
 .star-btn.on{color:#ffad3d;border-color:#ffad3d59;background:#ffad3d14}
@@ -224,7 +229,7 @@ img{display:block;max-width:100%}
 @media (width<=1080px){
   .header-inner,.catalog-section,.footer-inner{padding-right:24px;padding-left:24px}
   .cards-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
-  .admin-grid{grid-template-columns:1fr}
+  .admin-grid{grid-template-columns:minmax(0,1fr)}
   .admin-stats{grid-template-columns:repeat(2,1fr)}
 }
 @media (width<=800px){
@@ -262,9 +267,76 @@ img{display:block;max-width:100%}
   .site-header{z-index:50}
   .hero-section{padding-top:env(safe-area-inset-top, 0px)}
 }
+
+/* ---------- admin روی موبایل ---------- */
+@media (width<=800px){
+  /* بدون سرریز افقی: ستون‌های گرید با minmax(0,1fr) کوچک می‌شوند */
+  .admin-page{padding:16px 12px 64px}
+  .admin-top{gap:12px;margin-bottom:16px}
+  .admin-top h1{font-size:19px}
+  .admin-top p{font-size:11px}
+  .admin-actions{gap:8px;flex-wrap:wrap;width:100%}
+  .admin-actions .button{flex:1 1 auto;justify-content:center;height:42px;padding:0 12px;font-size:12px}
+  .add-mobile{display:inline-flex}
+  .back-to-list{display:inline-flex}
+  /* آمار به‌جای ۵ کارت عمودی، نوار افقی کم‌ارتفاع */
+  .admin-stats{gap:9px;margin-bottom:16px;padding-bottom:4px;display:flex;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .admin-stats::-webkit-scrollbar{display:none}
+  .stat-card{flex:0 0 auto;width:108px;min-height:60px;padding:10px 12px;border-radius:12px}
+  .stat-card strong{font-size:17px}
+  .stat-card span{margin-top:2px;font-size:10px;line-height:1.6}
+  /* لیست بازی‌ها اول صفحه می‌آید تا بازی‌ها فوراً دیده شوند */
+  .admin-grid{gap:16px}
+  .admin-grid>form{order:2}
+  .admin-grid>div{order:1}
+  .list-head{display:flex}
+  .form-card{position:static;padding:15px 14px;border-radius:14px}
+  .form-card h2{margin-bottom:12px;font-size:14px}
+  .field{margin-bottom:11px}
+  .field label{font-size:12px}
+  /* font-size:16px = جلوگیری از زوم خودکار iOS هنگام فوکوس روی فیلدها */
+  .field input[type=text],.field input[type=url],.field input[type=file],.field input[type=password],.field input[type=search],.field input[type=email],.field input[type=tel],.field input[type=number],.field select,.field textarea,.list-search{font-size:16px}
+  .field textarea{min-height:96px}
+  .checkbox-row input[type=checkbox]{width:22px;height:22px}
+  .cover-preview{aspect-ratio:16/10}
+  .form-actions{gap:10px;margin-top:14px;flex-wrap:wrap}
+  .form-actions .button{flex:1 1 auto;height:46px;justify-content:center;font-size:13px}
+  .list-toolbar{flex-direction:column;align-items:stretch;gap:8px}
+  .list-tabs{max-width:100%;overflow-x:auto;scrollbar-width:none}
+  .list-tabs::-webkit-scrollbar{display:none}
+  .list-tabs button{flex:none}
+  .list-search{width:100%;min-width:0;height:44px}
+  .admin-list{max-height:60vh;max-height:min(60dvh,520px);padding:6px;-webkit-overflow-scrolling:touch}
+  .admin-row{grid-template-columns:auto minmax(0,1fr);grid-template-areas:"cover info" "actions actions";gap:9px 10px;padding:10px;display:grid;align-items:center}
+  .admin-row>.admin-cover{grid-area:cover}
+  .admin-row>.admin-row-info{grid-area:info}
+  .admin-row>.admin-row-actions{grid-area:actions;justify-content:flex-end;gap:10px}
+  .admin-row-info strong{font-size:13.5px;white-space:normal}
+  .admin-row-info small{gap:6px}
+  .admin-cover{width:42px;height:55px}
+  .star-btn{width:40px;height:40px;font-size:17px}
+  .admin-row-actions .button.small{height:40px;min-width:44px;justify-content:center;font-size:14px}
+  .list-count{margin-top:8px;font-size:11px}
+  .ai-publisher{margin-top:16px}
+  .ai-publisher .field-help{font-size:11px;line-height:1.9}
+  .ai-list{max-height:52vh;max-height:min(52dvh,380px)}
+  .ai-row{flex-wrap:wrap;gap:8px}
+  .ai-row-info{flex-basis:calc(100% - 28px)}
+  .ai-row .admin-cover{width:38px;height:50px}
+  .ai-row .button.small{height:38px}
+  .login-wrap{padding:24px 14px}
+  .login-card{padding:24px 18px}
+}
 @media (width<=560px){
   .cards-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
   .field-row{grid-template-columns:1fr}
-  .admin-stats{grid-template-columns:repeat(2,1fr)}
   .header-search-wrap{flex-basis:150px}
+  .admin-page{padding:14px 10px 56px}
+  .admin-grid{gap:14px}
+  .admin-stats{gap:8px}
+  .stat-card{min-width:96px}
+  .list-tabs button{padding:0 9px}
+  .admin-row{gap:8px;padding:9px}
+  .admin-row-actions{gap:8px}
+  .admin-row-actions .button.small{min-width:42px}
 }

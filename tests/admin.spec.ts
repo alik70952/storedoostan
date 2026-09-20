@@ -1,7 +1,6 @@
 import { test, expect } from "@playwright/test";
 
 const USERNAME = process.env.E2E_ADMIN_USERNAME || "admin";
-const PASSWORD = process.env.E2E_ADMIN_PASSWORD || "";
 
 test("ورود مدیر و افزودن بازی جدید", async ({ page }) => {
   test.skip(!process.env.E2E_ADMIN_PASSWORD, "رمز ادمین ست نشده است");
@@ -17,7 +16,7 @@ test("ورود مدیر و افزودن بازی جدید", async ({ page }) => 
 
   await page.getByLabel("نام فارسی بازی *").fill("بازی تستی آزمایشی");
   await page.getByLabel("نام اصلی (انگلیسی) *").fill("Test Game E2E");
-  await page.getByRole("button", { name: "افزودن بازی" }).click();
+  await page.getByRole("button", { name: "افزودن بازی", exact: true }).click();
   await expect(page.getByText("بازی جدید با موفقیت اضافه شد.")).toBeVisible();
   await expect(page.locator(".admin-row", { hasText: "بازی تستی آزمایشی" }).first()).toBeVisible();
 

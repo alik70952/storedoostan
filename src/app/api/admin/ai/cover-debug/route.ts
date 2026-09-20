@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { isAuthenticated } from "@/lib/auth";
 import { findOfficialCover } from "@/lib/ai-cover";
+import { normalizePlatform } from "@/lib/validation";
 import { deleteCoverByUrl } from "@/lib/cover-store";
 
 // ابزار تشخیصی موتور کاور: نشان می‌دهد برای یک نام بازی، کاور از کدام منبع می‌آید.
@@ -23,11 +24,19 @@ export async function GET(request: Request) {
   const keep = search.get("keep") === "1";
   const steamAppIdRaw = search.get("steamAppId") || "";
   const steamAppId = /^\d{1,10}$/.test(steamAppIdRaw) ? Number(steamAppIdRaw) : null;
+  // پلتفرم اختیاری (?platform=xbox|ps5|ps4) تا ترتیب منابع همان قانون انتشار باشد
+  const platformParam = (search.get("platform") || "").trim().toUpperCase();
+  const platform =
+    platformParam === "XBOX" || platformParam === "XBOX OFFLINE"
+      ? ("Xbox Offline" as const)
+      : platformParam === "PS4" || platformParam === "PLAYSTATION 4" || platformParam === "PLAYSTATION4"
+        ? ("PS4" as const)
+        : ("PS5" as const);
 
   try {
-    const cover = await findOfficialCover(name, steamAppId, name);
+    const cover = await findOfficialCover(name, steamAppId, name, platform);
     if (cover && !keep) await deleteCoverByUrl(cover.url);
-    return NextResponse.json({ name, cover, kept: Boolean(cover && keep), steamAppId });
+    return NextResponse.json({ name, platform, cover, kept: Boolean(cover && keep), steamAppId });
   } catch (err) {
     return NextResponse.json({ name, error: err instanceof Error ? err.message : String(err) }, { status: 500 });
   }
