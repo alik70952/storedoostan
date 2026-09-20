@@ -1,7 +1,8 @@
 // موتور پیدا کردن کاور رسمی هر بازی از کل اینترنت — بدون حدس و بدون ساخت تصویر AI.
 // منابع به ترتیب: PlayStation Store (هنر رسمی PS از جستجوی محدود به استور) →
-// Xbox Store (API رسمی مایکروسافت، بوکس‌آرت عمودی) → Steam → RAWG (اگر کلید باشد) →
+// سایت‌های ایرانی p30day/downloadha (کاور بازی‌های PS) → Steam → RAWG (اگر کلید باشد) →
 // ویکی‌پدیا → جستجوی تصویر وب: DuckDuckGo → Bing → Google (متاکریتیک/IGN و… هم از همین راه).
+// قانون فروشگاه: دسته Xbox Offline فقط و فقط از استور Xbox کاور می‌گیرد.
 // خروجی همیشه یک فایل واقعیِ دانلودشده است که در جدول covers ذخیره می‌شود (/api/covers/<uuid>.<ext>).
 
 import { saveCover } from "./cover-store";
@@ -264,6 +265,84 @@ async function rawgCover(title: string, seen: Set<string>): Promise<FoundCover |
   return null;
 }
 
+/* ---------- منبع ۲/۳: سایت‌های ایرانی p30day / downloadha (فقط PS5/PS4) ---------- */
+
+/**
+ * این سایت‌ها بازی‌های پلی‌استیشن را با تصویر شاخص رسمی منتشر می‌کنند.
+ * روش: جستجوی داخلی سایت → برداشتن اولین تصویرِ واقعاً مرتبط با نام بازی از HTML.
+ */
+async function irSiteCover(
+  title: string,
+  seen: Set<string>,
+  which: "p30day" | "downloadha"
+): Promise<FoundCover | null> {
+  const path =
+    which === "p30day"
+      ? `https://www.p30day.ir/?s=${encodeURIComponent(title)}`
+      : `https://www.downloadha.com/?s=${encodeURIComponent(title)}`;
+  const html = await fetchText(path);
+  if (!html || html.length < 5000) return null;
+  const url = extractRelatedImage(html, seen, title);
+  if (!url) return null;
+  const dl = await downloadImage(url, { portrait: !url.includes(".avif") });
+  if (!dl) return null;
+  return { url: await saveCover(dl.mime, dl.bytes), source: which };
+}
+
+/**
+ * از بین همه تگ‌های img/source صفحه، تصویری را برمی‌دارد که واقعاً به نام بازی ربط دارد.
+ * لوگو/بنر/تبلیغ/آواتار خود سایت‌ها و تصاویر تکراری رد می‌شوند.
+ */
+function extractRelatedImage(html: string, seen: Set<string>, title: string): string | null {
+  const nameWords = title
+    .toLowerCase()
+    .replace(/[^a-z0-9 ]+/g, " ")
+    .split(/\s+/)
+    .filter((w) => w.length >= 3);
+  const titleKey = norm(title).slice(0, 4);
+  const picked = new Set<string>();
+  const cands: Array<{ url: string; ctx: string }> = [];
+  const tagRe = /<(img|source)\b[^>]*>/gi;
+  let m: RegExpExecArray | null;
+  while ((m = tagRe.exec(html)) !== null) {
+    const tag = m[0];
+    const attr =
+      tag.match(/(?:srcset|data-srcset|data-src|data-lazy-src|src)\s*=\s*["']([^"']+)/i)?.[1] ?? "";
+    if (!attr) continue;
+    // از srcset چندتایی، بزرگ‌ترین نسخه (آخرین)
+    const parts = attr
+      .split(",")
+      .map((s) => s.trim().split(/\s+/)[0])
+      .filter(Boolean);
+    let url = parts.length > 0 ? parts[parts.length - 1] : "";
+    if (!url) continue;
+    if (url.startsWith("//")) url = `https:${url}`;
+    if (!/^https?:\/\//i.test(url)) continue;
+    if (!/\.(jpe?g|png|webp|avif)(\?|#|$)/i.test(url)) continue;
+    const low = url.toLowerCase();
+    // لوگو/بنر/تبلیغ/آیکون خود سایت‌ها و فرمت‌های غیرعکسی
+    if (/logo|icon|sprite|banner|ads|tablig|tabligh|\.gif|svg|avatar|emoji|updateicon|metacritic|mtc\d|kk-star|magnet|placeholder|loading/.test(low)) continue;
+    if (picked.has(url) || seen.has(url)) continue;
+    picked.add(url);
+    cands.push({ url, ctx: `${low} ${tag.slice(0, 300).toLowerCase()}` });
+  }
+  if (cands.length === 0) return null;
+  const scored = cands
+    .map((c) => {
+      let score = 0;
+      if (titleKey && c.ctx.includes(titleKey)) score += 120;
+      for (const w of nameWords) {
+        if (c.ctx.includes(w)) score += w.length >= 6 ? 12 : 6;
+      }
+      return { ...c, score };
+    })
+    .sort((a, b) => b.score - a.score);
+  // آستانه شباهت تا بنر/عکس نامرتبط برداشته نشود
+  const need = titleKey.length >= 6 ? 100 : 55;
+  if (scored[0].score < need) return null;
+  return scored[0].url;
+}
+
 /* ---------- منبع ۳: ویکی‌پدیا (بوکس‌آرت رسمی مقاله بازی) ---------- */
 
 async function wikipediaCover(title: string, seen: Set<string>): Promise<FoundCover | null> {
@@ -515,6 +594,8 @@ async function xboxStoreCover(title: string, seen: Set<string>): Promise<FoundCo
  */
 export type CoverStep =
   | "playstation"
+  | "p30day"
+  | "downloadha"
   | "xbox"
   | "steam-known"
   | "steam-search"
@@ -526,7 +607,7 @@ export type CoverStep =
 
 export function coverStepsFor(platform: Platform): CoverStep[] {
   if (platform === "Xbox Offline") return ["xbox"];
-  return ["playstation", "steam-known", "steam-search", "rawg", "wikipedia", "duckduckgo", "bing", "google"];
+  return ["playstation", "p30day", "downloadha", "steam-known", "steam-search", "rawg", "wikipedia", "duckduckgo", "bing", "google"];
 }
 
 /**
@@ -558,6 +639,17 @@ export async function findOfficialCover(
     if (steps.includes("xbox")) {
       const xbox = await xboxStoreCover(title, seen);
       if (xbox) return xbox;
+    }
+
+    // ۲/۳) سایت‌های ایرانی p30day و downloadha (فقط برای بازی‌های PS)
+    if (steps.includes("p30day")) {
+      const p30 = await irSiteCover(title, seen, "p30day");
+      if (p30) return p30;
+    }
+
+    if (steps.includes("downloadha")) {
+      const dlha = await irSiteCover(title, seen, "downloadha");
+      if (dlha) return dlha;
     }
 
     // ۳) Steam: آیدی معلوم → جستجوی استور

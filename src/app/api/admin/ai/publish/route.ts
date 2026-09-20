@@ -3,7 +3,7 @@ import { revalidatePath } from "next/cache";
 import { isAuthenticated } from "@/lib/auth";
 import { createGame, listGames, updateGame } from "@/lib/db";
 import { validateGameInput } from "@/lib/validation";
-import { normalizeAiJson, splitXboxSuffix } from "@/lib/ai-game";
+import { normalizeAiJson, splitPlatformSuffix } from "@/lib/ai-game";
 import { callGlmForGame } from "@/lib/ai-client";
 import { findOfficialCover } from "@/lib/ai-cover";
 
@@ -40,17 +40,20 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "نام بازی خالی است.", step: "info" as Step }, { status: 400 });
   }
 
-  // ۰) قانون فروشگاه: «xbox» آخر نام بازی (مثل «Halo Infinite xbox») یعنی Xbox Offline.
-  // پسوند جدا می‌شود تا نام تمیز به مدل و جستجوی کاور برود.
-  const { cleanName, forceXbox } = splitXboxSuffix(name);
+  // ۰) قانون فروشگاه: پسوند پلتفرم آخر نام بازی («xbox» / «ps5» / «ps4»، مثل «Hi-Fi Rush ps5»)
+  // دسته نهایی را تعیین می‌کند. پسوند جدا می‌شود تا نام تمیز به مدل و جستجوی کاور برود.
+  // یک بازی می‌تواند هم‌زمان در دو دسته ثبت شود (مثلاً «Hi-Fi Rush xbox» و «Hi-Fi Rush ps5»)؛
+  // پس تشخیص تکراری با «نام + پلتفرم» انجام می‌شود، نه فقط نام.
+  const { cleanName, forced } = splitPlatformSuffix(name);
   if (!cleanName) {
     return NextResponse.json({ error: "نام بازی خالی است.", step: "info" as Step }, { status: 400 });
   }
 
-  // ۱) جلوگیری از تکراری: اگر همین عنوان (انگلیسی) از قبل هست، همان را برگردان
+  // ۱) جلوگیری از تکراری: اگر همین عنوان در همان دسته از قبل هست، همان را برگردان
   try {
-    const existing = (await listGames()).find(
-      (g) => g.title.trim().toLowerCase() === cleanName.toLowerCase()
+    const all = await listGames();
+    const existing = all.find(
+      (g) => g.title.trim().toLowerCase() === cleanName.toLowerCase() && (forced === null || g.platform === forced)
     );
     if (existing) {
       // اگر بازی هست ولی کاور ندارد (مثلاً کاور قبلاً پیدا نشده بود)، همین حالا دنبالش بگرد
@@ -96,7 +99,7 @@ export async function POST(request: Request) {
   let resolved;
   try {
     const raw = await callGlmForGame(cleanName);
-    resolved = normalizeAiJson(raw, cleanName, { forceXbox });
+    resolved = normalizeAiJson(raw, cleanName, { forced });
   } catch (err) {
     return NextResponse.json(
       { error: err instanceof Error ? err.message : "خطای تولید اطلاعات.", step: "info" as Step, input: cleanName },
@@ -105,7 +108,8 @@ export async function POST(request: Request) {
   }
 
   // ۳) کاور رسمی — فقط از منابعِ مجازِ پلتفرم نهایی:
-  // Xbox Offline → فقط استور Xbox؛ PS5/PS4 → استور PS، Steam، RAWG، ویکی‌پدیا و جستجوی تصویر وب (گوگل/Bing/DuckDuckGo).
+  // Xbox Offline → فقط استور Xbox؛ PS5/PS4 → اول استور PS، بعد سایت‌های ایرانی (p30day/downloadha)،
+  // بعد Steam، RAWG، ویکی‌پدیا و جستجوی تصویر وب (گوگل/Bing/DuckDuckGo).
   const cover = await findOfficialCover(resolved.coverQuery, resolved.steamAppId, cleanName, resolved.platform);
   const warning = cover
     ? null
