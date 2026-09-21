@@ -97,6 +97,7 @@ export async function saveGameAction(_prev: ActionResult, formData: FormData): P
     title: String(formData.get("title") ?? ""),
     titleFa: String(formData.get("titleFa") ?? ""),
     platform: String(formData.get("platform") ?? ""),
+    twoPlayer: formData.get("twoPlayer") === "on" || formData.get("twoPlayer") === "true",
     genre: String(formData.get("genre") ?? ""),
     cover,
     description: String(formData.get("description") ?? ""),

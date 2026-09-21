@@ -12,3 +12,4 @@ artifacts/
 *.log
 .vercel
 .freebuff/
+stitch_extracted/

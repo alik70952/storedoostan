@@ -1,5 +1,5 @@
 import type { Platform } from "./types";
-import { GENRES } from "./types";
+import { ACCOUNT_PLATFORM, GENRES } from "./types";
 
 export const AINEX_BASE_URL = (
   process.env.AINEX_BASE_URL || "https://api.apinex.bond/v1"
@@ -9,10 +9,13 @@ export const AINEX_MODEL = process.env.AINEX_MODEL || "glm-5.3-flash";
 // قانون فروشگاه: پسوند پلتفرم آخر نام بازی (مثل «… xbox» یا «… ps5» یا «… ps4») تعیین می‌کند
 // بازی در کدام دسته ثبت شود. این پسوند قبل از ارسال به مدل و جستجوی کاور جدا می‌شود تا نام تمیز بماند.
 const SUFFIX_SEP = String.raw`[\s\-–—_()\[\]{}،,.:;!؟?/\\|~«»""''` + "*#]";
+// دسته «PS5 اکانتی»: پسوندهایی مثل «ps5 اکانتی»، «اکانتی»، «ps5 account» و «accounti»
+const ACCOUNT_SUFFIX_WORD = String.raw`(?:اکانتی|اکانت|accounts?|accounti|accounty)`;
 export const PLATFORM_SUFFIX_RE = {
   xbox: new RegExp(`${SUFFIX_SEP}+xbox${SUFFIX_SEP}*$`, "i"),
   ps5: new RegExp(`${SUFFIX_SEP}+ps5${SUFFIX_SEP}*$`, "i"),
   ps4: new RegExp(`${SUFFIX_SEP}+ps4${SUFFIX_SEP}*$`, "i"),
+  account: new RegExp(`(?:${SUFFIX_SEP}*ps5)?${SUFFIX_SEP}*${ACCOUNT_SUFFIX_WORD}${SUFFIX_SEP}*$`, "i"),
 } as const;
 // برای سازگاری با کدهای قبلی
 export const XBOX_SUFFIX_RE = PLATFORM_SUFFIX_RE.xbox;
@@ -23,6 +26,10 @@ export function splitPlatformSuffix(rawName: string): { cleanName: string; force
   const name = (rawName ?? "").trim().slice(0, 120);
   if (PLATFORM_SUFFIX_RE.xbox.test(name)) {
     return { cleanName: name.replace(PLATFORM_SUFFIX_RE.xbox, "").trim().slice(0, 120), forced: "Xbox Offline" };
+  }
+  // پسوند دسته اکانتی قبل از ps5 بررسی می‌شود تا «… ps5 اکانتی» به دسته اکانتی برود
+  if (PLATFORM_SUFFIX_RE.account.test(name)) {
+    return { cleanName: name.replace(PLATFORM_SUFFIX_RE.account, "").trim().slice(0, 120), forced: ACCOUNT_PLATFORM };
   }
   if (PLATFORM_SUFFIX_RE.ps5.test(name)) {
     return { cleanName: name.replace(PLATFORM_SUFFIX_RE.ps5, "").trim().slice(0, 120), forced: "PS5" };
@@ -45,8 +52,8 @@ Rules:
 - Keep the official English title exactly (including subtitles, accents like o with diaeresis).
 - Write "titleFa" as a natural Persian title.
 - Write "descriptionFa" as 2-4 natural Persian sentences for shoppers (no English, no markdown, max 400 chars).
-- The "xbox", "ps5" and "ps4" words are NEVER part of any game title (users append them to choose the store category). The store sells only PS5, PS4 and Xbox Offline games.
-- "platform" must be exactly one of: "PS5", "PS4", "Xbox Offline". Prefer PS5 > PS4 when multi-platform. Return "Xbox Offline" ONLY when the game is an Xbox exclusive (for example: Halo, Gears of War, Forza); never for games that also exist on PlayStation.
+- The "xbox", "ps5", "ps4", "account" and "اکانتی" words are NEVER part of any game title (users append them to choose the store category). The store sells only PS5, PS4, PS5 اکانتی and Xbox Offline games.
+- "platform" must be exactly one of: "PS5", "PS4", "Xbox Offline". Prefer PS5 > PS4 when multi-platform. Return "Xbox Offline" ONLY when the game is an Xbox exclusive (for example: Halo, Gears of War, Forza); never for games that also exist on PlayStation. NEVER return "PS5 اکانتی" — that category is chosen only by the user's suffix.
 - "genre" must be exactly one of the Persian genres listed below.
 - NEVER invent a cover URL. Return "coverCandidateQuery" = official English title, and "steamAppId" = numeric Steam app id ONLY if 100 percent sure, else null.
 - Output VALID JSON ONLY, no markdown, exactly these keys:

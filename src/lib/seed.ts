@@ -1,6 +1,6 @@
 import type { Game, GameInput } from "./types";
 
-type SeedEntry = { title: string; titleFa: string; platform: Game["platform"]; genre: string; cover: string; description: string; featured?: boolean };
+type SeedEntry = { title: string; titleFa: string; platform: Game["platform"]; twoPlayer?: boolean; genre: string; cover: string; description: string; featured?: boolean };
 
 const entries: SeedEntry[] = [
   { title: "God of War Ragnarök", titleFa: "خدای جنگ: راگناروک", platform: "PS5", genre: "اکشن و ماجراجویی", cover: "https://cdn.cloudflare.steamstatic.com/steam/apps/2322010/library_600x900.jpg", description: "نسخه کپی‌خور خدای جنگ راگناروک برای PS5 — نصب آفلاین و اجرای تضمینی بدون نیاز به اینترنت. سفر حماسی کریتوس و آترئوس در دنیاهای نورس با دوبله و زیرنویس فارسی در فروشگاه دوستان.", featured: true },
@@ -21,8 +21,8 @@ const entries: SeedEntry[] = [
   { title: "Bloodborne", titleFa: "بلادبورن", platform: "PS4", genre: "نقش‌آفرینی", cover: "https://upload.wikimedia.org/wikipedia/en/6/68/Bloodborne_Cover_Wallpaper.jpg", description: "شکارچیان شهر یارنام در تاریکی گوتیک؛ یکی از سخت‌ترین و دوست‌داشتنی‌ترین انحصاری‌های PS4." },
   { title: "Persona 5 Royal", titleFa: "پرسونا ۵ رویال", platform: "PS4", genre: "نقش‌آفرینی", cover: "https://cdn.cloudflare.steamstatic.com/steam/apps/1687950/library_600x900.jpg", description: "دزدانی با قلب‌های ماسک‌دار در توکیو؛ صد ساعت نقش‌آفرینی پرجزئیات و پرانرژی." },
   { title: "Days Gone", titleFa: "دیز گان", platform: "PS4", genre: "ترس و بقا", cover: "https://cdn.cloudflare.steamstatic.com/steam/apps/1259420/library_600x900.jpg", description: "زنده‌ماندن دیکن سنت‌جان در میان دریای زامبی‌های شمال غرب آمریکا." },
-  { title: "EA SPORTS FC 25", titleFa: "فوتبال EA اسپورتس ۲۰۲۵", platform: "PS5", genre: "ورزشی", cover: "https://cdn.cloudflare.steamstatic.com/steam/apps/2669320/library_600x900.jpg", description: "نسخه کپی‌خور FC 25 برای PS5 — جدیدترین فوتبال EA با تیم‌های به‌روز و حالت آلتیمیت تیم؛ نصب آفلاین در فروشگاه دوستان." },
-  { title: "FIFA 23", titleFa: "فیفا ۲۳", platform: "PS4", genre: "ورزشی", cover: "https://cdn.cloudflare.steamstatic.com/steam/apps/1811260/library_600x900.jpg", description: "نسخه کپی‌خور فیفا ۲۳ برای PS4 — آخرین فیفا با جام جهانی قطر و گیم‌پلی روان؛ نصب آفلاین." },
+  { title: "EA SPORTS FC 25", titleFa: "فوتبال EA اسپورتس ۲۰۲۵", platform: "PS5", twoPlayer: true, genre: "ورزشی", cover: "https://cdn.cloudflare.steamstatic.com/steam/apps/2669320/library_600x900.jpg", description: "نسخه کپی‌خور FC 25 برای PS5 — جدیدترین فوتبال EA با تیم‌های به‌روز و حالت آلتیمیت تیم؛ نصب آفلاین در فروشگاه دوستان." },
+  { title: "FIFA 23", titleFa: "فیفا ۲۳", platform: "PS4", twoPlayer: true, genre: "ورزشی", cover: "https://cdn.cloudflare.steamstatic.com/steam/apps/1811260/library_600x900.jpg", description: "نسخه کپی‌خور فیفا ۲۳ برای PS4 — آخرین فیفا با جام جهانی قطر و گیم‌پلی روان؛ نصب آفلاین." },
   { title: "Halo: The Master Chief Collection", titleFa: "هیلو: مجموعه مستر چیف", platform: "Xbox Offline", genre: "شوتر", cover: "https://cdn.cloudflare.steamstatic.com/steam/apps/1358820/library_600x900.jpg", description: "مجموعه کامل حماسه مستر چیف؛ شش بازی افسانه‌ای شوتر اول‌شخص با داستان حماسی و نبردهای نفس‌گیر، ویژه اجرای آفلاین روی Xbox.", featured: true },
   { title: "Forza Horizon 5", titleFa: "فورتزا هورایزن ۵", platform: "Xbox Offline", genre: "مسابقه‌ای", cover: "https://cdn.cloudflare.steamstatic.com/steam/apps/1551360/library_600x900.jpg", description: "بزرگ‌ترین فستیوال اتومبیل‌رانی جهان در مکزیک؛ صدها خودرو، آب‌وهوای پویا و جاده‌های بی‌پایان برای تجربه آفلاین روی Xbox.", featured: true },
   { title: "Gears 5", titleFa: "گیرز ۵", platform: "Xbox Offline", genre: "شوتر", cover: "https://cdn.cloudflare.steamstatic.com/steam/apps/1097840/library_600x900.jpg", description: "حماسه کیت دیاز در برابر ازدحام لوکاست‌ها؛ کمپین داستانی عمیق و حالت فرار هیجانی، مناسب اجرای آفلاین." },
@@ -36,6 +36,8 @@ export const seedGames: Game[] = entries.map((entry, index) => {
     title: entry.title,
     titleFa: entry.titleFa,
     platform: entry.platform,
+    // دسته دو نفره: برچسب عرضی روی بازی‌های PS5/PS4
+    twoPlayer: entry.twoPlayer ?? false,
     genre: entry.genre,
     cover: entry.cover,
     description: entry.description,

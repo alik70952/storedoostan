@@ -1,7 +1,23 @@
 import type { GameInput, Platform } from "./types";
 import { GENRES } from "./types";
 
-export const PLATFORMS: Platform[] = ["PS5", "PS4", "Xbox Offline"];
+export const PLATFORMS: Platform[] = ["PS5", "PS4", "PS5 اکانتی", "Xbox Offline"];
+
+// نام‌های جایگزین دسته «PS5 اکانتی» (برای ورودی‌های دستی و افزودن با هوش مصنوعی)
+const ACCOUNT_PLATFORM_ALIASES = new Set<string>([
+  "PS5 اکانتی",
+  "PS5اکانتی",
+  "PS5 اکانت",
+  "PS5اکانت",
+  "PS5 ACCOUNT",
+  "PS5 ACCOUNTS",
+  "PS5 ACCOUNTI",
+  "PS5 ACCOUNTY",
+  "PS5 ACCOUNTGAME",
+  "PS5 ACCOUNT GAMES",
+  "ACCOUNT PS5",
+  "PLAYSTATION 5 اکانتی",
+]);
 export const MAX_TEXT = 120;
 export const MAX_DESCRIPTION = 800;
 export const MAX_URL = 1000;
@@ -69,9 +85,11 @@ export function detectImageMime(bytes: Uint8Array): string | null {
 }
 
 export function normalizePlatform(value: string): Platform | null {
-  const upper = value.trim().toUpperCase();
+  const cleaned = (value ?? "").replace(/\s+/g, " ").trim();
+  const upper = cleaned.toUpperCase();
   if (upper === "PS5") return "PS5";
   if (upper === "PS4") return "PS4";
+  if (ACCOUNT_PLATFORM_ALIASES.has(upper)) return "PS5 اکانتی";
   if (upper === "XBOX OFFLINE") return "Xbox Offline";
   return null;
 }
@@ -83,6 +101,7 @@ export function validateGameInput(raw: {
   title?: string;
   titleFa?: string;
   platform?: string;
+  twoPlayer?: boolean;
   genre?: string;
   cover?: string;
   description?: string;
@@ -106,6 +125,16 @@ export function validateGameInput(raw: {
 
   return {
     ok: true,
-    value: { title, titleFa, platform, genre, cover, description, featured: Boolean(raw.featured) }
+    value: {
+      title,
+      titleFa,
+      platform,
+      // دسته دو نفره: برچسب عرضی — بازی هم در تب پلتفرم خودش و هم در تب «دو نفره» نمایش داده می‌شود
+      twoPlayer: Boolean(raw.twoPlayer),
+      genre,
+      cover,
+      description,
+      featured: Boolean(raw.featured)
+    }
   };
 }

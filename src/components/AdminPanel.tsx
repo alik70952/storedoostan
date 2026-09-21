@@ -3,19 +3,20 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useActionState } from "react";
 import type { ActionResult, Game, Platform } from "@/lib/types";
-import { GENRES, persianNumber } from "@/lib/types";
+import { GENRES, persianNumber, platformClass } from "@/lib/types";
 import { saveGameAction, deleteGameAction, toggleFeaturedAction, logoutAction } from "@/app/admin/actions";
 import AiGamePublisher from "@/components/AiGamePublisher";
 import { compressImageFile } from "@/lib/image-compress";
 import { persianDate } from "./GameCard";
 
-const PLATFORMS: Platform[] = ["PS5", "PS4", "Xbox Offline"];
-type ListPlatform = "all" | "PS5" | "PS4" | "Xbox Offline";
+const PLATFORMS: Platform[] = ["PS5", "PS4", "PS5 اکانتی", "Xbox Offline"];
+type ListPlatform = Platform | "two-player" | "all";
 
 const EMPTY_FORM = {
   title: "",
   titleFa: "",
   platform: "PS5" as Platform,
+  twoPlayer: false,
   genre: GENRES[0] as string,
   cover: "",
   description: "",
@@ -44,6 +45,7 @@ export default function AdminPanel({ games }: { games: Game[] }) {
       total: games.length,
       ps5: games.filter((g) => g.platform === "PS5").length,
       ps4: games.filter((g) => g.platform === "PS4").length,
+      account: games.filter((g) => g.platform === "PS5 اکانتی").length,
       xbox: games.filter((g) => g.platform === "Xbox Offline").length,
       week: games.filter((g) => new Date(g.createdAt).getTime() >= weekAgo).length
     };
@@ -102,7 +104,7 @@ export default function AdminPanel({ games }: { games: Game[] }) {
   const filtered = useMemo(() => {
     const q = listQuery.trim();
     return [...games]
-      .filter((g) => (listPlatform === "all" ? true : g.platform === listPlatform))
+      .filter((g) => (listPlatform === "all" ? true : listPlatform === "two-player" ? g.twoPlayer : g.platform === listPlatform))
       .filter((g) => !q || g.titleFa.includes(q) || g.title.toLowerCase().includes(q.toLowerCase()) || g.genre.includes(q))
       .sort((a, b) => b.updatedAt.localeCompare(a.updatedAt));
   }, [games, listQuery, listPlatform]);
@@ -110,7 +112,14 @@ export default function AdminPanel({ games }: { games: Game[] }) {
   const counts = useMemo(() => {
     const q = listQuery.trim();
     const base = games.filter((g) => !q || g.titleFa.includes(q) || g.title.toLowerCase().includes(q.toLowerCase()) || g.genre.includes(q));
-        return { all: base.length, ps5: base.filter((g) => g.platform === "PS5").length, ps4: base.filter((g) => g.platform === "PS4").length, xbox: base.filter((g) => g.platform === "Xbox Offline").length };
+    return {
+      all: base.length,
+      ps5: base.filter((g) => g.platform === "PS5").length,
+      ps4: base.filter((g) => g.platform === "PS4").length,
+      account: base.filter((g) => g.platform === "PS5 اکانتی").length,
+      xbox: base.filter((g) => g.platform === "Xbox Offline").length,
+      twoPlayer: base.filter((g) => g.twoPlayer).length
+    };
   }, [games, listQuery]);
 
   function update<K extends keyof typeof EMPTY_FORM>(key: K, value: (typeof EMPTY_FORM)[K]) {
@@ -122,6 +131,7 @@ export default function AdminPanel({ games }: { games: Game[] }) {
       title: game.title,
       titleFa: game.titleFa,
       platform: game.platform,
+      twoPlayer: game.twoPlayer,
       genre: game.genre,
       cover: game.cover,
       description: game.description,
@@ -197,6 +207,7 @@ export default function AdminPanel({ games }: { games: Game[] }) {
         <div className="stat-card"><strong>{persianNumber(stats.total)}</strong><span>کل بازی‌ها</span></div>
         <div className="stat-card"><strong>{persianNumber(stats.ps5)}</strong><span>بازی PS5</span></div>
                 <div className="stat-card"><strong>{persianNumber(stats.ps4)}</strong><span>بازی PS4</span></div>
+        <div className="stat-card"><strong>{persianNumber(stats.account)}</strong><span>بازی PS5 اکانتی</span></div>
         <div className="stat-card"><strong>{persianNumber(stats.xbox)}</strong><span>بازی Xbox Offline</span></div>
         <div className="stat-card"><strong>{persianNumber(stats.week)}</strong><span>افزوده این هفته</span></div>
       </div>
@@ -219,7 +230,7 @@ export default function AdminPanel({ games }: { games: Game[] }) {
           </div>
           <div className="field-row">
             <div className="field">
-              <label htmlFor="platform">پلتفرم *</label>
+              <label htmlFor="platform">دسته / پلتفرم *</label>
               <select id="platform" name="platform" value={form.platform} onChange={(e) => update("platform", e.target.value as Platform)}>
                 {PLATFORMS.map((p) => <option key={p} value={p}>{p}</option>)}
               </select>
@@ -304,6 +315,10 @@ export default function AdminPanel({ games }: { games: Game[] }) {
             <textarea id="description" name="description" value={form.description} onChange={(e) => update("description", e.target.value)} placeholder="چند جمله درباره بازی…" />
           </div>
           <div className="field checkbox-row">
+            <input id="twoPlayer" name="twoPlayer" type="checkbox" checked={form.twoPlayer} onChange={(e) => update("twoPlayer", e.target.checked)} />
+            <label htmlFor="twoPlayer">نمایش در دسته «بازی‌های دو نفره» (PS5 / PS4)</label>
+          </div>
+          <div className="field checkbox-row">
             <input id="featured" name="featured" type="checkbox" checked={form.featured} onChange={(e) => update("featured", e.target.checked)} />
             <label htmlFor="featured">نمایش ستاره «منتخب» روی کارت</label>
           </div>
@@ -333,7 +348,9 @@ export default function AdminPanel({ games }: { games: Game[] }) {
               <button className={listPlatform === "all" ? "active" : ""} onClick={() => setListPlatform("all")}>همه <span>{persianNumber(counts.all)}</span></button>
               <button className={listPlatform === "PS5" ? "active" : ""} onClick={() => setListPlatform("PS5")}>PS5 <span>{persianNumber(counts.ps5)}</span></button>
                             <button className={listPlatform === "PS4" ? "active" : ""} onClick={() => setListPlatform("PS4")}>PS4 <span>{persianNumber(counts.ps4)}</span></button>
+              <button className={listPlatform === "PS5 اکانتی" ? "active" : ""} onClick={() => setListPlatform("PS5 اکانتی")}>PS5 اکانتی <span>{persianNumber(counts.account)}</span></button>
               <button className={listPlatform === "Xbox Offline" ? "active" : ""} onClick={() => setListPlatform("Xbox Offline")}>Xbox Offline <span>{persianNumber(counts.xbox)}</span></button>
+              <button className={listPlatform === "two-player" ? "active" : ""} onClick={() => setListPlatform("two-player")}>دو نفره <span>{persianNumber(counts.twoPlayer)}</span></button>
             </div>
             <input
               className="list-search"
@@ -373,7 +390,8 @@ export default function AdminPanel({ games }: { games: Game[] }) {
                   <div className="admin-row-info" title="کلیک برای ویرایش">
                     <strong>{game.titleFa || game.title}</strong>
                     <small>
-                      <span className={`pill ${game.platform.toLowerCase().split(" ")[0]}`}>{game.platform}</span>
+                      <span className={`pill ${platformClass(game.platform)}`}>{game.platform}</span>
+                      {game.twoPlayer ? <span className="pill two-player">دو نفره</span> : null}
                       {game.genre ? <span>{game.genre}</span> : null}
                       {game.featured ? <span className="pill featured">منتخب</span> : null}
                       <span>{persianDate(game.createdAt)}</span>

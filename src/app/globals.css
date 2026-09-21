@@ -101,6 +101,7 @@ img{display:block;max-width:100%}
 .platform-ps5{color:#d9e4f7;background:#2f3e52d9;border-color:#d3e1f536}
 .platform-ps4{color:#b9d3ff;background:#265191d9;border-color:#71a7ff3d}
 .platform-xbox{color:#d3f7c9;background:#1f6f2cd9;border-color:#54d69b66}
+.platform-account{color:#e4dcff;background:#463a8fd9;border-color:#a99bff4d}
 .featured-badge{color:#2a1b08;background:var(--accent);border-radius:6px;height:22px;place-items:center;min-width:22px;padding:0 6px;font-size:9px;font-weight:800;display:grid;position:absolute;top:9px;inset-inline-end:9px;z-index:2}
 .game-card-body{padding:12px 13px 14px}
 .game-card-body h2{color:#e9ecef;letter-spacing:-.01em;min-height:34px;margin:0 0 5px;font-size:13px;font-weight:700;line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
@@ -214,6 +215,8 @@ img{display:block;max-width:100%}
 .pill.ps5{color:#d9e4f7;background:#2f3e52}
 .pill.ps4{color:#b9d3ff;background:#2651918f}
 .pill.xbox{color:#d3f7c9;background:#1f6f2cbf}
+.pill.account{color:#e4dcff;background:#463a8f}
+.pill.two-player{color:#ffe4a8;background:#6b4a12}
 .pill.featured{color:#2a1b08;background:var(--accent)}
 .admin-row-actions{align-items:center;gap:8px;display:flex;flex:none}
 

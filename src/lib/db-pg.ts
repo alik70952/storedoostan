@@ -30,6 +30,7 @@ async function ensureSchema(): Promise<void> {
         title TEXT NOT NULL,
         "titleFa" TEXT NOT NULL,
         platform TEXT NOT NULL,
+        "twoPlayer" INTEGER NOT NULL DEFAULT 0,
         genre TEXT NOT NULL DEFAULT '',
         cover TEXT NOT NULL DEFAULT '',
         description TEXT NOT NULL DEFAULT '',
@@ -37,13 +38,15 @@ async function ensureSchema(): Promise<void> {
         "createdAt" TEXT NOT NULL,
         "updatedAt" TEXT NOT NULL
       );`);
+      // مهاجرت سبک: دیتابیس‌های قدیمی ستون دسته «دو نفره» را ندارند.
+      await p.query(`ALTER TABLE games ADD COLUMN IF NOT EXISTS "twoPlayer" INTEGER NOT NULL DEFAULT 0`);
       const count = await p.query("SELECT COUNT(*)::int AS c FROM games");
       if (Number(count.rows[0]?.c ?? 0) === 0) {
         for (const g of seedGames) {
           await p.query(
-            `INSERT INTO games (id,title,"titleFa",platform,genre,cover,description,featured,"createdAt","updatedAt")
-             VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10) ON CONFLICT (id) DO NOTHING`,
-            [g.id, g.title, g.titleFa, g.platform, g.genre, g.cover, g.description, g.featured ? 1 : 0, g.createdAt, g.updatedAt]
+            `INSERT INTO games (id,title,"titleFa",platform,"twoPlayer",genre,cover,description,featured,"createdAt","updatedAt")
+             VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11) ON CONFLICT (id) DO NOTHING`,
+            [g.id, g.title, g.titleFa, g.platform, g.twoPlayer ? 1 : 0, g.genre, g.cover, g.description, g.featured ? 1 : 0, g.createdAt, g.updatedAt]
           );
         }
       }
@@ -58,11 +61,18 @@ async function ensureSchema(): Promise<void> {
 type Row = Record<string, unknown>;
 
 function toGame(r: Row): Game {
+  const platform = (
+    r.platform === "Xbox Offline" ? "Xbox Offline" :
+    r.platform === "PS4" ? "PS4" :
+    r.platform === "PS5 اکانتی" ? "PS5 اکانتی" :
+    "PS5"
+  ) as Platform;
   return {
     id: String(r.id),
     title: String(r.title ?? ""),
     titleFa: String(r.titleFa ?? ""),
-        platform: (r.platform === "Xbox Offline" ? "Xbox Offline" : r.platform === "PS4" ? "PS4" : "PS5") as Platform,
+    platform,
+    twoPlayer: Number(r.twoPlayer) === 1,
     genre: String(r.genre ?? ""),
     cover: String(r.cover ?? ""),
     description: String(r.description ?? ""),
@@ -89,17 +99,17 @@ export const pgBackend = {
     const now = new Date().toISOString();
     const game: Game = { ...input, id: randomUUID(), createdAt: now, updatedAt: now };
     await getPool().query(
-      `INSERT INTO games (id,title,"titleFa",platform,genre,cover,description,featured,"createdAt","updatedAt")
-       VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10)`,
-      [game.id, game.title, game.titleFa, game.platform, game.genre, game.cover, game.description, game.featured ? 1 : 0, game.createdAt, game.updatedAt]
+      `INSERT INTO games (id,title,"titleFa",platform,"twoPlayer",genre,cover,description,featured,"createdAt","updatedAt")
+       VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11)`,
+      [game.id, game.title, game.titleFa, game.platform, game.twoPlayer ? 1 : 0, game.genre, game.cover, game.description, game.featured ? 1 : 0, game.createdAt, game.updatedAt]
     );
     return game;
   },
   async updateGame(id: string, input: GameInput): Promise<Game | null> {
     await ensureSchema();
     const res = await getPool().query(
-      `UPDATE games SET title=$1,"titleFa"=$2,platform=$3,genre=$4,cover=$5,description=$6,featured=$7,"updatedAt"=$8 WHERE id=$9`,
-      [input.title, input.titleFa, input.platform, input.genre, input.cover, input.description, input.featured ? 1 : 0, new Date().toISOString(), id]
+      `UPDATE games SET title=$1,"titleFa"=$2,platform=$3,"twoPlayer"=$4,genre=$5,cover=$6,description=$7,featured=$8,"updatedAt"=$9 WHERE id=$10`,
+      [input.title, input.titleFa, input.platform, input.twoPlayer ? 1 : 0, input.genre, input.cover, input.description, input.featured ? 1 : 0, new Date().toISOString(), id]
     );
     if ((res.rowCount ?? 0) === 0) return null;
     return pgBackend.getGame(id);
