@@ -1,12 +1,12 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import type { Game } from "@/lib/types";
-import { persianNumber } from "@/lib/types";
+import type { Game, Platform } from "@/lib/types";
+import { ACCOUNT_PLATFORM, persianNumber } from "@/lib/types";
 import GameCard from "./GameCard";
 import Logo from "./Logo";
 
-type PlatformFilter = "PS5" | "PS4" | "Xbox Offline" | "all";
+type PlatformFilter = Platform | "two-player" | "all";
 type SortKey = "newest" | "oldest" | "alpha" | "featured";
 
 const SORT_OPTIONS: { value: SortKey; label: string }[] = [
@@ -15,6 +15,25 @@ const SORT_OPTIONS: { value: SortKey; label: string }[] = [
   { value: "featured", label: "منتخب‌ها اول" },
   { value: "oldest", label: "قدیمی‌ترین" }
 ];
+
+// تب‌های دسته‌ها — شامل دسته «PS5 اکانتی» و دسته عرضی «دو نفره» (بازی‌های PS5/PS4)
+const PLATFORM_TABS: { value: PlatformFilter; label: string }[] = [
+  { value: "PS5", label: "PS5 کپی‌خور" },
+  { value: "PS4", label: "PS4 کپی‌خور" },
+  { value: ACCOUNT_PLATFORM, label: ACCOUNT_PLATFORM },
+  { value: "Xbox Offline", label: "Xbox آفلاین" },
+  { value: "two-player", label: "دو نفره" },
+  { value: "all", label: "همه" }
+];
+
+const PLATFORM_HEADINGS: Record<PlatformFilter, string> = {
+  PS5: "بازی‌های PS5 کپی‌خور",
+  PS4: "بازی‌های PS4 کپی‌خور",
+  [ACCOUNT_PLATFORM]: "بازی‌های PS5 اکانتی",
+  "Xbox Offline": "بازی‌های Xbox آفلاین",
+  "two-player": "بازی‌های دو نفره",
+  all: "همه بازی‌ها"
+};
 
 function SearchIcon() {
   return (
@@ -33,13 +52,16 @@ export default function HomeClient({ games }: { games: Game[] }) {
   const stats = useMemo(() => {
     const ps5 = games.filter((g) => g.platform === "PS5").length;
     const ps4 = games.filter((g) => g.platform === "PS4").length;
+    const account = games.filter((g) => g.platform === ACCOUNT_PLATFORM).length;
     const xbox = games.filter((g) => g.platform === "Xbox Offline").length;
-    return { total: games.length, ps5, ps4, xbox };
+    const twoPlayer = games.filter((g) => g.twoPlayer).length;
+    return { total: games.length, ps5, ps4, account, xbox, twoPlayer };
   }, [games]);
 
   const visible = useMemo(() => {
     const q = query.trim();
-    let list = games.filter((g) => (platform === "all" ? true : g.platform === platform));
+    // دسته «دو نفره» عرضی است: بازی‌های دو نفره از همه پلتفرم‌ها (PS5/PS4 و…) را نشان می‌دهد
+    let list = games.filter((g) => (platform === "all" ? true : platform === "two-player" ? g.twoPlayer : g.platform === platform));
     if (q) {
       list = list.filter(
         (g) =>
@@ -56,7 +78,19 @@ export default function HomeClient({ games }: { games: Game[] }) {
     return sorted;
   }, [games, platform, query, sort]);
 
-  const heading = platform === "PS5" ? "بازی‌های PS5 کپی‌خور" : platform === "PS4" ? "بازی‌های PS4 کپی‌خور" : platform === "Xbox Offline" ? "بازی‌های Xbox آفلاین" : "همه بازی‌ها";
+  const counts: Record<PlatformFilter, number> = {
+    PS5: stats.ps5,
+    PS4: stats.ps4,
+    [ACCOUNT_PLATFORM]: stats.account,
+    "Xbox Offline": stats.xbox,
+    "two-player": stats.twoPlayer,
+    all: stats.total
+  };
+  const heading = PLATFORM_HEADINGS[platform];
+
+  function selectPlatform(next: PlatformFilter) {
+    setPlatform(next);
+  }
 
   return (
     <div className="app-shell">
@@ -66,7 +100,7 @@ export default function HomeClient({ games }: { games: Game[] }) {
             className="brand"
             onClick={() => {
               setQuery("");
-              setPlatform("PS5");
+              selectPlatform("PS5");
               window.scrollTo({ top: 0, behavior: "smooth" });
             }}
           >
@@ -75,12 +109,11 @@ export default function HomeClient({ games }: { games: Game[] }) {
             </span>
             <span className="brand-copy">
               <strong>فروشگاه دوستان</strong>
-              <small>PS4 · PS5 · Xbox Offline</small>
+              <small>PS4 · PS5 · PS5 اکانتی · Xbox Offline</small>
             </span>
           </button>
         </div>
       </header>
-
       <section className="hero-section">
         <div className="hero-glow hero-glow-one" />
         <div className="hero-glow hero-glow-two" />
@@ -89,7 +122,7 @@ export default function HomeClient({ games }: { games: Game[] }) {
             <Logo size={128} />
           </div>
           <h1>فروشگاه دوستان</h1>
-          <p>مجموعه بازی‌های کپی‌خور PS5 و PS4 و بازی آفلاین Xbox. بازی کن، به سبک خودت.</p>
+          <p>مجموعه بازی‌های کپی‌خور PS5 و PS4، بازی اکانتی PS5 و بازی آفلاین Xbox. بازی کن، به سبک خودت.</p>
           <p className="hero-address">📍 شیراز، بلوار رحمت، خیابان لشکری، کوچه ۱ — فروشگاه دوستان</p>
           <div className="hero-search-wrap">
             <SearchIcon />
@@ -118,6 +151,14 @@ export default function HomeClient({ games }: { games: Game[] }) {
               <span>PS4</span>
             </div>
             <div>
+              <strong>{persianNumber(stats.account)}</strong>
+              <span>PS5 اکانتی</span>
+            </div>
+            <div>
+              <strong>{persianNumber(stats.twoPlayer)}</strong>
+              <span>دو نفره</span>
+            </div>
+            <div>
               <strong>{persianNumber(stats.xbox)}</strong>
               <span>Xbox آفلاین</span>
             </div>
@@ -132,18 +173,11 @@ export default function HomeClient({ games }: { games: Game[] }) {
       <section className="catalog-section" id="catalog">
         <div className="catalog-toolbar">
           <div className="view-switcher" role="tablist" aria-label="انتخاب پلتفرم">
-            <button className={platform === "PS5" ? "active" : ""} onClick={() => setPlatform("PS5")}>
-              PS5 کپی‌خور <span>{persianNumber(stats.ps5)}</span>
-            </button>
-            <button className={platform === "PS4" ? "active" : ""} onClick={() => setPlatform("PS4")}>
-              PS4 کپی‌خور <span>{persianNumber(stats.ps4)}</span>
-            </button>
-            <button className={platform === "Xbox Offline" ? "active" : ""} onClick={() => setPlatform("Xbox Offline")}>
-              Xbox آفلاین <span>{persianNumber(stats.xbox)}</span>
-            </button>
-            <button className={platform === "all" ? "active" : ""} onClick={() => setPlatform("all")}>
-              همه <span>{persianNumber(stats.total)}</span>
-            </button>
+            {PLATFORM_TABS.map((tab) => (
+              <button key={tab.value} className={platform === tab.value ? "active" : ""} onClick={() => selectPlatform(tab.value)}>
+                {tab.label} <span>{persianNumber(counts[tab.value])}</span>
+              </button>
+            ))}
           </div>
           <label className="sort-select">
             <span>مرتب‌سازی:</span>

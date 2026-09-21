@@ -65,6 +65,7 @@ export async function POST(request: Request) {
               title: existing.title,
               titleFa: existing.titleFa,
               platform: existing.platform,
+              twoPlayer: existing.twoPlayer,
               genre: existing.genre,
               cover: cover.url,
               description: existing.description,
@@ -108,7 +109,7 @@ export async function POST(request: Request) {
   }
 
   // ۳) کاور رسمی — فقط از منابعِ مجازِ پلتفرم نهایی:
-  // Xbox Offline → فقط استور Xbox؛ PS5/PS4 → اول استور PS، بعد سایت‌های ایرانی (p30day/downloadha)،
+  // Xbox Offline → فقط استور Xbox؛ PS5/PS4/PS5 اکانتی → اول استور PS، بعد سایت‌های ایرانی (p30day/downloadha)،
   // بعد Steam، RAWG، ویکی‌پدیا و جستجوی تصویر وب (گوگل/Bing/DuckDuckGo).
   const cover = await findOfficialCover(resolved.coverQuery, resolved.steamAppId, cleanName, resolved.platform);
   const warning = cover

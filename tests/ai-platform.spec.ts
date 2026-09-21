@@ -35,4 +35,14 @@ test("قانون پسوند پلتفرم و ترتیب منابع کاور (وا
   expect(cover.coverStepsFor("PS4")).toEqual(ps5Steps);
   expect(ps5Steps).not.toContain("xbox");
   expect(ps5Steps.indexOf("p30day")).toBeLessThan(ps5Steps.indexOf("google"));
+
+  // ۶) دسته «PS5 اکانتی»: پسوندها (بدون ظرفیت — همه در یک دسته)
+  expect(game.splitPlatformSuffix("EA SPORTS FC 26 ps5 اکانتی")).toEqual({ cleanName: "EA SPORTS FC 26", forced: "PS5 اکانتی" });
+  expect(game.splitPlatformSuffix("EA SPORTS FC 26 اکانتی")).toEqual({ cleanName: "EA SPORTS FC 26", forced: "PS5 اکانتی" });
+  expect(game.splitPlatformSuffix("EA SPORTS FC 26 PS5 ACCOUNT")).toEqual({ cleanName: "EA SPORTS FC 26", forced: "PS5 اکانتی" });
+  expect(game.splitPlatformSuffix("EA SPORTS FC 26 ps5accounti")).toEqual({ cleanName: "EA SPORTS FC 26", forced: "PS5 اکانتی" });
+  // نام بازی معمولی نباید اشتباهی وارد دسته اکانتی شود
+  expect(game.splitPlatformSuffix("The Accountant")).toEqual({ cleanName: "The Accountant", forced: null });
+  // دسته اکانتی هم مثل PS5 از منابع کاور پلی‌استیشن استفاده می‌کند
+  expect(cover.coverStepsFor("PS5 اکانتی")).toEqual(ps5Steps);
 });

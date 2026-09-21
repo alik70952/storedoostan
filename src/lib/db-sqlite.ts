@@ -26,6 +26,7 @@ export function getConnection(): DatabaseSync {
       title TEXT NOT NULL,
       titleFa TEXT NOT NULL,
       platform TEXT NOT NULL,
+      twoPlayer INTEGER NOT NULL DEFAULT 0,
       genre TEXT NOT NULL DEFAULT '',
       cover TEXT NOT NULL DEFAULT '',
       description TEXT NOT NULL DEFAULT '',
@@ -33,21 +34,39 @@ export function getConnection(): DatabaseSync {
       createdAt TEXT NOT NULL,
       updatedAt TEXT NOT NULL
     );`);
-    const insert = db.prepare(`INSERT INTO games (id,title,titleFa,platform,genre,cover,description,featured,createdAt,updatedAt)
-      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`);
+    const insert = db.prepare(`INSERT INTO games (id,title,titleFa,platform,twoPlayer,genre,cover,description,featured,createdAt,updatedAt)
+      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`);
     for (const g of seedGames) {
-      insert.run(g.id, g.title, g.titleFa, g.platform, g.genre, g.cover, g.description, g.featured ? 1 : 0, g.createdAt, g.updatedAt);
+      insert.run(g.id, g.title, g.titleFa, g.platform, g.twoPlayer ? 1 : 0, g.genre, g.cover, g.description, g.featured ? 1 : 0, g.createdAt, g.updatedAt);
     }
+  } else {
+    ensureTwoPlayerColumn(db);
   }
   return db;
 }
 
+// مهاجرت سبک: دیتابیس‌های قدیمی ستون دسته «دو نفره» را ندارند.
+function ensureTwoPlayerColumn(connection: DatabaseSync): void {
+  const columns = connection.prepare("PRAGMA table_info(games)").all() as Array<{ name?: unknown }>;
+  const hasTwoPlayer = columns.some((c) => String(c.name ?? "") === "twoPlayer");
+  if (!hasTwoPlayer) {
+    connection.exec("ALTER TABLE games ADD COLUMN twoPlayer INTEGER NOT NULL DEFAULT 0");
+  }
+}
+
 function rowToGame(row: Record<string, unknown>): Game {
+  const platform = (
+    row.platform === "Xbox Offline" ? "Xbox Offline" :
+    row.platform === "PS4" ? "PS4" :
+    row.platform === "PS5 اکانتی" ? "PS5 اکانتی" :
+    "PS5"
+  ) as Platform;
   return {
     id: String(row.id),
     title: String(row.title),
     titleFa: String(row.titleFa),
-        platform: (row.platform === "Xbox Offline" ? "Xbox Offline" : row.platform === "PS4" ? "PS4" : "PS5") as Platform,
+    platform,
+    twoPlayer: Number(row.twoPlayer) === 1,
     genre: String(row.genre),
     cover: String(row.cover),
     description: String(row.description),
@@ -70,9 +89,9 @@ export function getGame(id: string): Game | null {
 export function createGame(input: GameInput): Game {
   const now = new Date().toISOString();
   const game: Game = { ...input, id: randomUUID(), createdAt: now, updatedAt: now };
-  getConnection().prepare(`INSERT INTO games (id,title,titleFa,platform,genre,cover,description,featured,createdAt,updatedAt)
-    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`).run(
-    game.id, game.title, game.titleFa, game.platform, game.genre, game.cover, game.description, game.featured ? 1 : 0, game.createdAt, game.updatedAt
+  getConnection().prepare(`INSERT INTO games (id,title,titleFa,platform,twoPlayer,genre,cover,description,featured,createdAt,updatedAt)
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`).run(
+    game.id, game.title, game.titleFa, game.platform, game.twoPlayer ? 1 : 0, game.genre, game.cover, game.description, game.featured ? 1 : 0, game.createdAt, game.updatedAt
   );
   return game;
 }
@@ -80,8 +99,8 @@ export function createGame(input: GameInput): Game {
 export function updateGame(id: string, input: GameInput): Game | null {
   const existing = getGame(id);
   if (!existing) return null;
-  getConnection().prepare(`UPDATE games SET title=?, titleFa=?, platform=?, genre=?, cover=?, description=?, featured=?, updatedAt=? WHERE id=?`)
-    .run(input.title, input.titleFa, input.platform, input.genre, input.cover, input.description, input.featured ? 1 : 0, new Date().toISOString(), id);
+  getConnection().prepare(`UPDATE games SET title=?, titleFa=?, platform=?, twoPlayer=?, genre=?, cover=?, description=?, featured=?, updatedAt=? WHERE id=?`)
+    .run(input.title, input.titleFa, input.platform, input.twoPlayer ? 1 : 0, input.genre, input.cover, input.description, input.featured ? 1 : 0, new Date().toISOString(), id);
   return getGame(id);
 }
 

@@ -3,6 +3,7 @@ import { isAuthenticated } from "@/lib/auth";
 import { findOfficialCover } from "@/lib/ai-cover";
 import { normalizePlatform } from "@/lib/validation";
 import { deleteCoverByUrl } from "@/lib/cover-store";
+import type { Platform } from "@/lib/types";
 
 // ابزار تشخیصی موتور کاور: نشان می‌دهد برای یک نام بازی، کاور از کدام منبع می‌آید.
 // فقط برای ادمینِ واردشده است؛ چون هر فراخوانی یک دانلود واقعی + نوشتن موقت در جدول covers دارد.
@@ -24,14 +25,14 @@ export async function GET(request: Request) {
   const keep = search.get("keep") === "1";
   const steamAppIdRaw = search.get("steamAppId") || "";
   const steamAppId = /^\d{1,10}$/.test(steamAppIdRaw) ? Number(steamAppIdRaw) : null;
-  // پلتفرم اختیاری (?platform=xbox|ps5|ps4) تا ترتیب منابع همان قانون انتشار باشد
+  // پلتفرم اختیاری (?platform=xbox|ps5|ps4|ps5-اکانتی) تا ترتیب منابع همان قانون انتشار باشد
   const platformParam = (search.get("platform") || "").trim().toUpperCase();
-  const platform =
-    platformParam === "XBOX" || platformParam === "XBOX OFFLINE"
-      ? ("Xbox Offline" as const)
-      : platformParam === "PS4" || platformParam === "PLAYSTATION 4" || platformParam === "PLAYSTATION4"
-        ? ("PS4" as const)
-        : ("PS5" as const);
+  const platformAlias =
+    platformParam === "XBOX" ? "XBOX OFFLINE" :
+    platformParam === "PLAYSTATION 4" || platformParam === "PLAYSTATION4" ? "PS4" :
+    platformParam;
+  // normalizePlatform دسته‌های PS5 / PS4 / PS5 اکانتی / Xbox Offline و نام‌های جایگزینشان را می‌شناسد
+  const platform: Platform = normalizePlatform(platformAlias) ?? "PS5";
 
   try {
     const cover = await findOfficialCover(name, steamAppId, name, platform);

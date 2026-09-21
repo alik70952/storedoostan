@@ -1,6 +1,7 @@
 "use client";
 
 import type { Game } from "@/lib/types";
+import { platformClass } from "@/lib/types";
 
 export function persianDate(iso: string): string {
   try {
@@ -14,7 +15,7 @@ export default function GameCard({ game }: { game: Game }) {
   return (
     <article className="game-card">
       <div className="cover-wrap">
-        <span className={`platform-badge platform-${game.platform.toLowerCase().split(" ")[0]}`}>{game.platform}</span>
+        <span className={`platform-badge platform-${platformClass(game.platform)}`}>{game.platform}</span>
         {game.featured ? <span className="featured-badge" title="منتخب">★</span> : null}
         {game.cover ? (
           <img className="cover" src={game.cover} alt={game.titleFa || game.title} loading="lazy" />
@@ -26,7 +27,10 @@ export default function GameCard({ game }: { game: Game }) {
       </div>
       <div className="game-card-body">
         <h2>{game.titleFa || game.title}</h2>
-        <p className="card-meta">{game.platform} · {game.genre}</p>
+        <p className="card-meta">
+          {game.platform}
+          {game.twoPlayer ? " · دو نفره" : ""} · {game.genre}
+        </p>
         <p className="card-date">{persianDate(game.createdAt)}</p>
       </div>
     </article>
