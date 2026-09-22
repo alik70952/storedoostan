@@ -47,7 +47,7 @@ npm start
 2. دکمه «تولید بازی‌ها» را بزنید؛ مدل `glm-5.3-flash` (سرویس APInex) برای هر بازی نام فارسی، پلتفرم، ژانر و توضیح فارسی می‌سازد.
 3. کاور رسمی به این ترتیب از اینترنت پیدا و دانلود می‌شود (اولین منبعی که جواب دهد):
 
-   `PlayStation Store` → `Xbox Store (API رسمی مایکروسافت)` → `Steam` → `RAWG (نیازمند RAWG_API_KEY)` → `ویکی‌پدیا` → `DuckDuckGo` → `Bing` → `Google`
+   `PlayStation Store` → `IGDB (نیازمند کلید رایگان Twitch)` → `Xbox Store (API رسمی مایکروسافت)` → `p30day / downloadha` → `Steam` → `RAWG (نیازمند RAWG_API_KEY)` → `ویکی‌پدیا` → `DuckDuckGo` → `Bing` → `Google`
 
 4. هر فایل کاور در جدول `covers` ذخیره و از `/api/covers/<uuid>.<ext>` سرو می‌شود (همان مسیر آپلود دستی).
 5. اگر بازی از قبل در فروشگاه باشد، رد می‌شود؛ ولی اگر آن بازی کاور نداشته باشد، در همان اجرا کاور برایش پیدا و اضافه می‌شود.
@@ -56,6 +56,7 @@ npm start
 نکته‌ها:
 
 - `APINEX_API_KEY` فقط سمت سرور خوانده می‌شود و هرگز به مرورگر نمی‌رود.
+- **کاور رسمی و همیشه درست (توصیه‌شده):** در [کنسول توسعه‌دهندگان Twitch](https://dev.twitch.tv/console) یک Application رایگان بسازید و `TWITCH_CLIENT_ID` و `TWITCH_CLIENT_SECRET` را در Environment Variables بگذارید؛ با این کار منبع IGDB فعال می‌شود که برای «هر» بازی بوکس‌آرت رسمی و دقیق دارد (همان کاورهایی که سایت‌های مرجع مثل hencheats نشان می‌دهند). این دو کلید فقط سمت سرور خوانده می‌شوند.
 - هر بازی بسته به منابع کاور حدود ۱۰ تا ۳۰ ثانیه طول می‌کشد؛ درخواست‌ها دوتا-دوتا (concurrency = ۲) اجرا می‌شوند.
 - روت تشخیصی کاور (فقط برای ادمین واردشده): `/api/admin/ai/cover-debug?name=Returnal`
   با `&keep=1` کاور پیدا‌شده در دیتابیس نگه داشته می‌شود، وگرنه ردیف موقت پاک می‌شود.
@@ -81,7 +82,7 @@ npm start
    خروجی (`ADMIN_USERNAME`, `ADMIN_PASSWORD_HASH`, `SESSION_SECRET`, `COOKIE_SECURE=true`) را در
    `Vercel → Project → Settings → Environment Variables` (برای Production) کپی کنید.
    اگر قبلاً به Storage وصل شده‌اید، `DATABASE_URL` را دست نزنید.
-   برای فعال شدن افزودن گروهی با AI، `APINEX_API_KEY` (و در صورت تمایل `AINEX_BASE_URL`, `AINEX_MODEL`, `RAWG_API_KEY`) را هم اضافه کنید.
+   برای فعال شدن افزودن گروهی با AI، `APINEX_API_KEY` (و در صورت تمایل `AINEX_BASE_URL`, `AINEX_MODEL`, `RAWG_API_KEY`, `TWITCH_CLIENT_ID`, `TWITCH_CLIENT_SECRET`) را هم اضافه کنید.
 
 3. **دیپلوی:**
    ```bash

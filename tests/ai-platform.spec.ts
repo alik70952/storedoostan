@@ -31,10 +31,13 @@ test("قانون پسوند پلتفرم و ترتیب منابع کاور (وا
   // ۵) ترتیب منابع کاور
   expect(cover.coverStepsFor("Xbox Offline")).toEqual(["xbox"]);
   const ps5Steps = cover.coverStepsFor("PS5");
-  expect(ps5Steps).toEqual(["playstation", "p30day", "downloadha", "steam-known", "steam-search", "rawg", "wikipedia", "duckduckgo", "bing", "google"]);
+  expect(ps5Steps).toEqual(["playstation", "igdb", "p30day", "downloadha", "steam-known", "steam-search", "rawg", "wikipedia", "duckduckgo", "bing", "google"]);
   expect(cover.coverStepsFor("PS4")).toEqual(ps5Steps);
   expect(ps5Steps).not.toContain("xbox");
   expect(ps5Steps.indexOf("p30day")).toBeLessThan(ps5Steps.indexOf("google"));
+  // IGDB بعد از استور PlayStation و قبل از سایت‌های ایرانی
+  expect(ps5Steps.indexOf("igdb")).toBeGreaterThan(ps5Steps.indexOf("playstation"));
+  expect(ps5Steps.indexOf("igdb")).toBeLessThan(ps5Steps.indexOf("p30day"));
 
   // ۶) دسته «PS5 اکانتی»: پسوندها (بدون ظرفیت — همه در یک دسته)
   expect(game.splitPlatformSuffix("EA SPORTS FC 26 ps5 اکانتی")).toEqual({ cleanName: "EA SPORTS FC 26", forced: "PS5 اکانتی" });

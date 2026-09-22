@@ -1,5 +1,6 @@
 // موتور پیدا کردن کاور رسمی هر بازی از کل اینترنت — بدون حدس و بدون ساخت تصویر AI.
 // منابع به ترتیب: PlayStation Store (هنر رسمی PS از جستجوی محدود به استور) →
+// IGDB (بوکس‌آرت رسمی همه بازی‌ها؛ اگر کلید رایگان Twitch تنظیم شده باشد) →
 // سایت‌های ایرانی p30day/downloadha (کاور بازی‌های PS) → Steam → RAWG (اگر کلید باشد) →
 // ویکی‌پدیا → جستجوی تصویر وب: DuckDuckGo → Bing → Google (متاکریتیک/IGN و… هم از همین راه).
 // قانون فروشگاه: دسته Xbox Offline فقط و فقط از استور Xbox کاور می‌گیرد.
@@ -384,11 +385,24 @@ async function wikipediaCover(title: string, seen: Set<string>): Promise<FoundCo
 
 /* ---------- منابع ۴-۶: جستجوی تصویر باز وب (دسترسی کامل به اینترنت) ---------- */
 
+/**
+ * دامنه‌های معتبرِ هنر بازی: اگر تصویر از یکی از این‌ها باشد، لازم نیست نام بازی
+ * داخل URL بیاید — چون کاورهای رسمی استورها اغلب آدرس هش‌شده دارند (مثل
+ * image.api.playstation.com/vulcan/ap/rnd/...jpg) و رد کردن‌شان یعنی از دست دادن
+ * بهترین کاور. فقط لوگو/آیکون/اسپرایت بودن حتماً چک می‌شود.
+ */
+const TRUSTED_ART_DOMAINS =
+  /(?:^|\.)(?:image\.api\.playstation|store\.playstation|ps-ssl\.playstation|playstation\.com|steamstatic|steamusercontent|steamcommunity|akamai\.steamstatic|cloudflare\.steamstatic|metacritic|ignimgs|gamespot|giantbomb|gamefaqs|mobygames|mobygames\.com|fandom|wikimedia|wikipedia|rawg|rawg\.io|vg247|pushsquare|playstationlifestyle|videogameschronicle|dualshockers|gamerant|gfinityesports|theverge|polygon|kotaku|xbox\.com|store-images\.s-microsoft|xboxassets|images\.igdb)\./i;
+
 /** فیلتر نتیجه‌ها: باید شبیه کاور بازی باشد، نه آیکون/لوگو/اسپرایت */
 function plausibleCoverHit(hitUrl: string, title: string): boolean {
   const u = hitUrl.toLowerCase();
   if (/(?:^|\/)(?:icon|favicon|logo|avatar|sprite|emoji)[._-]/.test(u)) return false;
-  if (!/\.(jpe?g|png|webp)(\?|#|$)/i.test(u) && !/(steampowered|metacritic|media-?cdn|gamespot|ign|cloudflare)/.test(u)) return false;
+  const isImage = /\.(jpe?g|png|webp)(\?|#|$)/i.test(u);
+  const trusted = TRUSTED_ART_DOMAINS.test(u);
+  if (!isImage && !trusted) return false;
+  // دامنه معتبر → قبول (حتی اگر نام بازی در URL نباشد)
+  if (trusted) return true;
   const q = norm(title);
   if (!q) return true;
   let haystack = u;
@@ -402,7 +416,7 @@ async function duckduckgoCover(
   seen: Set<string>,
   opts: { queries?: string[]; onlyPlaystation?: boolean } = {}
 ): Promise<FoundCover | null> {
-  const queries = opts.queries ?? [`${title} game cover art`, `${title} ps5 box art`];
+  const queries = opts.queries ?? [`${title} game cover art`, `${title} ps5 box art`, `${title} box art`, `${title} playstation store cover`];
   const isPs = (u: string) => /(?:image\.api\.playstation|store\.playstation|ps-ssl\.playstation)\.(?:com|net)/i.test(u);
   for (const query of queries) {
     const html = await fetchText(
@@ -425,7 +439,7 @@ async function duckduckgoCover(
     const ratioScore = (h: Hit) =>
       h.width && h.height ? Math.abs(h.width / h.height - 0.7) : 2;
     hits.sort((a, b) => ratioScore(a) - ratioScore(b));
-    for (const hit of hits.slice(0, 12)) {
+    for (const hit of hits.slice(0, 24)) {
       const img = hit.image;
       if (!img || seen.has(img)) continue;
       seen.add(img);
@@ -443,7 +457,7 @@ async function bingCover(
   seen: Set<string>,
   opts: { queries?: string[]; onlyPlaystation?: boolean } = {}
 ): Promise<FoundCover | null> {
-  const queries = opts.queries ?? [`${title} video game cover`, `${title} box art`];
+  const queries = opts.queries ?? [`${title} video game cover`, `${title} box art`, `${title} ps5 game cover art`];
   const isPs = (u: string) => /(?:image\.api\.playstation|store\.playstation|ps-ssl\.playstation)\.(?:com|net)/i.test(u);
   for (const query of queries) {
     const html = await fetchText(
@@ -455,7 +469,7 @@ async function bingCover(
     const urls = [...html.matchAll(/murl&quot;:&quot;(.*?)&quot;/g)]
       .map((m) => m[1].replace(/\\u003d/g, "=").replace(/\\u0026/g, "&").replace(/\\\//g, "/"))
       .filter(Boolean);
-    for (const url of urls.slice(0, 12)) {
+    for (const url of urls.slice(0, 24)) {
       if (seen.has(url)) continue;
       seen.add(url);
       if (opts.onlyPlaystation && !isPs(url)) continue;
@@ -472,7 +486,7 @@ async function googleCover(
   seen: Set<string>,
   opts: { queries?: string[]; onlyPlaystation?: boolean } = {}
 ): Promise<FoundCover | null> {
-  const queries = opts.queries ?? [`${title} game cover art`, `${title} ps5 cover metacritic`];
+  const queries = opts.queries ?? [`${title} game cover art`, `${title} ps5 cover metacritic`, `${title} box art cover`];
   const isPs = (u: string) => /(?:image\.api\.playstation|store\.playstation|ps-ssl\.playstation)\.(?:com|net)/i.test(u);
   for (const query of queries) {
     const html = await fetchText(
@@ -491,7 +505,7 @@ async function googleCover(
       .filter((c) => c.w >= 300 && c.h >= 450)
       // بوکس‌آرت عمودی (نسبت ~0.7) اولویت دارد، نه لوگو/بنر افقی
       .sort((a, b) => Math.abs(a.w / a.h - 0.7) - Math.abs(b.w / b.h - 0.7));
-    for (const c of cands.slice(0, 12)) {
+    for (const c of cands.slice(0, 24)) {
       if (seen.has(c.url)) continue;
       seen.add(c.url);
       if (opts.onlyPlaystation && !isPs(c.url)) continue;
@@ -511,7 +525,12 @@ async function googleCover(
  * را اول از همه برمی‌داریم.
  */
 async function playstationStoreCover(title: string, seen: Set<string>): Promise<FoundCover | null> {
-  const psQueries = [`site:store.playstation.com ${title}`, `${title} ps5 cover art playstation store`];
+  const psQueries = [
+    `site:store.playstation.com ${title}`,
+    `${title} ps5 cover art playstation store`,
+    `site:image.api.playstation.com ${title}`,
+    `${title} ps4 playstation store game cover`,
+  ];
   const engines = [duckduckgoCover, bingCover, googleCover];
   for (const engine of engines) {
     const hit = await engine(title, seen, { queries: psQueries, onlyPlaystation: true });
@@ -583,6 +602,108 @@ async function xboxStoreCover(title: string, seen: Set<string>): Promise<FoundCo
   return null;
 }
 
+/* ---------- منبع: IGDB (بوکس‌آرت رسمی همه بازی‌ها — کلید رایگان Twitch) ---------- */
+
+/**
+ * IGDB پایگاه رسمی بازی‌هاست و برای «هر» بازی (PS، Xbox، PC و…) بوکس‌آرت عمودیِ
+ * اصلی دارد — دقیقاً همان چیزی که سایت‌های مرجع مثل hencheats نشان می‌دهند.
+ * ثبت‌نام رایگان: https://dev.twitch.tv/console → Client-ID + Client-Secret
+ * متغیرها: TWITCH_CLIENT_ID و TWITCH_CLIENT_SECRET — بدون آن‌ها این منبع رد می‌شود.
+ */
+
+type IgdbToken = { token: string; expiresAt: number };
+let igdbTokenCache: IgdbToken | null = null;
+
+function igdbCredentials(): { id: string; secret: string } | null {
+  const id = process.env.TWITCH_CLIENT_ID || "";
+  const secret = process.env.TWITCH_CLIENT_SECRET || "";
+  return id && secret ? { id, secret } : null;
+}
+
+async function igdbAppToken(): Promise<string | null> {
+  const creds = igdbCredentials();
+  if (!creds) return null;
+  if (igdbTokenCache && igdbTokenCache.expiresAt > Date.now() + 60_000) return igdbTokenCache.token;
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), SEARCH_TIMEOUT_MS);
+  try {
+    const url =
+      `https://id.twitch.tv/oauth2/token?client_id=${encodeURIComponent(creds.id)}` +
+      `&client_secret=${encodeURIComponent(creds.secret)}&grant_type=client_credentials`;
+    const res = await fetch(url, { method: "POST", signal: controller.signal });
+    if (!res.ok) return null;
+    const data = (await res.json()) as { access_token?: string; expires_in?: number };
+    if (!data.access_token) return null;
+    igdbTokenCache = {
+      token: data.access_token,
+      expiresAt: Date.now() + Math.max(300, data.expires_in ?? 3600) * 1000,
+    };
+    return igdbTokenCache.token;
+  } catch {
+    return null;
+  } finally {
+    clearTimeout(timer);
+  }
+}
+
+async function igdbCover(title: string, seen: Set<string>): Promise<FoundCover | null> {
+  const creds = igdbCredentials();
+  const token = await igdbAppToken();
+  if (!creds || !token) return null;
+  const q = norm(title);
+  if (q.length < 3) return null;
+  // این کلمات یعنی نتیجه DLC/ساندترک/آپدیت است، نه خود بازی اصلی
+  const DLC_RE = /(costume|dlc|soundtrack|ost|demo|beta|playtest|skin|pack|upgrade|season\s*pass|content|update|expansion|original soundtrack)/i;
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), SEARCH_TIMEOUT_MS);
+  try {
+    const body =
+      `search "${title.replace(/\\/g, "").replace(/"/g, "")}";\n` +
+      "fields name,cover.image_id;\n" +
+      "limit 10;";
+    const res = await fetch("https://api.igdb.com/v4/games", {
+      method: "POST",
+      signal: controller.signal,
+      headers: {
+        "Client-ID": creds.id,
+        Authorization: `Bearer ${token}`,
+        Accept: "application/json",
+      },
+      body,
+    });
+    if (!res.ok) return null;
+    const data = (await res.json()) as Array<{ name?: string; cover?: { image_id?: string } }>;
+    const candidates = data
+      .filter((g) => g.name && g.cover?.image_id)
+      .filter((g) => !DLC_RE.test(g.name ?? ""))
+      .map((g) => {
+        const nk = norm(g.name ?? "");
+        let score = 0;
+        if (nk === q) score = 100;
+        else if (nk.startsWith(q) || q.startsWith(nk)) score = 80;
+        else if (nk.includes(q) || q.includes(nk)) score = 50;
+        return { id: g.cover?.image_id ?? "", score };
+      })
+      .filter((c) => c.score >= 50)
+      .sort((a, b) => b.score - a.score);
+    // t_cover_big_2x = بوکس‌آرت رسمی با کیفیت 528x748؛ اگر نبود t_cover_big
+    for (const c of candidates.slice(0, 3)) {
+      for (const size of ["t_cover_big_2x", "t_cover_big"]) {
+        const url = `https://images.igdb.com/igdb/image/upload/${size}/${c.id}.jpg`;
+        if (seen.has(url)) continue;
+        seen.add(url);
+        const dl = await downloadImage(url, { portrait: true });
+        if (dl) return { url: await saveCover(dl.mime, dl.bytes), source: "igdb" };
+      }
+    }
+    return null;
+  } catch {
+    return null;
+  } finally {
+    clearTimeout(timer);
+  }
+}
+
 /* ---------- API اصلی ---------- */
 
 /**
@@ -594,6 +715,7 @@ async function xboxStoreCover(title: string, seen: Set<string>): Promise<FoundCo
  */
 export type CoverStep =
   | "playstation"
+  | "igdb"
   | "p30day"
   | "downloadha"
   | "xbox"
@@ -607,7 +729,7 @@ export type CoverStep =
 
 export function coverStepsFor(platform: Platform): CoverStep[] {
   if (platform === "Xbox Offline") return ["xbox"];
-  return ["playstation", "p30day", "downloadha", "steam-known", "steam-search", "rawg", "wikipedia", "duckduckgo", "bing", "google"];
+  return ["playstation", "igdb", "p30day", "downloadha", "steam-known", "steam-search", "rawg", "wikipedia", "duckduckgo", "bing", "google"];
 }
 
 /**
@@ -631,6 +753,12 @@ export async function findOfficialCover(
     if (steps.includes("playstation")) {
       const ps = await playstationStoreCover(title, seen);
       if (ps) return ps;
+    }
+
+    // ۱/۵) IGDB: بوکس‌آرت رسمی و دقیق برای همه بازی‌ها (وقتی کلید رایگان Twitch تنظیم شده باشد)
+    if (steps.includes("igdb")) {
+      const igdb = await igdbCover(title, seen);
+      if (igdb) return igdb;
     }
 
     // ۲) استور Xbox: بوکس‌آرت عمودی رسمی از API مایکروسافت
