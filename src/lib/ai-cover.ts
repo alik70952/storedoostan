@@ -4,6 +4,8 @@
 // سایت‌های ایرانی p30day/downloadha (کاور بازی‌های PS) → Steam → RAWG (اگر کلید باشد) →
 // ویکی‌پدیا → جستجوی تصویر وب: DuckDuckGo → Bing → Google (متاکریتیک/IGN و… هم از همین راه).
 // قانون فروشگاه: دسته Xbox Offline فقط و فقط از استور Xbox کاور می‌گیرد.
+// بازی‌های PS4 یک مسیر جدا (psstore-ps4 → playstation-ps4) دارند تا کاور همان کنسول
+// (نوار مشکی PS4، نسخه ...00 استور) برداشته شود، نه کاور سفید PS5.
 // خروجی همیشه یک فایل واقعیِ دانلودشده است که در جدول covers ذخیره می‌شود (/api/covers/<uuid>.<ext>).
 
 import { saveCover } from "./cover-store";
@@ -126,8 +128,13 @@ function hasAlphaChannel(bytes: Uint8Array, mime: string): boolean {
  * دانلود و اعتبارسنجی کامل یک تصویر (MIME واقعی + ابعاد).
  * opts.portrait = فقط بوکس‌آرت عمودیِ واقعی را قبول کن (برای ویکی‌پدیا و جستجوی وب) —
  * بنر افقی، والپیپر و لوگوی شفاف رد می‌شود.
+ * opts.wantPlatform = کنسول درخواستی (PS4/PS5): نوار بالای بوکس‌آرت (سفید=PS5، مشکی=PS4)
+ * با sharp از بایت‌ها خوانده می‌شود و اگر مال کنسول دیگری بود، تصویر رد می‌شود.
  */
-async function downloadImage(url: string, opts: { portrait?: boolean; allowSquare?: boolean } = {}): Promise<Downloaded | null> {
+async function downloadImage(
+  url: string,
+  opts: { portrait?: boolean; allowSquare?: boolean; wantPlatform?: "PS4" | "PS5" } = {}
+): Promise<Downloaded | null> {
   const portrait = opts.portrait === true;
   if (!/^https?:\/\//i.test(url)) return null;
   if (/\.(svg|svgz|ico|gif)(\?|#|$)/i.test(url)) return null;
@@ -167,11 +174,63 @@ async function downloadImage(url: string, opts: { portrait?: boolean; allowSquar
       const ratio = width / height;
       if (ratio < 0.4 || ratio > 2.35) return null;
     }
+    // گام ۴: نوار کنسول — PS5 سفید / PS4 مشکی. اگر تصویر بوکس‌آرت عمودی است و
+    // نوار قابل‌تشخیصی از کنسولِ «دیگری» دارد، رد می‌شود.
+    if (opts.wantPlatform && portrait) {
+      const banner = await readTopBanner(buf);
+      if (banner && !matchesConsoleBanner(banner.pixels, banner.frac, url, opts.wantPlatform)) return null;
+    }
     return { bytes: buf, mime, width, height, alpha };
   } catch {
     return null;
   } finally {
     clearTimeout(timer);
+  }
+}
+
+/**
+ * خواندن الگوی پیکسلی «نوار بالای» تصویر با sharp:
+ * - ۱۰٪ بالایی تصویر به ۴۸ ستون میانگین گرفته می‌شود
+ * - نوار واقعی (سفید PS5 / مشکی PS4) پیکسل‌های تقریباً یکنواخت دارد → frac بالا
+ * - آرت تمیز/تمام‌صفحه پیکسل‌های پراکنده دارد → frac پایین (رد نمی‌شود)
+ */
+async function readTopBanner(
+  bytes: Uint8Array
+): Promise<{ pixels: { r: number; g: number; b: number }[]; frac: number } | null> {
+  try {
+    const { default: sharp } = await import("sharp");
+    const meta = await sharp(Buffer.from(bytes)).metadata();
+    const w = meta.width ?? 0;
+    const h = meta.height ?? 0;
+    if (!w || !h) return null;
+    const bandH = Math.max(2, Math.round(h * 0.1));
+    const cols = 48;
+    const raw = await sharp(Buffer.from(bytes))
+      .extract({ left: 0, top: 0, width: w, height: bandH })
+      .resize(cols, 1, { fit: "fill" })
+      .raw()
+      .toBuffer({ resolveWithObject: true });
+    const data = raw.data;
+    const channels = raw.info.channels;
+    const pixels: { r: number; g: number; b: number }[] = [];
+    for (let i = 0; i < cols; i++) {
+      const o = i * channels;
+      pixels.push({ r: data[o] ?? 0, g: data[o + 1] ?? 0, b: data[o + 2] ?? 0 });
+    }
+    // یکنواختی نوار: میانگین انحراف هر پیکسل از میانگین کل
+    const mean = (f: (p: { r: number; g: number; b: number }) => number) =>
+      pixels.reduce((s, p) => s + f(p), 0) / pixels.length;
+    const mr = mean((p) => p.r);
+    const mg = mean((p) => p.g);
+    const mb = mean((p) => p.b);
+    const dev =
+      pixels.reduce((s, p) => s + Math.abs(p.r - mr) + Math.abs(p.g - mg) + Math.abs(p.b - mb), 0) /
+      (pixels.length * 3);
+    // نوار واقعی انحراف کم (< 26) دارد؛ آرت تمیز انحراف بالا
+    const frac = Math.max(0, Math.min(1, 1 - dev / 60));
+    return { pixels, frac: frac >= 0.55 ? frac : 0 };
+  } catch {
+    return null; // sharp در دسترس نبود → بدون فیلتر نوار ادامه بده
   }
 }
 
@@ -411,10 +470,58 @@ function plausibleCoverHit(hitUrl: string, title: string): boolean {
   return norm(haystack).includes(probe);
 }
 
+/**
+ * نوار سفید PS5 / مشکی PS4 بالای بوکس‌آرت: اگر تصویر برای کنسول دیگری است، ردش کن.
+ * داده: الگوی پیکسلی بالای کاور (از sharp گرفته می‌شود) + آدرس تصویر.
+ * - نوار روشن (سفید/آبی روشن با لوگوی تیره): فقط PS5 قبول می‌کند
+ * - نوار تیره غالباً مشکی (PS4/PS3): کنسولِ درخواست‌شده باید همان باشد
+ * - آرت تمیز/تمام‌صفحه (بدون نوار): برای هر دو کنسول خوب است
+ */
+export function matchesConsoleBanner(
+  pixels: { r: number; g: number; b: number }[],
+  bannerFrac: number,
+  imageUrl: string,
+  wanted: "PS4" | "PS5"
+): boolean {
+  if (!pixels.length || bannerFrac <= 0) return true; // نوارِ قابل‌تشخیصی نیست → آرت تمیز
+  const u = (imageUrl || "").toLowerCase();
+  const urlSaysPs5 = /(^|[^a-z0-9])(ps5|playstation[-_ ]?5)([^a-z0-9]|$)/.test(u) && !/(^|[^a-z0-9])(ps4|playstation[-_ ]?4)([^a-z0-9]|$)/.test(u);
+  const urlSaysPs4 = /(^|[^a-z0-9])(ps4|playstation[-_ ]?4)([^a-z0-9]|$)/.test(u) && !/(^|[^a-z0-9])(ps5|playstation[-_ ]?5)([^a-z0-9]|$)/.test(u);
+  const n = pixels.length;
+  const avg = (f: (p: { r: number; g: number; b: number }) => number) =>
+    pixels.reduce((s, p) => s + f(p), 0) / n;
+  const meanR = avg((p) => p.r);
+  const meanG = avg((p) => p.g);
+  const meanB = avg((p) => p.b);
+  const bright = (meanR + meanG + meanB) / 3;
+  const spread = Math.max(meanR, meanG, meanB) - Math.min(meanR, meanG, meanB);
+  // پیکسل‌های «آبی سونی»: لوگوی ▲●✕■ سفید روی زمینه آبی یعنی نوار PS5/PS4 واقعی
+  let blueSony = 0;
+  for (const p of pixels) {
+    if (p.b > 120 && p.b > p.r + 40 && p.b > p.g + 40) blueSony++;
+  }
+  const blueFrac = blueSony / n;
+  const looksWhiteBanner = bright > 150 || (blueFrac > 0.04 && spread < 90);
+  if (wanted === "PS5") {
+    if (urlSaysPs4) return false; // آدرس مال PS4 است
+    // نوار سفیدِ واقعی یا آبی سونی → حتماً PS5 است، قبول
+    if (looksWhiteBanner) return true;
+    // نوار تیره + مدرک PS5 بودن در آدرس → قبول (مثلاً نسخه Deluxe تیره)
+    if (urlSaysPs5) return true;
+    // نوار تیره بدون هیچ مدرکی → احتمالاً بوکس PS4/قدیمی است، رد
+    return false;
+  }
+  // wanted === "PS4"
+  if (urlSaysPs5) return false; // آدرس مال PS5 است
+  if (looksWhiteBanner) return false; // نوار سفید = PS5
+  // نوار تیره (مشکی PS4 یا تیره مینیمال) → قبول
+  return true;
+}
+
 async function duckduckgoCover(
   title: string,
   seen: Set<string>,
-  opts: { queries?: string[]; onlyPlaystation?: boolean } = {}
+  opts: { queries?: string[]; onlyPlaystation?: boolean; platform?: "PS4" | "PS5" } = {}
 ): Promise<FoundCover | null> {
   const queries = opts.queries ?? [`${title} game cover art`, `${title} ps5 box art`, `${title} box art`, `${title} playstation store cover`];
   const isPs = (u: string) => /(?:image\.api\.playstation|store\.playstation|ps-ssl\.playstation)\.(?:com|net)/i.test(u);
@@ -445,7 +552,7 @@ async function duckduckgoCover(
       seen.add(img);
       if (opts.onlyPlaystation && !isPs(img)) continue;
       if (hit.title && !plausibleCoverHit(img, title) && !plausibleCoverHit(hit.title, title)) continue;
-      const dl = await downloadImage(img, { portrait: true, allowSquare: opts.onlyPlaystation === true });
+      const dl = await downloadImage(img, { portrait: true, allowSquare: opts.onlyPlaystation === true, wantPlatform: opts.platform });
       if (dl) return { url: await saveCover(dl.mime, dl.bytes), source: "duckduckgo" };
     }
   }
@@ -455,7 +562,7 @@ async function duckduckgoCover(
 async function bingCover(
   title: string,
   seen: Set<string>,
-  opts: { queries?: string[]; onlyPlaystation?: boolean } = {}
+  opts: { queries?: string[]; onlyPlaystation?: boolean; platform?: "PS4" | "PS5" } = {}
 ): Promise<FoundCover | null> {
   const queries = opts.queries ?? [`${title} video game cover`, `${title} box art`, `${title} ps5 game cover art`];
   const isPs = (u: string) => /(?:image\.api\.playstation|store\.playstation|ps-ssl\.playstation)\.(?:com|net)/i.test(u);
@@ -474,7 +581,7 @@ async function bingCover(
       seen.add(url);
       if (opts.onlyPlaystation && !isPs(url)) continue;
       if (!plausibleCoverHit(url, title)) continue;
-      const dl = await downloadImage(url, { portrait: true, allowSquare: opts.onlyPlaystation === true });
+      const dl = await downloadImage(url, { portrait: true, allowSquare: opts.onlyPlaystation === true, wantPlatform: opts.platform });
       if (dl) return { url: await saveCover(dl.mime, dl.bytes), source: "bing" };
     }
   }
@@ -484,7 +591,7 @@ async function bingCover(
 async function googleCover(
   title: string,
   seen: Set<string>,
-  opts: { queries?: string[]; onlyPlaystation?: boolean } = {}
+  opts: { queries?: string[]; onlyPlaystation?: boolean; platform?: "PS4" | "PS5" } = {}
 ): Promise<FoundCover | null> {
   const queries = opts.queries ?? [`${title} game cover art`, `${title} ps5 cover metacritic`, `${title} box art cover`];
   const isPs = (u: string) => /(?:image\.api\.playstation|store\.playstation|ps-ssl\.playstation)\.(?:com|net)/i.test(u);
@@ -510,8 +617,180 @@ async function googleCover(
       seen.add(c.url);
       if (opts.onlyPlaystation && !isPs(c.url)) continue;
       if (!plausibleCoverHit(c.url, title)) continue;
-      const dl = await downloadImage(c.url, { portrait: true, allowSquare: opts.onlyPlaystation === true });
+      const dl = await downloadImage(c.url, { portrait: true, allowSquare: opts.onlyPlaystation === true, wantPlatform: opts.platform });
       if (dl) return { url: await saveCover(dl.mime, dl.bytes), source: "google" };
+    }
+  }
+  return null;
+}
+
+/* ---------- منبع: PlayStation Store مستقیم (بدون کلید، بر اساس Concept ID) ---------- */
+
+/**
+ * جستجوی مستقیم در API استور پلی‌استیشن (keyless) و بعد جزئیات هر محصول:
+ * - web.np.playstation.com/api/graphql/v1/op (operationName=searchStore با persisted hash
+ *   خودکار از صفحه SPA استور) → conceptId های واقعی (نه نتایج ویدیو/تم/آواتار که همان
+ *   سرچ گوگل «site:store.playstation.com» قاطی‌شان بود)
+ * - concept/api/v1/products?... → بوکس‌آرت عمودی رسمی همان پلتفرم
+ * برای PS4 اول تصویر مخصوص PS4 (productId های ...00) امتحان می‌شود؛ اگر فقط PS5 بود،
+ * برای بازی‌های PS4 آن کاور رد می‌شود و به جای آرت عمومی/پاک PS4 ادامه داده می‌شود.
+ */
+type PsConcepts = { concepts: Array<{ id: string; name: string }> };
+
+/** کش ماژولی هش persisted-query عملیات searchStore (با هربار بالا آمدن سرور یک‌بار) */
+let psSearchHashCache: string | null | undefined;
+
+/** از HTML صفحه جستجوی PS Store هش زنده searchStore را بیرون می‌کشد */
+async function psLiveSearchHash(): Promise<string | null> {
+  if (psSearchHashCache !== undefined) return psSearchHashCache;
+  psSearchHashCache = null;
+  try {
+    // ۱) صفحه SPA جستجو → اسکریپت‌های chunk آن
+    const page = await fetchText(
+      `https://store.playstation.com/en-us/search/${encodeURIComponent("god of war")}`,
+      { Accept: "text/html" }
+    );
+    if (!page) return null;
+    const chunks = new Set<string>();
+    const re = /src="(\/_next\/static\/chunks\/[^"]+\.js)"/g;
+    let m: RegExpExecArray | null;
+    while ((m = re.exec(page)) !== null) chunks.add(`https://store.playstation.com${m[1]}`);
+    // ۲) داخل هر chunk دنبال operationName=searchStore + هشِ کنارش بگرد
+    const hashRe = /searchStore[\s\S]{0,600}?sha256Hash"\s*:\s*"([a-f0-9]{64})|sha256Hash"\s*:\s*"([a-f0-9]{64})[\s\S]{0,600}?searchStore/;
+    for (const chunkUrl of [...chunks].slice(0, 12)) {
+      const js = await fetchText(chunkUrl, { Accept: "*/*" }, 8000);
+      if (!js || !js.includes("searchStore")) continue;
+      const hit = hashRe.exec(js);
+      const hash = hit?.[1] ?? hit?.[2] ?? "";
+      if (/^[a-f0-9]{64}$/.test(hash)) {
+        psSearchHashCache = hash;
+        return hash;
+      }
+    }
+  } catch {
+    /* استور در دسترس نبود — مسیر مستقیم رد می‌شود */
+  }
+  return null;
+}
+
+async function psSearchConcepts(title: string): Promise<PsConcepts["concepts"]> {
+  const q = title.trim();
+  if (q.length < 3) return [];
+  const hash = await psLiveSearchHash();
+  if (!hash) return [];
+  const variables = encodeURIComponent(JSON.stringify({ searchTerm: q, pageArgs: { size: 12, offset: 0 } }));
+  const extensions = encodeURIComponent(JSON.stringify({ persistedQuery: { version: 1, sha256Hash: hash } }));
+  const url = `https://web.np.playstation.com/api/graphql/v1/op?operationName=searchStore&variables=${variables}&extensions=${extensions}`;
+  const text = await fetchText(url, { Accept: "application/json", Origin: "https://store.playstation.com" });
+  if (!text) return [];
+  try {
+    const data = JSON.parse(text) as {
+      data?: {
+        searchStore?: {
+          results?: Array<{ id?: string; name?: string }>;
+        };
+      };
+    };
+    const list = data.data?.searchStore?.results ?? [];
+    const tq = norm(q);
+    return (list ?? [])
+      .filter((c) => c.id && c.name)
+      .map((c) => {
+        const nk = norm(c.name ?? "");
+        let score = 0;
+        if (nk === tq) score = 100;
+        else if (nk.startsWith(tq) || tq.startsWith(nk)) score = 80;
+        else if (nk.includes(tq) || tq.includes(nk)) score = 60;
+        return { id: String(c.id), name: String(c.name), score };
+      })
+      .filter((c) => c.score >= 60)
+      .sort((a, b) => b.score - a.score)
+      .slice(0, 3);
+  } catch {
+    return [];
+  }
+}
+
+type PsProductImage = { url: string; productId: string; name: string };
+
+async function psConceptImages(conceptId: string): Promise<PsProductImage[]> {
+  const url =
+    `https://store.playstation.com/store/api/v1/concept/${encodeURIComponent(conceptId)}/products` +
+    `?country=US&language=en&size=30`;
+  const text = await fetchText(url, { Accept: "application/json", Origin: "https://store.playstation.com" });
+  if (!text) return [];
+  try {
+    const data = JSON.parse(text) as {
+      data?: { concept?: { products?: Array<{ id?: string; name?: string; media?: { screenshots?: Array<{ url?: string }> } }> } };
+    };
+    const products = data.data?.concept?.products ?? [];
+    const out: PsProductImage[] = [];
+    for (const p of products) {
+      const pid = String(p.id ?? "");
+      if (!pid) continue;
+      // فقط خود «بازی» — نه باندل/ادیشن/افزونه/آواتار/تم/ساندترک
+      if (!/^UP\d{4}-[A-Z]{4}\d{5}_00-/.test(pid) && !/^EP\d{4}-[A-Z]{4}\d{5}_00-/.test(pid)) continue;
+      if (/(bundle|edition|deluxe|ultimate|collection|complete|add[- ]?on|avatar|theme|soundtrack|season[- ]?pass|starter|credits|bundle)/i.test(p.name ?? "")) continue;
+      for (const s of p.media?.screenshots ?? []) {
+        if (s.url) out.push({ url: s.url, productId: pid, name: String(p.name ?? "") });
+      }
+    }
+    return out;
+  } catch {
+    return [];
+  }
+}
+
+/** شماره سری productId استور: ...00 = نسخه PS4/پایه؛ اعداد بالاتر = PS5/PS VR2 و… */
+function psProductSuffix(productId: string): number | null {
+  const m = productId.match(/_00-(\d{16})$/);
+  if (!m) return null;
+  const tail = m[1];
+  if (!tail.startsWith("00000000")) return null;
+  const n = Number(tail.slice(8));
+  return Number.isFinite(n) ? n : null;
+}
+
+/** آیا این تصویر، بوکس‌آرت «خالص» همان کنسول درخواستی است؟ */
+function psImageMatchesPlatform(url: string, productId: string, platform: "PS4" | "PS5"): boolean {
+  const u = url.toLowerCase();
+  // هنر PS با نوار سفید PS5 یا مشکی PS5 — باید با پلتفرم بازی یکی باشد
+  const looksPs5 = /ps5/.test(u);
+  const looksPs4 = /ps4/.test(u);
+  // آرت‌های packshot رسمی سونی معمولاً «packshot» در آدرس دارند
+  const isPackshot = /packshot/.test(u);
+  if (platform === "PS4" && looksPs5 && !looksPs4) return false;
+  if (platform === "PS5" && looksPs4 && !looksPs5) return false;
+  const suffix = psProductSuffix(productId);
+  if (suffix === null) return isPackshot; // شناسه ناشناس → فقط packshot واقعی
+  if (platform === "PS4") return suffix < 100 || isPackshot;
+  return true;
+}
+
+/**
+ * بهترین کاور رسمی همان پلتفرم از استور PS:
+ * برای PS4 اول نسخه‌های ...0000 تا ...0099 (خانواده PS4) امتحان می‌شوند و
+ * تصاویر دارای نوار PS5 رد می‌شوند — مشکل «کاور PS5 روی بازی PS4» همین‌جا حل می‌شود.
+ */
+async function playstationDirectCover(
+  title: string,
+  seen: Set<string>,
+  platform: "PS4" | "PS5"
+): Promise<FoundCover | null> {
+  const concepts = await psSearchConcepts(title);
+  for (const concept of concepts) {
+    const images = await psConceptImages(concept.id);
+    const platformFirst = [...images].sort((a, b) => {
+      const sa = psImageMatchesPlatform(a.url, a.productId, platform) ? 0 : 1;
+      const sb = psImageMatchesPlatform(b.url, b.productId, platform) ? 0 : 1;
+      return sa - sb;
+    });
+    for (const img of platformFirst) {
+      if (!psImageMatchesPlatform(img.url, img.productId, platform)) continue;
+      if (!/^https?:\/\//i.test(img.url) || seen.has(img.url)) continue;
+      seen.add(img.url);
+      const dl = await downloadImage(img.url, { portrait: true, allowSquare: true });
+      if (dl) return { url: await saveCover(dl.mime, dl.bytes), source: "psstore-ps4" };
     }
   }
   return null;
@@ -524,17 +803,33 @@ async function googleCover(
  * در موتورهای جستجو ایندکس شده‌اند. با جستجوی محدود به دامنه استور، هنر رسمی پلی‌استیشن
  * را اول از همه برمی‌داریم.
  */
-async function playstationStoreCover(title: string, seen: Set<string>): Promise<FoundCover | null> {
-  const psQueries = [
-    `site:store.playstation.com ${title}`,
-    `${title} ps5 cover art playstation store`,
-    `site:image.api.playstation.com ${title}`,
-    `${title} ps4 playstation store game cover`,
-  ];
+async function playstationStoreCover(
+  title: string,
+  seen: Set<string>,
+  opts: { platform?: "PS4" | "PS5" } = {}
+): Promise<FoundCover | null> {
+  const psQueries =
+    opts.platform === "PS4"
+      ? [
+          `site:store.playstation.com ${title} ps4`,
+          `${title} ps4 cover art playstation store`,
+          `site:image.api.playstation.com ${title} ps4`,
+          `${title} ps4 playstation store game cover`,
+        ]
+      : [
+          `site:store.playstation.com ${title}`,
+          `${title} ps5 cover art playstation store`,
+          `site:image.api.playstation.com ${title}`,
+          `${title} ps4 playstation store game cover`,
+        ];
   const engines = [duckduckgoCover, bingCover, googleCover];
   for (const engine of engines) {
-    const hit = await engine(title, seen, { queries: psQueries, onlyPlaystation: true });
-    if (hit) return { url: hit.url, source: "playstation" };
+    const hit = await engine(title, seen, {
+      queries: psQueries,
+      onlyPlaystation: true,
+      platform: opts.platform,
+    });
+    if (hit) return { url: hit.url, source: opts.platform === "PS4" ? "playstation-ps4" : "playstation" };
   }
   return null;
 }
@@ -715,6 +1010,8 @@ async function igdbCover(title: string, seen: Set<string>): Promise<FoundCover |
  */
 export type CoverStep =
   | "playstation"
+  | "playstation-ps4"
+  | "psstore-ps4"
   | "igdb"
   | "p30day"
   | "downloadha"
@@ -729,6 +1026,9 @@ export type CoverStep =
 
 export function coverStepsFor(platform: Platform): CoverStep[] {
   if (platform === "Xbox Offline") return ["xbox"];
+  if (platform === "PS4") {
+    return ["psstore-ps4", "playstation-ps4", "igdb", "p30day", "downloadha", "steam-known", "steam-search", "rawg", "wikipedia", "duckduckgo", "bing", "google"];
+  }
   return ["playstation", "igdb", "p30day", "downloadha", "steam-known", "steam-search", "rawg", "wikipedia", "duckduckgo", "bing", "google"];
 }
 
@@ -749,9 +1049,17 @@ export async function findOfficialCover(
   const steps = coverStepsFor(platform);
 
   try {
+    // ۰) PS4: جستجوی مستقیم استور PS مخصوص همان کنسول (اول نسخه PS4، بدون نوار PS5)
+    if (platform === "PS4" && steps.includes("psstore-ps4")) {
+      const direct = await playstationDirectCover(title, seen, "PS4");
+      if (direct) return direct;
+    }
+
     // ۱) استور PlayStation: هنر رسمی پلی‌استیشن (تصاویر ایندکس‌شده استور)
-    if (steps.includes("playstation")) {
-      const ps = await playstationStoreCover(title, seen);
+    // برای PS4: کوئری‌ها و فیلتر نوار کنسول مخصوص همان نسخه است
+    if (steps.includes("playstation") || steps.includes("playstation-ps4")) {
+      const forPs4 = platform === "PS4";
+      const ps = await playstationStoreCover(title, seen, forPs4 ? { platform: "PS4" } : undefined);
       if (ps) return ps;
     }
 

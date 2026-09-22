@@ -28,12 +28,14 @@ test("قانون پسوند پلتفرم و ترتیب منابع کاور (وا
   expect(game.normalizeAiJson({ title: "Hi-Fi Rush", platform: "Xbox Offline" }, "Hi-Fi Rush", { forceXbox: true }).platform).toBe("Xbox Offline");
   expect(game.normalizeAiJson({ title: "Hi-Fi Rush", platform: "Xbox Offline" }, "Hi-Fi Rush", { forceXbox: true }).forceXbox).toBe(true);
 
-  // ۵) ترتیب منابع کاور
+  // ۵) ترتیب منابع کاور — Xbox فقط استور Xbox؛ PS4 اول مستقیم همان کنسول
   expect(cover.coverStepsFor("Xbox Offline")).toEqual(["xbox"]);
   const ps5Steps = cover.coverStepsFor("PS5");
   expect(ps5Steps).toEqual(["playstation", "igdb", "p30day", "downloadha", "steam-known", "steam-search", "rawg", "wikipedia", "duckduckgo", "bing", "google"]);
-  expect(cover.coverStepsFor("PS4")).toEqual(ps5Steps);
+  const ps4Steps = cover.coverStepsFor("PS4");
+  expect(ps4Steps).toEqual(["psstore-ps4", "playstation-ps4", "igdb", "p30day", "downloadha", "steam-known", "steam-search", "rawg", "wikipedia", "duckduckgo", "bing", "google"]);
   expect(ps5Steps).not.toContain("xbox");
+  expect(ps4Steps).not.toContain("xbox");
   expect(ps5Steps.indexOf("p30day")).toBeLessThan(ps5Steps.indexOf("google"));
   // IGDB بعد از استور PlayStation و قبل از سایت‌های ایرانی
   expect(ps5Steps.indexOf("igdb")).toBeGreaterThan(ps5Steps.indexOf("playstation"));
@@ -48,4 +50,18 @@ test("قانون پسوند پلتفرم و ترتیب منابع کاور (وا
   expect(game.splitPlatformSuffix("The Accountant")).toEqual({ cleanName: "The Accountant", forced: null });
   // دسته اکانتی هم مثل PS5 از منابع کاور پلی‌استیشن استفاده می‌کند
   expect(cover.coverStepsFor("PS5 اکانتی")).toEqual(ps5Steps);
+
+  // ۷) تشخیص نوار کنسول: سفید=PS5، مشکی=PS4، آرت تمیز برای هر دو خوب است
+  const white = Array.from({ length: 48 }, () => ({ r: 250, g: 250, b: 252 }));
+  const black = Array.from({ length: 48 }, () => ({ r: 12, g: 12, b: 14 }));
+  expect(cover.matchesConsoleBanner([], 0, "https://x/y.jpg", "PS4")).toBe(true);
+  expect(cover.matchesConsoleBanner(white, 0.9, "https://x/y.jpg", "PS5")).toBe(true);
+  expect(cover.matchesConsoleBanner(white, 0.9, "https://x/y.jpg", "PS4")).toBe(false);
+  expect(cover.matchesConsoleBanner(black, 0.9, "https://x/y.jpg", "PS4")).toBe(true);
+  expect(cover.matchesConsoleBanner(black, 0.9, "https://x/y.jpg", "PS5")).toBe(false);
+  expect(cover.matchesConsoleBanner(black, 0.9, "https://x/ps5-game.jpg", "PS5")).toBe(true);
+  // نوار سفیدِ واضح یعنی باکس PS5 است — حتی با توکن ps4 در آدرس، برای PS4 رد می‌شود
+  // (پیکسل بر حدسِ آدرس می‌چربد؛ مدرک متناقض = رد، نه حدس اشتباه)
+  expect(cover.matchesConsoleBanner(white, 0.9, "https://x/ps4-game.jpg", "PS4")).toBe(false);
+  expect(cover.matchesConsoleBanner(white, 0.9, "https://x/ps4-game.jpg", "PS5")).toBe(false);
 });
