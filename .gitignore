@@ -1,7 +1,13 @@
 node_modules/
 .next/
 out/
-data/
+data/*
+!data/ps4-titles.txt
+!data/ps4-cover-manifest.json
+!data/ps4-cover-overrides.json
+!data/ps4-cover-failures.json
+!data/ps4-fa-cache.json
+!data/ps4-fa-overrides.json
 .env*
 !.env.example
 .env.production

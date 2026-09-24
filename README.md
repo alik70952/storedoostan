@@ -47,7 +47,7 @@ npm start
 2. دکمه «تولید بازی‌ها» را بزنید؛ مدل `glm-5.3-flash` (سرویس APInex) برای هر بازی نام فارسی، پلتفرم، ژانر و توضیح فارسی می‌سازد.
 3. کاور رسمی به این ترتیب از اینترنت پیدا و دانلود می‌شود (اولین منبعی که جواب دهد):
 
-   `PlayStation Store` → `Xbox Store (API رسمی مایکروسافت)` → `Steam` → `RAWG (نیازمند RAWG_API_KEY)` → `ویکی‌پدیا` → `DuckDuckGo` → `Bing` → `Google`
+   `PlayStation Store` → `IGDB (نیازمند کلید رایگان Twitch)` → `Xbox Store (API رسمی مایکروسافت)` → `p30day / downloadha` → `Steam` → `RAWG (نیازمند RAWG_API_KEY)` → `ویکی‌پدیا` → `DuckDuckGo` → `Bing` → `Google`
 
 4. هر فایل کاور در جدول `covers` ذخیره و از `/api/covers/<uuid>.<ext>` سرو می‌شود (همان مسیر آپلود دستی).
 5. اگر بازی از قبل در فروشگاه باشد، رد می‌شود؛ ولی اگر آن بازی کاور نداشته باشد، در همان اجرا کاور برایش پیدا و اضافه می‌شود.
@@ -56,6 +56,7 @@ npm start
 نکته‌ها:
 
 - `APINEX_API_KEY` فقط سمت سرور خوانده می‌شود و هرگز به مرورگر نمی‌رود.
+- **کاور رسمی و همیشه درست (توصیه‌شده):** در [کنسول توسعه‌دهندگان Twitch](https://dev.twitch.tv/console) یک Application رایگان بسازید و `TWITCH_CLIENT_ID` و `TWITCH_CLIENT_SECRET` را در Environment Variables بگذارید؛ با این کار منبع IGDB فعال می‌شود که برای «هر» بازی بوکس‌آرت رسمی و دقیق دارد (همان کاورهایی که سایت‌های مرجع مثل hencheats نشان می‌دهند). این دو کلید فقط سمت سرور خوانده می‌شوند.
 - هر بازی بسته به منابع کاور حدود ۱۰ تا ۳۰ ثانیه طول می‌کشد؛ درخواست‌ها دوتا-دوتا (concurrency = ۲) اجرا می‌شوند.
 - روت تشخیصی کاور (فقط برای ادمین واردشده): `/api/admin/ai/cover-debug?name=Returnal`
   با `&keep=1` کاور پیدا‌شده در دیتابیس نگه داشته می‌شود، وگرنه ردیف موقت پاک می‌شود.
@@ -65,6 +66,44 @@ npm start
   node scripts/clean-orphan-covers.mjs          # فقط گزارش
   node scripts/clean-orphan-covers.mjs --apply  # حذف واقعی
   ```
+
+## کاتالوگ ۵۰۰ بازی PS4 با کاور رسمی
+
+لیست ۵۰۰ بازی PS4 (از فایل PDF) به کاتالوگ سایت اضافه شده و **کاور رسمی هر بازی داخل خودِ ریپو**
+(پوشه `public/covers/ps4/`) نگه داشته می‌شود. پس بعد از `git push` و دیپلوی روی Vercel، بازی‌ها
+با کاور خودشان بدون هیچ کار اضافه‌ای نمایش داده می‌شوند — نه آپلود دستی لازم است و نه دیتابیس
+جداگانه، چون فایل‌ها استاتیک‌اند و از CDN ورسل سرو می‌شوند.
+
+فایل‌های مرتبط:
+
+| فایل | نقش |
+| --- | --- |
+| `src/lib/ps4-catalog.ts` | کاتالوگ تولیدشده (نام انگلیسی/فارسی، ژانر، دو نفره، توضیح، آدرس کاور) |
+| `src/lib/catalog.ts` | ترکیب seed دستی + کاتالوگ PS4 با شناسه ثابت ردیف‌ها (`ps4-cat-N`) |
+| `scripts/extract-pdf-list.py` | استخراج متن لیست از PDF (بدون کتابخانه خارجی) |
+| `scripts/fetch-ps4-covers.mjs` | پیدا کردن/دانلود کاور رسمی هر بازی و فشرده‌سازی با sharp |
+| `scripts/build-ps4-catalog.mjs` | ساخت `ps4-catalog.ts` (نام فارسی و ژانر با GLM، کش‌شده) |
+
+بازتولید کامل (اختیاری — همه مراحل قابل ادامه‌دادن هستند):
+
+```bash
+python scripts/extract-pdf-list.py "<لیست.pdf>" data/ps4-list-raw.txt   # متن خام PDF
+# data/ps4-titles.txt = خطوط «N. نام بازی — PS4» از همان خروجی (یک نام در هر خط)
+node --experimental-strip-types scripts/fetch-ps4-covers.mjs           # کاورها → public/covers/ps4
+node --experimental-strip-types scripts/build-ps4-catalog.mjs          # کاتالوگ → src/lib/ps4-catalog.ts
+```
+
+نکته‌ها:
+
+- موتور کاور به ترتیب از منابع رسمی استفاده می‌کند: **استور PlayStation → ویکی‌پدیا (تطبیق دقیق
+  عنوان مقاله) → IGDB → p30day/downloadha → Steam → RAWG → جستجوی تصویر**؛ برای هر بازی یک فایل
+  واقعی دانلود و به JPEG عرض ۶۰۰ فشرده می‌شود. فهرست کاورها در `data/ps4-cover-manifest.json` است.
+- عنوان‌هایی که کاورشان پیدا نشد در `data/ps4-cover-failures.json` ثبت می‌شوند. برای دست‌کاری
+  دستی، `data/ps4-fa-overrides.json` را بسازید (کلید = عنوان انگلیسی، مقدار = `titleFa` / `genre` /
+  `cover` / `twoPlayer` / `description`) و اسکریپت‌ها را دوباره اجرا کنید.
+- کش ترجمه فارسی در `data/ps4-fa-cache.json` ذخیره می‌شود؛ اجرای مجدد مدل را دوباره صدا نمی‌زند.
+- روی Vercel کاتالوگ خودکار به دیتابیس اضافه می‌شود: ردیف‌های نبوده درج می‌شوند و بازی‌هایی که
+  کاورشان خالی بود کاور می‌گیرند؛ ویرایش‌های ادمین دست‌نخورده می‌مانند (فقط ردیف‌های `ps4-cat-*`).
 
 ## استقرار روی Vercel (قدم‌به‌قدم)
 
@@ -81,13 +120,15 @@ npm start
    خروجی (`ADMIN_USERNAME`, `ADMIN_PASSWORD_HASH`, `SESSION_SECRET`, `COOKIE_SECURE=true`) را در
    `Vercel → Project → Settings → Environment Variables` (برای Production) کپی کنید.
    اگر قبلاً به Storage وصل شده‌اید، `DATABASE_URL` را دست نزنید.
-   برای فعال شدن افزودن گروهی با AI، `APINEX_API_KEY` (و در صورت تمایل `AINEX_BASE_URL`, `AINEX_MODEL`, `RAWG_API_KEY`) را هم اضافه کنید.
+   برای فعال شدن افزودن گروهی با AI، `APINEX_API_KEY` (و در صورت تمایل `AINEX_BASE_URL`, `AINEX_MODEL`, `RAWG_API_KEY`, `TWITCH_CLIENT_ID`, `TWITCH_CLIENT_SECRET`) را هم اضافه کنید.
 
 3. **دیپلوی:**
    ```bash
    git push   # یا Deploy از داشبورد Vercel
    ```
-   بیلد موفق یعنی `npm run build` سبز شده. جدول `games` و داده‌های اولیه (seed) در اولین بازدید خودکار ساخته می‌شوند.
+   بیلد موفق یعنی `npm run build` سبز شده. جدول `games` در اولین بازدید خودکار ساخته می‌شود و
+   کاتالوگ کامل (بازی‌های seed + ۵۰۰ بازی PS4 با کاور رسمی) داخل همان جدول درج می‌شود؛
+   اگر دیتابیس از قبل پر بود، فقط ردیف‌های نبوده اضافه می‌شوند.
 
 4. **نکات مهم:**
    - اگر روی HTTPS هستید حتماً `COOKIE_SECURE=true` باشد (اسکریپت خودش true می‌گذارد).

@@ -3,7 +3,7 @@ import { randomUUID } from "node:crypto";
 import fs from "node:fs";
 import path from "node:path";
 import type { Game, GameInput, Platform } from "./types";
-import { seedGames } from "./seed";
+import { catalogGames } from "./catalog";
 
 // لوکال: پوشه data ـــ روی Vercel: حافظه موقت /tmp (ماندگار نیست؛ برای ماندگاری DATABASE_URL بگذارید)
 const DATA_DIR =
@@ -14,13 +14,59 @@ export const UPLOADS_DIR = path.join(DATA_DIR, "uploads");
 
 let db: DatabaseSync | null = null;
 
+const INSERT_GAME_SQL = `INSERT OR IGNORE INTO games (id,title,titleFa,platform,twoPlayer,genre,cover,description,featured,createdAt,updatedAt)
+  VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`;
+
+/**
+ * پرکردن ردیف‌های کاتالوگ (بازی‌های seed + کاتالوگ ۵۰۰ بازی PS4) در دیتابیس موجود.
+ * شناسه ثابت ردیف‌ها باعث می‌شود در اجرای بعدی چیزی تکراری ساخته نشود، و
+ * ویرایش/حذف ادمین هم دست‌نخورده بماند.
+ */
+function ensureCatalogRows(connection: DatabaseSync): void {
+  const rows = connection.prepare("SELECT id FROM games").all() as Array<{ id?: unknown }>;
+  const existingIds = new Set(rows.map((row) => String(row.id ?? "")));
+  const missing = catalogGames.filter((g) => !existingIds.has(g.id));
+  if (missing.length > 0) {
+    const insert = connection.prepare(INSERT_GAME_SQL);
+    connection.exec("BEGIN");
+    try {
+      for (const g of missing) {
+        insert.run(g.id, g.title, g.titleFa, g.platform, g.twoPlayer ? 1 : 0, g.genre, g.cover, g.description, g.featured ? 1 : 0, g.createdAt, g.updatedAt);
+      }
+      connection.exec("COMMIT");
+    } catch (err) {
+      connection.exec("ROLLBACK");
+      throw err;
+    }
+  }
+
+  // بازی‌هایی که در زمان انتشار کاورشان پیدا نشده بود، آخرین کاور کاتالوگ را می‌گیرند
+  const empty = connection
+    .prepare("SELECT COUNT(*) AS c FROM games WHERE id LIKE 'ps4-cat-%' AND (cover IS NULL OR cover = '')")
+    .get() as { c?: unknown } | undefined;
+  if (Number(empty?.c ?? 0) > 0) {
+    const update = connection.prepare("UPDATE games SET cover = ? WHERE id = ? AND (cover IS NULL OR cover = '')");
+    connection.exec("BEGIN");
+    try {
+      for (const g of catalogGames) {
+        if (g.cover) update.run(g.cover, g.id);
+      }
+      connection.exec("COMMIT");
+    } catch {
+      connection.exec("ROLLBACK");
+    }
+  }
+}
+
 export function getConnection(): DatabaseSync {
   if (db) return db;
   fs.mkdirSync(DATA_DIR, { recursive: true });
   fs.mkdirSync(UPLOADS_DIR, { recursive: true });
   db = new DatabaseSync(DB_PATH);
   const existing = db.prepare("SELECT name FROM sqlite_master WHERE type='table' AND name='games'").get();
-  if (!existing) {
+  if (existing) {
+    ensureTwoPlayerColumn(db);
+  } else {
     db.exec(`CREATE TABLE games (
       id TEXT PRIMARY KEY,
       title TEXT NOT NULL,
@@ -34,14 +80,8 @@ export function getConnection(): DatabaseSync {
       createdAt TEXT NOT NULL,
       updatedAt TEXT NOT NULL
     );`);
-    const insert = db.prepare(`INSERT INTO games (id,title,titleFa,platform,twoPlayer,genre,cover,description,featured,createdAt,updatedAt)
-      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`);
-    for (const g of seedGames) {
-      insert.run(g.id, g.title, g.titleFa, g.platform, g.twoPlayer ? 1 : 0, g.genre, g.cover, g.description, g.featured ? 1 : 0, g.createdAt, g.updatedAt);
-    }
-  } else {
-    ensureTwoPlayerColumn(db);
   }
+  ensureCatalogRows(db);
   return db;
 }
 

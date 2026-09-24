@@ -1,0 +1,3488 @@
+{
+  "Grand Theft Auto V": {
+    "file": "/covers/ps4/grand-theft-auto-v.jpg",
+    "source": "restored",
+    "width": 380,
+    "height": 391,
+    "bytes": 46425
+  },
+  "Red Dead Redemption 2": {
+    "file": "/covers/ps4/red-dead-redemption-2.jpg",
+    "source": "restored",
+    "width": 300,
+    "height": 450,
+    "bytes": 33279
+  },
+  "God of War": {
+    "file": "/covers/ps4/god-of-war.jpg",
+    "source": "restored",
+    "width": 267,
+    "height": 373,
+    "bytes": 26368
+  },
+  "God of War Ragnarök": {
+    "file": "/covers/ps4/god-of-war-ragnarok.jpg",
+    "source": "restored",
+    "width": 300,
+    "height": 450,
+    "bytes": 29515
+  },
+  "Marvel's Spider-Man": {
+    "file": "/covers/ps4/marvels-spider-man.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 444,
+    "bytes": 34477
+  },
+  "Marvel's Spider-Man: Miles Morales": {
+    "file": "/covers/ps4/marvels-spider-man-miles-morales.jpg",
+    "source": "restored",
+    "width": 300,
+    "height": 450,
+    "bytes": 15768
+  },
+  "The Last of Us Part II": {
+    "file": "/covers/ps4/the-last-of-us-part-ii.jpg",
+    "source": "restored",
+    "width": 300,
+    "height": 450,
+    "bytes": 25133
+  },
+  "Uncharted 4: A Thief's End": {
+    "file": "/covers/ps4/uncharted-4-a-thiefs-end.jpg",
+    "source": "restored",
+    "width": 275,
+    "height": 361,
+    "bytes": 22914
+  },
+  "Uncharted: The Lost Legacy": {
+    "file": "/covers/ps4/uncharted-the-lost-legacy.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 434,
+    "bytes": 31184
+  },
+  "Horizon Zero Dawn": {
+    "file": "/covers/ps4/horizon-zero-dawn.jpg",
+    "source": "restored",
+    "width": 273,
+    "height": 365,
+    "bytes": 27714
+  },
+  "Horizon Forbidden West": {
+    "file": "/covers/ps4/horizon-forbidden-west.jpg",
+    "source": "restored",
+    "width": 273,
+    "height": 365,
+    "bytes": 27742
+  },
+  "Ghost of Tsushima": {
+    "file": "/covers/ps4/ghost-of-tsushima.jpg",
+    "source": "restored",
+    "width": 273,
+    "height": 365,
+    "bytes": 21854
+  },
+  "Days Gone": {
+    "file": "/covers/ps4/days-gone.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 437,
+    "bytes": 16710
+  },
+  "Bloodborne": {
+    "file": "/covers/ps4/bloodborne.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 469,
+    "bytes": 37272
+  },
+  "Death Stranding": {
+    "file": "/covers/ps4/death-stranding.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 425,
+    "bytes": 24695
+  },
+  "Death Stranding Director's Cut": {
+    "file": "/covers/ps4/death-stranding-directors-cut.jpg",
+    "source": "restored",
+    "width": 273,
+    "height": 365,
+    "bytes": 15176
+  },
+  "Ratchet & Clank": {
+    "file": "/covers/ps4/ratchet-clank.jpg",
+    "source": "restored",
+    "width": 300,
+    "height": 450,
+    "bytes": 35342
+  },
+  "inFAMOUS Second Son": {
+    "file": "/covers/ps4/infamous-second-son.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 438,
+    "bytes": 45557
+  },
+  "inFAMOUS First Light": {
+    "file": "/covers/ps4/infamous-first-light.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 435,
+    "bytes": 39031
+  },
+  "Killzone Shadow Fall": {
+    "file": "/covers/ps4/killzone-shadow-fall.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 438,
+    "bytes": 29305
+  },
+  "Driveclub": {
+    "file": "/covers/ps4/driveclub.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 437,
+    "bytes": 31573
+  },
+  "Until Dawn": {
+    "file": "/covers/ps4/until-dawn.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 433,
+    "bytes": 26190
+  },
+  "LittleBigPlanet 3": {
+    "file": "/covers/ps4/littlebigplanet-3.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 435,
+    "bytes": 53965
+  },
+  "Dreams": {
+    "file": "/covers/ps4/dreams.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 494,
+    "bytes": 38973
+  },
+  "Concrete Genie": {
+    "file": "/covers/ps4/concrete-genie.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 444,
+    "bytes": 48490
+  },
+  "Knack": {
+    "file": "/covers/ps4/knack.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 436,
+    "bytes": 51006
+  },
+  "Knack 2": {
+    "file": "/covers/ps4/knack-2.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 436,
+    "bytes": 51006
+  },
+  "Detroit: Become Human": {
+    "file": "/covers/ps4/detroit-become-human.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 495,
+    "bytes": 27637
+  },
+  "Heavy Rain": {
+    "file": "/covers/ps4/heavy-rain.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 443,
+    "bytes": 40252
+  },
+  "Beyond: Two Souls": {
+    "file": "/covers/ps4/beyond-two-souls.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 396,
+    "bytes": 29514
+  },
+  "Shadow of the Colossus": {
+    "file": "/covers/ps4/shadow-of-the-colossus.jpg",
+    "source": "restored",
+    "width": 267,
+    "height": 373,
+    "bytes": 14850
+  },
+  "Gravity Rush 2": {
+    "file": "/covers/ps4/gravity-rush-2.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 411,
+    "bytes": 37827
+  },
+  "Everybody's Golf": {
+    "file": "/covers/ps4/everybodys-golf.jpg",
+    "source": "manual",
+    "width": 290,
+    "height": 290,
+    "bytes": 24505
+  },
+  "Astro Bot Rescue Mission": {
+    "file": "/covers/ps4/astro-bot-rescue-mission.jpg",
+    "source": "restored",
+    "width": 273,
+    "height": 365,
+    "bytes": 20815
+  },
+  "MediEvil": {
+    "file": "/covers/ps4/medievil.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 444,
+    "bytes": 44340
+  },
+  "Sackboy: A Big Adventure": {
+    "file": "/covers/ps4/sackboy-a-big-adventure.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 446,
+    "bytes": 44702
+  },
+  "The Witcher 3: Wild Hunt": {
+    "file": "/covers/ps4/the-witcher-3-wild-hunt.jpg",
+    "source": "restored",
+    "width": 300,
+    "height": 450,
+    "bytes": 27545
+  },
+  "Cyberpunk 2077": {
+    "file": "/covers/ps4/cyberpunk-2077.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 443,
+    "bytes": 39089
+  },
+  "Elden Ring": {
+    "file": "/covers/ps4/elden-ring.jpg",
+    "source": "restored",
+    "width": 273,
+    "height": 364,
+    "bytes": 15366
+  },
+  "Dark Souls Remastered": {
+    "file": "/covers/ps4/dark-souls-remastered.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 436,
+    "bytes": 36016
+  },
+  "Dark Souls II: Scholar of the First Sin": {
+    "file": "/covers/ps4/dark-souls-ii-scholar-of-the-first-sin.jpg",
+    "source": "restored",
+    "width": 300,
+    "height": 450,
+    "bytes": 19222
+  },
+  "Dark Souls III": {
+    "file": "/covers/ps4/dark-souls-iii.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 436,
+    "bytes": 36778
+  },
+  "Sekiro: Shadows Die Twice": {
+    "file": "/covers/ps4/sekiro-shadows-die-twice.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 440,
+    "bytes": 32598
+  },
+  "Nioh": {
+    "file": "/covers/ps4/nioh.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 467,
+    "bytes": 37687
+  },
+  "Nioh 2": {
+    "file": "/covers/ps4/nioh-2.jpg",
+    "source": "restored",
+    "width": 273,
+    "height": 364,
+    "bytes": 22016
+  },
+  "Monster Hunter: World": {
+    "file": "/covers/ps4/monster-hunter-world.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 457,
+    "bytes": 45237
+  },
+  "Monster Hunter World: Iceborne": {
+    "file": "/covers/ps4/monster-hunter-world-iceborne.jpg",
+    "source": "manual",
+    "width": 300,
+    "height": 332,
+    "bytes": 28882
+  },
+  "Final Fantasy XV": {
+    "file": "/covers/ps4/final-fantasy-xv.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 436,
+    "bytes": 33241
+  },
+  "Final Fantasy VII Remake": {
+    "file": "/covers/ps4/final-fantasy-vii-remake.jpg",
+    "source": "restored",
+    "width": 385,
+    "height": 600,
+    "bytes": 41192
+  },
+  "Final Fantasy XII: The Zodiac Age": {
+    "file": "/covers/ps4/final-fantasy-xii-the-zodiac-age.jpg",
+    "source": "restored",
+    "width": 300,
+    "height": 450,
+    "bytes": 35847
+  },
+  "Final Fantasy X/X-2 HD Remaster": {
+    "file": "/covers/ps4/final-fantasy-x-x-2-hd-remaster.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 450,
+    "bytes": 39286
+  },
+  "Final Fantasy VIII Remastered": {
+    "file": "/covers/ps4/final-fantasy-viii-remastered.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 460,
+    "bytes": 17775
+  },
+  "Final Fantasy IX": {
+    "file": "/covers/ps4/final-fantasy-ix.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 437,
+    "bytes": 37738
+  },
+  "Final Fantasy Type-0 HD": {
+    "file": "/covers/ps4/final-fantasy-type-0-hd.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 482,
+    "bytes": 45043
+  },
+  "Kingdom Hearts III": {
+    "file": "/covers/ps4/kingdom-hearts-iii.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 476,
+    "bytes": 55394
+  },
+  "Kingdom Hearts HD 1.5+2.5 Remix": {
+    "file": "/covers/ps4/kingdom-hearts-hd-1-5-2-5-remix.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 467,
+    "bytes": 37280
+  },
+  "Kingdom Hearts HD 2.8 Final Chapter Prologue": {
+    "file": "/covers/ps4/kingdom-hearts-hd-2-8-final-chapter-prologue.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 467,
+    "bytes": 35418
+  },
+  "Dragon Quest XI S": {
+    "file": "/covers/ps4/dragon-quest-xi-s.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 474,
+    "bytes": 36176
+  },
+  "Persona 5": {
+    "file": "/covers/ps4/persona-5.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 436,
+    "bytes": 50039
+  },
+  "Persona 5 Royal": {
+    "file": "/covers/ps4/persona-5-royal.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 473,
+    "bytes": 38562
+  },
+  "Persona 5 Strikers": {
+    "file": "/covers/ps4/persona-5-strikers.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 436,
+    "bytes": 54256
+  },
+  "Persona 4 Arena Ultimax": {
+    "file": "/covers/ps4/persona-4-arena-ultimax.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 467,
+    "bytes": 54015
+  },
+  "Persona 3 Reload": {
+    "file": "/covers/ps4/persona-3-reload.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 433,
+    "bytes": 44934
+  },
+  "Yakuza 0": {
+    "file": "/covers/ps4/yakuza-0.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 436,
+    "bytes": 33434
+  },
+  "Yakuza Kiwami": {
+    "file": "/covers/ps4/yakuza-kiwami.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 436,
+    "bytes": 36862
+  },
+  "Yakuza Kiwami 2": {
+    "file": "/covers/ps4/yakuza-kiwami-2.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 499,
+    "bytes": 38466
+  },
+  "Yakuza 3 Remastered": {
+    "file": "/covers/ps4/yakuza-3-remastered.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 504,
+    "bytes": 39478
+  },
+  "Yakuza 4 Remastered": {
+    "file": "/covers/ps4/yakuza-4-remastered.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 500,
+    "bytes": 42859
+  },
+  "Yakuza 5 Remastered": {
+    "file": "/covers/ps4/yakuza-5-remastered.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 476,
+    "bytes": 40407
+  },
+  "Yakuza 6: The Song of Life": {
+    "file": "/covers/ps4/yakuza-6-the-song-of-life.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 525,
+    "bytes": 35181
+  },
+  "Yakuza: Like a Dragon": {
+    "file": "/covers/ps4/yakuza-like-a-dragon.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 436,
+    "bytes": 49017
+  },
+  "Judgment": {
+    "file": "/covers/ps4/judgment.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 467,
+    "bytes": 39452
+  },
+  "Lost Judgment": {
+    "file": "/covers/ps4/lost-judgment.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 428,
+    "bytes": 29323
+  },
+  "NieR: Automata": {
+    "file": "/covers/ps4/nier-automata.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 487,
+    "bytes": 35977
+  },
+  "NieR Replicant": {
+    "file": "/covers/ps4/nier-replicant.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 444,
+    "bytes": 28993
+  },
+  "Tales of Berseria": {
+    "file": "/covers/ps4/tales-of-berseria.jpg",
+    "source": "restored",
+    "width": 275,
+    "height": 362,
+    "bytes": 21146
+  },
+  "Tales of Zestiria": {
+    "file": "/covers/ps4/tales-of-zestiria.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 436,
+    "bytes": 37885
+  },
+  "Tales of Arise": {
+    "file": "/covers/ps4/tales-of-arise.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 439,
+    "bytes": 32233
+  },
+  "Star Ocean: The Divine Force": {
+    "file": "/covers/ps4/star-ocean-the-divine-force.jpg",
+    "source": "restored",
+    "width": 300,
+    "height": 450,
+    "bytes": 39796
+  },
+  "Ni no Kuni II": {
+    "file": "/covers/ps4/ni-no-kuni-ii.jpg",
+    "source": "restored",
+    "width": 300,
+    "height": 450,
+    "bytes": 37193
+  },
+  "Ni no Kuni: Wrath of the White Witch": {
+    "file": "/covers/ps4/ni-no-kuni-wrath-of-the-white-witch.jpg",
+    "source": "restored",
+    "width": 300,
+    "height": 450,
+    "bytes": 39217
+  },
+  "Dragon Ball Xenoverse": {
+    "file": "/covers/ps4/dragon-ball-xenoverse.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 441,
+    "bytes": 56607
+  },
+  "Dragon Ball Xenoverse 2": {
+    "file": "/covers/ps4/dragon-ball-xenoverse-2.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 441,
+    "bytes": 56607
+  },
+  "Dragon Ball FighterZ": {
+    "file": "/covers/ps4/dragon-ball-fighterz.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 439,
+    "bytes": 60153
+  },
+  "Dragon Ball Z: Kakarot": {
+    "file": "/covers/ps4/dragon-ball-z-kakarot.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 441,
+    "bytes": 32913
+  },
+  "Dragon Ball: The Breakers": {
+    "file": "/covers/ps4/dragon-ball-the-breakers.jpg",
+    "source": "restored",
+    "width": 300,
+    "height": 450,
+    "bytes": 47006
+  },
+  "Naruto Shippuden: Ultimate Ninja Storm 4": {
+    "file": "/covers/ps4/naruto-shippuden-ultimate-ninja-storm-4.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 474,
+    "bytes": 49133
+  },
+  "Naruto Shippuden: Ultimate Ninja Storm Trilogy": {
+    "file": "/covers/ps4/naruto-shippuden-ultimate-ninja-storm-trilogy.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 436,
+    "bytes": 48816
+  },
+  "One Piece: Pirate Warriors 3": {
+    "file": "/covers/ps4/one-piece-pirate-warriors-3.jpg",
+    "source": "manual",
+    "width": 282,
+    "height": 353,
+    "bytes": 36799
+  },
+  "One Piece: Pirate Warriors 4": {
+    "file": "/covers/ps4/one-piece-pirate-warriors-4.jpg",
+    "source": "restored",
+    "width": 300,
+    "height": 450,
+    "bytes": 35010
+  },
+  "One Piece World Seeker": {
+    "file": "/covers/ps4/one-piece-world-seeker.jpg",
+    "source": "restored",
+    "width": 286,
+    "height": 360,
+    "bytes": 31370
+  },
+  "Attack on Titan": {
+    "file": "/covers/ps4/attack-on-titan.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 436,
+    "bytes": 47282
+  },
+  "Attack on Titan 2": {
+    "file": "/covers/ps4/attack-on-titan-2.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 436,
+    "bytes": 47282
+  },
+  "Demon Slayer: The Hinokami Chronicles": {
+    "file": "/covers/ps4/demon-slayer-the-hinokami-chronicles.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 483,
+    "bytes": 56714
+  },
+  "Jump Force": {
+    "file": "/covers/ps4/jump-force.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 443,
+    "bytes": 46020
+  },
+  "Soulcalibur VI": {
+    "file": "/covers/ps4/soulcalibur-vi.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 472,
+    "bytes": 46061
+  },
+  "Tekken 7": {
+    "file": "/covers/ps4/tekken-7.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 436,
+    "bytes": 34292
+  },
+  "Street Fighter V": {
+    "file": "/covers/ps4/street-fighter-v.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 442,
+    "bytes": 49186
+  },
+  "Street Fighter 30th Anniversary Collection": {
+    "file": "/covers/ps4/street-fighter-30th-anniversary-collection.jpg",
+    "source": "restored",
+    "width": 300,
+    "height": 450,
+    "bytes": 38901
+  },
+  "Mortal Kombat X": {
+    "file": "/covers/ps4/mortal-kombat-x.jpg",
+    "source": "restored",
+    "width": 274,
+    "height": 364,
+    "bytes": 16540
+  },
+  "Mortal Kombat 11": {
+    "file": "/covers/ps4/mortal-kombat-11.jpg",
+    "source": "restored",
+    "width": 273,
+    "height": 365,
+    "bytes": 20060
+  },
+  "Injustice: Gods Among Us": {
+    "file": "/covers/ps4/injustice-gods-among-us.jpg",
+    "source": "manual",
+    "width": 256,
+    "height": 315,
+    "bytes": 22881
+  },
+  "Injustice 2": {
+    "file": "/covers/ps4/injustice-2.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 487,
+    "bytes": 40108
+  },
+  "WWE 2K16": {
+    "file": "/covers/ps4/wwe-2k16.jpg",
+    "source": "restored",
+    "width": 265,
+    "height": 376,
+    "bytes": 28181
+  },
+  "WWE 2K17": {
+    "file": "/covers/ps4/wwe-2k17.jpg",
+    "source": "restored",
+    "width": 265,
+    "height": 376,
+    "bytes": 25586
+  },
+  "WWE 2K18": {
+    "file": "/covers/ps4/wwe-2k18.jpg",
+    "source": "restored",
+    "width": 265,
+    "height": 377,
+    "bytes": 29858
+  },
+  "WWE 2K24": {
+    "file": "/covers/ps4/wwe-2k24.jpg",
+    "source": "restored",
+    "width": 300,
+    "height": 450,
+    "bytes": 28702
+  },
+  "UFC": {
+    "file": "/covers/ps4/ufc.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 434,
+    "bytes": 40118
+  },
+  "EA Sports FC 24": {
+    "file": "/covers/ps4/ea-sports-fc-24.jpg",
+    "source": "manual",
+    "width": 314,
+    "height": 318,
+    "bytes": 29728
+  },
+  "EA Sports FC 25": {
+    "file": "/covers/ps4/ea-sports-fc-25.jpg",
+    "source": "restored",
+    "width": 300,
+    "height": 450,
+    "bytes": 25478
+  },
+  "EA Sports FC 26": {
+    "file": "/covers/ps4/ea-sports-fc-26.jpg",
+    "source": "manual",
+    "width": 316,
+    "height": 316,
+    "bytes": 24274
+  },
+  "FIFA 15": {
+    "file": "/covers/ps4/fifa-15.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 475,
+    "bytes": 30516
+  },
+  "FIFA 16": {
+    "file": "/covers/ps4/fifa-16.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 475,
+    "bytes": 30516
+  },
+  "FIFA 17": {
+    "file": "/covers/ps4/fifa-17.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 493,
+    "bytes": 52315
+  },
+  "FIFA 18": {
+    "file": "/covers/ps4/fifa-18.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 436,
+    "bytes": 32673
+  },
+  "FIFA 19": {
+    "file": "/covers/ps4/fifa-19.jpg",
+    "source": "restored",
+    "width": 390,
+    "height": 486,
+    "bytes": 49919
+  },
+  "FIFA 20": {
+    "file": "/covers/ps4/fifa-20.jpg",
+    "source": "restored",
+    "width": 492,
+    "height": 600,
+    "bytes": 54830
+  },
+  "FIFA 21": {
+    "file": "/covers/ps4/fifa-21.jpg",
+    "source": "restored",
+    "width": 265,
+    "height": 376,
+    "bytes": 23152
+  },
+  "FIFA 22": {
+    "file": "/covers/ps4/fifa-22.jpg",
+    "source": "restored",
+    "width": 390,
+    "height": 488,
+    "bytes": 29944
+  },
+  "eFootball PES 2020": {
+    "file": "/covers/ps4/efootball-pes-2020.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 440,
+    "bytes": 55577
+  },
+  "eFootball PES 2021": {
+    "file": "/covers/ps4/efootball-pes-2021.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 448,
+    "bytes": 45366
+  },
+  "NBA 2K16": {
+    "file": "/covers/ps4/nba-2k16.jpg",
+    "source": "restored",
+    "width": 265,
+    "height": 376,
+    "bytes": 22730
+  },
+  "NBA 2K17": {
+    "file": "/covers/ps4/nba-2k17.jpg",
+    "source": "restored",
+    "width": 265,
+    "height": 376,
+    "bytes": 20751
+  },
+  "Madden NFL 19": {
+    "file": "/covers/ps4/madden-nfl-19.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 496,
+    "bytes": 35199
+  },
+  "Madden NFL 20": {
+    "file": "/covers/ps4/madden-nfl-20.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 495,
+    "bytes": 40337
+  },
+  "Madden NFL 21": {
+    "file": "/covers/ps4/madden-nfl-21.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 467,
+    "bytes": 24138
+  },
+  "Madden NFL 22": {
+    "file": "/covers/ps4/madden-nfl-22.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 447,
+    "bytes": 35545
+  },
+  "Madden NFL 23": {
+    "file": "/covers/ps4/madden-nfl-23.jpg",
+    "source": "restored",
+    "width": 271,
+    "height": 368,
+    "bytes": 20629
+  },
+  "Madden NFL 24": {
+    "file": "/covers/ps4/madden-nfl-24.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 495,
+    "bytes": 40337
+  },
+  "MLB The Show 23": {
+    "file": "/covers/ps4/mlb-the-show-23.jpg",
+    "source": "restored",
+    "width": 273,
+    "height": 365,
+    "bytes": 27157
+  },
+  "MLB The Show 24": {
+    "file": "/covers/ps4/mlb-the-show-24.jpg",
+    "source": "restored",
+    "width": 273,
+    "height": 365,
+    "bytes": 29837
+  },
+  "F1 2016": {
+    "file": "/covers/ps4/f1-2016.jpg",
+    "source": "restored",
+    "width": 265,
+    "height": 377,
+    "bytes": 18835
+  },
+  "F1 2017": {
+    "file": "/covers/ps4/f1-2017.jpg",
+    "source": "restored",
+    "width": 600,
+    "height": 775,
+    "bytes": 65082
+  },
+  "F1 2020": {
+    "file": "/covers/ps4/f1-2020.jpg",
+    "source": "restored",
+    "width": 265,
+    "height": 374,
+    "bytes": 21385
+  },
+  "F1 2021": {
+    "file": "/covers/ps4/f1-2021.jpg",
+    "source": "restored",
+    "width": 267,
+    "height": 373,
+    "bytes": 24139
+  },
+  "F1 22": {
+    "file": "/covers/ps4/f1-22.jpg",
+    "source": "restored",
+    "width": 273,
+    "height": 365,
+    "bytes": 21640
+  },
+  "F1 23": {
+    "file": "/covers/ps4/f1-23.jpg",
+    "source": "restored",
+    "width": 265,
+    "height": 374,
+    "bytes": 21385
+  },
+  "F1 24": {
+    "file": "/covers/ps4/f1-24.jpg",
+    "source": "restored",
+    "width": 300,
+    "height": 450,
+    "bytes": 29198
+  },
+  "Dirt Rally": {
+    "file": "/covers/ps4/dirt-rally.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 463,
+    "bytes": 39969
+  },
+  "Dirt Rally 2.0": {
+    "file": "/covers/ps4/dirt-rally-2-0.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 463,
+    "bytes": 39969
+  },
+  "Dirt 4": {
+    "file": "/covers/ps4/dirt-4.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 504,
+    "bytes": 54738
+  },
+  "Dirt 5": {
+    "file": "/covers/ps4/dirt-5.jpg",
+    "source": "restored",
+    "width": 275,
+    "height": 363,
+    "bytes": 33738
+  },
+  "WRC 5": {
+    "file": "/covers/ps4/wrc-5.jpg",
+    "source": "manual",
+    "width": 284,
+    "height": 351,
+    "bytes": 21276
+  },
+  "WRC 6": {
+    "file": "/covers/ps4/wrc-6.jpg",
+    "source": "manual",
+    "width": 300,
+    "height": 339,
+    "bytes": 23721
+  },
+  "WRC 7": {
+    "file": "/covers/ps4/wrc-7.jpg",
+    "source": "restored",
+    "width": 300,
+    "height": 450,
+    "bytes": 21552
+  },
+  "WRC 8": {
+    "file": "/covers/ps4/wrc-8.jpg",
+    "source": "restored",
+    "width": 300,
+    "height": 450,
+    "bytes": 20572
+  },
+  "WRC 9": {
+    "file": "/covers/ps4/wrc-9.jpg",
+    "source": "restored",
+    "width": 300,
+    "height": 450,
+    "bytes": 38965
+  },
+  "WRC 10": {
+    "file": "/covers/ps4/wrc-10.jpg",
+    "source": "restored",
+    "width": 300,
+    "height": 450,
+    "bytes": 21278
+  },
+  "WRC Generations": {
+    "file": "/covers/ps4/wrc-generations.jpg",
+    "source": "manual",
+    "width": 250,
+    "height": 375,
+    "bytes": 19980
+  },
+  "Project CARS": {
+    "file": "/covers/ps4/project-cars.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 436,
+    "bytes": 40700
+  },
+  "Project CARS 2": {
+    "file": "/covers/ps4/project-cars-2.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 436,
+    "bytes": 29788
+  },
+  "Project CARS 3": {
+    "file": "/covers/ps4/project-cars-3.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 436,
+    "bytes": 40700
+  },
+  "Assetto Corsa": {
+    "file": "/covers/ps4/assetto-corsa.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 467,
+    "bytes": 20761
+  },
+  "Assetto Corsa Competizione": {
+    "file": "/covers/ps4/assetto-corsa-competizione.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 444,
+    "bytes": 36076
+  },
+  "Gran Turismo Sport": {
+    "file": "/covers/ps4/gran-turismo-sport.jpg",
+    "source": "restored",
+    "width": 270,
+    "height": 360,
+    "bytes": 16861
+  },
+  "The Crew": {
+    "file": "/covers/ps4/the-crew.jpg",
+    "source": "restored",
+    "width": 276,
+    "height": 361,
+    "bytes": 26584
+  },
+  "The Crew 2": {
+    "file": "/covers/ps4/the-crew-2.jpg",
+    "source": "restored",
+    "width": 276,
+    "height": 361,
+    "bytes": 25675
+  },
+  "Need for Speed Rivals": {
+    "file": "/covers/ps4/need-for-speed-rivals.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 436,
+    "bytes": 28317
+  },
+  "Need for Speed": {
+    "file": "/covers/ps4/need-for-speed.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 449,
+    "bytes": 50973
+  },
+  "Need for Speed Payback": {
+    "file": "/covers/ps4/need-for-speed-payback.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 436,
+    "bytes": 34411
+  },
+  "Need for Speed Heat": {
+    "file": "/covers/ps4/need-for-speed-heat.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 495,
+    "bytes": 34115
+  },
+  "Need for Speed Unbound": {
+    "file": "/covers/ps4/need-for-speed-unbound.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 449,
+    "bytes": 50973
+  },
+  "Burnout Paradise Remastered": {
+    "file": "/covers/ps4/burnout-paradise-remastered.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 479,
+    "bytes": 30968
+  },
+  "Hot Wheels Unleashed": {
+    "file": "/covers/ps4/hot-wheels-unleashed.jpg",
+    "source": "restored",
+    "width": 300,
+    "height": 450,
+    "bytes": 30839
+  },
+  "Hot Wheels Unleashed 2": {
+    "file": "/covers/ps4/hot-wheels-unleashed-2.jpg",
+    "source": "restored",
+    "width": 300,
+    "height": 450,
+    "bytes": 37727
+  },
+  "Crash Team Racing Nitro-Fueled": {
+    "file": "/covers/ps4/crash-team-racing-nitro-fueled.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 436,
+    "bytes": 50427
+  },
+  "Team Sonic Racing": {
+    "file": "/covers/ps4/team-sonic-racing.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 444,
+    "bytes": 47023
+  },
+  "Sonic Forces": {
+    "file": "/covers/ps4/sonic-forces.jpg",
+    "source": "restored",
+    "width": 300,
+    "height": 450,
+    "bytes": 26147
+  },
+  "Sonic Mania": {
+    "file": "/covers/ps4/sonic-mania.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 447,
+    "bytes": 43742
+  },
+  "Sonic Frontiers": {
+    "file": "/covers/ps4/sonic-frontiers.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 445,
+    "bytes": 39365
+  },
+  "Rayman Legends": {
+    "file": "/covers/ps4/rayman-legends.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 467,
+    "bytes": 38574
+  },
+  "Crash Bandicoot N. Sane Trilogy": {
+    "file": "/covers/ps4/crash-bandicoot-n-sane-trilogy.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 439,
+    "bytes": 50822
+  },
+  "Crash Bandicoot 4": {
+    "file": "/covers/ps4/crash-bandicoot-4.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 435,
+    "bytes": 44667
+  },
+  "Spyro Reignited Trilogy": {
+    "file": "/covers/ps4/spyro-reignited-trilogy.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 435,
+    "bytes": 43544
+  },
+  "New Super Lucky's Tale": {
+    "file": "/covers/ps4/new-super-luckys-tale.jpg",
+    "source": "restored",
+    "width": 300,
+    "height": 450,
+    "bytes": 34115
+  },
+  "Yooka-Laylee": {
+    "file": "/covers/ps4/yooka-laylee.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 439,
+    "bytes": 45394
+  },
+  "Yooka-Laylee and the Impossible Lair": {
+    "file": "/covers/ps4/yooka-laylee-and-the-impossible-lair.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 439,
+    "bytes": 45394
+  },
+  "Shovel Knight": {
+    "file": "/covers/ps4/shovel-knight.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 464,
+    "bytes": 47538
+  },
+  "Cuphead": {
+    "file": "/covers/ps4/cuphead.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 487,
+    "bytes": 33015
+  },
+  "Celeste": {
+    "file": "/covers/ps4/celeste.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 400,
+    "bytes": 35959
+  },
+  "Hollow Knight": {
+    "file": "/covers/ps4/hollow-knight.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 467,
+    "bytes": 36489
+  },
+  "Ori and the Blind Forest": {
+    "file": "/covers/ps4/ori-and-the-blind-forest.jpg",
+    "source": "restored",
+    "width": 273,
+    "height": 365,
+    "bytes": 20595
+  },
+  "Ori and the Will of the Wisps": {
+    "file": "/covers/ps4/ori-and-the-will-of-the-wisps.jpg",
+    "source": "restored",
+    "width": 300,
+    "height": 450,
+    "bytes": 31288
+  },
+  "Dead Cells": {
+    "file": "/covers/ps4/dead-cells.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 484,
+    "bytes": 41884
+  },
+  "Hades": {
+    "file": "/covers/ps4/hades.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 482,
+    "bytes": 42107
+  },
+  "Enter the Gungeon": {
+    "file": "/covers/ps4/enter-the-gungeon.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 436,
+    "bytes": 39089
+  },
+  "The Binding of Isaac: Rebirth": {
+    "file": "/covers/ps4/the-binding-of-isaac-rebirth.jpg",
+    "source": "restored",
+    "width": 300,
+    "height": 450,
+    "bytes": 27907
+  },
+  "A Hat in Time": {
+    "file": "/covers/ps4/a-hat-in-time.jpg",
+    "source": "restored",
+    "width": 300,
+    "height": 450,
+    "bytes": 38841
+  },
+  "Little Nightmares": {
+    "file": "/covers/ps4/little-nightmares.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 467,
+    "bytes": 19218
+  },
+  "Little Nightmares II": {
+    "file": "/covers/ps4/little-nightmares-ii.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 467,
+    "bytes": 19218
+  },
+  "Inside": {
+    "file": "/covers/ps4/inside.jpg",
+    "source": "restored",
+    "width": 300,
+    "height": 461,
+    "bytes": 18394
+  },
+  "Limbo": {
+    "file": "/covers/ps4/limbo.jpg",
+    "source": "restored",
+    "width": 320,
+    "height": 432,
+    "bytes": 8244
+  },
+  "Journey": {
+    "file": "/covers/ps4/journey.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 467,
+    "bytes": 56422
+  },
+  "Abzu": {
+    "file": "/covers/ps4/abzu.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 437,
+    "bytes": 28349
+  },
+  "Flower": {
+    "file": "/covers/ps4/flower.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 467,
+    "bytes": 28232
+  },
+  "Child of Light": {
+    "file": "/covers/ps4/child-of-light.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 502,
+    "bytes": 34750
+  },
+  "Trine 2": {
+    "file": "/covers/ps4/trine-2.jpg",
+    "source": "restored",
+    "width": 264,
+    "height": 377,
+    "bytes": 25077
+  },
+  "Trine 3": {
+    "file": "/covers/ps4/trine-3.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 436,
+    "bytes": 34522
+  },
+  "Trine 4": {
+    "file": "/covers/ps4/trine-4.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 426,
+    "bytes": 43862
+  },
+  "Broforce": {
+    "file": "/covers/ps4/broforce.jpg",
+    "source": "restored",
+    "width": 300,
+    "height": 450,
+    "bytes": 32262
+  },
+  "Guacamelee!": {
+    "file": "/covers/ps4/guacamelee.jpg",
+    "source": "restored",
+    "width": 584,
+    "height": 714,
+    "bytes": 98940
+  },
+  "Guacamelee! 2": {
+    "file": "/covers/ps4/guacamelee-2.jpg",
+    "source": "restored",
+    "width": 300,
+    "height": 450,
+    "bytes": 37050
+  },
+  "Shantae: Half-Genie Hero": {
+    "file": "/covers/ps4/shantae-half-genie-hero.jpg",
+    "source": "restored",
+    "width": 300,
+    "height": 450,
+    "bytes": 34070
+  },
+  "Shantae and the Pirate's Curse": {
+    "file": "/covers/ps4/shantae-and-the-pirates-curse.jpg",
+    "source": "restored",
+    "width": 300,
+    "height": 450,
+    "bytes": 31611
+  },
+  "Owlboy": {
+    "file": "/covers/ps4/owlboy.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 436,
+    "bytes": 46321
+  },
+  "Fez": {
+    "file": "/covers/ps4/fez.jpg",
+    "source": "restored",
+    "width": 300,
+    "height": 450,
+    "bytes": 32940
+  },
+  "The Witness": {
+    "file": "/covers/ps4/the-witness.jpg",
+    "source": "restored",
+    "width": 300,
+    "height": 450,
+    "bytes": 19632
+  },
+  "The Talos Principle": {
+    "file": "/covers/ps4/the-talos-principle.jpg",
+    "source": "restored",
+    "width": 300,
+    "height": 450,
+    "bytes": 16739
+  },
+  "The Escapists": {
+    "file": "/covers/ps4/the-escapists.jpg",
+    "source": "restored",
+    "width": 300,
+    "height": 450,
+    "bytes": 19222
+  },
+  "The Escapists 2": {
+    "file": "/covers/ps4/the-escapists-2.jpg",
+    "source": "restored",
+    "width": 300,
+    "height": 450,
+    "bytes": 29280
+  },
+  "Terraria": {
+    "file": "/covers/ps4/terraria.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 502,
+    "bytes": 47828
+  },
+  "Minecraft": {
+    "file": "/covers/ps4/minecraft.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 440,
+    "bytes": 40093
+  },
+  "Stardew Valley": {
+    "file": "/covers/ps4/stardew-valley.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 440,
+    "bytes": 44731
+  },
+  "Don't Starve": {
+    "file": "/covers/ps4/dont-starve.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 437,
+    "bytes": 46344
+  },
+  "Don't Starve Together": {
+    "file": "/covers/ps4/dont-starve-together.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 437,
+    "bytes": 46344
+  },
+  "Cities: Skylines": {
+    "file": "/covers/ps4/cities-skylines.jpg",
+    "source": "restored",
+    "width": 273,
+    "height": 365,
+    "bytes": 23728
+  },
+  "Jurassic World Evolution": {
+    "file": "/covers/ps4/jurassic-world-evolution.jpg",
+    "source": "restored",
+    "width": 273,
+    "height": 365,
+    "bytes": 21619
+  },
+  "Planet Coaster": {
+    "file": "/covers/ps4/planet-coaster.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 467,
+    "bytes": 42718
+  },
+  "Two Point Hospital": {
+    "file": "/covers/ps4/two-point-hospital.jpg",
+    "source": "restored",
+    "width": 273,
+    "height": 364,
+    "bytes": 27265
+  },
+  "The Sims 4": {
+    "file": "/covers/ps4/the-sims-4.jpg",
+    "source": "restored",
+    "width": 300,
+    "height": 450,
+    "bytes": 38876
+  },
+  "Dragon Age: Inquisition": {
+    "file": "/covers/ps4/dragon-age-inquisition.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 443,
+    "bytes": 42720
+  },
+  "Mass Effect Legendary Edition": {
+    "file": "/covers/ps4/mass-effect-legendary-edition.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 451,
+    "bytes": 34795
+  },
+  "Star Wars Battlefront": {
+    "file": "/covers/ps4/star-wars-battlefront.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 474,
+    "bytes": 40815
+  },
+  "Star Wars Battlefront II": {
+    "file": "/covers/ps4/star-wars-battlefront-ii.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 436,
+    "bytes": 34612
+  },
+  "Star Wars Jedi: Fallen Order": {
+    "file": "/covers/ps4/star-wars-jedi-fallen-order.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 447,
+    "bytes": 33618
+  },
+  "Star Wars Jedi: Survivor": {
+    "file": "/covers/ps4/star-wars-jedi-survivor.jpg",
+    "source": "restored",
+    "width": 300,
+    "height": 450,
+    "bytes": 21602
+  },
+  "Star Wars Squadrons": {
+    "file": "/covers/ps4/star-wars-squadrons.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 436,
+    "bytes": 37953
+  },
+  "Star Wars: Republic Commando": {
+    "file": "/covers/ps4/star-wars-republic-commando.jpg",
+    "source": "manual",
+    "width": 269,
+    "height": 372,
+    "bytes": 28669
+  },
+  "LEGO Star Wars: The Skywalker Saga": {
+    "file": "/covers/ps4/lego-star-wars-the-skywalker-saga.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 445,
+    "bytes": 41220
+  },
+  "LEGO Marvel Super Heroes": {
+    "file": "/covers/ps4/lego-marvel-super-heroes.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 467,
+    "bytes": 49556
+  },
+  "LEGO Marvel Super Heroes 2": {
+    "file": "/covers/ps4/lego-marvel-super-heroes-2.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 439,
+    "bytes": 50682
+  },
+  "LEGO DC Super-Villains": {
+    "file": "/covers/ps4/lego-dc-super-villains.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 446,
+    "bytes": 44933
+  },
+  "LEGO Batman 3": {
+    "file": "/covers/ps4/lego-batman-3.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 525,
+    "bytes": 38594
+  },
+  "LEGO Jurassic World": {
+    "file": "/covers/ps4/lego-jurassic-world.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 443,
+    "bytes": 44024
+  },
+  "LEGO The Incredibles": {
+    "file": "/covers/ps4/lego-the-incredibles.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 436,
+    "bytes": 42478
+  },
+  "LEGO Harry Potter Collection": {
+    "file": "/covers/ps4/lego-harry-potter-collection.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 469,
+    "bytes": 40709
+  },
+  "LEGO City Undercover": {
+    "file": "/covers/ps4/lego-city-undercover.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 446,
+    "bytes": 49943
+  },
+  "LEGO The Hobbit": {
+    "file": "/covers/ps4/lego-the-hobbit.jpg",
+    "source": "restored",
+    "width": 267,
+    "height": 373,
+    "bytes": 27614
+  },
+  "Middle-earth: Shadow of Mordor": {
+    "file": "/covers/ps4/middle-earth-shadow-of-mordor.jpg",
+    "source": "restored",
+    "width": 273,
+    "height": 365,
+    "bytes": 17335
+  },
+  "Middle-earth: Shadow of War": {
+    "file": "/covers/ps4/middle-earth-shadow-of-war.jpg",
+    "source": "restored",
+    "width": 273,
+    "height": 365,
+    "bytes": 16751
+  },
+  "Mad Max": {
+    "file": "/covers/ps4/mad-max.jpg",
+    "source": "restored",
+    "width": 300,
+    "height": 450,
+    "bytes": 28091
+  },
+  "Batman: Arkham Knight": {
+    "file": "/covers/ps4/batman-arkham-knight.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 467,
+    "bytes": 37257
+  },
+  "Batman: Return to Arkham": {
+    "file": "/covers/ps4/batman-return-to-arkham.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 437,
+    "bytes": 41801
+  },
+  "Batman: Arkham VR": {
+    "file": "/covers/ps4/batman-arkham-vr.jpg",
+    "source": "restored",
+    "width": 300,
+    "height": 450,
+    "bytes": 23202
+  },
+  "Suicide Squad: Kill the Justice League": {
+    "file": "/covers/ps4/suicide-squad-kill-the-justice-league.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 440,
+    "bytes": 41527
+  },
+  "Marvel's Guardians of the Galaxy": {
+    "file": "/covers/ps4/marvels-guardians-of-the-galaxy.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 467,
+    "bytes": 46351
+  },
+  "Marvel's Avengers": {
+    "file": "/covers/ps4/marvels-avengers.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 442,
+    "bytes": 40367
+  },
+  "Marvel's Midnight Suns": {
+    "file": "/covers/ps4/marvels-midnight-suns.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 441,
+    "bytes": 39215
+  },
+  "Deadpool": {
+    "file": "/covers/ps4/deadpool.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 491,
+    "bytes": 30231
+  },
+  "XCOM 2": {
+    "file": "/covers/ps4/xcom-2.jpg",
+    "source": "restored",
+    "width": 500,
+    "height": 709,
+    "bytes": 74378
+  },
+  "Civilization VI": {
+    "file": "/covers/ps4/civilization-vi.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 467,
+    "bytes": 32327
+  },
+  "Diablo III: Eternal Collection": {
+    "file": "/covers/ps4/diablo-iii-eternal-collection.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 525,
+    "bytes": 45006
+  },
+  "Diablo II: Resurrected": {
+    "file": "/covers/ps4/diablo-ii-resurrected.jpg",
+    "source": "manual",
+    "width": 257,
+    "height": 387,
+    "bytes": 16221
+  },
+  "Diablo IV": {
+    "file": "/covers/ps4/diablo-iv.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 491,
+    "bytes": 20556
+  },
+  "Torchlight II": {
+    "file": "/covers/ps4/torchlight-ii.jpg",
+    "source": "restored",
+    "width": 400,
+    "height": 612,
+    "bytes": 44398
+  },
+  "Torchlight III": {
+    "file": "/covers/ps4/torchlight-iii.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 450,
+    "bytes": 52458
+  },
+  "Path of Exile": {
+    "file": "/covers/ps4/path-of-exile.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 464,
+    "bytes": 32129
+  },
+  "Divinity: Original Sin": {
+    "file": "/covers/ps4/divinity-original-sin.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 460,
+    "bytes": 49882
+  },
+  "Divinity: Original Sin 2": {
+    "file": "/covers/ps4/divinity-original-sin-2.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 460,
+    "bytes": 49882
+  },
+  "Pillars of Eternity": {
+    "file": "/covers/ps4/pillars-of-eternity.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 467,
+    "bytes": 35911
+  },
+  "Pillars of Eternity II": {
+    "file": "/covers/ps4/pillars-of-eternity-ii.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 446,
+    "bytes": 34023
+  },
+  "Wasteland 2": {
+    "file": "/covers/ps4/wasteland-2.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 467,
+    "bytes": 28531
+  },
+  "Wasteland 3": {
+    "file": "/covers/ps4/wasteland-3.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 486,
+    "bytes": 36145
+  },
+  "Fallout 4": {
+    "file": "/covers/ps4/fallout-4.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 501,
+    "bytes": 31913
+  },
+  "Fallout 76": {
+    "file": "/covers/ps4/fallout-76.jpg",
+    "source": "restored",
+    "width": 400,
+    "height": 400,
+    "bytes": 30967
+  },
+  "Fallout Shelter": {
+    "file": "/covers/ps4/fallout-shelter.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 443,
+    "bytes": 31431
+  },
+  "The Elder Scrolls V: Skyrim Special Edition": {
+    "file": "/covers/ps4/the-elder-scrolls-v-skyrim-special-edition.jpg",
+    "source": "restored",
+    "width": 300,
+    "height": 450,
+    "bytes": 23490
+  },
+  "The Elder Scrolls Online": {
+    "file": "/covers/ps4/the-elder-scrolls-online.jpg",
+    "source": "restored",
+    "width": 264,
+    "height": 376,
+    "bytes": 19200
+  },
+  "The Outer Worlds": {
+    "file": "/covers/ps4/the-outer-worlds.jpg",
+    "source": "restored",
+    "width": 273,
+    "height": 365,
+    "bytes": 28558
+  },
+  "Kingdom Come: Deliverance": {
+    "file": "/covers/ps4/kingdom-come-deliverance.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 433,
+    "bytes": 33289
+  },
+  "Mount & Blade II: Bannerlord": {
+    "file": "/covers/ps4/mount-blade-ii-bannerlord.jpg",
+    "source": "restored",
+    "width": 273,
+    "height": 364,
+    "bytes": 24796
+  },
+  "Assassin's Creed IV: Black Flag": {
+    "file": "/covers/ps4/assassins-creed-iv-black-flag.jpg",
+    "source": "restored",
+    "width": 300,
+    "height": 450,
+    "bytes": 31516
+  },
+  "Assassin's Creed Rogue Remastered": {
+    "file": "/covers/ps4/assassins-creed-rogue-remastered.jpg",
+    "source": "manual",
+    "width": 279,
+    "height": 357,
+    "bytes": 26143
+  },
+  "Assassin's Creed Unity": {
+    "file": "/covers/ps4/assassins-creed-unity.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 439,
+    "bytes": 43144
+  },
+  "Assassin's Creed Syndicate": {
+    "file": "/covers/ps4/assassins-creed-syndicate.jpg",
+    "source": "restored",
+    "width": 276,
+    "height": 361,
+    "bytes": 26478
+  },
+  "Assassin's Creed Origins": {
+    "file": "/covers/ps4/assassins-creed-origins.jpg",
+    "source": "restored",
+    "width": 300,
+    "height": 450,
+    "bytes": 32078
+  },
+  "Assassin's Creed Odyssey": {
+    "file": "/covers/ps4/assassins-creed-odyssey.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 467,
+    "bytes": 36684
+  },
+  "Assassin's Creed Valhalla": {
+    "file": "/covers/ps4/assassins-creed-valhalla.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 467,
+    "bytes": 36684
+  },
+  "Assassin's Creed Mirage": {
+    "file": "/covers/ps4/assassins-creed-mirage.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 438,
+    "bytes": 33176
+  },
+  "Assassin's Creed III Remastered": {
+    "file": "/covers/ps4/assassins-creed-iii-remastered.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 436,
+    "bytes": 39838
+  },
+  "Far Cry 4": {
+    "file": "/covers/ps4/far-cry-4.jpg",
+    "source": "restored",
+    "width": 300,
+    "height": 450,
+    "bytes": 33772
+  },
+  "Far Cry Primal": {
+    "file": "/covers/ps4/far-cry-primal.jpg",
+    "source": "restored",
+    "width": 300,
+    "height": 450,
+    "bytes": 31349
+  },
+  "Far Cry 5": {
+    "file": "/covers/ps4/far-cry-5.jpg",
+    "source": "restored",
+    "width": 276,
+    "height": 361,
+    "bytes": 28988
+  },
+  "Far Cry New Dawn": {
+    "file": "/covers/ps4/far-cry-new-dawn.jpg",
+    "source": "restored",
+    "width": 276,
+    "height": 361,
+    "bytes": 28723
+  },
+  "Far Cry 6": {
+    "file": "/covers/ps4/far-cry-6.jpg",
+    "source": "restored",
+    "width": 276,
+    "height": 361,
+    "bytes": 23818
+  },
+  "Watch Dogs": {
+    "file": "/covers/ps4/watch-dogs.jpg",
+    "source": "restored",
+    "width": 276,
+    "height": 361,
+    "bytes": 23059
+  },
+  "Watch Dogs 2": {
+    "file": "/covers/ps4/watch-dogs-2.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 515,
+    "bytes": 45968
+  },
+  "Watch Dogs Legion": {
+    "file": "/covers/ps4/watch-dogs-legion.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 445,
+    "bytes": 42215
+  },
+  "Tom Clancy's The Division": {
+    "file": "/covers/ps4/tom-clancys-the-division.jpg",
+    "source": "restored",
+    "width": 300,
+    "height": 450,
+    "bytes": 34821
+  },
+  "Ghost Recon Wildlands": {
+    "file": "/covers/ps4/ghost-recon-wildlands.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 482,
+    "bytes": 49280
+  },
+  "Ghost Recon Breakpoint": {
+    "file": "/covers/ps4/ghost-recon-breakpoint.jpg",
+    "source": "restored",
+    "width": 380,
+    "height": 391,
+    "bytes": 23415
+  },
+  "Rainbow Six Siege": {
+    "file": "/covers/ps4/rainbow-six-siege.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 467,
+    "bytes": 39948
+  },
+  "The Crew Motorfest": {
+    "file": "/covers/ps4/the-crew-motorfest.jpg",
+    "source": "restored",
+    "width": 300,
+    "height": 450,
+    "bytes": 29550
+  },
+  "South Park: The Stick of Truth": {
+    "file": "/covers/ps4/south-park-the-stick-of-truth.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 493,
+    "bytes": 52050
+  },
+  "South Park: The Fractured but Whole": {
+    "file": "/covers/ps4/south-park-the-fractured-but-whole.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 493,
+    "bytes": 52050
+  },
+  "Trials Fusion": {
+    "file": "/covers/ps4/trials-fusion.jpg",
+    "source": "restored",
+    "width": 274,
+    "height": 363,
+    "bytes": 23880
+  },
+  "Trials Rising": {
+    "file": "/covers/ps4/trials-rising.jpg",
+    "source": "restored",
+    "width": 276,
+    "height": 361,
+    "bytes": 27504
+  },
+  "Prince of Persia: The Lost Crown": {
+    "file": "/covers/ps4/prince-of-persia-the-lost-crown.jpg",
+    "source": "restored",
+    "width": 273,
+    "height": 365,
+    "bytes": 24424
+  },
+  "Immortals Fenyx Rising": {
+    "file": "/covers/ps4/immortals-fenyx-rising.jpg",
+    "source": "restored",
+    "width": 276,
+    "height": 361,
+    "bytes": 26743
+  },
+  "Avatar: Frontiers of Pandora": {
+    "file": "/covers/ps4/avatar-frontiers-of-pandora.jpg",
+    "source": "restored",
+    "width": 275,
+    "height": 363,
+    "bytes": 26377
+  },
+  "Starlink: Battle for Atlas": {
+    "file": "/covers/ps4/starlink-battle-for-atlas.jpg",
+    "source": "restored",
+    "width": 276,
+    "height": 361,
+    "bytes": 11047
+  },
+  "Riders Republic": {
+    "file": "/covers/ps4/riders-republic.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 436,
+    "bytes": 42341
+  },
+  "Skull and Bones": {
+    "file": "/covers/ps4/skull-and-bones.jpg",
+    "source": "restored",
+    "width": 300,
+    "height": 450,
+    "bytes": 35472
+  },
+  "Dying Light": {
+    "file": "/covers/ps4/dying-light.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 467,
+    "bytes": 37417
+  },
+  "Dying Light 2 Stay Human": {
+    "file": "/covers/ps4/dying-light-2-stay-human.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 434,
+    "bytes": 32465
+  },
+  "Dead Island Definitive Edition": {
+    "file": "/covers/ps4/dead-island-definitive-edition.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 483,
+    "bytes": 47374
+  },
+  "Dead Island 2": {
+    "file": "/covers/ps4/dead-island-2.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 433,
+    "bytes": 45723
+  },
+  "Dead Rising": {
+    "file": "/covers/ps4/dead-rising.jpg",
+    "source": "restored",
+    "width": 520,
+    "height": 733,
+    "bytes": 63919
+  },
+  "Dead Rising 2": {
+    "file": "/covers/ps4/dead-rising-2.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 499,
+    "bytes": 49392
+  },
+  "Dead Rising 2: Off the Record": {
+    "file": "/covers/ps4/dead-rising-2-off-the-record.jpg",
+    "source": "restored",
+    "width": 300,
+    "height": 450,
+    "bytes": 37497
+  },
+  "Dead Rising 3": {
+    "file": "/covers/ps4/dead-rising-3.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 441,
+    "bytes": 38463
+  },
+  "Dead Rising 4": {
+    "file": "/covers/ps4/dead-rising-4.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 445,
+    "bytes": 36540
+  },
+  "Resident Evil": {
+    "file": "/covers/ps4/resident-evil.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 440,
+    "bytes": 34127
+  },
+  "Resident Evil 0": {
+    "file": "/covers/ps4/resident-evil-0.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 438,
+    "bytes": 31801
+  },
+  "Resident Evil 2": {
+    "file": "/covers/ps4/resident-evil-2.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 442,
+    "bytes": 37034
+  },
+  "Resident Evil 3": {
+    "file": "/covers/ps4/resident-evil-3.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 439,
+    "bytes": 31639
+  },
+  "Resident Evil 4": {
+    "file": "/covers/ps4/resident-evil-4.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 440,
+    "bytes": 25195
+  },
+  "Resident Evil 5": {
+    "file": "/covers/ps4/resident-evil-5.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 432,
+    "bytes": 54614
+  },
+  "Resident Evil 6": {
+    "file": "/covers/ps4/resident-evil-6.jpg",
+    "source": "restored",
+    "width": 500,
+    "height": 589,
+    "bytes": 30611
+  },
+  "Resident Evil 7": {
+    "file": "/covers/ps4/resident-evil-7.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 443,
+    "bytes": 23557
+  },
+  "Resident Evil Village": {
+    "file": "/covers/ps4/resident-evil-village.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 440,
+    "bytes": 34127
+  },
+  "Resident Evil Revelations": {
+    "file": "/covers/ps4/resident-evil-revelations.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 495,
+    "bytes": 40791
+  },
+  "Resident Evil Revelations 2": {
+    "file": "/covers/ps4/resident-evil-revelations-2.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 495,
+    "bytes": 40791
+  },
+  "Resident Evil Resistance": {
+    "file": "/covers/ps4/resident-evil-resistance.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 486,
+    "bytes": 38641
+  },
+  "Resident Evil Operation Raccoon City": {
+    "file": "/covers/ps4/resident-evil-operation-raccoon-city.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 487,
+    "bytes": 42725
+  },
+  "Resident Evil Umbrella Corps": {
+    "file": "/covers/ps4/resident-evil-umbrella-corps.jpg",
+    "source": "restored",
+    "width": 266,
+    "height": 374,
+    "bytes": 21593
+  },
+  "Devil May Cry 4 Special Edition": {
+    "file": "/covers/ps4/devil-may-cry-4-special-edition.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 436,
+    "bytes": 43355
+  },
+  "Devil May Cry 5": {
+    "file": "/covers/ps4/devil-may-cry-5.jpg",
+    "source": "restored",
+    "width": 273,
+    "height": 365,
+    "bytes": 28576
+  },
+  "Devil May Cry HD Collection": {
+    "file": "/covers/ps4/devil-may-cry-hd-collection.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 436,
+    "bytes": 29250
+  },
+  "DMC: Devil May Cry Definitive Edition": {
+    "file": "/covers/ps4/dmc-devil-may-cry-definitive-edition.jpg",
+    "source": "manual",
+    "width": 273,
+    "height": 365,
+    "bytes": 25355
+  },
+  "Marvel vs. Capcom: Infinite": {
+    "file": "/covers/ps4/marvel-vs-capcom-infinite.jpg",
+    "source": "restored",
+    "width": 300,
+    "height": 450,
+    "bytes": 35494
+  },
+  "Marvel vs. Capcom Fighting Collection": {
+    "file": "/covers/ps4/marvel-vs-capcom-fighting-collection.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 479,
+    "bytes": 66927
+  },
+  "Mega Man Legacy Collection": {
+    "file": "/covers/ps4/mega-man-legacy-collection.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 431,
+    "bytes": 47963
+  },
+  "Mega Man Legacy Collection 2": {
+    "file": "/covers/ps4/mega-man-legacy-collection-2.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 431,
+    "bytes": 47963
+  },
+  "Mega Man 11": {
+    "file": "/covers/ps4/mega-man-11.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 444,
+    "bytes": 46982
+  },
+  "Onimusha: Warlords": {
+    "file": "/covers/ps4/onimusha-warlords.jpg",
+    "source": "restored",
+    "width": 300,
+    "height": 450,
+    "bytes": 24797
+  },
+  "Okami HD": {
+    "file": "/covers/ps4/okami-hd.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 438,
+    "bytes": 53388
+  },
+  "Dragon's Dogma: Dark Arisen": {
+    "file": "/covers/ps4/dragons-dogma-dark-arisen.jpg",
+    "source": "restored",
+    "width": 300,
+    "height": 450,
+    "bytes": 39774
+  },
+  "Sifu": {
+    "file": "/covers/ps4/sifu.jpg",
+    "source": "restored",
+    "width": 273,
+    "height": 365,
+    "bytes": 14376
+  },
+  "Sleeping Dogs: Definitive Edition": {
+    "file": "/covers/ps4/sleeping-dogs-definitive-edition.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 460,
+    "bytes": 55292
+  },
+  "Mafia III": {
+    "file": "/covers/ps4/mafia-iii.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 525,
+    "bytes": 53721
+  },
+  "Mafia: Definitive Edition": {
+    "file": "/covers/ps4/mafia-definitive-edition.jpg",
+    "source": "restored",
+    "width": 300,
+    "height": 450,
+    "bytes": 25480
+  },
+  "Mafia II: Definitive Edition": {
+    "file": "/covers/ps4/mafia-ii-definitive-edition.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 525,
+    "bytes": 53721
+  },
+  "L.A. Noire": {
+    "file": "/covers/ps4/l-a-noire.jpg",
+    "source": "restored",
+    "width": 300,
+    "height": 450,
+    "bytes": 29567
+  },
+  "Bully": {
+    "file": "/covers/ps4/bully.jpg",
+    "source": "restored",
+    "width": 300,
+    "height": 450,
+    "bytes": 29140
+  },
+  "Saints Row IV": {
+    "file": "/covers/ps4/saints-row-iv.jpg",
+    "source": "restored",
+    "width": 270,
+    "height": 370,
+    "bytes": 29090
+  },
+  "Saints Row: Gat out of Hell": {
+    "file": "/covers/ps4/saints-row-gat-out-of-hell.jpg",
+    "source": "restored",
+    "width": 300,
+    "height": 450,
+    "bytes": 41702
+  },
+  "Saints Row": {
+    "file": "/covers/ps4/saints-row.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 441,
+    "bytes": 35401
+  },
+  "Saints Row The Third Remastered": {
+    "file": "/covers/ps4/saints-row-the-third-remastered.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 487,
+    "bytes": 44066
+  },
+  "Just Cause 3": {
+    "file": "/covers/ps4/just-cause-3.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 500,
+    "bytes": 51205
+  },
+  "Just Cause 4": {
+    "file": "/covers/ps4/just-cause-4.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 427,
+    "bytes": 22752
+  },
+  "Prototype 2": {
+    "file": "/covers/ps4/prototype-2.jpg",
+    "source": "restored",
+    "width": 450,
+    "height": 500,
+    "bytes": 41529
+  },
+  "Darksiders Warmastered Edition": {
+    "file": "/covers/ps4/darksiders-warmastered-edition.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 498,
+    "bytes": 47475
+  },
+  "Darksiders II Deathinitive Edition": {
+    "file": "/covers/ps4/darksiders-ii-deathinitive-edition.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 437,
+    "bytes": 38188
+  },
+  "Darksiders III": {
+    "file": "/covers/ps4/darksiders-iii.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 445,
+    "bytes": 41599
+  },
+  "Darksiders Genesis": {
+    "file": "/covers/ps4/darksiders-genesis.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 437,
+    "bytes": 37402
+  },
+  "Metal Gear Solid V: Ground Zeroes": {
+    "file": "/covers/ps4/metal-gear-solid-v-ground-zeroes.jpg",
+    "source": "manual",
+    "width": 250,
+    "height": 309,
+    "bytes": 15636
+  },
+  "Metal Gear Solid V: The Phantom Pain": {
+    "file": "/covers/ps4/metal-gear-solid-v-the-phantom-pain.jpg",
+    "source": "restored",
+    "width": 273,
+    "height": 365,
+    "bytes": 16076
+  },
+  "Metal Gear Survive": {
+    "file": "/covers/ps4/metal-gear-survive.jpg",
+    "source": "manual",
+    "width": 258,
+    "height": 387,
+    "bytes": 24233
+  },
+  "Hitman": {
+    "file": "/covers/ps4/hitman.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 445,
+    "bytes": 23408
+  },
+  "Hitman 2": {
+    "file": "/covers/ps4/hitman-2.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 433,
+    "bytes": 23145
+  },
+  "Hitman 3": {
+    "file": "/covers/ps4/hitman-3.jpg",
+    "source": "restored",
+    "width": 300,
+    "height": 450,
+    "bytes": 7922
+  },
+  "Hitman World of Assassination": {
+    "file": "/covers/ps4/hitman-world-of-assassination.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 445,
+    "bytes": 23408
+  },
+  "Sniper Elite 3": {
+    "file": "/covers/ps4/sniper-elite-3.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 525,
+    "bytes": 30920
+  },
+  "Sniper Elite 4": {
+    "file": "/covers/ps4/sniper-elite-4.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 438,
+    "bytes": 37942
+  },
+  "Sniper Elite 5": {
+    "file": "/covers/ps4/sniper-elite-5.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 435,
+    "bytes": 39470
+  },
+  "Sniper Ghost Warrior 3": {
+    "file": "/covers/ps4/sniper-ghost-warrior-3.jpg",
+    "source": "restored",
+    "width": 450,
+    "height": 518,
+    "bytes": 53314
+  },
+  "Sniper Ghost Warrior Contracts": {
+    "file": "/covers/ps4/sniper-ghost-warrior-contracts.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 447,
+    "bytes": 35370
+  },
+  "Sniper Ghost Warrior Contracts 2": {
+    "file": "/covers/ps4/sniper-ghost-warrior-contracts-2.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 447,
+    "bytes": 35370
+  },
+  "Wolfenstein: The New Order": {
+    "file": "/covers/ps4/wolfenstein-the-new-order.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 453,
+    "bytes": 45100
+  },
+  "Wolfenstein: The Old Blood": {
+    "file": "/covers/ps4/wolfenstein-the-old-blood.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 453,
+    "bytes": 45100
+  },
+  "Wolfenstein II: The New Colossus": {
+    "file": "/covers/ps4/wolfenstein-ii-the-new-colossus.jpg",
+    "source": "restored",
+    "width": 273,
+    "height": 365,
+    "bytes": 17857
+  },
+  "Wolfenstein: Youngblood": {
+    "file": "/covers/ps4/wolfenstein-youngblood.jpg",
+    "source": "restored",
+    "width": 320,
+    "height": 450,
+    "bytes": 35051
+  },
+  "DOOM": {
+    "file": "/covers/ps4/doom.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 435,
+    "bytes": 40684
+  },
+  "DOOM Eternal": {
+    "file": "/covers/ps4/doom-eternal.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 400,
+    "bytes": 35652
+  },
+  "Quake": {
+    "file": "/covers/ps4/quake.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 467,
+    "bytes": 30412
+  },
+  "Quake II": {
+    "file": "/covers/ps4/quake-ii.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 437,
+    "bytes": 22833
+  },
+  "Rage 2": {
+    "file": "/covers/ps4/rage-2.jpg",
+    "source": "restored",
+    "width": 500,
+    "height": 699,
+    "bytes": 73368
+  },
+  "Prey": {
+    "file": "/covers/ps4/prey.jpg",
+    "source": "restored",
+    "width": 600,
+    "height": 818,
+    "bytes": 72879
+  },
+  "Dishonored Definitive Edition": {
+    "file": "/covers/ps4/dishonored-definitive-edition.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 437,
+    "bytes": 31724
+  },
+  "Dishonored 2": {
+    "file": "/covers/ps4/dishonored-2.jpg",
+    "source": "restored",
+    "width": 500,
+    "height": 577,
+    "bytes": 49255
+  },
+  "Dishonored: Death of the Outsider": {
+    "file": "/covers/ps4/dishonored-death-of-the-outsider.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 525,
+    "bytes": 35276
+  },
+  "Deathloop": {
+    "file": "/covers/ps4/deathloop.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 437,
+    "bytes": 39548
+  },
+  "The Evil Within": {
+    "file": "/covers/ps4/the-evil-within.jpg",
+    "source": "restored",
+    "width": 300,
+    "height": 450,
+    "bytes": 28970
+  },
+  "The Evil Within 2": {
+    "file": "/covers/ps4/the-evil-within-2.jpg",
+    "source": "restored",
+    "width": 300,
+    "height": 450,
+    "bytes": 23279
+  },
+  "Alien: Isolation": {
+    "file": "/covers/ps4/alien-isolation.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 497,
+    "bytes": 28492
+  },
+  "Outlast": {
+    "file": "/covers/ps4/outlast.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 467,
+    "bytes": 14045
+  },
+  "Outlast 2": {
+    "file": "/covers/ps4/outlast-2.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 460,
+    "bytes": 29058
+  },
+  "Amnesia: Collection": {
+    "file": "/covers/ps4/amnesia-collection.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 436,
+    "bytes": 24526
+  },
+  "SOMA": {
+    "file": "/covers/ps4/soma.jpg",
+    "source": "restored",
+    "width": 300,
+    "height": 450,
+    "bytes": 15474
+  },
+  "Layers of Fear": {
+    "file": "/covers/ps4/layers-of-fear.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 498,
+    "bytes": 47442
+  },
+  "Layers of Fear 2": {
+    "file": "/covers/ps4/layers-of-fear-2.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 498,
+    "bytes": 47442
+  },
+  "Dead by Daylight": {
+    "file": "/covers/ps4/dead-by-daylight.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 469,
+    "bytes": 30922
+  },
+  "World War Z": {
+    "file": "/covers/ps4/world-war-z.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 447,
+    "bytes": 22846
+  },
+  "Back 4 Blood": {
+    "file": "/covers/ps4/back-4-blood.jpg",
+    "source": "restored",
+    "width": 268,
+    "height": 372,
+    "bytes": 20320
+  },
+  "Killing Floor 2": {
+    "file": "/covers/ps4/killing-floor-2.jpg",
+    "source": "restored",
+    "width": 275,
+    "height": 363,
+    "bytes": 24696
+  },
+  "Payday 2": {
+    "file": "/covers/ps4/payday-2.jpg",
+    "source": "restored",
+    "width": 347,
+    "height": 500,
+    "bytes": 20804
+  },
+  "Overcooked": {
+    "file": "/covers/ps4/overcooked.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 525,
+    "bytes": 45041
+  },
+  "Overcooked 2": {
+    "file": "/covers/ps4/overcooked-2.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 525,
+    "bytes": 45041
+  },
+  "Moving Out": {
+    "file": "/covers/ps4/moving-out.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 433,
+    "bytes": 37437
+  },
+  "Moving Out 2": {
+    "file": "/covers/ps4/moving-out-2.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 433,
+    "bytes": 37437
+  },
+  "It Takes Two": {
+    "file": "/covers/ps4/it-takes-two.jpg",
+    "source": "restored",
+    "width": 300,
+    "height": 450,
+    "bytes": 30959
+  },
+  "A Way Out": {
+    "file": "/covers/ps4/a-way-out.jpg",
+    "source": "restored",
+    "width": 267,
+    "height": 374,
+    "bytes": 17329
+  },
+  "Unravel": {
+    "file": "/covers/ps4/unravel.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 453,
+    "bytes": 37574
+  },
+  "Unravel Two": {
+    "file": "/covers/ps4/unravel-two.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 453,
+    "bytes": 37574
+  },
+  "Human: Fall Flat": {
+    "file": "/covers/ps4/human-fall-flat.jpg",
+    "source": "restored",
+    "width": 300,
+    "height": 450,
+    "bytes": 36268
+  },
+  "Gang Beasts": {
+    "file": "/covers/ps4/gang-beasts.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 436,
+    "bytes": 23099
+  },
+  "Rocket League": {
+    "file": "/covers/ps4/rocket-league.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 437,
+    "bytes": 41333
+  },
+  "Among Us": {
+    "file": "/covers/ps4/among-us.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 467,
+    "bytes": 46300
+  },
+  "Brawlhalla": {
+    "file": "/covers/ps4/brawlhalla.jpg",
+    "source": "restored",
+    "width": 300,
+    "height": 450,
+    "bytes": 37273
+  },
+  "Warframe": {
+    "file": "/covers/ps4/warframe.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 505,
+    "bytes": 30361
+  },
+  "Destiny": {
+    "file": "/covers/ps4/destiny.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 467,
+    "bytes": 51705
+  },
+  "Destiny 2": {
+    "file": "/covers/ps4/destiny-2.jpg",
+    "source": "restored",
+    "width": 359,
+    "height": 434,
+    "bytes": 36571
+  },
+  "Call of Duty: Ghosts": {
+    "file": "/covers/ps4/call-of-duty-ghosts.jpg",
+    "source": "restored",
+    "width": 261,
+    "height": 380,
+    "bytes": 20108
+  },
+  "Call of Duty: Advanced Warfare": {
+    "file": "/covers/ps4/call-of-duty-advanced-warfare.jpg",
+    "source": "restored",
+    "width": 270,
+    "height": 368,
+    "bytes": 22284
+  },
+  "Call of Duty: Black Ops III": {
+    "file": "/covers/ps4/call-of-duty-black-ops-iii.jpg",
+    "source": "restored",
+    "width": 274,
+    "height": 365,
+    "bytes": 19724
+  },
+  "Call of Duty: Infinite Warfare": {
+    "file": "/covers/ps4/call-of-duty-infinite-warfare.jpg",
+    "source": "restored",
+    "width": 261,
+    "height": 380,
+    "bytes": 16577
+  },
+  "Call of Duty: Modern Warfare Remastered": {
+    "file": "/covers/ps4/call-of-duty-modern-warfare-remastered.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 437,
+    "bytes": 29202
+  },
+  "Call of Duty: WWII": {
+    "file": "/covers/ps4/call-of-duty-wwii.jpg",
+    "source": "manual",
+    "width": 281,
+    "height": 355,
+    "bytes": 21979
+  },
+  "Call of Duty: Black Ops 4": {
+    "file": "/covers/ps4/call-of-duty-black-ops-4.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 497,
+    "bytes": 31482
+  },
+  "Call of Duty: Modern Warfare": {
+    "file": "/covers/ps4/call-of-duty-modern-warfare.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 467,
+    "bytes": 37998
+  },
+  "Call of Duty: Modern Warfare 2 Campaign Remastered": {
+    "file": "/covers/ps4/call-of-duty-modern-warfare-2-campaign-remastered.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 445,
+    "bytes": 31925
+  },
+  "Call of Duty: Black Ops Cold War": {
+    "file": "/covers/ps4/call-of-duty-black-ops-cold-war.jpg",
+    "source": "restored",
+    "width": 270,
+    "height": 371,
+    "bytes": 24837
+  },
+  "Call of Duty: Vanguard": {
+    "file": "/covers/ps4/call-of-duty-vanguard.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 487,
+    "bytes": 34688
+  },
+  "Call of Duty: Modern Warfare II": {
+    "file": "/covers/ps4/call-of-duty-modern-warfare-ii.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 467,
+    "bytes": 37998
+  },
+  "Call of Duty: Modern Warfare III": {
+    "file": "/covers/ps4/call-of-duty-modern-warfare-iii.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 467,
+    "bytes": 37998
+  },
+  "Call of Duty: Black Ops 6": {
+    "file": "/covers/ps4/call-of-duty-black-ops-6.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 463,
+    "bytes": 30709
+  },
+  "Battlefield 4": {
+    "file": "/covers/ps4/battlefield-4.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 494,
+    "bytes": 56447
+  },
+  "Battlefield Hardline": {
+    "file": "/covers/ps4/battlefield-hardline.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 437,
+    "bytes": 35452
+  },
+  "Battlefield 1": {
+    "file": "/covers/ps4/battlefield-1.jpg",
+    "source": "restored",
+    "width": 380,
+    "height": 391,
+    "bytes": 39754
+  },
+  "Battlefield V": {
+    "file": "/covers/ps4/battlefield-v.jpg",
+    "source": "restored",
+    "width": 400,
+    "height": 400,
+    "bytes": 36405
+  },
+  "Battlefield 2042": {
+    "file": "/covers/ps4/battlefield-2042.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 493,
+    "bytes": 51824
+  },
+  "Titanfall 2": {
+    "file": "/covers/ps4/titanfall-2.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 483,
+    "bytes": 20709
+  },
+  "Apex Legends": {
+    "file": "/covers/ps4/apex-legends.jpg",
+    "source": "steam",
+    "width": 300,
+    "height": 450,
+    "bytes": 39396
+  },
+  "Plants vs. Zombies: Garden Warfare": {
+    "file": "/covers/ps4/plants-vs-zombies-garden-warfare.jpg",
+    "source": "restored",
+    "width": 300,
+    "height": 450,
+    "bytes": 38870
+  },
+  "Plants vs. Zombies: Garden Warfare 2": {
+    "file": "/covers/ps4/plants-vs-zombies-garden-warfare-2.jpg",
+    "source": "restored",
+    "width": 300,
+    "height": 450,
+    "bytes": 38870
+  },
+  "Plants vs. Zombies: Battle for Neighborville": {
+    "file": "/covers/ps4/plants-vs-zombies-battle-for-neighborville.jpg",
+    "source": "restored",
+    "width": 300,
+    "height": 450,
+    "bytes": 32594
+  },
+  "The Dark Pictures: Man of Medan": {
+    "file": "/covers/ps4/the-dark-pictures-man-of-medan.jpg",
+    "source": "restored",
+    "width": 273,
+    "height": 365,
+    "bytes": 17819
+  },
+  "The Quarry": {
+    "file": "/covers/ps4/the-quarry.jpg",
+    "source": "restored",
+    "width": 300,
+    "height": 450,
+    "bytes": 34791
+  },
+  "The Walking Dead: Season Two": {
+    "file": "/covers/ps4/the-walking-dead-season-two.jpg",
+    "source": "restored",
+    "width": 300,
+    "height": 450,
+    "bytes": 28621
+  },
+  "The Walking Dead: A New Frontier": {
+    "file": "/covers/ps4/the-walking-dead-a-new-frontier.jpg",
+    "source": "restored",
+    "width": 300,
+    "height": 450,
+    "bytes": 30122
+  },
+  "The Walking Dead: The Final Season": {
+    "file": "/covers/ps4/the-walking-dead-the-final-season.jpg",
+    "source": "restored",
+    "width": 300,
+    "height": 450,
+    "bytes": 29536
+  },
+  "Batman: The Telltale Series": {
+    "file": "/covers/ps4/batman-the-telltale-series.jpg",
+    "source": "restored",
+    "width": 300,
+    "height": 450,
+    "bytes": 17116
+  },
+  "Batman: The Enemy Within": {
+    "file": "/covers/ps4/batman-the-enemy-within.jpg",
+    "source": "restored",
+    "width": 300,
+    "height": 450,
+    "bytes": 28737
+  },
+  "Tales from the Borderlands": {
+    "file": "/covers/ps4/tales-from-the-borderlands.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 467,
+    "bytes": 39185
+  },
+  "Borderlands: The Handsome Collection": {
+    "file": "/covers/ps4/borderlands-the-handsome-collection.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 439,
+    "bytes": 49697
+  },
+  "Borderlands 3": {
+    "file": "/covers/ps4/borderlands-3.jpg",
+    "source": "restored",
+    "width": 271,
+    "height": 368,
+    "bytes": 34910
+  },
+  "Tiny Tina's Wonderlands": {
+    "file": "/covers/ps4/tiny-tinas-wonderlands.jpg",
+    "source": "restored",
+    "width": 273,
+    "height": 365,
+    "bytes": 24353
+  },
+  "Control": {
+    "file": "/covers/ps4/control.jpg",
+    "source": "restored",
+    "width": 273,
+    "height": 365,
+    "bytes": 17819
+  },
+  "Alan Wake Remastered": {
+    "file": "/covers/ps4/alan-wake-remastered.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 441,
+    "bytes": 17883
+  },
+  "Remnant: From the Ashes": {
+    "file": "/covers/ps4/remnant-from-the-ashes.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 450,
+    "bytes": 39575
+  },
+  "The Surge": {
+    "file": "/covers/ps4/the-surge.jpg",
+    "source": "restored",
+    "width": 300,
+    "height": 450,
+    "bytes": 19944
+  },
+  "The Surge 2": {
+    "file": "/covers/ps4/the-surge-2.jpg",
+    "source": "restored",
+    "width": 300,
+    "height": 450,
+    "bytes": 27536
+  },
+  "Lords of the Fallen": {
+    "file": "/covers/ps4/lords-of-the-fallen.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 485,
+    "bytes": 37077
+  },
+  "Mortal Shell": {
+    "file": "/covers/ps4/mortal-shell.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 467,
+    "bytes": 25667
+  },
+  "My Hero One's Justice 2": {
+    "file": "/covers/ps4/my-hero-ones-justice-2.jpg",
+    "source": "restored",
+    "width": 300,
+    "height": 450,
+    "bytes": 34235
+  },
+  "WWE 2K19": {
+    "file": "/covers/ps4/wwe-2k19.jpg",
+    "source": "manual",
+    "width": 266,
+    "height": 333,
+    "bytes": 23559
+  },
+  "F1 2015": {
+    "file": "/covers/ps4/f1-2015.jpg",
+    "source": "manual",
+    "width": 295,
+    "height": 338,
+    "bytes": 24530
+  },
+  "F1 2018": {
+    "file": "/covers/ps4/f1-2018.jpg",
+    "source": "manual",
+    "width": 273,
+    "height": 365,
+    "bytes": 17969
+  },
+  "F1 2019": {
+    "file": "/covers/ps4/f1-2019.jpg",
+    "source": "manual",
+    "width": 270,
+    "height": 321,
+    "bytes": 15089
+  },
+  "Far Cry 3 Classic Edition": {
+    "file": "/covers/ps4/far-cry-3-classic-edition.jpg",
+    "source": "manual",
+    "width": 283,
+    "height": 352,
+    "bytes": 29646
+  },
+  "FIFA 14": {
+    "file": "/covers/ps4/fifa-14.jpg",
+    "source": "manual",
+    "width": 284,
+    "height": 350,
+    "bytes": 22957
+  },
+  "Friday the 13th: The Game": {
+    "file": "/covers/ps4/friday-the-13th-the-game.jpg",
+    "source": "manual",
+    "width": 259,
+    "height": 345,
+    "bytes": 17116
+  },
+  "MLB The Show 19": {
+    "file": "/covers/ps4/mlb-the-show-19.jpg",
+    "source": "manual",
+    "width": 279,
+    "height": 356,
+    "bytes": 21238
+  },
+  "MLB The Show 20": {
+    "file": "/covers/ps4/mlb-the-show-20.jpg",
+    "source": "manual",
+    "width": 300,
+    "height": 300,
+    "bytes": 15185
+  },
+  "MLB The Show 21": {
+    "file": "/covers/ps4/mlb-the-show-21.jpg",
+    "source": "manual",
+    "width": 255,
+    "height": 383,
+    "bytes": 24882
+  },
+  "MLB The Show 22": {
+    "file": "/covers/ps4/mlb-the-show-22.jpg",
+    "source": "manual",
+    "width": 316,
+    "height": 316,
+    "bytes": 19706
+  },
+  "NBA 2K18": {
+    "file": "/covers/ps4/nba-2k18.jpg",
+    "source": "manual",
+    "width": 265,
+    "height": 376,
+    "bytes": 20842
+  },
+  "NBA 2K19": {
+    "file": "/covers/ps4/nba-2k19.jpg",
+    "source": "manual",
+    "width": 290,
+    "height": 351,
+    "bytes": 30613
+  },
+  "NBA 2K20": {
+    "file": "/covers/ps4/nba-2k20.jpg",
+    "source": "manual",
+    "width": 258,
+    "height": 387,
+    "bytes": 21799
+  },
+  "NBA 2K21": {
+    "file": "/covers/ps4/nba-2k21.jpg",
+    "source": "manual",
+    "width": 285,
+    "height": 358,
+    "bytes": 21082
+  },
+  "NBA 2K22": {
+    "file": "/covers/ps4/nba-2k22.jpg",
+    "source": "manual",
+    "width": 282,
+    "height": 353,
+    "bytes": 23974
+  },
+  "NBA 2K23": {
+    "file": "/covers/ps4/nba-2k23.jpg",
+    "source": "manual",
+    "width": 235,
+    "height": 259,
+    "bytes": 18831
+  },
+  "NBA 2K24": {
+    "file": "/covers/ps4/nba-2k24.jpg",
+    "source": "manual",
+    "width": 288,
+    "height": 346,
+    "bytes": 26847
+  },
+  "PES 2017": {
+    "file": "/covers/ps4/pes-2017.jpg",
+    "source": "manual",
+    "width": 281,
+    "height": 355,
+    "bytes": 27976
+  },
+  "PES 2018": {
+    "file": "/covers/ps4/pes-2018.jpg",
+    "source": "manual",
+    "width": 281,
+    "height": 354,
+    "bytes": 25416
+  },
+  "PES 2019": {
+    "file": "/covers/ps4/pes-2019.jpg",
+    "source": "manual",
+    "width": 280,
+    "height": 355,
+    "bytes": 24825
+  },
+  "Prototype Biohazard Bundle": {
+    "file": "/covers/ps4/prototype-biohazard-bundle.jpg",
+    "source": "manual",
+    "width": 267,
+    "height": 373,
+    "bytes": 19628
+  },
+  "Rainbow Six Extraction": {
+    "file": "/covers/ps4/rainbow-six-extraction.jpg",
+    "source": "manual",
+    "width": 276,
+    "height": 361,
+    "bytes": 21835
+  },
+  "Resident Evil Code: Veronica X": {
+    "file": "/covers/ps4/resident-evil-code-veronica-x.jpg",
+    "source": "manual",
+    "width": 259,
+    "height": 388,
+    "bytes": 19730
+  },
+  "Star Ocean: Integrity and Faithlessness": {
+    "file": "/covers/ps4/star-ocean-integrity-and-faithlessness.jpg",
+    "source": "manual",
+    "width": 250,
+    "height": 310,
+    "bytes": 26341
+  },
+  "The Dark Pictures: House of Ashes": {
+    "file": "/covers/ps4/the-dark-pictures-house-of-ashes.jpg",
+    "source": "manual",
+    "width": 273,
+    "height": 365,
+    "bytes": 17879
+  },
+  "The Dark Pictures: Little Hope": {
+    "file": "/covers/ps4/the-dark-pictures-little-hope.jpg",
+    "source": "manual",
+    "width": 285,
+    "height": 349,
+    "bytes": 16938
+  },
+  "The Dark Pictures: The Devil in Me": {
+    "file": "/covers/ps4/the-dark-pictures-the-devil-in-me.jpg",
+    "source": "manual",
+    "width": 280,
+    "height": 356,
+    "bytes": 15976
+  },
+  "The Division 2": {
+    "file": "/covers/ps4/the-division-2.jpg",
+    "source": "manual",
+    "width": 276,
+    "height": 361,
+    "bytes": 24954
+  },
+  "The Last Guardian": {
+    "file": "/covers/ps4/the-last-guardian.jpg",
+    "source": "manual",
+    "width": 300,
+    "height": 330,
+    "bytes": 21377
+  },
+  "The Last of Us Remastered": {
+    "file": "/covers/ps4/the-last-of-us-remastered.jpg",
+    "source": "manual",
+    "width": 256,
+    "height": 340,
+    "bytes": 20997
+  },
+  "The Order: 1886": {
+    "file": "/covers/ps4/the-order-1886.jpg",
+    "source": "manual",
+    "width": 250,
+    "height": 278,
+    "bytes": 14461
+  },
+  "The Walking Dead: Season One": {
+    "file": "/covers/ps4/the-walking-dead-season-one.jpg",
+    "source": "manual",
+    "width": 250,
+    "height": 375,
+    "bytes": 18053
+  },
+  "Trine Enchanted Edition": {
+    "file": "/covers/ps4/trine-enchanted-edition.jpg",
+    "source": "manual",
+    "width": 256,
+    "height": 360,
+    "bytes": 24455
+  },
+  "UFC 2": {
+    "file": "/covers/ps4/ufc-2.jpg",
+    "source": "manual",
+    "width": 301,
+    "height": 331,
+    "bytes": 21046
+  },
+  "UFC 3": {
+    "file": "/covers/ps4/ufc-3.jpg",
+    "source": "manual",
+    "width": 290,
+    "height": 344,
+    "bytes": 24615
+  },
+  "UFC 4": {
+    "file": "/covers/ps4/ufc-4.jpg",
+    "source": "manual",
+    "width": 303,
+    "height": 329,
+    "bytes": 27104
+  },
+  "WWE 2K20": {
+    "file": "/covers/ps4/wwe-2k20.jpg",
+    "source": "manual",
+    "width": 281,
+    "height": 353,
+    "bytes": 26259
+  },
+  "WWE 2K22": {
+    "file": "/covers/ps4/wwe-2k22.jpg",
+    "source": "manual",
+    "width": 281,
+    "height": 354,
+    "bytes": 20946
+  },
+  "WWE 2K23": {
+    "file": "/covers/ps4/wwe-2k23.jpg",
+    "source": "manual",
+    "width": 281,
+    "height": 354,
+    "bytes": 16302
+  },
+  "Assassin's Creed The Ezio Collection": {
+    "file": "/covers/ps4/assassins-creed-the-ezio-collection.jpg",
+    "source": "wikipedia",
+    "width": 276,
+    "height": 361,
+    "bytes": 21614
+  },
+  "Fall Guys": {
+    "file": "/covers/ps4/fall-guys.jpg",
+    "source": "manual",
+    "width": 300,
+    "height": 450,
+    "bytes": 36587
+  }
+}

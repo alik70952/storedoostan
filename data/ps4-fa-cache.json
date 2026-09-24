@@ -1,0 +1,2002 @@
+{
+  "Cyberpunk 2077": {
+    "titleFa": "سایبرپانک ۲۰۷۷",
+    "genre": "نقش‌آفرینی"
+  },
+  "Elden Ring": {
+    "titleFa": "الدن رینگ",
+    "genre": "نقش‌آفرینی"
+  },
+  "Dark Souls Remastered": {
+    "titleFa": "دارک سولز ریمسترد",
+    "genre": "نقش‌آفرینی"
+  },
+  "Dark Souls II: Scholar of the First Sin": {
+    "titleFa": "دارک سولز ۲: اسکولار آو د فرست سین",
+    "genre": "نقش‌آفرینی"
+  },
+  "Dark Souls III": {
+    "titleFa": "دارک سولز ۳",
+    "genre": "نقش‌آفرینی"
+  },
+  "Sekiro: Shadows Die Twice": {
+    "titleFa": "سکیرو: سایه‌ها دو بار می‌میرند",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Nioh": {
+    "titleFa": "نیوه",
+    "genre": "نقش‌آفرینی"
+  },
+  "Nioh 2": {
+    "titleFa": "نیوه ۲",
+    "genre": "نقش‌آفرینی"
+  },
+  "Monster Hunter: World": {
+    "titleFa": "مانستر هانتر: ورلد",
+    "genre": "نقش‌آفرینی"
+  },
+  "Monster Hunter World: Iceborne": {
+    "titleFa": "مانستر هانتر ورلد: آیس‌بورن",
+    "genre": "نقش‌آفرینی"
+  },
+  "Final Fantasy XV": {
+    "titleFa": "فاینال فانتزی ۱۵",
+    "genre": "نقش‌آفرینی"
+  },
+  "Final Fantasy VII Remake": {
+    "titleFa": "فاینال فانتزی ۷ ریمیک",
+    "genre": "نقش‌آفرینی"
+  },
+  "Final Fantasy XII: The Zodiac Age": {
+    "titleFa": "فاینال فانتزی ۱۲: زودیاک ایج",
+    "genre": "نقش‌آفرینی"
+  },
+  "Final Fantasy X/X-2 HD Remaster": {
+    "titleFa": "فاینال فانتزی ۱۰/۱۰-۲ اچ‌دی ریمستر",
+    "genre": "نقش‌آفرینی"
+  },
+  "Final Fantasy VIII Remastered": {
+    "titleFa": "فاینال فانتزی ۸ ریمسترد",
+    "genre": "نقش‌آفرینی"
+  },
+  "Final Fantasy IX": {
+    "titleFa": "فاینال فانتزی ۹",
+    "genre": "نقش‌آفرینی"
+  },
+  "Final Fantasy Type-0 HD": {
+    "titleFa": "فاینال فانتزی تایپ-۰ اچ‌دی",
+    "genre": "نقش‌آفرینی"
+  },
+  "Kingdom Hearts III": {
+    "titleFa": "کینگدام هارتس ۳",
+    "genre": "نقش‌آفرینی"
+  },
+  "Kingdom Hearts HD 1.5+2.5 Remix": {
+    "titleFa": "کینگدام هارتس اچ‌دی ۱.۵+۲.۵ ریمیکس",
+    "genre": "نقش‌آفرینی"
+  },
+  "Kingdom Hearts HD 2.8 Final Chapter Prologue": {
+    "titleFa": "کینگدام هارتس اچ‌دی ۲.۸ فاینال چپتر پرولوگ",
+    "genre": "نقش‌آفرینی"
+  },
+  "Killzone Shadow Fall": {
+    "titleFa": "کیلزون شادو فال",
+    "genre": "شوتر"
+  },
+  "Driveclub": {
+    "titleFa": "درایوکلاب",
+    "genre": "مسابقه‌ای"
+  },
+  "The Order: 1886": {
+    "titleFa": "دی اوردر: ۱۸۸۶",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Until Dawn": {
+    "titleFa": "آنتیل دان",
+    "genre": "ترس و بقا"
+  },
+  "LittleBigPlanet 3": {
+    "titleFa": "لیتل بیگ پلنت ۳",
+    "genre": "خانوادگی"
+  },
+  "Dreams": {
+    "titleFa": "دریمز",
+    "genre": "خانوادگی"
+  },
+  "Concrete Genie": {
+    "titleFa": "کانکریت جینی",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Knack": {
+    "titleFa": "نک",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Knack 2": {
+    "titleFa": "نک ۲",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Detroit: Become Human": {
+    "titleFa": "دیترویت: بیکام هیومن",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Heavy Rain": {
+    "titleFa": "هوی رین",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Beyond: Two Souls": {
+    "titleFa": "بیاند: تو سولز",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Shadow of the Colossus": {
+    "titleFa": "سایه کلوسوس",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "The Last Guardian": {
+    "titleFa": "آخرین نگهبان",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Gravity Rush 2": {
+    "titleFa": "گرویتی راش ۲",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Everybody's Golf": {
+    "titleFa": "اوربادی گلف",
+    "genre": "ورزشی"
+  },
+  "Astro Bot Rescue Mission": {
+    "titleFa": "استرو بات رسکیو میشن",
+    "genre": "خانوادگی"
+  },
+  "MediEvil": {
+    "titleFa": "مدی ایول",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Sackboy: A Big Adventure": {
+    "titleFa": "سک بوی: یک ماجراجویی بزرگ",
+    "genre": "خانوادگی"
+  },
+  "The Witcher 3: Wild Hunt": {
+    "titleFa": "ویچر ۳: وایلد هانت",
+    "genre": "نقش‌آفرینی"
+  },
+  "Dragon Quest XI S": {
+    "titleFa": "دراگون کوئست ۱۱ اس",
+    "genre": "نقش‌آفرینی"
+  },
+  "Persona 5": {
+    "titleFa": "پرسونا ۵",
+    "genre": "نقش‌آفرینی"
+  },
+  "Persona 5 Royal": {
+    "titleFa": "پرسونا ۵ رویال",
+    "genre": "نقش‌آفرینی"
+  },
+  "Persona 5 Strikers": {
+    "titleFa": "پرسونا ۵ استریکرز",
+    "genre": "نقش‌آفرینی"
+  },
+  "Persona 4 Arena Ultimax": {
+    "titleFa": "پرسونا ۴ آرنا التیماکس",
+    "genre": "مبارزه‌ای"
+  },
+  "Persona 3 Reload": {
+    "titleFa": "پرسونا ۳ ریلود",
+    "genre": "نقش‌آفرینی"
+  },
+  "Yakuza 0": {
+    "titleFa": "یاکوزا ۰",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Yakuza Kiwami": {
+    "titleFa": "یاکوزا کیوامی",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Yakuza Kiwami 2": {
+    "titleFa": "یاکوزا کیوامی ۲",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Yakuza 3 Remastered": {
+    "titleFa": "یاکوزا ۳ ریمسترد",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Yakuza 4 Remastered": {
+    "titleFa": "یاکوزا ۴ ریمسترد",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Yakuza 5 Remastered": {
+    "titleFa": "یاکوزا ۵ ریمسترد",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Yakuza 6: The Song of Life": {
+    "titleFa": "یاکوزا ۶: نغمه زندگی",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Yakuza: Like a Dragon": {
+    "titleFa": "یاکوزا: لایک ا دراگون",
+    "genre": "نقش‌آفرینی"
+  },
+  "Judgment": {
+    "titleFa": "جاجمنت",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Lost Judgment": {
+    "titleFa": "لاست جاجمنت",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "NieR: Automata": {
+    "titleFa": "نیر: اتوماتا",
+    "genre": "نقش‌آفرینی"
+  },
+  "NieR Replicant": {
+    "titleFa": "نیر رپلیکنت",
+    "genre": "نقش‌آفرینی"
+  },
+  "Tales of Berseria": {
+    "titleFa": "تیلز آو برسریا",
+    "genre": "نقش‌آفرینی"
+  },
+  "Tales of Zestiria": {
+    "titleFa": "تیلز آو زستیریا",
+    "genre": "نقش‌آفرینی"
+  },
+  "Grand Theft Auto V": {
+    "titleFa": "اتومبیل‌دزدی بزرگ ۵",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Red Dead Redemption 2": {
+    "titleFa": "رد دد ردمپشن ۲",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "God of War": {
+    "titleFa": "خدای جنگ",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "God of War Ragnarök": {
+    "titleFa": "خدای جنگ راگناروک",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Marvel's Spider-Man": {
+    "titleFa": "مرد عنکبوتی مارول",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Marvel's Spider-Man: Miles Morales": {
+    "titleFa": "مرد عنکبوتی: مایلز مورالس",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "The Last of Us Remastered": {
+    "titleFa": "آخرین بازمانده از ما ریمستر",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "The Last of Us Part II": {
+    "titleFa": "آخرین بازمانده از ما بخش ۲",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Uncharted 4: A Thief's End": {
+    "titleFa": "آنچارتد ۴: عاقبت یک دزد",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Uncharted: The Lost Legacy": {
+    "titleFa": "آنچارتد: میراث گمشده",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Horizon Zero Dawn": {
+    "titleFa": "هورایزن زیرو داون",
+    "genre": "نقش‌آفرینی"
+  },
+  "Horizon Forbidden West": {
+    "titleFa": "هورایزن غرب ممنوعه",
+    "genre": "نقش‌آفرینی"
+  },
+  "Ghost of Tsushima": {
+    "titleFa": "شبح تسوشیما",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Days Gone": {
+    "titleFa": "دیز گان",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Bloodborne": {
+    "titleFa": "بلادبورن",
+    "genre": "نقش‌آفرینی"
+  },
+  "Death Stranding": {
+    "titleFa": "دث استرندینگ",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Death Stranding Director's Cut": {
+    "titleFa": "دث استرندینگ نسخه کارگردان",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Ratchet & Clank": {
+    "titleFa": "رچت و کلنک",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "inFAMOUS Second Son": {
+    "titleFa": "اینفیموس سکند سان",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "inFAMOUS First Light": {
+    "titleFa": "اینفیموس فرست لایت",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Jump Force": {
+    "titleFa": "جامپ فورس",
+    "genre": "مبارزه‌ای"
+  },
+  "Soulcalibur VI": {
+    "titleFa": "سول کالیبر ۶",
+    "genre": "مبارزه‌ای"
+  },
+  "Tekken 7": {
+    "titleFa": "تکن ۷",
+    "genre": "مبارزه‌ای"
+  },
+  "Street Fighter V": {
+    "titleFa": "استریت فایتر ۵",
+    "genre": "مبارزه‌ای"
+  },
+  "Street Fighter 30th Anniversary Collection": {
+    "titleFa": "استریت فایتر: مجموعه سی‌امین سالگرد",
+    "genre": "مبارزه‌ای"
+  },
+  "Mortal Kombat X": {
+    "titleFa": "مورتال کمبت ۱۰",
+    "genre": "مبارزه‌ای"
+  },
+  "Mortal Kombat 11": {
+    "titleFa": "مورتال کمبت ۱۱",
+    "genre": "مبارزه‌ای"
+  },
+  "Injustice: Gods Among Us": {
+    "titleFa": "اینجاستیس: خدایان در میان ما",
+    "genre": "مبارزه‌ای"
+  },
+  "Injustice 2": {
+    "titleFa": "اینجاستیس ۲",
+    "genre": "مبارزه‌ای"
+  },
+  "WWE 2K16": {
+    "titleFa": "دبلیودبلیوای ۲کی۱۶",
+    "genre": "ورزشی"
+  },
+  "WWE 2K17": {
+    "titleFa": "دبلیودبلیوای ۲کی۱۷",
+    "genre": "ورزشی"
+  },
+  "WWE 2K18": {
+    "titleFa": "دبلیودبلیوای ۲کی۱۸",
+    "genre": "ورزشی"
+  },
+  "WWE 2K19": {
+    "titleFa": "دبلیودبلیوای ۲کی۱۹",
+    "genre": "ورزشی"
+  },
+  "WWE 2K20": {
+    "titleFa": "دبلیودبلیوای ۲کی۲۰",
+    "genre": "ورزشی"
+  },
+  "WWE 2K22": {
+    "titleFa": "دبلیودبلیوای ۲کی۲۲",
+    "genre": "ورزشی"
+  },
+  "WWE 2K23": {
+    "titleFa": "دبلیودبلیوای ۲کی۲۳",
+    "genre": "ورزشی"
+  },
+  "WWE 2K24": {
+    "titleFa": "دبلیودبلیوای ۲کی۲۴",
+    "genre": "ورزشی"
+  },
+  "UFC": {
+    "titleFa": "یو اف سی",
+    "genre": "ورزشی"
+  },
+  "UFC 2": {
+    "titleFa": "یو اف سی ۲",
+    "genre": "ورزشی"
+  },
+  "UFC 3": {
+    "titleFa": "یو اف سی ۳",
+    "genre": "ورزشی"
+  },
+  "UFC 4": {
+    "titleFa": "یو اف سی ۴",
+    "genre": "مبارزه‌ای"
+  },
+  "EA Sports FC 24": {
+    "titleFa": "اف سی ۲۴",
+    "genre": "ورزشی"
+  },
+  "EA Sports FC 25": {
+    "titleFa": "اف سی ۲۵",
+    "genre": "ورزشی"
+  },
+  "EA Sports FC 26": {
+    "titleFa": "اف سی ۲۶",
+    "genre": "ورزشی"
+  },
+  "FIFA 14": {
+    "titleFa": "فیفا ۱۴",
+    "genre": "ورزشی"
+  },
+  "FIFA 15": {
+    "titleFa": "فیفا ۱۵",
+    "genre": "ورزشی"
+  },
+  "FIFA 16": {
+    "titleFa": "فیفا ۱۶",
+    "genre": "ورزشی"
+  },
+  "FIFA 17": {
+    "titleFa": "فیفا ۱۷",
+    "genre": "ورزشی"
+  },
+  "FIFA 18": {
+    "titleFa": "فیفا ۱۸",
+    "genre": "ورزشی"
+  },
+  "FIFA 19": {
+    "titleFa": "فیفا ۱۹",
+    "genre": "ورزشی"
+  },
+  "FIFA 20": {
+    "titleFa": "فیفا ۲۰",
+    "genre": "ورزشی"
+  },
+  "FIFA 21": {
+    "titleFa": "فیفا ۲۱",
+    "genre": "ورزشی"
+  },
+  "FIFA 22": {
+    "titleFa": "فیفا ۲۲",
+    "genre": "ورزشی"
+  },
+  "eFootball PES 2020": {
+    "titleFa": "پی اس ۲۰۲۰",
+    "genre": "ورزشی"
+  },
+  "eFootball PES 2021": {
+    "titleFa": "پی اس ۲۰۲۱",
+    "genre": "ورزشی"
+  },
+  "PES 2017": {
+    "titleFa": "پی اس ۲۰۱۷",
+    "genre": "ورزشی"
+  },
+  "PES 2018": {
+    "titleFa": "پی اس ۲۰۱۸",
+    "genre": "ورزشی"
+  },
+  "PES 2019": {
+    "titleFa": "پی اس ۲۰۱۹",
+    "genre": "ورزشی"
+  },
+  "NBA 2K16": {
+    "titleFa": "ان بی ای ۲کا۱۶",
+    "genre": "ورزشی"
+  },
+  "NBA 2K17": {
+    "titleFa": "ان بی ای ۲کا۱۷",
+    "genre": "ورزشی"
+  },
+  "F1 2016": {
+    "titleFa": "فرمول یک ۲۰۱۶",
+    "genre": "مسابقه‌ای"
+  },
+  "F1 2017": {
+    "titleFa": "فرمول یک ۲۰۱۷",
+    "genre": "مسابقه‌ای"
+  },
+  "F1 2018": {
+    "titleFa": "فرمول یک ۲۰۱۸",
+    "genre": "مسابقه‌ای"
+  },
+  "F1 2019": {
+    "titleFa": "فرمول یک ۲۰۱۹",
+    "genre": "مسابقه‌ای"
+  },
+  "F1 2020": {
+    "titleFa": "فرمول یک ۲۰۲۰",
+    "genre": "مسابقه‌ای"
+  },
+  "F1 2021": {
+    "titleFa": "فرمول یک ۲۰۲۱",
+    "genre": "مسابقه‌ای"
+  },
+  "F1 22": {
+    "titleFa": "فرمول یک ۲۲",
+    "genre": "مسابقه‌ای"
+  },
+  "F1 23": {
+    "titleFa": "فرمول یک ۲۳",
+    "genre": "مسابقه‌ای"
+  },
+  "F1 24": {
+    "titleFa": "فرمول یک ۲۴",
+    "genre": "مسابقه‌ای"
+  },
+  "Dirt Rally": {
+    "titleFa": "درت رالی",
+    "genre": "مسابقه‌ای"
+  },
+  "Dirt Rally 2.0": {
+    "titleFa": "درت رالی ۲.۰",
+    "genre": "مسابقه‌ای"
+  },
+  "Dirt 4": {
+    "titleFa": "درت ۴",
+    "genre": "مسابقه‌ای"
+  },
+  "Dirt 5": {
+    "titleFa": "درت ۵",
+    "genre": "مسابقه‌ای"
+  },
+  "WRC 5": {
+    "titleFa": "دبلیو آر سی ۵",
+    "genre": "مسابقه‌ای"
+  },
+  "WRC 6": {
+    "titleFa": "دبلیو آر سی ۶",
+    "genre": "مسابقه‌ای"
+  },
+  "WRC 7": {
+    "titleFa": "دبلیو آر سی ۷",
+    "genre": "مسابقه‌ای"
+  },
+  "WRC 8": {
+    "titleFa": "دبلیو آر سی ۸",
+    "genre": "مسابقه‌ای"
+  },
+  "WRC 9": {
+    "titleFa": "دبلیو آر سی ۹",
+    "genre": "مسابقه‌ای"
+  },
+  "WRC 10": {
+    "titleFa": "دبلیو آر سی ۱۰",
+    "genre": "مسابقه‌ای"
+  },
+  "WRC Generations": {
+    "titleFa": "دبلیو آر سی جنریشنز",
+    "genre": "مسابقه‌ای"
+  },
+  "NBA 2K18": {
+    "titleFa": "ان‌بی‌ای ۲کی۱۸",
+    "genre": "ورزشی"
+  },
+  "NBA 2K19": {
+    "titleFa": "ان‌بی‌ای ۲کی۱۹",
+    "genre": "ورزشی"
+  },
+  "NBA 2K20": {
+    "titleFa": "ان‌بی‌ای ۲کی۲۰",
+    "genre": "ورزشی"
+  },
+  "NBA 2K21": {
+    "titleFa": "ان‌بی‌ای ۲کی۲۱",
+    "genre": "ورزشی"
+  },
+  "NBA 2K22": {
+    "titleFa": "ان‌بی‌ای ۲کی۲۲",
+    "genre": "ورزشی"
+  },
+  "NBA 2K23": {
+    "titleFa": "ان‌بی‌ای ۲کی۲۳",
+    "genre": "ورزشی"
+  },
+  "NBA 2K24": {
+    "titleFa": "ان‌بی‌ای ۲کی۲۴",
+    "genre": "ورزشی"
+  },
+  "Madden NFL 19": {
+    "titleFa": "مدن ان‌اف‌ال ۱۹",
+    "genre": "ورزشی"
+  },
+  "Madden NFL 20": {
+    "titleFa": "مدن ان‌اف‌ال ۲۰",
+    "genre": "ورزشی"
+  },
+  "Madden NFL 21": {
+    "titleFa": "مدن ان‌اف‌ال ۲۱",
+    "genre": "ورزشی"
+  },
+  "Madden NFL 22": {
+    "titleFa": "مدن ان‌اف‌ال ۲۲",
+    "genre": "ورزشی"
+  },
+  "Madden NFL 23": {
+    "titleFa": "مدن ان‌اف‌ال ۲۳",
+    "genre": "ورزشی"
+  },
+  "Madden NFL 24": {
+    "titleFa": "مدن ان‌اف‌ال ۲۴",
+    "genre": "ورزشی"
+  },
+  "MLB The Show 19": {
+    "titleFa": "ام‌ال‌بی د شو ۱۹",
+    "genre": "ورزشی"
+  },
+  "MLB The Show 20": {
+    "titleFa": "ام‌ال‌بی د شو ۲۰",
+    "genre": "ورزشی"
+  },
+  "MLB The Show 21": {
+    "titleFa": "ام‌ال‌بی د شو ۲۱",
+    "genre": "ورزشی"
+  },
+  "MLB The Show 22": {
+    "titleFa": "ام‌ال‌بی د شو ۲۲",
+    "genre": "ورزشی"
+  },
+  "MLB The Show 23": {
+    "titleFa": "ام‌ال‌بی د شو ۲۳",
+    "genre": "ورزشی"
+  },
+  "MLB The Show 24": {
+    "titleFa": "ام‌ال‌بی د شو ۲۴",
+    "genre": "ورزشی"
+  },
+  "F1 2015": {
+    "titleFa": "فرمول یک ۲۰۱۵",
+    "genre": "مسابقه‌ای"
+  },
+  "Sonic Frontiers": {
+    "titleFa": "سونیک فرانتیرز",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Rayman Legends": {
+    "titleFa": "ریمن لجندز",
+    "genre": "خانوادگی"
+  },
+  "Crash Bandicoot N. Sane Trilogy": {
+    "titleFa": "کرش باندیکوت: سه‌گانه ان سِین",
+    "genre": "خانوادگی"
+  },
+  "Crash Bandicoot 4": {
+    "titleFa": "کرش باندیکوت ۴",
+    "genre": "خانوادگی"
+  },
+  "Spyro Reignited Trilogy": {
+    "titleFa": "اسپایرو ری‌اِگنایتد تریلوژی",
+    "genre": "خانوادگی"
+  },
+  "New Super Lucky's Tale": {
+    "titleFa": "نیو سوپر لاکیز تیل",
+    "genre": "خانوادگی"
+  },
+  "Yooka-Laylee": {
+    "titleFa": "یوکا لیلی",
+    "genre": "خانوادگی"
+  },
+  "Yooka-Laylee and the Impossible Lair": {
+    "titleFa": "یوکا لیلی و مخفیگاه غیرممکن",
+    "genre": "خانوادگی"
+  },
+  "Shovel Knight": {
+    "titleFa": "شاول نایت",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Cuphead": {
+    "titleFa": "کاپ‌هد",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Celeste": {
+    "titleFa": "سلست",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Hollow Knight": {
+    "titleFa": "هالو نایت",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Ori and the Blind Forest": {
+    "titleFa": "اوری و جنگل نابینا",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Ori and the Will of the Wisps": {
+    "titleFa": "اوری و اراده ویسپ‌ها",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Dead Cells": {
+    "titleFa": "دد سلز",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Hades": {
+    "titleFa": "هیدیز",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Enter the Gungeon": {
+    "titleFa": "انتر د گانجن",
+    "genre": "شوتر"
+  },
+  "The Binding of Isaac: Rebirth": {
+    "titleFa": "بیندینگ آو آیزاک: ریبرث",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "A Hat in Time": {
+    "titleFa": "کلاهی در زمان",
+    "genre": "خانوادگی"
+  },
+  "Little Nightmares": {
+    "titleFa": "کابوس‌های کوچک",
+    "genre": "ترس و بقا"
+  },
+  "Project CARS": {
+    "titleFa": "پراجکت کارز",
+    "genre": "مسابقه‌ای"
+  },
+  "Project CARS 2": {
+    "titleFa": "پراجکت کارز ۲",
+    "genre": "مسابقه‌ای"
+  },
+  "Project CARS 3": {
+    "titleFa": "پراجکت کارز ۳",
+    "genre": "مسابقه‌ای"
+  },
+  "Assetto Corsa": {
+    "titleFa": "استو کورسا",
+    "genre": "مسابقه‌ای"
+  },
+  "Assetto Corsa Competizione": {
+    "titleFa": "استو کورسا کامپتیزیونه",
+    "genre": "مسابقه‌ای"
+  },
+  "Gran Turismo Sport": {
+    "titleFa": "گرن توریسمو اسپورت",
+    "genre": "مسابقه‌ای"
+  },
+  "The Crew": {
+    "titleFa": "د کرو",
+    "genre": "مسابقه‌ای"
+  },
+  "The Crew 2": {
+    "titleFa": "د کرو ۲",
+    "genre": "مسابقه‌ای"
+  },
+  "Need for Speed Rivals": {
+    "titleFa": "نید فور اسپید: ریوالز",
+    "genre": "مسابقه‌ای"
+  },
+  "Need for Speed": {
+    "titleFa": "نید فور اسپید",
+    "genre": "مسابقه‌ای"
+  },
+  "Need for Speed Payback": {
+    "titleFa": "نید فور اسپید: پی‌بک",
+    "genre": "مسابقه‌ای"
+  },
+  "Need for Speed Heat": {
+    "titleFa": "نید فور اسپید: هیت",
+    "genre": "مسابقه‌ای"
+  },
+  "Need for Speed Unbound": {
+    "titleFa": "نید فور اسپید: آنباند",
+    "genre": "مسابقه‌ای"
+  },
+  "Burnout Paradise Remastered": {
+    "titleFa": "برن‌اوت پارادایس ریمسترد",
+    "genre": "مسابقه‌ای"
+  },
+  "Hot Wheels Unleashed": {
+    "titleFa": "هات ویلز آنلیشد",
+    "genre": "مسابقه‌ای"
+  },
+  "Hot Wheels Unleashed 2": {
+    "titleFa": "هات ویلز آنلیشد ۲",
+    "genre": "مسابقه‌ای"
+  },
+  "Crash Team Racing Nitro-Fueled": {
+    "titleFa": "کراش تیم ریسینگ نیترو فیولد",
+    "genre": "مسابقه‌ای"
+  },
+  "Team Sonic Racing": {
+    "titleFa": "تیم سونیک ریسینگ",
+    "genre": "مسابقه‌ای"
+  },
+  "Sonic Forces": {
+    "titleFa": "سونیک فورسز",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Sonic Mania": {
+    "titleFa": "سونیک مانیا",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Little Nightmares II": {
+    "titleFa": "کابوس‌های کوچک ۲",
+    "genre": "ترس و بقا"
+  },
+  "Inside": {
+    "titleFa": "اینساید",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Limbo": {
+    "titleFa": "لیمبو",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Journey": {
+    "titleFa": "جورنی",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Abzu": {
+    "titleFa": "آبزو",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Flower": {
+    "titleFa": "فلاور",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Child of Light": {
+    "titleFa": "فرزند روشنایی",
+    "genre": "نقش‌آفرینی"
+  },
+  "Trine Enchanted Edition": {
+    "titleFa": "تراین انچنتد ادیشن",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Trine 2": {
+    "titleFa": "تراین ۲",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Trine 3": {
+    "titleFa": "تراین ۳",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Trine 4": {
+    "titleFa": "تراین ۴",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Broforce": {
+    "titleFa": "بروفورس",
+    "genre": "شوتر"
+  },
+  "Guacamelee!": {
+    "titleFa": "گواکاملی!",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Guacamelee! 2": {
+    "titleFa": "گواکاملی! ۲",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Shantae: Half-Genie Hero": {
+    "titleFa": "شانته: هف جینی هیرو",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Shantae and the Pirate's Curse": {
+    "titleFa": "شانته و نفرین دزد دریایی",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Owlboy": {
+    "titleFa": "اول‌بوی",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Fez": {
+    "titleFa": "فز",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "The Witness": {
+    "titleFa": "د ویتنس",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "The Talos Principle": {
+    "titleFa": "د تلوس پرینسیپل",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "The Swapper": {
+    "titleFa": "د سواپر",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "The Escapists": {
+    "titleFa": "د اسکیپیستس",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "The Escapists 2": {
+    "titleFa": "د اسکیپیستس ۲",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Terraria": {
+    "titleFa": "تراریا",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Minecraft": {
+    "titleFa": "ماینکرفت",
+    "genre": "خانوادگی"
+  },
+  "Stardew Valley": {
+    "titleFa": "استاردیو ولی",
+    "genre": "نقش‌آفرینی"
+  },
+  "Don't Starve": {
+    "titleFa": "دونت استارو",
+    "genre": "ترس و بقا"
+  },
+  "Don't Starve Together": {
+    "titleFa": "دونت استارو توگدر",
+    "genre": "ترس و بقا"
+  },
+  "Cities: Skylines": {
+    "titleFa": "سیتیز: اسکای‌لاینز",
+    "genre": "خانوادگی"
+  },
+  "Jurassic World Evolution": {
+    "titleFa": "ژوراسیک ورلد ایولوشن",
+    "genre": "خانوادگی"
+  },
+  "Planet Coaster": {
+    "titleFa": "پلنت کوستر",
+    "genre": "خانوادگی"
+  },
+  "Two Point Hospital": {
+    "titleFa": "تو پوینت هاسپیتال",
+    "genre": "خانوادگی"
+  },
+  "The Sims 4": {
+    "titleFa": "د سیمز ۴",
+    "genre": "خانوادگی"
+  },
+  "Dragon Age: Inquisition": {
+    "titleFa": "دراگون ایج: اینکوئوزیشن",
+    "genre": "نقش‌آفرینی"
+  },
+  "Mass Effect Legendary Edition": {
+    "titleFa": "مس افکت لجندری ادیشن",
+    "genre": "نقش‌آفرینی"
+  },
+  "Star Wars Battlefront": {
+    "titleFa": "جنگ ستارگان: بتل‌فرانت",
+    "genre": "شوتر"
+  },
+  "Star Wars Battlefront II": {
+    "titleFa": "جنگ ستارگان: بتل‌فرانت ۲",
+    "genre": "شوتر"
+  },
+  "Star Wars Jedi: Fallen Order": {
+    "titleFa": "جنگ ستارگان جدای: فالن اوردر",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Star Wars Jedi: Survivor": {
+    "titleFa": "جنگ ستارگان جدای: سروایور",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Star Wars Squadrons": {
+    "titleFa": "جنگ ستارگان: اسکادرانز",
+    "genre": "شوتر"
+  },
+  "Star Wars: Republic Commando": {
+    "titleFa": "جنگ ستارگان: ریپابلیک کماندو",
+    "genre": "شوتر"
+  },
+  "LEGO Star Wars: The Skywalker Saga": {
+    "titleFa": "لگو جنگ ستارگان: حماسه اسکای‌واکر",
+    "genre": "خانوادگی"
+  },
+  "LEGO Marvel Super Heroes": {
+    "titleFa": "لگو ابرقهرمانان مارول",
+    "genre": "خانوادگی"
+  },
+  "LEGO Marvel Super Heroes 2": {
+    "titleFa": "لگو ابرقهرمانان مارول ۲",
+    "genre": "خانوادگی"
+  },
+  "LEGO DC Super-Villains": {
+    "titleFa": "لگو شروران دی‌سی",
+    "genre": "خانوادگی"
+  },
+  "LEGO Batman 3": {
+    "titleFa": "لگو بتمن ۳",
+    "genre": "خانوادگی"
+  },
+  "LEGO Jurassic World": {
+    "titleFa": "لگو دنیای ژوراسیک",
+    "genre": "خانوادگی"
+  },
+  "LEGO The Incredibles": {
+    "titleFa": "لگو شگفت‌انگیزان",
+    "genre": "خانوادگی"
+  },
+  "LEGO Harry Potter Collection": {
+    "titleFa": "مجموعه لگو هری پاتر",
+    "genre": "خانوادگی"
+  },
+  "LEGO City Undercover": {
+    "titleFa": "لگو سیتی آندرکاور",
+    "genre": "خانوادگی"
+  },
+  "LEGO The Hobbit": {
+    "titleFa": "لگو هابیت",
+    "genre": "خانوادگی"
+  },
+  "Middle-earth: Shadow of Mordor": {
+    "titleFa": "سرزمین میانه: سایه موردور",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Middle-earth: Shadow of War": {
+    "titleFa": "سرزمین میانه: سایه جنگ",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Mad Max": {
+    "titleFa": "مد مکس",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Batman: Arkham Knight": {
+    "titleFa": "بتمن: شوالیه آرکام",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Batman: Return to Arkham": {
+    "titleFa": "بتمن: بازگشت به آرکام",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Batman: Arkham VR": {
+    "titleFa": "بتمن: آرکام وی‌آر",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Suicide Squad: Kill the Justice League": {
+    "titleFa": "جوخه انتحار: لیگ عدالت را بکش",
+    "genre": "شوتر"
+  },
+  "Marvel's Guardians of the Galaxy": {
+    "titleFa": "نگهبانان کهکشان مارول",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Marvel's Avengers": {
+    "titleFa": "انتقام‌جویان مارول",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Marvel's Midnight Suns": {
+    "titleFa": "مارولز میدنایت سانز",
+    "genre": "نقش‌آفرینی"
+  },
+  "Deadpool": {
+    "titleFa": "ددپول",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "XCOM 2": {
+    "titleFa": "ایکس‌کام ۲",
+    "genre": "نقش‌آفرینی"
+  },
+  "Civilization VI": {
+    "titleFa": "تمدن ۶",
+    "genre": "نقش‌آفرینی"
+  },
+  "Diablo III: Eternal Collection": {
+    "titleFa": "دیابلو ۳: اترنال کالکشن",
+    "genre": "نقش‌آفرینی"
+  },
+  "Diablo II: Resurrected": {
+    "titleFa": "دیابلو ۲: ریسورکتد",
+    "genre": "نقش‌آفرینی"
+  },
+  "Diablo IV": {
+    "titleFa": "دیابلو ۴",
+    "genre": "نقش‌آفرینی"
+  },
+  "Torchlight II": {
+    "titleFa": "تورچ‌لایت ۲",
+    "genre": "نقش‌آفرینی"
+  },
+  "Torchlight III": {
+    "titleFa": "تورچ‌لایت ۳",
+    "genre": "نقش‌آفرینی"
+  },
+  "Path of Exile": {
+    "titleFa": "پث آو اگزیل",
+    "genre": "نقش‌آفرینی"
+  },
+  "Divinity: Original Sin": {
+    "titleFa": "دیوینتی: اورجینال سین",
+    "genre": "نقش‌آفرینی"
+  },
+  "Divinity: Original Sin 2": {
+    "titleFa": "دیوینتی: اورجینال سین ۲",
+    "genre": "نقش‌آفرینی"
+  },
+  "Pillars of Eternity": {
+    "titleFa": "پیلارز آو اترنیتی",
+    "genre": "نقش‌آفرینی"
+  },
+  "Pillars of Eternity II": {
+    "titleFa": "پیلارز آو اترنیتی ۲",
+    "genre": "نقش‌آفرینی"
+  },
+  "Wasteland 2": {
+    "titleFa": "ویست‌لند ۲",
+    "genre": "نقش‌آفرینی"
+  },
+  "Wasteland 3": {
+    "titleFa": "ویست‌لند ۳",
+    "genre": "نقش‌آفرینی"
+  },
+  "Fallout 4": {
+    "titleFa": "فال‌اوت ۴",
+    "genre": "نقش‌آفرینی"
+  },
+  "Fallout 76": {
+    "titleFa": "فال‌اوت ۷۶",
+    "genre": "نقش‌آفرینی"
+  },
+  "Fallout Shelter": {
+    "titleFa": "فال‌اوت شلتر",
+    "genre": "نقش‌آفرینی"
+  },
+  "The Elder Scrolls V: Skyrim Special Edition": {
+    "titleFa": "الدر اسکرولز ۵: اسکایریم اسپشیال ادیشن",
+    "genre": "نقش‌آفرینی"
+  },
+  "Watch Dogs 2": {
+    "titleFa": "واچ داگز ۲",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Watch Dogs Legion": {
+    "titleFa": "واچ داگز لژیون",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Tom Clancy's The Division": {
+    "titleFa": "تام کلنسی د دیویژن",
+    "genre": "شوتر"
+  },
+  "The Division 2": {
+    "titleFa": "د دیویژن ۲",
+    "genre": "شوتر"
+  },
+  "Ghost Recon Wildlands": {
+    "titleFa": "گوست ریکان وایلدلندز",
+    "genre": "شوتر"
+  },
+  "Ghost Recon Breakpoint": {
+    "titleFa": "گوست ریکان بریک‌پوینت",
+    "genre": "شوتر"
+  },
+  "Rainbow Six Siege": {
+    "titleFa": "رینبو سیکس سیج",
+    "genre": "شوتر"
+  },
+  "Rainbow Six Extraction": {
+    "titleFa": "رینبو سیکس اکسترکشن",
+    "genre": "شوتر"
+  },
+  "The Crew Motorfest": {
+    "titleFa": "د کرو موتورفست",
+    "genre": "مسابقه‌ای"
+  },
+  "South Park: The Stick of Truth": {
+    "titleFa": "ساوت پارک: چوب حقیقت",
+    "genre": "نقش‌آفرینی"
+  },
+  "South Park: The Fractured but Whole": {
+    "titleFa": "ساوت پارک: شکسته اما کامل",
+    "genre": "نقش‌آفرینی"
+  },
+  "Trials Fusion": {
+    "titleFa": "ترایلز فیوژن",
+    "genre": "مسابقه‌ای"
+  },
+  "Trials Rising": {
+    "titleFa": "ترایلز رایزینگ",
+    "genre": "مسابقه‌ای"
+  },
+  "Prince of Persia: The Lost Crown": {
+    "titleFa": "شاهزاده پارسی: تاج گمشده",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Immortals Fenyx Rising": {
+    "titleFa": "ایمورتالز فینیکس رایزینگ",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Avatar: Frontiers of Pandora": {
+    "titleFa": "آواتار: مرزهای پاندورا",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Starlink: Battle for Atlas": {
+    "titleFa": "استارلینک: نبرد برای اطلس",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Riders Republic": {
+    "titleFa": "رایدرز ریپابلیک",
+    "genre": "ورزشی"
+  },
+  "Skull and Bones": {
+    "titleFa": "اسکال اند بونز",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Far Cry 3 Classic Edition": {
+    "titleFa": "فار کرای ۳ نسخه کلاسیک",
+    "genre": "شوتر"
+  },
+  "The Elder Scrolls Online": {
+    "titleFa": "الدر اسکرولز آنلاین",
+    "genre": "نقش‌آفرینی"
+  },
+  "The Outer Worlds": {
+    "titleFa": "دی اوتر ورلدز",
+    "genre": "نقش‌آفرینی"
+  },
+  "Kingdom Come: Deliverance": {
+    "titleFa": "کینگدام کام: دلیورنس",
+    "genre": "نقش‌آفرینی"
+  },
+  "Mount & Blade II: Bannerlord": {
+    "titleFa": "مانت اند بلید ۲: بنرلرد",
+    "genre": "نقش‌آفرینی"
+  },
+  "Assassin's Creed IV: Black Flag": {
+    "titleFa": "اساسینز کرید ۴: پرچم سیاه",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Assassin's Creed Rogue Remastered": {
+    "titleFa": "اساسینز کرید روگ ریمسترد",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Assassin's Creed Unity": {
+    "titleFa": "اساسینز کرید یونیتی",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Assassin's Creed Syndicate": {
+    "titleFa": "اساسینز کرید سیندیکیت",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Assassin's Creed Origins": {
+    "titleFa": "اساسینز کرید اوریجینز",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Assassin's Creed Odyssey": {
+    "titleFa": "اساسینز کرید ادیسه",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Assassin's Creed Valhalla": {
+    "titleFa": "اساسینز کرید والهالا",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Assassin's Creed Mirage": {
+    "titleFa": "اساسینز کرید میراژ",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Assassin's Creed III Remastered": {
+    "titleFa": "اساسینز کرید ۳ ریمسترد",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Assassin's Creed The Ezio Collection": {
+    "titleFa": "اساسینز کرید مجموعه اتزیو",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Far Cry 4": {
+    "titleFa": "فار کرای ۴",
+    "genre": "شوتر"
+  },
+  "Far Cry Primal": {
+    "titleFa": "فار کرای پرایمال",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Far Cry 5": {
+    "titleFa": "فار کرای ۵",
+    "genre": "شوتر"
+  },
+  "Far Cry New Dawn": {
+    "titleFa": "فار کرای نیو دان",
+    "genre": "شوتر"
+  },
+  "Far Cry 6": {
+    "titleFa": "فار کرای ۶",
+    "genre": "شوتر"
+  },
+  "Watch Dogs": {
+    "titleFa": "واچ داگز",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Dying Light": {
+    "titleFa": "دایینگ لایت",
+    "genre": "ترس و بقا"
+  },
+  "Dying Light 2 Stay Human": {
+    "titleFa": "دایینگ لایت ۲ استی هیومن",
+    "genre": "ترس و بقا"
+  },
+  "Dead Island Definitive Edition": {
+    "titleFa": "دد آیلند دفینیتیو ادیشن",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Dead Island 2": {
+    "titleFa": "دد آیلند ۲",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Dead Rising": {
+    "titleFa": "دد رایزینگ",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Dead Rising 2": {
+    "titleFa": "دد رایزینگ ۲",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Dead Rising 2: Off the Record": {
+    "titleFa": "دد رایزینگ ۲: آف د رکورد",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Dead Rising 3": {
+    "titleFa": "دد رایزینگ ۳",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Dead Rising 4": {
+    "titleFa": "دد رایزینگ ۴",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Resident Evil": {
+    "titleFa": "رزیدنت اویل",
+    "genre": "ترس و بقا"
+  },
+  "Resident Evil 0": {
+    "titleFa": "رزیدنت اویل ۰",
+    "genre": "ترس و بقا"
+  },
+  "Resident Evil 2": {
+    "titleFa": "رزیدنت اویل ۲",
+    "genre": "ترس و بقا"
+  },
+  "Resident Evil 3": {
+    "titleFa": "رزیدنت اویل ۳",
+    "genre": "ترس و بقا"
+  },
+  "Resident Evil 4": {
+    "titleFa": "رزیدنت اویل ۴",
+    "genre": "ترس و بقا"
+  },
+  "Resident Evil 5": {
+    "titleFa": "رزیدنت اویل ۵",
+    "genre": "ترس و بقا"
+  },
+  "Resident Evil 6": {
+    "titleFa": "رزیدنت اویل ۶",
+    "genre": "ترس و بقا"
+  },
+  "Resident Evil 7": {
+    "titleFa": "رزیدنت اویل ۷",
+    "genre": "ترس و بقا"
+  },
+  "Resident Evil Village": {
+    "titleFa": "رزیدنت اویل ویلیج",
+    "genre": "ترس و بقا"
+  },
+  "Resident Evil Revelations": {
+    "titleFa": "رزیدنت اویل رولیشنز",
+    "genre": "ترس و بقا"
+  },
+  "Resident Evil Revelations 2": {
+    "titleFa": "رزیدنت اویل رولیشنز ۲",
+    "genre": "ترس و بقا"
+  },
+  "Resident Evil Resistance": {
+    "titleFa": "رزیدنت اویل رزیستنس",
+    "genre": "ترس و بقا"
+  },
+  "Resident Evil Operation Raccoon City": {
+    "titleFa": "رزیدنت اویل عملیات راکون سیتی",
+    "genre": "شوتر"
+  },
+  "Resident Evil Umbrella Corps": {
+    "titleFa": "رزیدنت اویل آمبرلا کورپس",
+    "genre": "شوتر"
+  },
+  "Resident Evil Code: Veronica X": {
+    "titleFa": "رزیدنت اویل کد ورونیکا ایکس",
+    "genre": "ترس و بقا"
+  },
+  "Devil May Cry 4 Special Edition": {
+    "titleFa": "دویل می کرای ۴ نسخه ویژه",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Devil May Cry 5": {
+    "titleFa": "دویل می کرای ۵",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Devil May Cry HD Collection": {
+    "titleFa": "دویل می کرای اچ‌دی کالکشن",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "DMC: Devil May Cry Definitive Edition": {
+    "titleFa": "دی‌ام‌سی: دویل می کرای نسخه دفینیتیو",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Marvel vs. Capcom: Infinite": {
+    "titleFa": "مارول در برابر کپکام: اینفینیت",
+    "genre": "مبارزه‌ای"
+  },
+  "Marvel vs. Capcom Fighting Collection": {
+    "titleFa": "کالکشن مبارزه‌ای مارول در برابر کپکام",
+    "genre": "مبارزه‌ای"
+  },
+  "Mega Man Legacy Collection": {
+    "titleFa": "مگا من لگسی کالکشن",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Mega Man Legacy Collection 2": {
+    "titleFa": "مگا من لگسی کالکشن ۲",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Mega Man 11": {
+    "titleFa": "مگا من ۱۱",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Onimusha: Warlords": {
+    "titleFa": "اونیموشا: وارلردز",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Okami HD": {
+    "titleFa": "اوکامی اچ‌دی",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Dragon's Dogma: Dark Arisen": {
+    "titleFa": "دراگونز دوگما: دارک اریزن",
+    "genre": "نقش‌آفرینی"
+  },
+  "Sifu": {
+    "titleFa": "سیفو",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Sleeping Dogs: Definitive Edition": {
+    "titleFa": "اسلیپینگ داگز نسخه دفینیتیو",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Mafia III": {
+    "titleFa": "مافیا ۳",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Mafia: Definitive Edition": {
+    "titleFa": "مافیا: نسخه دفینیتیو",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Mafia II: Definitive Edition": {
+    "titleFa": "مافیا ۲: نسخه دفینیتیو",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "L.A. Noire": {
+    "titleFa": "ال ای نوآر",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Bully": {
+    "titleFa": "بولی",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Saints Row IV": {
+    "titleFa": "سنتز رو ۴",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Saints Row: Gat out of Hell": {
+    "titleFa": "سنتز رو: خروج از جهنم",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Saints Row": {
+    "titleFa": "سنتز رو",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Saints Row The Third Remastered": {
+    "titleFa": "سنتز رو: سومین ریمستر",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Just Cause 3": {
+    "titleFa": "جاست کاز ۳",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Just Cause 4": {
+    "titleFa": "جاست کاز ۴",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Prototype Biohazard Bundle": {
+    "titleFa": "پروتوتایپ بایوهازارد باندل",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Prototype 2": {
+    "titleFa": "پروتوتایپ ۲",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Darksiders Warmastered Edition": {
+    "titleFa": "دارک سایدرز نسخه وارمسترد",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Darksiders II Deathinitive Edition": {
+    "titleFa": "دارک سایدرز ۲ نسخه دثینتیو",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Darksiders III": {
+    "titleFa": "دارک سایدرز ۳",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Darksiders Genesis": {
+    "titleFa": "دارک سایدرز پیدایش",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Metal Gear Solid V: Ground Zeroes": {
+    "titleFa": "متال گیر سالید ۵: گراند زیروز",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Metal Gear Solid V: The Phantom Pain": {
+    "titleFa": "متال گیر سالید ۵: درد فانتوم",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Metal Gear Survive": {
+    "titleFa": "متال گیر سوروایو",
+    "genre": "ترس و بقا"
+  },
+  "Hitman": {
+    "titleFa": "هیتمن",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Hitman 2": {
+    "titleFa": "هیتمن ۲",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Dishonored: Death of the Outsider": {
+    "titleFa": "دیس آنرد: مرگ بیگانه",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Deathloop": {
+    "titleFa": "دث لوپ",
+    "genre": "شوتر"
+  },
+  "The Evil Within": {
+    "titleFa": "شیطان درون",
+    "genre": "ترس و بقا"
+  },
+  "The Evil Within 2": {
+    "titleFa": "شیطان درون ۲",
+    "genre": "ترس و بقا"
+  },
+  "Alien: Isolation": {
+    "titleFa": "بیگانه: انزوا",
+    "genre": "ترس و بقا"
+  },
+  "Outlast": {
+    "titleFa": "اوت لست",
+    "genre": "ترس و بقا"
+  },
+  "Outlast 2": {
+    "titleFa": "اوت لست ۲",
+    "genre": "ترس و بقا"
+  },
+  "Amnesia: Collection": {
+    "titleFa": "امنژیا: کالکشن",
+    "genre": "ترس و بقا"
+  },
+  "SOMA": {
+    "titleFa": "سوما",
+    "genre": "ترس و بقا"
+  },
+  "Layers of Fear": {
+    "titleFa": "لایه‌های ترس",
+    "genre": "ترس و بقا"
+  },
+  "Layers of Fear 2": {
+    "titleFa": "لایه‌های ترس ۲",
+    "genre": "ترس و بقا"
+  },
+  "Friday the 13th: The Game": {
+    "titleFa": "جمعه سیزدهم: بازی",
+    "genre": "ترس و بقا"
+  },
+  "Dead by Daylight": {
+    "titleFa": "دد بای دیلایت",
+    "genre": "ترس و بقا"
+  },
+  "World War Z": {
+    "titleFa": "جنگ جهانی زد",
+    "genre": "شوتر"
+  },
+  "Back 4 Blood": {
+    "titleFa": "بک فور بلاد",
+    "genre": "شوتر"
+  },
+  "Killing Floor 2": {
+    "titleFa": "کیلینگ فلور ۲",
+    "genre": "شوتر"
+  },
+  "Payday 2": {
+    "titleFa": "پی دی ۲",
+    "genre": "شوتر"
+  },
+  "Overcooked": {
+    "titleFa": "اورکوکد",
+    "genre": "خانوادگی"
+  },
+  "Overcooked 2": {
+    "titleFa": "اورکوکد ۲",
+    "genre": "خانوادگی"
+  },
+  "Moving Out": {
+    "titleFa": "مووینگ اوت",
+    "genre": "خانوادگی"
+  },
+  "Hitman 3": {
+    "titleFa": "هیتمن ۳",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Hitman World of Assassination": {
+    "titleFa": "هیتمن ورلد آو اساسینیشن",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Sniper Elite 3": {
+    "titleFa": "اسنایپر الیت ۳",
+    "genre": "شوتر"
+  },
+  "Sniper Elite 4": {
+    "titleFa": "اسنایپر الیت ۴",
+    "genre": "شوتر"
+  },
+  "Sniper Elite 5": {
+    "titleFa": "اسنایپر الیت ۵",
+    "genre": "شوتر"
+  },
+  "Sniper Ghost Warrior 3": {
+    "titleFa": "اسنایپر گوست واریور ۳",
+    "genre": "شوتر"
+  },
+  "Sniper Ghost Warrior Contracts": {
+    "titleFa": "اسنایپر گوست واریور کنترکتس",
+    "genre": "شوتر"
+  },
+  "Sniper Ghost Warrior Contracts 2": {
+    "titleFa": "اسنایپر گوست واریور کنترکتس ۲",
+    "genre": "شوتر"
+  },
+  "Wolfenstein: The New Order": {
+    "titleFa": "ولفنشتاین: د نیو اوردر",
+    "genre": "شوتر"
+  },
+  "Wolfenstein: The Old Blood": {
+    "titleFa": "ولفنشتاین: د اولد بلاد",
+    "genre": "شوتر"
+  },
+  "Wolfenstein II: The New Colossus": {
+    "titleFa": "ولفنشتاین ۲: د نیو کلوسوس",
+    "genre": "شوتر"
+  },
+  "Wolfenstein: Youngblood": {
+    "titleFa": "ولفنشتاین: یانگ بلاد",
+    "genre": "شوتر"
+  },
+  "DOOM": {
+    "titleFa": "دووم",
+    "genre": "شوتر"
+  },
+  "DOOM Eternal": {
+    "titleFa": "دووم اترنال",
+    "genre": "شوتر"
+  },
+  "Quake": {
+    "titleFa": "کواک",
+    "genre": "شوتر"
+  },
+  "Quake II": {
+    "titleFa": "کواک ۲",
+    "genre": "شوتر"
+  },
+  "Rage 2": {
+    "titleFa": "ریج ۲",
+    "genre": "شوتر"
+  },
+  "Prey": {
+    "titleFa": "پری",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Dishonored Definitive Edition": {
+    "titleFa": "دیس آنرد دفینیتیو ادیشن",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Dishonored 2": {
+    "titleFa": "دیس آنرد ۲",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Moving Out 2": {
+    "titleFa": "مووینگ اوت ۲",
+    "genre": "خانوادگی"
+  },
+  "It Takes Two": {
+    "titleFa": "ایت تیکس تو",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "A Way Out": {
+    "titleFa": "ا وی اوت",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Unravel": {
+    "titleFa": "آنرول",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Unravel Two": {
+    "titleFa": "آنرول ۲",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Human: Fall Flat": {
+    "titleFa": "هیومن فال فلت",
+    "genre": "خانوادگی"
+  },
+  "Gang Beasts": {
+    "titleFa": "گنگ بیستز",
+    "genre": "مبارزه‌ای"
+  },
+  "Rocket League": {
+    "titleFa": "راکت لیگ",
+    "genre": "ورزشی"
+  },
+  "Fall Guys": {
+    "titleFa": "فال گایز",
+    "genre": "خانوادگی"
+  },
+  "Among Us": {
+    "titleFa": "امانگ آس",
+    "genre": "خانوادگی"
+  },
+  "Brawlhalla": {
+    "titleFa": "برالهالا",
+    "genre": "مبارزه‌ای"
+  },
+  "Warframe": {
+    "titleFa": "وارفریم",
+    "genre": "شوتر"
+  },
+  "Destiny": {
+    "titleFa": "دستینی",
+    "genre": "شوتر"
+  },
+  "Destiny 2": {
+    "titleFa": "دستینی ۲",
+    "genre": "شوتر"
+  },
+  "Call of Duty: Ghosts": {
+    "titleFa": "ندای وظیفه: ارواح",
+    "genre": "شوتر"
+  },
+  "Call of Duty: Advanced Warfare": {
+    "titleFa": "ندای وظیفه: جنگاوری پیشرفته",
+    "genre": "شوتر"
+  },
+  "Call of Duty: Black Ops III": {
+    "titleFa": "ندای وظیفه: بلک اپس ۳",
+    "genre": "شوتر"
+  },
+  "Call of Duty: Infinite Warfare": {
+    "titleFa": "ندای وظیفه: جنگاوری بی‌نهایت",
+    "genre": "شوتر"
+  },
+  "Call of Duty: Modern Warfare Remastered": {
+    "titleFa": "ندای وظیفه: جنگاوری نوین ریمستر",
+    "genre": "شوتر"
+  },
+  "Call of Duty: WWII": {
+    "titleFa": "ندای وظیفه: جنگ جهانی دوم",
+    "genre": "شوتر"
+  },
+  "The Dark Pictures: House of Ashes": {
+    "titleFa": "دارک پیکچرز: هاوس آو اشز",
+    "genre": "ترس و بقا"
+  },
+  "The Dark Pictures: The Devil in Me": {
+    "titleFa": "دارک پیکچرز: شیطان درون من",
+    "genre": "ترس و بقا"
+  },
+  "The Quarry": {
+    "titleFa": "د کوئری",
+    "genre": "ترس و بقا"
+  },
+  "The Walking Dead: Season One": {
+    "titleFa": "مردگان متحرک: فصل اول",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "The Walking Dead: Season Two": {
+    "titleFa": "مردگان متحرک: فصل دوم",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "The Walking Dead: A New Frontier": {
+    "titleFa": "مردگان متحرک: مرز جدید",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "The Walking Dead: The Final Season": {
+    "titleFa": "مردگان متحرک: فصل پایانی",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Batman: The Telltale Series": {
+    "titleFa": "بتمن: تل‌تیل سریز",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Batman: The Enemy Within": {
+    "titleFa": "بتمن: دشمن درون",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Tales from the Borderlands": {
+    "titleFa": "تیلز فرام د بوردرلندز",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Borderlands: The Handsome Collection": {
+    "titleFa": "بوردرلندز: هندسام کالکشن",
+    "genre": "شوتر"
+  },
+  "Borderlands 3": {
+    "titleFa": "بوردرلندز ۳",
+    "genre": "شوتر"
+  },
+  "Tiny Tina's Wonderlands": {
+    "titleFa": "تینی تیناز واندرلندز",
+    "genre": "شوتر"
+  },
+  "Control": {
+    "titleFa": "کنترل",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Alan Wake Remastered": {
+    "titleFa": "الن ویک ریمستر",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Remnant: From the Ashes": {
+    "titleFa": "رمننت: فرام د اشز",
+    "genre": "شوتر"
+  },
+  "The Surge": {
+    "titleFa": "د سرج",
+    "genre": "نقش‌آفرینی"
+  },
+  "The Surge 2": {
+    "titleFa": "د سرج ۲",
+    "genre": "نقش‌آفرینی"
+  },
+  "Lords of the Fallen": {
+    "titleFa": "لردز آو د فالن",
+    "genre": "نقش‌آفرینی"
+  },
+  "Mortal Shell": {
+    "titleFa": "مورتال شل",
+    "genre": "نقش‌آفرینی"
+  },
+  "Call of Duty: Black Ops 4": {
+    "titleFa": "ندای وظیفه: بلک اپس ۴",
+    "genre": "شوتر"
+  },
+  "Call of Duty: Modern Warfare": {
+    "titleFa": "ندای وظیفه: جنگاوری نوین",
+    "genre": "شوتر"
+  },
+  "Call of Duty: Modern Warfare 2 Campaign Remastered": {
+    "titleFa": "ندای وظیفه: جنگاوری نوین ۲ ریمستر",
+    "genre": "شوتر"
+  },
+  "Call of Duty: Black Ops Cold War": {
+    "titleFa": "ندای وظیفه: بلک اپس جنگ سرد",
+    "genre": "شوتر"
+  },
+  "Call of Duty: Vanguard": {
+    "titleFa": "ندای وظیفه: ونگارد",
+    "genre": "شوتر"
+  },
+  "Call of Duty: Modern Warfare II": {
+    "titleFa": "ندای وظیفه: جنگاوری نوین ۲",
+    "genre": "شوتر"
+  },
+  "Call of Duty: Modern Warfare III": {
+    "titleFa": "ندای وظیفه: جنگاوری نوین ۳",
+    "genre": "شوتر"
+  },
+  "Call of Duty: Black Ops 6": {
+    "titleFa": "ندای وظیفه: بلک اپس ۶",
+    "genre": "شوتر"
+  },
+  "Battlefield 4": {
+    "titleFa": "بتلفیلد ۴",
+    "genre": "شوتر"
+  },
+  "Battlefield Hardline": {
+    "titleFa": "بتلفیلد هاردلاین",
+    "genre": "شوتر"
+  },
+  "Battlefield 1": {
+    "titleFa": "بتلفیلد ۱",
+    "genre": "شوتر"
+  },
+  "Battlefield V": {
+    "titleFa": "بتلفیلد ۵",
+    "genre": "شوتر"
+  },
+  "Battlefield 2042": {
+    "titleFa": "بتلفیلد ۲۰۴۲",
+    "genre": "شوتر"
+  },
+  "Titanfall 2": {
+    "titleFa": "تایتان‌فال ۲",
+    "genre": "شوتر"
+  },
+  "Apex Legends": {
+    "titleFa": "اپکس لجندز",
+    "genre": "شوتر"
+  },
+  "Plants vs. Zombies: Garden Warfare": {
+    "titleFa": "گیاهان دربرابر زامبی‌ها: جنگ در باغ",
+    "genre": "شوتر"
+  },
+  "Plants vs. Zombies: Garden Warfare 2": {
+    "titleFa": "گیاهان دربرابر زامبی‌ها: جنگ در باغ ۲",
+    "genre": "شوتر"
+  },
+  "Plants vs. Zombies: Battle for Neighborville": {
+    "titleFa": "گیاهان دربرابر زامبی‌ها: نبرد برای نیبورویل",
+    "genre": "شوتر"
+  },
+  "The Dark Pictures: Man of Medan": {
+    "titleFa": "دارک پیکچرز: من آو مدان",
+    "genre": "ترس و بقا"
+  },
+  "The Dark Pictures: Little Hope": {
+    "titleFa": "دارک پیکچرز: لیتل هوپ",
+    "genre": "ترس و بقا"
+  },
+  "Tales of Arise": {
+    "titleFa": "تیلز آو آرایز",
+    "genre": "نقش‌آفرینی"
+  },
+  "Star Ocean: Integrity and Faithlessness": {
+    "titleFa": "استار اوشن: یکپارچگی و بی‌ایمانی",
+    "genre": "نقش‌آفرینی"
+  },
+  "Star Ocean: The Divine Force": {
+    "titleFa": "استار اوشن: نیروی الهی",
+    "genre": "نقش‌آفرینی"
+  },
+  "Ni no Kuni II": {
+    "titleFa": "نی نو کونی ۲",
+    "genre": "نقش‌آفرینی"
+  },
+  "Ni no Kuni: Wrath of the White Witch": {
+    "titleFa": "نی نو کونی: خشم جادوگر سفید",
+    "genre": "نقش‌آفرینی"
+  },
+  "Dragon Ball Xenoverse": {
+    "titleFa": "دراگون بال زنورس",
+    "genre": "مبارزه‌ای"
+  },
+  "Dragon Ball Xenoverse 2": {
+    "titleFa": "دراگون بال زنورس ۲",
+    "genre": "مبارزه‌ای"
+  },
+  "Dragon Ball FighterZ": {
+    "titleFa": "دراگون بال فایترز",
+    "genre": "مبارزه‌ای"
+  },
+  "Dragon Ball Z: Kakarot": {
+    "titleFa": "دراگون بال زد: کاکاروت",
+    "genre": "نقش‌آفرینی"
+  },
+  "Dragon Ball: The Breakers": {
+    "titleFa": "دراگون بال: بریکرز",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Naruto Shippuden: Ultimate Ninja Storm 4": {
+    "titleFa": "ناروتو شیپودن: التیمیت نینجا استورم ۴",
+    "genre": "مبارزه‌ای"
+  },
+  "Naruto Shippuden: Ultimate Ninja Storm Trilogy": {
+    "titleFa": "ناروتو شیپودن: سه‌گانه التیمیت نینجا استورم",
+    "genre": "مبارزه‌ای"
+  },
+  "One Piece: Pirate Warriors 3": {
+    "titleFa": "وان پیس: پایرت واریورز ۳",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "One Piece: Pirate Warriors 4": {
+    "titleFa": "وان پیس: پایرت واریورز ۴",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "One Piece World Seeker": {
+    "titleFa": "وان پیس: ورلد سیکر",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Attack on Titan": {
+    "titleFa": "اتک آن تایتان",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Attack on Titan 2": {
+    "titleFa": "اتک آن تایتان ۲",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Demon Slayer: The Hinokami Chronicles": {
+    "titleFa": "دیمن اسلیر: وقایع هینوکامی",
+    "genre": "مبارزه‌ای"
+  },
+  "My Hero One's Justice": {
+    "titleFa": "مای هیرو وانز جاستیس",
+    "genre": "مبارزه‌ای"
+  },
+  "My Hero One's Justice 2": {
+    "titleFa": "مای هیرو وانز جاستیس ۲",
+    "genre": "مبارزه‌ای"
+  }
+}

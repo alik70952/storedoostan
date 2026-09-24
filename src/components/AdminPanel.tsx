@@ -6,6 +6,7 @@ import type { ActionResult, Game, Platform } from "@/lib/types";
 import { GENRES, persianNumber, platformClass } from "@/lib/types";
 import { saveGameAction, deleteGameAction, toggleFeaturedAction, logoutAction } from "@/app/admin/actions";
 import AiGamePublisher from "@/components/AiGamePublisher";
+import CoverCropper from "@/components/CoverCropper";
 import { compressImageFile } from "@/lib/image-compress";
 import { persianDate } from "./GameCard";
 
@@ -31,6 +32,8 @@ export default function AdminPanel({ games }: { games: Game[] }) {
   const [preview, setPreview] = useState("");
   const [previewError, setPreviewError] = useState(false);
   const [compressing, setCompressing] = useState(false);
+  const [cropOpen, setCropOpen] = useState(false);
+  const [cropSrc, setCropSrc] = useState("");
   const formRef = useRef<HTMLFormElement>(null);
   const fileRef = useRef<HTMLInputElement>(null);
   const listRef = useRef<HTMLDivElement>(null);
@@ -146,6 +149,72 @@ export default function AdminPanel({ games }: { games: Game[] }) {
     // اگر فرم از قبل جلوی چشم است، صفحه را جابه‌جا نکن
     if (rect.top >= 0 && rect.top < window.innerHeight * 0.35) return;
     el.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+
+  // کراپ دستی کاور: عکسِ پیش‌نمایش/فایل در کراپر باز می‌شود؛ نتیجه جایگزین
+  // فایل انتخابی می‌شود تا با همان «ذخیره بازی» در جدول covers ذخیره شود.
+  // اگر هنوز هیچ فایل/پیش‌نمایشی نیست ولی بازی در حال ویرایش کاور دارد، کاور
+  // فعلی از سرور گرفته و در کراپر باز می‌شود (برای برش کاورهای ذخیره‌شده AI).
+  async function openCropperFromExisting() {
+    const existing = editing?.cover ?? "";
+    if (!existing) {
+      openCropper();
+      return;
+    }
+    try {
+      const res = await fetch(existing);
+      if (!res.ok) {
+        openCropper();
+        return;
+      }
+      const blob = await res.blob();
+      if (!blob.type.startsWith("image/")) {
+        openCropper();
+        return;
+      }
+      const ext = blob.type === "image/png" ? "png" : blob.type === "image/webp" ? "webp" : "jpg";
+      const file = new File([blob], `cover.${ext}`, { type: blob.type });
+      if (cropSrc.startsWith("blob:")) URL.revokeObjectURL(cropSrc);
+      setCropSrc(URL.createObjectURL(file));
+      const dt = new DataTransfer();
+      dt.items.add(file);
+      if (fileRef.current) {
+        fileRef.current.files = dt.files;
+      }
+      setCropOpen(true);
+    } catch {
+      openCropper();
+    }
+  }
+
+  function openCropper() {
+    const file = fileRef.current?.files?.[0];
+    if (file && file.size > 0) {
+      if (cropSrc.startsWith("blob:")) URL.revokeObjectURL(cropSrc);
+      setCropSrc(URL.createObjectURL(file));
+      setCropOpen(true);
+      return;
+    }
+    if (preview && !previewError) {
+      setCropSrc(preview);
+      setCropOpen(true);
+    }
+  }
+
+  function applyCrop(file: File) {
+    const dt = new DataTransfer();
+    dt.items.add(file);
+    if (fileRef.current) {
+      fileRef.current.files = dt.files;
+    }
+    if (cropSrc.startsWith("blob:")) URL.revokeObjectURL(cropSrc);
+    const url = URL.createObjectURL(file);
+    setCropSrc("");
+    setCropOpen(false);
+    setPreview(url);
+    setPreviewError(false);
+    // کراپ دستی اولویت دارد — لینک متنی را خالی کن تا همان فایل ذخیره شود
+    setForm((prev) => ({ ...prev, cover: "" }));
   }
 
   function startEdit(game: Game) {
@@ -284,11 +353,24 @@ export default function AdminPanel({ games }: { games: Game[] }) {
                   onError={() => setPreviewError(true)}
                 />
               </div>
+              <div className="crop-open-row">
+                <button className="button ghost small" type="button" onClick={openCropper}>
+                  ✂ برش کاور (حذف نوار کنسول بالای عکس)
+                </button>
+              </div>
             </div>
           ) : null}
           {preview && previewError ? (
             <div className="field">
               <div className="alert error">این لینک در مرورگر نمایش داده نشد، ولی مشکلی نیست — بازی بدون عکس ذخیره می‌شود. اگر می‌خواهید عکس داشته باشد آدرس https معتبر وارد کنید.</div>
+            </div>
+          ) : null}
+          {editing?.cover ? (
+            <div className="field">
+              <button className="button ghost small" type="button" onClick={openCropperFromExisting}>
+                ✂ برش کاور فعلی بازی (مثلاً حذف نوار PS5 بالای عکس)
+              </button>
+              <p className="field-help">کاور فعلی بازی از سرور گرفته می‌شود تا برش بزنی؛ نتیجه با ذخیره بازی جایگزین همان کاور می‌شود.</p>
             </div>
           ) : null}
           {editing?.cover ? (
@@ -437,6 +519,17 @@ export default function AdminPanel({ games }: { games: Game[] }) {
         </div>
       </div>
       <AiGamePublisher />
+      {cropOpen && cropSrc ? (
+        <CoverCropper
+          imageSrc={cropSrc}
+          onApply={applyCrop}
+          onClose={() => {
+            if (cropSrc.startsWith("blob:") && cropSrc !== preview) URL.revokeObjectURL(cropSrc);
+            setCropSrc("");
+            setCropOpen(false);
+          }}
+        />
+      ) : null}
     </div>
   );
 }

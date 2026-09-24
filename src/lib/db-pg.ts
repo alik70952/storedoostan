@@ -1,7 +1,7 @@
 import { Pool } from "pg";
 import { randomUUID } from "node:crypto";
 import type { Game, GameInput, Platform } from "./types";
-import { seedGames } from "./seed";
+import { catalogGames } from "./catalog";
 
 // بک‌اند Postgres (Neon/Supabase) برای استقرار روی Vercel.
 // فقط وقتی استفاده می‌شود که DATABASE_URL ست شده باشد.
@@ -17,6 +17,61 @@ export function getPool(): Pool {
     });
   }
   return pool;
+}
+
+const GAME_COLUMNS = `(id,title,"titleFa",platform,"twoPlayer",genre,cover,description,featured,"createdAt","updatedAt")`;
+
+/** درج گروهی بازی‌ها — ردیف‌های موجود دست نمی‌خورند (ON CONFLICT DO NOTHING) */
+async function insertGames(pool: Pool, games: Game[]): Promise<void> {
+  const CHUNK = 100;
+  for (let i = 0; i < games.length; i += CHUNK) {
+    const chunk = games.slice(i, i + CHUNK);
+    const values: unknown[] = [];
+    const tuples = chunk.map((g, index) => {
+      const base = index * 11;
+      values.push(
+        g.id, g.title, g.titleFa, g.platform, g.twoPlayer ? 1 : 0,
+        g.genre, g.cover, g.description, g.featured ? 1 : 0, g.createdAt, g.updatedAt
+      );
+      const placeholders = Array.from({ length: 11 }, (_, k) => `$${base + k + 1}`);
+      return `(${placeholders.join(",")})`;
+    });
+    await pool.query(`INSERT INTO games ${GAME_COLUMNS} VALUES ${tuples.join(",")} ON CONFLICT (id) DO NOTHING`, values);
+  }
+}
+
+/**
+ * پرکردن ردیف‌های کاتالوگ در دیتابیس موجود (مثل Neon روی Vercel).
+ * فقط ردیف‌های «نبوده» اضافه می‌شوند؛ داده‌ها و ویرایش‌های ادمین دست نمی‌خورند.
+ * علاوه بر آن، بازی‌هایی که قبلاً کاورشان پیدا نشده بود (cover خالی) کاور می‌گیرند.
+ */
+async function ensureCatalogRows(p: Pool): Promise<void> {
+  const existingRes = await p.query(`SELECT id FROM games WHERE id LIKE 'ps4-cat-%'`);
+  const existing = new Set(existingRes.rows.map((row) => String((row as { id: unknown }).id)));
+  const missing = catalogGames.filter((g) => !existing.has(g.id));
+  if (missing.length > 0) await insertGames(p, missing);
+
+  const emptyRes = await p.query(
+    `SELECT COUNT(*)::int AS c FROM games WHERE id LIKE 'ps4-cat-%' AND (cover IS NULL OR cover = '')`
+  );
+  if (Number(emptyRes.rows[0]?.c ?? 0) > 0) {
+    const withCover = catalogGames.filter((g) => g.cover && existing.has(g.id));
+    const CHUNK = 200;
+    for (let i = 0; i < withCover.length; i += CHUNK) {
+      const chunk = withCover.slice(i, i + CHUNK);
+      const values: unknown[] = [];
+      const tuples = chunk.map((g, index) => {
+        const base = index * 2;
+        values.push(g.id, g.cover);
+        return `($${base + 1},$${base + 2})`;
+      });
+      await p.query(
+        `UPDATE games AS g SET cover = v.cover FROM (VALUES ${tuples.join(",")}) AS v(id, cover)
+         WHERE g.id = v.id AND (g.cover IS NULL OR g.cover = '')`,
+        values
+      );
+    }
+  }
 }
 
 let ready: Promise<void> | null = null;
@@ -42,13 +97,9 @@ async function ensureSchema(): Promise<void> {
       await p.query(`ALTER TABLE games ADD COLUMN IF NOT EXISTS "twoPlayer" INTEGER NOT NULL DEFAULT 0`);
       const count = await p.query("SELECT COUNT(*)::int AS c FROM games");
       if (Number(count.rows[0]?.c ?? 0) === 0) {
-        for (const g of seedGames) {
-          await p.query(
-            `INSERT INTO games (id,title,"titleFa",platform,"twoPlayer",genre,cover,description,featured,"createdAt","updatedAt")
-             VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11) ON CONFLICT (id) DO NOTHING`,
-            [g.id, g.title, g.titleFa, g.platform, g.twoPlayer ? 1 : 0, g.genre, g.cover, g.description, g.featured ? 1 : 0, g.createdAt, g.updatedAt]
-          );
-        }
+        await insertGames(p, catalogGames);
+      } else {
+        await ensureCatalogRows(p);
       }
     })();
     ready.catch(() => {

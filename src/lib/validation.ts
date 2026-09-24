@@ -57,6 +57,10 @@ export function isSafeCoverUrl(value: string): boolean {
   if (trimmed.startsWith("/api/covers/")) {
     return /^\/api\/covers\/[a-f0-9-]{36}\.(jpg|png|webp)(\?[^#]*)?(#.*)?$/i.test(trimmed);
   }
+  // کاورهای استاتیک خود سایت (public/covers/…) — کاتالوگ PS4 از این مسیر سرو می‌شود
+  if (trimmed.startsWith("/covers/")) {
+    return /^\/covers\/[a-z0-9][a-z0-9/_-]*\.(jpg|jpeg|png|webp)$/i.test(trimmed) && !trimmed.includes("..");
+  }
   // بقیه آدرس‌های نسبی (مثل /uploads/...) را قبول نمی‌کنیم
   if (trimmed.startsWith("/")) return false;
   if (trimmed.length > MAX_URL) return false;
