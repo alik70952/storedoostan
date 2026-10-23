@@ -57,6 +57,7 @@ function buildPs4CatalogGames(): Game[] {
       titleFa: entry.titleFa || entry.title,
       platform: PS4_PLATFORM,
       twoPlayer: entry.twoPlayer,
+      persianSub: false,
       genre: entry.genre,
       cover: entry.cover,
       description: entry.description,
@@ -70,5 +71,40 @@ function buildPs4CatalogGames(): Game[] {
 
 export const ps4CatalogGames: Game[] = buildPs4CatalogGames();
 
+/**
+ * بازی‌هایی که در کانال بله با «زیرنویس فارسی» اعلام شده‌اند (پلتفرم + نام دقیق ردیف سایت،
+ * شامل ردیف‌هایی که ادمین ساخته). فقط مقدار اولیه است؛ بعد از آن تیک پنل ادمین ملاک است.
+ */
+const PERSIAN_SUB_GAMES = new Set(
+  [
+    ["PS5", "Marvel's Wolverine"],
+    ["PS5", "Assassin's creed black flag resync"],
+    ["PS5", "Onimusha way of sword"],
+    ["PS5", "LEGO Batman: Legacy of the Dark Knight"],
+    ["PS5", "Mortal Shell 2"],
+    ["PS5", "Silent Hill: Townfall"],
+    ["PS5", "Senua's Saga: Hellblade II"],
+    ["PS5", "The Last of Us Part II Remastered"],
+    ["PS5", "Halo: Campaign Evolved"],
+    ["PS5", "Resonance: A Plague Tale Legacy"],
+    ["PS5", "The Last of Us Part I"],
+    ["PS5", "Silent Hill 2"],
+    ["PS5", "Pragmata"],
+    ["PS5", "Assassin's Creed Mirage"],
+    ["PS4", "Resident Evil 4"],
+    ["PS4", "The Last of Us Remastered"],
+    ["PS4", "Assassin's Creed Mirage"],
+    ["PS4", "God of War (PS2 Classic)"],
+    ["PS4", "God of War II (PS2 Classic)"],
+  ].map(([platform, title]) => `${platform}|${normTitle(title)}`)
+);
+
+export function hasPersianSub(game: Pick<Game, "platform" | "title">): boolean {
+  return PERSIAN_SUB_GAMES.has(`${game.platform}|${normTitle(game.title)}`);
+}
+
+/** ردیف‌های تکراری که باید از دیتابیس حذف شوند (Battlefield 6 دوم، بدون نام فارسی و توضیح) */
+export const REMOVED_GAME_IDS = ["52c31811-294a-4a6a-bc9d-82b2af70663f"];
+
 /** منبع واحد برای ساخت اولیه جدول و پرکردن ردیف‌های ناقص */
-export const catalogGames: Game[] = [...seedGames, ...ps4CatalogGames];
+export const catalogGames: Game[] = [...seedGames, ...ps4CatalogGames].map((g) => ({ ...g, persianSub: hasPersianSub(g) }));

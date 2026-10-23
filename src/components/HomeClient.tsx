@@ -35,6 +35,12 @@ const PLATFORM_HEADINGS: Record<PlatformFilter, string> = {
   all: "همه بازی‌ها"
 };
 
+// لوکیشن فروشگاه در اپ‌های مسیریابی (از کانال بله فروشگاه)
+const MAP_LINKS = [
+  { href: "https://balad.ir/p/2xQGjtBuVBewe1", label: "🗺️ مسیریابی با بلد" },
+  { href: "https://nshn.ir/2fQbgjrUYFQZoZ", label: "🧭 مسیریابی با نشان" }
+];
+
 function SearchIcon() {
   return (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
@@ -124,6 +130,11 @@ export default function HomeClient({ games }: { games: Game[] }) {
           <h1>فروشگاه دوستان</h1>
           <p>مجموعه بازی‌های کپی‌خور PS5 و PS4، بازی اکانتی PS5 و بازی آفلاین Xbox. بازی کن، به سبک خودت.</p>
           <p className="hero-address">📍 شیراز، خیابان سجاد، کوچه ۲، فرعی ۲/۵ — فروشگاه دوستان</p>
+          <div className="hero-maps">
+            {MAP_LINKS.map((m) => (
+              <a key={m.href} href={m.href} target="_blank" rel="noopener noreferrer">{m.label}</a>
+            ))}
+          </div>
           <div className="hero-search-wrap">
             <SearchIcon />
             <input
@@ -211,6 +222,9 @@ export default function HomeClient({ games }: { games: Game[] }) {
         <div className="footer-inner">
           <div className="footer-links">
             <a href="#catalog">فهرست بازی‌ها</a>
+            {MAP_LINKS.map((m) => (
+              <a key={m.href} href={m.href} target="_blank" rel="noopener noreferrer">{m.label}</a>
+            ))}
           </div>
           <div className="footer-meta">
             <span className="footer-address">📍 شیراز، خیابان سجاد، کوچه ۲، فرعی ۲/۵</span>

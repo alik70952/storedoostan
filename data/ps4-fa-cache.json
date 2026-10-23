@@ -1998,5 +1998,661 @@
   "My Hero One's Justice 2": {
     "titleFa": "مای هیرو وانز جاستیس ۲",
     "genre": "مبارزه‌ای"
+  },
+  "Sniper Elite: Resistance": {
+    "titleFa": "اسنایپر الیت: مقاومت",
+    "genre": "شوتر"
+  },
+  "Erica": {
+    "titleFa": "اریکا",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Bramble: The Mountain King": {
+    "titleFa": "برمبل: پادشاه کوهستان",
+    "genre": "ترس و بقا"
+  },
+  "Taxi Chaos": {
+    "titleFa": "تاکسی آشوب",
+    "genre": "مسابقه‌ای"
+  },
+  "The King of Fighters XIV": {
+    "titleFa": "پادشاه مبارزان ۱۴",
+    "genre": "مبارزه‌ای"
+  },
+  "SpongeBob SquarePants: Battle for Bikini Bottom - Rehydrated": {
+    "titleFa": "باب اسفنجی: نبرد بیکینی باتم",
+    "genre": "خانوادگی"
+  },
+  "Deus Ex: Mankind Divided": {
+    "titleFa": "دئوس اکس: بشریت تقسیم‌شده",
+    "genre": "نقش‌آفرینی"
+  },
+  "Kung Fu Panda: Showdown of Legendary Legends": {
+    "titleFa": "پاندای کونگ‌فوکار: نبرد افسانه‌ها",
+    "genre": "مبارزه‌ای"
+  },
+  "Outcast: Second Contact": {
+    "titleFa": "اوت‌کست: تماس دوم",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "TT Isle of Man": {
+    "titleFa": "تی‌تی آیل آو من",
+    "genre": "مسابقه‌ای"
+  },
+  "Uncharted: The Nathan Drake Collection": {
+    "titleFa": "آنچارتد: مجموعه نیتن دریک",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Wreckfest": {
+    "titleFa": "رک‌فست",
+    "genre": "مسابقه‌ای"
+  },
+  "Streets of Rage 4": {
+    "titleFa": "خیابان‌های خشم ۴",
+    "genre": "مبارزه‌ای"
+  },
+  "Zombie Army 4: Dead War": {
+    "titleFa": "ارتش زامبی ۴",
+    "genre": "شوتر"
+  },
+  "Road Redemption": {
+    "titleFa": "رود ردمپشن",
+    "genre": "مسابقه‌ای"
+  },
+  "Trover Saves the Universe": {
+    "titleFa": "تروور جهان را نجات می‌دهد",
+    "genre": "خانوادگی"
+  },
+  "Metro Exodus": {
+    "titleFa": "مترو اکسودوس",
+    "genre": "شوتر"
+  },
+  "Tennis World Tour 2": {
+    "titleFa": "تنیس ورلد تور ۲",
+    "genre": "ورزشی"
+  },
+  "Spike Volleyball": {
+    "titleFa": "اسپایک والیبال",
+    "genre": "ورزشی"
+  },
+  "Just Dance 2020": {
+    "titleFa": "جاست دنس ۲۰۲۰",
+    "genre": "خانوادگی"
+  },
+  "Captain Tsubasa: Rise of New Champions": {
+    "titleFa": "کاپیتان سوباسا: ظهور قهرمانان جدید",
+    "genre": "ورزشی"
+  },
+  "DayZ": {
+    "titleFa": "دی‌زی",
+    "genre": "ترس و بقا"
+  },
+  "A Plague Tale: Innocence": {
+    "titleFa": "افسانه طاعون: معصومیت",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Ace Combat 7: Skies Unknown": {
+    "titleFa": "ایس کامبت ۷: آسمان‌های ناشناخته",
+    "genre": "شوتر"
+  },
+  "Teenage Mutant Ninja Turtles: Mutants in Manhattan": {
+    "titleFa": "لاک‌پشت‌های نینجا: جهش‌یافته‌ها در منهتن",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "God of War III Remastered": {
+    "titleFa": "خدای جنگ ۳ ریمستر",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "MX vs ATV All Out": {
+    "titleFa": "ام‌ایکس در برابر ای‌تی‌وی: آل اوت",
+    "genre": "مسابقه‌ای"
+  },
+  "Fast & Furious Crossroads": {
+    "titleFa": "سریع و خشمگین: چهارراه",
+    "genre": "مسابقه‌ای"
+  },
+  "LEGO Star Wars: The Force Awakens": {
+    "titleFa": "لگو جنگ ستارگان: نیرو برمی‌خیزد",
+    "genre": "خانوادگی"
+  },
+  "Ben 10": {
+    "titleFa": "بن تن",
+    "genre": "خانوادگی"
+  },
+  "Metro Redux": {
+    "titleFa": "مترو ریداکس",
+    "genre": "شوتر"
+  },
+  "Rise of the Tomb Raider": {
+    "titleFa": "ظهور مهاجم مقبره",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Homefront: The Revolution": {
+    "titleFa": "هوم‌فرانت: انقلاب",
+    "genre": "شوتر"
+  },
+  "Conan Exiles": {
+    "titleFa": "کونان: تبعیدی‌ها",
+    "genre": "نقش‌آفرینی"
+  },
+  "The Amazing Spider-Man 2": {
+    "titleFa": "مرد عنکبوتی شگفت‌انگیز ۲",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Need for Speed: Hot Pursuit Remastered": {
+    "titleFa": "نید فور اسپید: هات پرسوت ریمستر",
+    "genre": "مسابقه‌ای"
+  },
+  "The LEGO Ninjago Movie Video Game": {
+    "titleFa": "لگو نینجاگو",
+    "genre": "خانوادگی"
+  },
+  "Just Dance 2021": {
+    "titleFa": "جاست دنس ۲۰۲۱",
+    "genre": "خانوادگی"
+  },
+  "Tomb Raider: Definitive Edition": {
+    "titleFa": "مهاجم مقبره: نسخه کامل",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Crysis Remastered": {
+    "titleFa": "کرایسیس ریمستر",
+    "genre": "شوتر"
+  },
+  "9 Monkeys of Shaolin": {
+    "titleFa": "۹ میمون شائولین",
+    "genre": "مبارزه‌ای"
+  },
+  "Insurgency: Sandstorm": {
+    "titleFa": "اینسرجنسی: طوفان شن",
+    "genre": "شوتر"
+  },
+  "3D Billiards: Billiards & Snooker": {
+    "titleFa": "بیلیارد سه‌بعدی: بیلیارد و اسنوکر",
+    "genre": "ورزشی"
+  },
+  "Farming Simulator 19": {
+    "titleFa": "شبیه‌ساز کشاورزی ۱۹",
+    "genre": "خانوادگی"
+  },
+  "Hello Neighbor 2": {
+    "titleFa": "سلام همسایه ۲",
+    "genre": "ترس و بقا"
+  },
+  "F.I.S.T.: Forged in Shadow Torch": {
+    "titleFa": "فیست: مشعل سایه",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Street Fighter 6": {
+    "titleFa": "استریت فایتر ۶",
+    "genre": "مبارزه‌ای"
+  },
+  "SpellForce III Reforced": {
+    "titleFa": "اسپل‌فورس ۳ ریفورسد",
+    "genre": "نقش‌آفرینی"
+  },
+  "WWE 2K Battlegrounds": {
+    "titleFa": "کشتی کج ۲K بتل‌گراندز",
+    "genre": "ورزشی"
+  },
+  "Desperados III": {
+    "titleFa": "دسپرادوز ۳",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Evil West": {
+    "titleFa": "غرب شیطانی",
+    "genre": "شوتر"
+  },
+  "One Piece Odyssey": {
+    "titleFa": "وان پیس اودیسه",
+    "genre": "نقش‌آفرینی"
+  },
+  "The Callisto Protocol": {
+    "titleFa": "پروتکل کالیستو",
+    "genre": "ترس و بقا"
+  },
+  "Gear.Club Unlimited 2": {
+    "titleFa": "گیر کلاب آنلیمیتد ۲",
+    "genre": "مسابقه‌ای"
+  },
+  "Aliens: Fireteam Elite": {
+    "titleFa": "بیگانه‌ها: تیم آتش نخبه",
+    "genre": "شوتر"
+  },
+  "Agatha Christie: Hercule Poirot - The First Cases": {
+    "titleFa": "آگاتا کریستی: هرکول پوآرو",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Atomic Heart": {
+    "titleFa": "قلب اتمی",
+    "genre": "شوتر"
+  },
+  "Beat Saber": {
+    "titleFa": "بیت سیبر",
+    "genre": "خانوادگی"
+  },
+  "Blue Fire": {
+    "titleFa": "آتش آبی",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Biomutant": {
+    "titleFa": "بایومیوتنت",
+    "genre": "نقش‌آفرینی"
+  },
+  "Blood & Truth": {
+    "titleFa": "خون و حقیقت",
+    "genre": "شوتر"
+  },
+  "Hogwarts Legacy": {
+    "titleFa": "میراث هاگوارتز",
+    "genre": "نقش‌آفرینی"
+  },
+  "eFootball 2024": {
+    "titleFa": "ای‌فوتبال ۲۰۲۴",
+    "genre": "ورزشی"
+  },
+  "LEGO 2K Drive": {
+    "titleFa": "لگو ۲K درایو",
+    "genre": "مسابقه‌ای"
+  },
+  "Midnight Fight Express": {
+    "titleFa": "میدنایت فایت اکسپرس",
+    "genre": "مبارزه‌ای"
+  },
+  "Like a Dragon: Ishin!": {
+    "titleFa": "مثل یک اژدها: ایشین",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Minecraft Legends": {
+    "titleFa": "ماینکرفت لجندز",
+    "genre": "خانوادگی"
+  },
+  "MX vs ATV Legends": {
+    "titleFa": "ام‌ایکس در برابر ای‌تی‌وی: لجندز",
+    "genre": "مسابقه‌ای"
+  },
+  "Police Simulator: Patrol Officers": {
+    "titleFa": "شبیه‌ساز پلیس: مأموران گشت",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Red Dead Redemption": {
+    "titleFa": "رد دد ردمپشن",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Sonic Colors: Ultimate": {
+    "titleFa": "سونیک کالرز: آلتیمیت",
+    "genre": "خانوادگی"
+  },
+  "Song of Horror": {
+    "titleFa": "آواز وحشت",
+    "genre": "ترس و بقا"
+  },
+  "SnowRunner": {
+    "titleFa": "اسنورانر",
+    "genre": "مسابقه‌ای"
+  },
+  "Sonic Origins Plus": {
+    "titleFa": "سونیک اوریجینز پلاس",
+    "genre": "خانوادگی"
+  },
+  "Terminator: Resistance": {
+    "titleFa": "ترمیناتور: مقاومت",
+    "genre": "شوتر"
+  },
+  "Stray": {
+    "titleFa": "استری",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "The Ascent": {
+    "titleFa": "د اسنت",
+    "genre": "شوتر"
+  },
+  "Sniper Elite V2 Remastered": {
+    "titleFa": "اسنایپر الیت V2 ریمستر",
+    "genre": "شوتر"
+  },
+  "The Dark Pictures Anthology: Little Hope": {
+    "titleFa": "دارک پیکچرز: لیتل هوپ",
+    "genre": "ترس و بقا"
+  },
+  "The Long Dark": {
+    "titleFa": "تاریکی طولانی",
+    "genre": "ترس و بقا"
+  },
+  "Twelve Minutes": {
+    "titleFa": "دوازده دقیقه",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Teenage Mutant Ninja Turtles: Shredder's Revenge": {
+    "titleFa": "لاک‌پشت‌های نینجا: انتقام شردر",
+    "genre": "مبارزه‌ای"
+  },
+  "Vampyr": {
+    "titleFa": "ومپایر",
+    "genre": "نقش‌آفرینی"
+  },
+  "Wanted: Dead": {
+    "titleFa": "تحت تعقیب: مرده",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Gran Turismo 7": {
+    "titleFa": "گرن توریسمو ۷",
+    "genre": "مسابقه‌ای"
+  },
+  "Visage": {
+    "titleFa": "ویزاژ",
+    "genre": "ترس و بقا"
+  },
+  "Truck Driver": {
+    "titleFa": "راننده کامیون",
+    "genre": "مسابقه‌ای"
+  },
+  "Werewolf: The Apocalypse - Earthblood": {
+    "titleFa": "گرگینه: آخرالزمان",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Sherlock Holmes: The Devil's Daughter": {
+    "titleFa": "شرلوک هلمز: دختر شیطان",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "NBA 2K25": {
+    "titleFa": "ان‌بی‌ای ۲K25",
+    "genre": "ورزشی"
+  },
+  "Sonic X Shadow Generations": {
+    "titleFa": "سونیک و شدو: جنریشنز",
+    "genre": "خانوادگی"
+  },
+  "Infliction: Extended Cut": {
+    "titleFa": "اینفلیکشن",
+    "genre": "ترس و بقا"
+  },
+  "Olympic Games Tokyo 2020": {
+    "titleFa": "بازی‌های المپیک توکیو ۲۰۲۰",
+    "genre": "ورزشی"
+  },
+  "Poppy Playtime": {
+    "titleFa": "پاپی پلی‌تایم",
+    "genre": "ترس و بقا"
+  },
+  "Season: A Letter to the Future": {
+    "titleFa": "فصل: نامه‌ای به آینده",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Nickelodeon Kart Racers 2: Grand Prix": {
+    "titleFa": "نیکلودئون کارت ریسرز ۲",
+    "genre": "مسابقه‌ای"
+  },
+  "Contra: Operation Galuga": {
+    "titleFa": "کنترا: عملیات گالوگا",
+    "genre": "شوتر"
+  },
+  "Grounded": {
+    "titleFa": "گراندد",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Nikoderiko: The Magical World": {
+    "titleFa": "نیکودریکو: دنیای جادویی",
+    "genre": "خانوادگی"
+  },
+  "Contra Anniversary Collection": {
+    "titleFa": "مجموعه سالگرد کنترا",
+    "genre": "شوتر"
+  },
+  "No Man's Sky": {
+    "titleFa": "آسمان بی‌انسان",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Blasphemous": {
+    "titleFa": "کفرآمیز",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "DreamWorks All-Star Kart Racing": {
+    "titleFa": "دریم‌ورکس: مسابقه کارت ستارگان",
+    "genre": "مسابقه‌ای"
+  },
+  "Shinobi: Art of Vengeance": {
+    "titleFa": "شینوبی: هنر انتقام",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Dungeons of Hinterberg": {
+    "titleFa": "سیاه‌چال‌های هینتربرگ",
+    "genre": "نقش‌آفرینی"
+  },
+  "Blasphemous II": {
+    "titleFa": "کفرآمیز ۲",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "LEGO Voyagers": {
+    "titleFa": "لگو وویجرز",
+    "genre": "خانوادگی"
+  },
+  "Sonic Racing: CrossWorlds": {
+    "titleFa": "سونیک ریسینگ: کراس‌ورلدز",
+    "genre": "مسابقه‌ای"
+  },
+  "Steep": {
+    "titleFa": "استیپ",
+    "genre": "ورزشی"
+  },
+  "Rabbids: Party of Legends": {
+    "titleFa": "ربیدز: مهمانی افسانه‌ها",
+    "genre": "خانوادگی"
+  },
+  "Bendy and the Dark Revival": {
+    "titleFa": "بندی و احیای تاریک",
+    "genre": "ترس و بقا"
+  },
+  "High on Life": {
+    "titleFa": "های آن لایف",
+    "genre": "شوتر"
+  },
+  "Asterix & Obelix XXL: Romastered": {
+    "titleFa": "آستریکس و اوبلیکس XXL",
+    "genre": "خانوادگی"
+  },
+  "Beach Buggy Racing": {
+    "titleFa": "مسابقه باگی ساحلی",
+    "genre": "مسابقه‌ای"
+  },
+  "Green Hell": {
+    "titleFa": "جهنم سبز",
+    "genre": "ترس و بقا"
+  },
+  "LEGO Party!": {
+    "titleFa": "لگو پارتی",
+    "genre": "خانوادگی"
+  },
+  "My First Gran Turismo": {
+    "titleFa": "اولین گرن توریسموی من",
+    "genre": "مسابقه‌ای"
+  },
+  "Tiny Troopers: Joint Ops XL": {
+    "titleFa": "سربازان کوچک: عملیات مشترک",
+    "genre": "شوتر"
+  },
+  "Poppy Playtime: Chapter 2": {
+    "titleFa": "پاپی پلی‌تایم: فصل ۲",
+    "genre": "ترس و بقا"
+  },
+  "Poppy Playtime: Chapter 3": {
+    "titleFa": "پاپی پلی‌تایم: فصل ۳",
+    "genre": "ترس و بقا"
+  },
+  "Shadows of the Damned: Hella Remastered": {
+    "titleFa": "سایه‌های نفرین‌شدگان",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Madison": {
+    "titleFa": "مدیسون",
+    "genre": "ترس و بقا"
+  },
+  "Torment: Tides of Numenera": {
+    "titleFa": "عذاب: جزر و مد نومنرا",
+    "genre": "نقش‌آفرینی"
+  },
+  "Shadow of the Ninja: Reborn": {
+    "titleFa": "سایه نینجا: تولد دوباره",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Five Nights at Freddy's: Security Breach": {
+    "titleFa": "پنج شب در فردی: نفوذ امنیتی",
+    "genre": "ترس و بقا"
+  },
+  "Hello Neighbor: Hide and Seek": {
+    "titleFa": "سلام همسایه: قایم‌باشک",
+    "genre": "ترس و بقا"
+  },
+  "The Expanse: A Telltale Series": {
+    "titleFa": "گستره: سری تل‌تیل",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Disney Epic Mickey: Rebrushed": {
+    "titleFa": "میکی حماسی: ریبراشد",
+    "genre": "خانوادگی"
+  },
+  "Death's Door": {
+    "titleFa": "دروازه مرگ",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Unknown 9: Awakening": {
+    "titleFa": "ناشناخته ۹: بیداری",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "SpongeBob SquarePants: The Cosmic Shake": {
+    "titleFa": "باب اسفنجی: لرزش کیهانی",
+    "genre": "خانوادگی"
+  },
+  "Winning Eleven 3: Final Ver.": {
+    "titleFa": "وینینگ الون ۳ (نوستالژی)",
+    "genre": "ورزشی"
+  },
+  "Airport Simulator: Day & Night": {
+    "titleFa": "شبیه‌ساز فرودگاه: شب و روز",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Car Mechanic Simulator 2021": {
+    "titleFa": "شبیه‌ساز مکانیک خودرو ۲۰۲۱",
+    "genre": "مسابقه‌ای"
+  },
+  "Mutant Year Zero: Road to Eden": {
+    "titleFa": "جهش‌یافته سال صفر: جاده عدن",
+    "genre": "نقش‌آفرینی"
+  },
+  "Syberia: The World Before": {
+    "titleFa": "سیبریا: دنیای پیشین",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Kao the Kangaroo": {
+    "titleFa": "کائو کانگورو",
+    "genre": "خانوادگی"
+  },
+  "New Tales from the Borderlands": {
+    "titleFa": "داستان‌های جدید از بوردرلندز",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Kaze and the Wild Masks": {
+    "titleFa": "کازه و نقاب‌های وحشی",
+    "genre": "خانوادگی"
+  },
+  "Transformers: Rise of the Dark Spark": {
+    "titleFa": "تبدیل‌شوندگان: ظهور جرقه تاریک",
+    "genre": "شوتر"
+  },
+  "Super Mario Bros. Wonder": {
+    "titleFa": "سوپر ماریو واندر",
+    "genre": "خانوادگی"
+  },
+  "Mario Forever": {
+    "titleFa": "ماریو فوراور",
+    "genre": "خانوادگی"
+  },
+  "God of War (PS2 Classic)": {
+    "titleFa": "خدای جنگ ۱ (نوستالژی PS2)",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "God of War II (PS2 Classic)": {
+    "titleFa": "خدای جنگ ۲ (نوستالژی PS2)",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Marsupilami: Hoobadventure": {
+    "titleFa": "مارسوپیلامی",
+    "genre": "خانوادگی"
+  },
+  "Metal: Hellsinger": {
+    "titleFa": "متال: هل‌سینگر",
+    "genre": "شوتر"
+  },
+  "Disco Elysium: The Final Cut": {
+    "titleFa": "دیسکو الیزیوم",
+    "genre": "نقش‌آفرینی"
+  },
+  "The House of the Dead: Remake": {
+    "titleFa": "خانه مردگان: ریمیک",
+    "genre": "شوتر"
+  },
+  "Mark of the Ninja: Remastered": {
+    "titleFa": "نشان نینجا: ریمستر",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Fobia: St. Dinfna Hotel": {
+    "titleFa": "فوبیا: هتل سنت دینفنا",
+    "genre": "ترس و بقا"
+  },
+  "RiMS Racing": {
+    "titleFa": "ریمز ریسینگ",
+    "genre": "مسابقه‌ای"
+  },
+  "Brothers in Arms: Road to Hill 30": {
+    "titleFa": "برادران جنگ: جاده تپه ۳۰",
+    "genre": "شوتر"
+  },
+  "Barbie in the 12 Dancing Princesses": {
+    "titleFa": "باربی و ۱۲ شاهزاده رقصنده",
+    "genre": "خانوادگی"
+  },
+  "Battlefield 2: Modern Combat": {
+    "titleFa": "بتلفیلد ۲: نبرد مدرن",
+    "genre": "شوتر"
+  },
+  "Brothers in Arms: Earned in Blood": {
+    "titleFa": "برادران جنگ: به بهای خون",
+    "genre": "شوتر"
+  },
+  "Bugs Bunny & Taz: Time Busters": {
+    "titleFa": "باگز بانی و تاز: شکارچیان زمان",
+    "genre": "خانوادگی"
+  },
+  "Airborne Troops: Countdown to D-Day": {
+    "titleFa": "نیروهای هوابرد: شمارش معکوس روز دی",
+    "genre": "شوتر"
+  },
+  "The Smurfs 2: The Prisoner of the Green Stone": {
+    "titleFa": "اسمورف‌ها ۲: زندانی سنگ سبز",
+    "genre": "خانوادگی"
+  },
+  "Monster Jam Showdown": {
+    "titleFa": "مانستر جم شودان",
+    "genre": "مسابقه‌ای"
+  },
+  "TopSpin 2K25": {
+    "titleFa": "تاپ اسپین ۲K25",
+    "genre": "ورزشی"
+  },
+  "Neighbours from Hell": {
+    "titleFa": "همسایه جهنمی",
+    "genre": "خانوادگی"
+  },
+  "Pepsiman": {
+    "titleFa": "پپسی‌من",
+    "genre": "خانوادگی"
+  },
+  "Plants vs. Zombies: Replanted": {
+    "titleFa": "گیاهان در برابر زامبی‌ها: ریپلنتد",
+    "genre": "خانوادگی"
+  },
+  "Mega Man X5": {
+    "titleFa": "مگامن X5",
+    "genre": "اکشن و ماجراجویی"
   }
 }

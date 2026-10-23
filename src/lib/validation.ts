@@ -106,6 +106,7 @@ export function validateGameInput(raw: {
   titleFa?: string;
   platform?: string;
   twoPlayer?: boolean;
+  persianSub?: boolean;
   genre?: string;
   cover?: string;
   description?: string;
@@ -135,6 +136,7 @@ export function validateGameInput(raw: {
       platform,
       // دسته دو نفره: برچسب عرضی — بازی هم در تب پلتفرم خودش و هم در تب «دو نفره» نمایش داده می‌شود
       twoPlayer: Boolean(raw.twoPlayer),
+      persianSub: Boolean(raw.persianSub),
       genre,
       cover,
       description,

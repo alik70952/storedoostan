@@ -66,6 +66,7 @@ export async function POST(request: Request) {
               titleFa: existing.titleFa,
               platform: existing.platform,
               twoPlayer: existing.twoPlayer,
+              persianSub: existing.persianSub,
               genre: existing.genre,
               cover: cover.url,
               description: existing.description,

@@ -23,6 +23,8 @@ export type Game = {
   platform: Platform;
   // دسته «بازی‌های دو نفره»: برچسب عرضی روی بازی‌های PS5/PS4 — بازی هم در تب پلتفرم خودش هست و هم در تب دو نفره
   twoPlayer: boolean;
+  // برچسب «زیرنویس فارسی» روی کارت بازی
+  persianSub: boolean;
   genre: string;
   cover: string;
   description: string;

@@ -109,6 +109,7 @@ test("دسته PS5 اکانتی روی دیتابیس قدیمی (بدون ست�
     titleFa: "فوتبال ۲۶",
     platform: "PS5 اکانتی",
     twoPlayer: true,
+    persianSub: true,
     genre: "ورزشی",
     cover: "",
     description: "نسخه اکانتی.",
@@ -118,10 +119,12 @@ test("دسته PS5 اکانتی روی دیتابیس قدیمی (بدون ست�
   expect(db.getGame(created.id)?.platform).toBe("PS5 اکانتی");
   expect(db.getGame(created.id)?.twoPlayer).toBe(true);
   expect(db.listGames().find((g) => g.id === created.id)?.twoPlayer).toBe(true);
+  expect(db.getGame(created.id)?.persianSub).toBe(true);
 
   // مهاجرت: ستون «دو نفره» خودکار اضافه و ستون ظرفیت (که دیگر وجود ندارد) برنگشته است
   const cols = (db.getConnection().prepare("PRAGMA table_info(games)").all() as Array<{ name?: unknown }>).map((c) => String(c.name));
   expect(cols).toContain("twoPlayer");
+  expect(cols).toContain("persianSub");
   expect(cols).not.toContain("capacity");
 
   // ویرایش: خاموش کردن برچسب دو نفره و تغییر دسته
@@ -130,6 +133,7 @@ test("دسته PS5 اکانتی روی دیتابیس قدیمی (بدون ست�
     titleFa: created.titleFa,
     platform: "PS5",
     twoPlayer: false,
+    persianSub: false,
     genre: created.genre,
     cover: created.cover,
     description: created.description,

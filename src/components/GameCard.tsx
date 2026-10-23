@@ -17,6 +17,7 @@ export default function GameCard({ game }: { game: Game }) {
       <div className="cover-wrap">
         <span className={`platform-badge platform-${platformClass(game.platform)}`}>{game.platform}</span>
         {game.featured ? <span className="featured-badge" title="منتخب">★</span> : null}
+        {game.persianSub ? <span className="sub-badge">زیرنویس فارسی</span> : null}
         {game.cover ? (
           <img className="cover" src={game.cover} alt={game.titleFa || game.title} loading="lazy" />
         ) : (

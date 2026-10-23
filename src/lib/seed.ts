@@ -57,6 +57,7 @@ export const seedGames: Game[] = entries.map((entry, index) => {
     platform: entry.platform,
     // دسته دو نفره: برچسب عرضی روی بازی‌های PS5/PS4
     twoPlayer: entry.twoPlayer ?? false,
+    persianSub: false,
     genre: entry.genre,
     cover: entry.cover,
     description: entry.description,

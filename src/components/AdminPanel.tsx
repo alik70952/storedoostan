@@ -18,6 +18,7 @@ const EMPTY_FORM = {
   titleFa: "",
   platform: "PS5" as Platform,
   twoPlayer: false,
+  persianSub: false,
   genre: GENRES[0] as string,
   cover: "",
   description: "",
@@ -135,6 +136,7 @@ export default function AdminPanel({ games }: { games: Game[] }) {
       titleFa: game.titleFa,
       platform: game.platform,
       twoPlayer: game.twoPlayer,
+      persianSub: game.persianSub,
       genre: game.genre,
       cover: game.cover,
       description: game.description,
@@ -401,6 +403,10 @@ export default function AdminPanel({ games }: { games: Game[] }) {
             <label htmlFor="twoPlayer">نمایش در دسته «بازی‌های دو نفره» (PS5 / PS4)</label>
           </div>
           <div className="field checkbox-row">
+            <input id="persianSub" name="persianSub" type="checkbox" checked={form.persianSub} onChange={(e) => update("persianSub", e.target.checked)} />
+            <label htmlFor="persianSub">برچسب «زیرنویس فارسی» روی کارت بازی</label>
+          </div>
+          <div className="field checkbox-row">
             <input id="featured" name="featured" type="checkbox" checked={form.featured} onChange={(e) => update("featured", e.target.checked)} />
             <label htmlFor="featured">نمایش ستاره «منتخب» روی کارت</label>
           </div>
@@ -474,6 +480,7 @@ export default function AdminPanel({ games }: { games: Game[] }) {
                     <small>
                       <span className={`pill ${platformClass(game.platform)}`}>{game.platform}</span>
                       {game.twoPlayer ? <span className="pill two-player">دو نفره</span> : null}
+                      {game.persianSub ? <span className="pill persian-sub">زیرنویس فارسی</span> : null}
                       {game.genre ? <span>{game.genre}</span> : null}
                       {game.featured ? <span className="pill featured">منتخب</span> : null}
                       <span>{persianDate(game.createdAt)}</span>

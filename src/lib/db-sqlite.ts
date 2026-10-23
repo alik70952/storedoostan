@@ -3,7 +3,7 @@ import { randomUUID } from "node:crypto";
 import fs from "node:fs";
 import path from "node:path";
 import type { Game, GameInput, Platform } from "./types";
-import { catalogGames } from "./catalog";
+import { REMOVED_GAME_IDS, catalogGames, hasPersianSub } from "./catalog";
 
 // لوکال: پوشه data ـــ روی Vercel: حافظه موقت /tmp (ماندگار نیست؛ برای ماندگاری DATABASE_URL بگذارید)
 const DATA_DIR =
@@ -14,8 +14,8 @@ export const UPLOADS_DIR = path.join(DATA_DIR, "uploads");
 
 let db: DatabaseSync | null = null;
 
-const INSERT_GAME_SQL = `INSERT OR IGNORE INTO games (id,title,titleFa,platform,twoPlayer,genre,cover,description,featured,createdAt,updatedAt)
-  VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`;
+const INSERT_GAME_SQL = `INSERT OR IGNORE INTO games (id,title,titleFa,platform,twoPlayer,persianSub,genre,cover,description,featured,createdAt,updatedAt)
+  VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`;
 
 /**
  * پرکردن ردیف‌های کاتالوگ (بازی‌های seed + کاتالوگ ۵۰۰ بازی PS4) در دیتابیس موجود.
@@ -23,6 +23,8 @@ const INSERT_GAME_SQL = `INSERT OR IGNORE INTO games (id,title,titleFa,platform,
  * ویرایش/حذف ادمین هم دست‌نخورده بماند.
  */
 function ensureCatalogRows(connection: DatabaseSync): void {
+  const remove = connection.prepare("DELETE FROM games WHERE id = ?");
+  for (const id of REMOVED_GAME_IDS) remove.run(id);
   const rows = connection.prepare("SELECT id FROM games").all() as Array<{ id?: unknown }>;
   const existingIds = new Set(rows.map((row) => String(row.id ?? "")));
   const missing = catalogGames.filter((g) => !existingIds.has(g.id));
@@ -31,7 +33,7 @@ function ensureCatalogRows(connection: DatabaseSync): void {
     connection.exec("BEGIN");
     try {
       for (const g of missing) {
-        insert.run(g.id, g.title, g.titleFa, g.platform, g.twoPlayer ? 1 : 0, g.genre, g.cover, g.description, g.featured ? 1 : 0, g.createdAt, g.updatedAt);
+        insert.run(g.id, g.title, g.titleFa, g.platform, g.twoPlayer ? 1 : 0, g.persianSub ? 1 : 0, g.genre, g.cover, g.description, g.featured ? 1 : 0, g.createdAt, g.updatedAt);
       }
       connection.exec("COMMIT");
     } catch (err) {
@@ -66,6 +68,7 @@ export function getConnection(): DatabaseSync {
   const existing = db.prepare("SELECT name FROM sqlite_master WHERE type='table' AND name='games'").get();
   if (existing) {
     ensureTwoPlayerColumn(db);
+    ensurePersianSubColumn(db);
   } else {
     db.exec(`CREATE TABLE games (
       id TEXT PRIMARY KEY,
@@ -73,6 +76,7 @@ export function getConnection(): DatabaseSync {
       titleFa TEXT NOT NULL,
       platform TEXT NOT NULL,
       twoPlayer INTEGER NOT NULL DEFAULT 0,
+      persianSub INTEGER NOT NULL DEFAULT 0,
       genre TEXT NOT NULL DEFAULT '',
       cover TEXT NOT NULL DEFAULT '',
       description TEXT NOT NULL DEFAULT '',
@@ -94,6 +98,18 @@ function ensureTwoPlayerColumn(connection: DatabaseSync): void {
   }
 }
 
+// مهاجرت سبک: ستون «زیرنویس فارسی»؛ فقط بار اول بازی‌های اعلام‌شده در کانال علامت می‌خورند
+function ensurePersianSubColumn(connection: DatabaseSync): void {
+  const columns = connection.prepare("PRAGMA table_info(games)").all() as Array<{ name?: unknown }>;
+  if (columns.some((c) => String(c.name ?? "") === "persianSub")) return;
+  connection.exec("ALTER TABLE games ADD COLUMN persianSub INTEGER NOT NULL DEFAULT 0");
+  const rows = connection.prepare("SELECT id, title, platform FROM games").all() as Array<Record<string, unknown>>;
+  const flag = connection.prepare("UPDATE games SET persianSub = 1 WHERE id = ?");
+  for (const r of rows) {
+    if (hasPersianSub({ title: String(r.title), platform: String(r.platform) as Platform })) flag.run(String(r.id));
+  }
+}
+
 function rowToGame(row: Record<string, unknown>): Game {
   const platform = (
     row.platform === "Xbox Offline" ? "Xbox Offline" :
@@ -107,6 +123,7 @@ function rowToGame(row: Record<string, unknown>): Game {
     titleFa: String(row.titleFa),
     platform,
     twoPlayer: Number(row.twoPlayer) === 1,
+    persianSub: Number(row.persianSub) === 1,
     genre: String(row.genre),
     cover: String(row.cover),
     description: String(row.description),
@@ -129,9 +146,8 @@ export function getGame(id: string): Game | null {
 export function createGame(input: GameInput): Game {
   const now = new Date().toISOString();
   const game: Game = { ...input, id: randomUUID(), createdAt: now, updatedAt: now };
-  getConnection().prepare(`INSERT INTO games (id,title,titleFa,platform,twoPlayer,genre,cover,description,featured,createdAt,updatedAt)
-    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`).run(
-    game.id, game.title, game.titleFa, game.platform, game.twoPlayer ? 1 : 0, game.genre, game.cover, game.description, game.featured ? 1 : 0, game.createdAt, game.updatedAt
+  getConnection().prepare(INSERT_GAME_SQL.replace("INSERT OR IGNORE", "INSERT")).run(
+    game.id, game.title, game.titleFa, game.platform, game.twoPlayer ? 1 : 0, game.persianSub ? 1 : 0, game.genre, game.cover, game.description, game.featured ? 1 : 0, game.createdAt, game.updatedAt
   );
   return game;
 }
@@ -139,8 +155,8 @@ export function createGame(input: GameInput): Game {
 export function updateGame(id: string, input: GameInput): Game | null {
   const existing = getGame(id);
   if (!existing) return null;
-  getConnection().prepare(`UPDATE games SET title=?, titleFa=?, platform=?, twoPlayer=?, genre=?, cover=?, description=?, featured=?, updatedAt=? WHERE id=?`)
-    .run(input.title, input.titleFa, input.platform, input.twoPlayer ? 1 : 0, input.genre, input.cover, input.description, input.featured ? 1 : 0, new Date().toISOString(), id);
+  getConnection().prepare(`UPDATE games SET title=?, titleFa=?, platform=?, twoPlayer=?, persianSub=?, genre=?, cover=?, description=?, featured=?, updatedAt=? WHERE id=?`)
+    .run(input.title, input.titleFa, input.platform, input.twoPlayer ? 1 : 0, input.persianSub ? 1 : 0, input.genre, input.cover, input.description, input.featured ? 1 : 0, new Date().toISOString(), id);
   return getGame(id);
 }
 

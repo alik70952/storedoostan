@@ -1,7 +1,7 @@
 import { Pool } from "pg";
 import { randomUUID } from "node:crypto";
 import type { Game, GameInput, Platform } from "./types";
-import { catalogGames } from "./catalog";
+import { REMOVED_GAME_IDS, catalogGames, hasPersianSub } from "./catalog";
 
 // بک‌اند Postgres (Neon/Supabase) برای استقرار روی Vercel.
 // فقط وقتی استفاده می‌شود که DATABASE_URL ست شده باشد.
@@ -19,7 +19,7 @@ export function getPool(): Pool {
   return pool;
 }
 
-const GAME_COLUMNS = `(id,title,"titleFa",platform,"twoPlayer",genre,cover,description,featured,"createdAt","updatedAt")`;
+const GAME_COLUMNS = `(id,title,"titleFa",platform,"twoPlayer","persianSub",genre,cover,description,featured,"createdAt","updatedAt")`;
 
 /** درج گروهی بازی‌ها — ردیف‌های موجود دست نمی‌خورند (ON CONFLICT DO NOTHING) */
 async function insertGames(pool: Pool, games: Game[]): Promise<void> {
@@ -28,12 +28,12 @@ async function insertGames(pool: Pool, games: Game[]): Promise<void> {
     const chunk = games.slice(i, i + CHUNK);
     const values: unknown[] = [];
     const tuples = chunk.map((g, index) => {
-      const base = index * 11;
+      const base = index * 12;
       values.push(
-        g.id, g.title, g.titleFa, g.platform, g.twoPlayer ? 1 : 0,
+        g.id, g.title, g.titleFa, g.platform, g.twoPlayer ? 1 : 0, g.persianSub ? 1 : 0,
         g.genre, g.cover, g.description, g.featured ? 1 : 0, g.createdAt, g.updatedAt
       );
-      const placeholders = Array.from({ length: 11 }, (_, k) => `$${base + k + 1}`);
+      const placeholders = Array.from({ length: 12 }, (_, k) => `$${base + k + 1}`);
       return `(${placeholders.join(",")})`;
     });
     await pool.query(`INSERT INTO games ${GAME_COLUMNS} VALUES ${tuples.join(",")} ON CONFLICT (id) DO NOTHING`, values);
@@ -46,6 +46,7 @@ async function insertGames(pool: Pool, games: Game[]): Promise<void> {
  * علاوه بر آن، بازی‌هایی که قبلاً کاورشان پیدا نشده بود (cover خالی) کاور می‌گیرند.
  */
 async function ensureCatalogRows(p: Pool): Promise<void> {
+  await p.query("DELETE FROM games WHERE id = ANY($1)", [REMOVED_GAME_IDS]);
   const existingRes = await p.query(`SELECT id FROM games WHERE id LIKE 'ps4-cat-%'`);
   const existing = new Set(existingRes.rows.map((row) => String((row as { id: unknown }).id)));
   const missing = catalogGames.filter((g) => !existing.has(g.id));
@@ -74,6 +75,18 @@ async function ensureCatalogRows(p: Pool): Promise<void> {
   }
 }
 
+// مهاجرت سبک: ستون «زیرنویس فارسی»؛ فقط بار اول بازی‌های اعلام‌شده در کانال علامت می‌خورند
+async function ensurePersianSubColumn(p: Pool): Promise<void> {
+  const col = await p.query(
+    `SELECT 1 FROM information_schema.columns WHERE table_name = 'games' AND column_name = 'persianSub'`
+  );
+  if ((col.rowCount ?? 0) > 0) return;
+  await p.query(`ALTER TABLE games ADD COLUMN IF NOT EXISTS "persianSub" INTEGER NOT NULL DEFAULT 0`);
+  const rows = await p.query("SELECT id, title, platform FROM games");
+  const ids = (rows.rows as Row[]).filter((r) => hasPersianSub({ title: String(r.title), platform: String(r.platform) as Platform })).map((r) => String(r.id));
+  if (ids.length > 0) await p.query(`UPDATE games SET "persianSub" = 1 WHERE id = ANY($1)`, [ids]);
+}
+
 let ready: Promise<void> | null = null;
 
 async function ensureSchema(): Promise<void> {
@@ -86,6 +99,7 @@ async function ensureSchema(): Promise<void> {
         "titleFa" TEXT NOT NULL,
         platform TEXT NOT NULL,
         "twoPlayer" INTEGER NOT NULL DEFAULT 0,
+        "persianSub" INTEGER NOT NULL DEFAULT 0,
         genre TEXT NOT NULL DEFAULT '',
         cover TEXT NOT NULL DEFAULT '',
         description TEXT NOT NULL DEFAULT '',
@@ -95,6 +109,7 @@ async function ensureSchema(): Promise<void> {
       );`);
       // مهاجرت سبک: دیتابیس‌های قدیمی ستون دسته «دو نفره» را ندارند.
       await p.query(`ALTER TABLE games ADD COLUMN IF NOT EXISTS "twoPlayer" INTEGER NOT NULL DEFAULT 0`);
+      await ensurePersianSubColumn(p);
       const count = await p.query("SELECT COUNT(*)::int AS c FROM games");
       if (Number(count.rows[0]?.c ?? 0) === 0) {
         await insertGames(p, catalogGames);
@@ -124,6 +139,7 @@ function toGame(r: Row): Game {
     titleFa: String(r.titleFa ?? ""),
     platform,
     twoPlayer: Number(r.twoPlayer) === 1,
+    persianSub: Number(r.persianSub) === 1,
     genre: String(r.genre ?? ""),
     cover: String(r.cover ?? ""),
     description: String(r.description ?? ""),
@@ -150,17 +166,16 @@ export const pgBackend = {
     const now = new Date().toISOString();
     const game: Game = { ...input, id: randomUUID(), createdAt: now, updatedAt: now };
     await getPool().query(
-      `INSERT INTO games (id,title,"titleFa",platform,"twoPlayer",genre,cover,description,featured,"createdAt","updatedAt")
-       VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11)`,
-      [game.id, game.title, game.titleFa, game.platform, game.twoPlayer ? 1 : 0, game.genre, game.cover, game.description, game.featured ? 1 : 0, game.createdAt, game.updatedAt]
+      `INSERT INTO games ${GAME_COLUMNS} VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12)`,
+      [game.id, game.title, game.titleFa, game.platform, game.twoPlayer ? 1 : 0, game.persianSub ? 1 : 0, game.genre, game.cover, game.description, game.featured ? 1 : 0, game.createdAt, game.updatedAt]
     );
     return game;
   },
   async updateGame(id: string, input: GameInput): Promise<Game | null> {
     await ensureSchema();
     const res = await getPool().query(
-      `UPDATE games SET title=$1,"titleFa"=$2,platform=$3,"twoPlayer"=$4,genre=$5,cover=$6,description=$7,featured=$8,"updatedAt"=$9 WHERE id=$10`,
-      [input.title, input.titleFa, input.platform, input.twoPlayer ? 1 : 0, input.genre, input.cover, input.description, input.featured ? 1 : 0, new Date().toISOString(), id]
+      `UPDATE games SET title=$1,"titleFa"=$2,platform=$3,"twoPlayer"=$4,"persianSub"=$5,genre=$6,cover=$7,description=$8,featured=$9,"updatedAt"=$10 WHERE id=$11`,
+      [input.title, input.titleFa, input.platform, input.twoPlayer ? 1 : 0, input.persianSub ? 1 : 0, input.genre, input.cover, input.description, input.featured ? 1 : 0, new Date().toISOString(), id]
     );
     if ((res.rowCount ?? 0) === 0) return null;
     return pgBackend.getGame(id);
