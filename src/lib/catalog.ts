@@ -1,6 +1,7 @@
 import type { Game } from "./types";
 import { seedGames } from "./seed";
 import { PS4_PLATFORM, ps4Catalog } from "./ps4-catalog";
+import { TWO_PLAYER_TITLES } from "./two-player-titles";
 
 // کاتالوگ پروژه = بازی‌های دستی seed + کاتالوگ ۵۰۰ بازی PS4 (src/lib/ps4-catalog.ts).
 //
@@ -103,8 +104,26 @@ export function hasPersianSub(game: Pick<Game, "platform" | "title">): boolean {
   return PERSIAN_SUB_GAMES.has(`${game.platform}|${normTitle(game.title)}`);
 }
 
-/** ردیف‌های تکراری که باید از دیتابیس حذف شوند (Battlefield 6 دوم، بدون نام فارسی و توضیح) */
-export const REMOVED_GAME_IDS = ["52c31811-294a-4a6a-bc9d-82b2af70663f"];
+const TWO_PLAYER = new Set(TWO_PLAYER_TITLES.map(normTitle));
+
+/** دسته «دو نفره» بر اساس فهرست بازی‌های دو نفره آفلاین (src/lib/two-player-titles.ts) */
+export function isTwoPlayer(title: string): boolean {
+  return TWO_PLAYER.has(normTitle(title));
+}
+
+/**
+ * ردیف‌هایی که باید از دیتابیس حذف شوند و دوباره درج نشوند:
+ * Battlefield 6 تکراری، و بازی‌های اولیه seed که در کانال بله نیستند (Forza 5 و Starfield ایکس‌باکس
+ * نسخه ادمین‌شان می‌ماند). ورودی‌های seed.ts سر جایشان می‌مانند تا شناسه بقیه جابه‌جا نشود.
+ */
+export const REMOVED_GAME_IDS = [
+  "52c31811-294a-4a6a-bc9d-82b2af70663f",
+  "seed-ps5-2", "seed-ps5-4", "seed-ps5-6", "seed-ps5-7", "seed-ps5-9", "seed-ps5-10", "seed-ps5-19",
+  "seed-xbox offline-21", "seed-xbox offline-22", "seed-xbox offline-23", "seed-xbox offline-24",
+  "seed-xbox offline-25", "seed-xbox offline-26",
+];
 
 /** منبع واحد برای ساخت اولیه جدول و پرکردن ردیف‌های ناقص */
-export const catalogGames: Game[] = [...seedGames, ...ps4CatalogGames].map((g) => ({ ...g, persianSub: hasPersianSub(g) }));
+export const catalogGames: Game[] = [...seedGames, ...ps4CatalogGames]
+  .filter((g) => !REMOVED_GAME_IDS.includes(g.id))
+  .map((g) => ({ ...g, twoPlayer: isTwoPlayer(g.title), persianSub: hasPersianSub(g) }));

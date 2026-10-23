@@ -1,7 +1,7 @@
 import { Pool } from "pg";
 import { randomUUID } from "node:crypto";
 import type { Game, GameInput, Platform } from "./types";
-import { REMOVED_GAME_IDS, catalogGames, hasPersianSub } from "./catalog";
+import { REMOVED_GAME_IDS, catalogGames, hasPersianSub, isTwoPlayer } from "./catalog";
 
 // بک‌اند Postgres (Neon/Supabase) برای استقرار روی Vercel.
 // فقط وقتی استفاده می‌شود که DATABASE_URL ست شده باشد.
@@ -87,6 +87,15 @@ async function ensurePersianSubColumn(p: Pool): Promise<void> {
   if (ids.length > 0) await p.query(`UPDATE games SET "persianSub" = 1 WHERE id = ANY($1)`, [ids]);
 }
 
+/** اصلاح داده‌ای که فقط یک بار روی هر دیتابیس اجرا می‌شود (ثبت در جدول app_migrations) */
+async function runOnce(p: Pool, id: string, fix: () => Promise<void>): Promise<void> {
+  await p.query("CREATE TABLE IF NOT EXISTS app_migrations (id TEXT PRIMARY KEY)");
+  const done = await p.query("SELECT 1 FROM app_migrations WHERE id = $1", [id]);
+  if ((done.rowCount ?? 0) > 0) return;
+  await fix();
+  await p.query("INSERT INTO app_migrations (id) VALUES ($1) ON CONFLICT (id) DO NOTHING", [id]);
+}
+
 let ready: Promise<void> | null = null;
 
 async function ensureSchema(): Promise<void> {
@@ -116,6 +125,12 @@ async function ensureSchema(): Promise<void> {
       } else {
         await ensureCatalogRows(p);
       }
+      // دسته «دو نفره» یک بار از روی فهرست بازی‌های دو نفره آفلاین بازسازی می‌شود (شامل ردیف‌های ادمین)
+      await runOnce(p, "two-player-v1", async () => {
+        const rows = await p.query("SELECT id, title FROM games");
+        const ids = (rows.rows as Row[]).filter((r) => isTwoPlayer(String(r.title))).map((r) => String(r.id));
+        await p.query(`UPDATE games SET "twoPlayer" = CASE WHEN id = ANY($1) THEN 1 ELSE 0 END`, [ids]);
+      });
     })();
     ready.catch(() => {
       ready = null;

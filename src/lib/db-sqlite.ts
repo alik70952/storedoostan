@@ -3,7 +3,7 @@ import { randomUUID } from "node:crypto";
 import fs from "node:fs";
 import path from "node:path";
 import type { Game, GameInput, Platform } from "./types";
-import { REMOVED_GAME_IDS, catalogGames, hasPersianSub } from "./catalog";
+import { REMOVED_GAME_IDS, catalogGames, hasPersianSub, isTwoPlayer } from "./catalog";
 
 // لوکال: پوشه data ـــ روی Vercel: حافظه موقت /tmp (ماندگار نیست؛ برای ماندگاری DATABASE_URL بگذارید)
 const DATA_DIR =
@@ -86,7 +86,28 @@ export function getConnection(): DatabaseSync {
     );`);
   }
   ensureCatalogRows(db);
+  // دسته «دو نفره» یک بار از روی فهرست بازی‌های دو نفره آفلاین بازسازی می‌شود (شامل ردیف‌های ادمین)
+  runOnce(db, "two-player-v1", (connection) => {
+    const rows = connection.prepare("SELECT id, title FROM games").all() as Array<Record<string, unknown>>;
+    const set = connection.prepare("UPDATE games SET twoPlayer = ? WHERE id = ?");
+    for (const r of rows) set.run(isTwoPlayer(String(r.title)) ? 1 : 0, String(r.id));
+  });
   return db;
+}
+
+/** اصلاح داده‌ای که فقط یک بار روی هر دیتابیس اجرا می‌شود (ثبت در جدول app_migrations) */
+function runOnce(connection: DatabaseSync, id: string, fix: (connection: DatabaseSync) => void): void {
+  connection.exec("CREATE TABLE IF NOT EXISTS app_migrations (id TEXT PRIMARY KEY)");
+  if (connection.prepare("SELECT 1 FROM app_migrations WHERE id = ?").get(id)) return;
+  connection.exec("BEGIN");
+  try {
+    fix(connection);
+    connection.prepare("INSERT INTO app_migrations (id) VALUES (?)").run(id);
+    connection.exec("COMMIT");
+  } catch (err) {
+    connection.exec("ROLLBACK");
+    throw err;
+  }
 }
 
 // مهاجرت سبک: دیتابیس‌های قدیمی ستون دسته «دو نفره» را ندارند.
