@@ -123,7 +123,7 @@ export default function HomeClient({ games }: { games: Game[] }) {
           </div>
           <h1>فروشگاه دوستان</h1>
           <p>مجموعه بازی‌های کپی‌خور PS5 و PS4، بازی اکانتی PS5 و بازی آفلاین Xbox. بازی کن، به سبک خودت.</p>
-          <p className="hero-address">📍 شیراز، بلوار رحمت، خیابان لشکری، کوچه ۱ — فروشگاه دوستان</p>
+          <p className="hero-address">📍 شیراز، خیابان سجاد، کوچه ۲، فرعی ۲/۵ — فروشگاه دوستان</p>
           <div className="hero-search-wrap">
             <SearchIcon />
             <input
@@ -213,7 +213,7 @@ export default function HomeClient({ games }: { games: Game[] }) {
             <a href="#catalog">فهرست بازی‌ها</a>
           </div>
           <div className="footer-meta">
-            <span className="footer-address">📍 شیراز، بلوار رحمت، خیابان لشکری، کوچه ۱</span>
+            <span className="footer-address">📍 شیراز، خیابان سجاد، کوچه ۲، فرعی ۲/۵</span>
             <span>© {new Intl.DateTimeFormat("fa-IR", { year: "numeric" }).format(new Date())} فروشگاه دوستان</span>
           </div>
         </div>

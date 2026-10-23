@@ -95,7 +95,7 @@ export default function Logo({ size = 40 }: { size?: number }) {
         fontSize="7.5"
         fill="#a8863d"
       >
-        📍 شیراز، بلوار رحمت، خیابان لشکری، کوچه ۱
+        📍 شیراز، خیابان سجاد، کوچه ۲، فرعی ۲/۵
       </text>
     </svg>
   );
