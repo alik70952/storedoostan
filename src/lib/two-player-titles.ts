@@ -1,4 +1,5 @@
 // بازی‌هایی که روی یک کنسول و آفلاین دو نفره بازی می‌شوند (هم‌صفحه، اسپلیت‌اسکرین یا رودررو).
+// منبع: تعداد بازیکن آفلاین در PlayStation Store (NO_OF_PLAYERS) + بررسی وب برای موارد حذف‌شده از استور.
 // بازی‌های فقط-آنلاین عمداً اینجا نیستند (کنسول کپی‌خور آفلاین است).
 // مقدار اولیه دسته «دو نفره» است؛ بعد از آن تیک پنل ادمین ملاک است. تطبیق با catalog.ts/normTitle.
 export const TWO_PLAYER_TITLES = [
@@ -9,10 +10,10 @@ export const TWO_PLAYER_TITLES = [
   "Trine 2", "Trine 3", "Trine 4", "Trine Enchanted Edition", "Child of Light", "A Hat in Time",
   "Crash Bandicoot 4", "Sonic Mania", "Sonic Origins Plus", "Shovel Knight", "Guacamelee!", "Guacamelee! 2",
   "Enter the Gungeon", "The Binding of Isaac: Rebirth", "Broforce", "Terraria", "Don't Starve Together",
-  "The Escapists 2", "Nikoderiko: The Magical World", "Marsupilami: Hoobadventure", "Starlink: Battle for Atlas",
+  "The Escapists 2", "Nikoderiko: The Magical World", "Starlink: Battle for Atlas",
   "Contra Anniversary Collection", "Contra: Operation Galuga", "Streets of Rage 4",
   "Teenage Mutant Ninja Turtles: Shredder's Revenge", "9 Monkeys of Shaolin", "Kung Fu Panda: Showdown of Legendary Legends",
-  "Ben 10", "Tiny Troopers: Joint Ops XL", "Darksiders Genesis",
+  "Darksiders Genesis",
   // لگو
   "LEGO 2K Drive", "LEGO Batman 3", "LEGO Batman: Legacy of the Dark Knight", "LEGO City Undercover", "LEGO DC Super-Villains",
   "LEGO Harry Potter Collection", "LEGO Jurassic World", "LEGO Marvel Super Heroes", "LEGO Marvel Super Heroes 2", "LEGO Party!",
@@ -48,10 +49,20 @@ export const TWO_PLAYER_TITLES = [
   // مسابقه‌ای با اسپلیت‌اسکرین
   "Crash Team Racing Nitro-Fueled", "Team Sonic Racing", "Sonic Racing: CrossWorlds", "Nickelodeon Kart Racers 2: Grand Prix",
   "DreamWorks All-Star Kart Racing", "Beach Buggy Racing", "Hot Wheels Unleashed", "Hot Wheels Unleashed 2",
-  "Gran Turismo Sport", "Gran Turismo 7", "My First Gran Turismo", "Dirt 5", "Gear.Club Unlimited 2",
+  "Gran Turismo Sport", "Gran Turismo 7", "Dirt 5", "Gear.Club Unlimited 2",
   "F1 2016", "F1 2017", "F1 2018", "F1 2019", "F1 2020", "F1 2021", "F1 22", "F1 23", "F1 24",
   "MX vs ATV All Out", "MX vs ATV Legends", "Monster Jam Showdown", "Road Redemption", "Trials Fusion", "Trials Rising",
   "Rocket League",
   // مهمانی
   "Rabbids: Party of Legends",
+  // تأییدشده با تعداد بازیکن آفلاین PlayStation Store (۲ نفر یا بیشتر)
+  "Beyond: Two Souls", "Call of Duty: Vanguard", "Dreams", "God of War: Sons of Sparta", "Halo: Campaign Evolved",
+  "Judgment", "Lost Judgment", "Quake", "Quake II", "REANIMAL", "RiMS Racing", "Shadow of the Ninja: Reborn",
+  "Sonic Colors: Ultimate", "SpongeBob SquarePants: Battle for Bikini Bottom - Rehydrated", "Stardew Valley",
+  "Star Wars Battlefront II", "Tales of Berseria", "Tales of Zestiria", "The Ascent", "The House of the Dead: Remake",
+  "The Smurfs 2: The Prisoner of the Green Stone", "Yooka-Laylee",
+  "WRC 5", "WRC 6", "WRC 7", "WRC 8", "WRC 9", "WRC 10", "WRC Generations",
+  // حالت «Movie Night» دست‌به‌دست دسته، آفلاین
+  "The Quarry", "The Dark Pictures Anthology: Little Hope", "The Dark Pictures: Little Hope", "The Dark Pictures: Man of Medan",
+  "The Dark Pictures: House of Ashes", "The Dark Pictures: The Devil in Me",
 ];

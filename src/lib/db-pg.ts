@@ -126,7 +126,7 @@ async function ensureSchema(): Promise<void> {
         await ensureCatalogRows(p);
       }
       // دسته «دو نفره» یک بار از روی فهرست بازی‌های دو نفره آفلاین بازسازی می‌شود (شامل ردیف‌های ادمین)
-      await runOnce(p, "two-player-v1", async () => {
+      await runOnce(p, "two-player-v2", async () => {
         const rows = await p.query("SELECT id, title FROM games");
         const ids = (rows.rows as Row[]).filter((r) => isTwoPlayer(String(r.title))).map((r) => String(r.id));
         await p.query(`UPDATE games SET "twoPlayer" = CASE WHEN id = ANY($1) THEN 1 ELSE 0 END`, [ids]);
