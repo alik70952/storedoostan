@@ -78,6 +78,12 @@ const entries: SeedEntry[] = [
   { title: "Resident Evil Requiem", titleFa: "رزیدنت اویل رکوئیم", platform: "Xbox Offline", genre: "ترس و بقا", cover: "/covers/xbox/resident-evil-requiem.jpg", description: "نسخه آفلاین رزیدنت اویل رکوئیم برای ایکس‌باکس — نصب و اجرای آفلاین روی کنسول؛ در فروشگاه دوستان." },
   { title: "WWE 2K26", titleFa: "کشتی کج ۲K26", platform: "Xbox Offline", genre: "ورزشی", cover: "/covers/xbox/wwe-2k26.jpg", description: "نسخه آفلاین کشتی کج ۲K26 برای ایکس‌باکس — نصب و اجرای آفلاین روی کنسول؛ در فروشگاه دوستان." },
   { title: "Assassin's Creed Black Flag Resynced", titleFa: "اساسینز کرید پرچم سیاه ریسینک", platform: "Xbox Offline", genre: "اکشن و ماجراجویی", cover: "/covers/xbox/assassins-creed-black-flag-resynced.jpg", description: "نسخه آفلاین اساسینز کرید پرچم سیاه ریسینک برای ایکس‌باکس — نصب و اجرای آفلاین روی کنسول؛ در فروشگاه دوستان." },
+  // بازی‌های جدید PS5 کانال بله — ۲ آبان ۱۴۰۵
+  { title: "Monster Hunter Stories 3: Twisted Reflection", titleFa: "مانستر هانتر استوریز ۳: بازتاب پیچیده", platform: "PS5", genre: "نقش‌آفرینی", cover: "/covers/ps5/monster-hunter-stories-3-twisted-reflection.jpg", description: "نسخه کپی‌خور مانستر هانتر استوریز ۳: بازتاب پیچیده برای PS5 — نصب آفلاین و اجرای تضمینی روی کنسول؛ در فروشگاه دوستان." },
+  { title: "EA Sports UFC 6", titleFa: "یو‌اف‌سی ۶", platform: "PS5", genre: "ورزشی", cover: "/covers/ps5/ea-sports-ufc-6.jpg", description: "نسخه کپی‌خور یو‌اف‌سی ۶ برای PS5 — نصب آفلاین و اجرای تضمینی روی کنسول؛ در فروشگاه دوستان." },
+  { title: "Ace Combat 8: Wings of Theve", titleFa: "ایس کامبت ۸: بال‌های تیو", platform: "PS5", genre: "شوتر", cover: "/covers/ps5/ace-combat-8-wings-of-theve.jpg", description: "نسخه کپی‌خور ایس کامبت ۸: بال‌های تیو برای PS5 — نصب آفلاین و اجرای تضمینی روی کنسول؛ در فروشگاه دوستان." },
+  { title: "Astro's Playroom", titleFa: "اتاق بازی آسترو", platform: "PS5", genre: "خانوادگی", cover: "/covers/ps5/astros-playroom.jpg", description: "نسخه کپی‌خور اتاق بازی آسترو برای PS5 — نصب آفلاین و اجرای تضمینی روی کنسول؛ در فروشگاه دوستان." },
+  { title: "PAW Patrol World", titleFa: "دنیای سگ‌های نگهبان", platform: "PS5", genre: "خانوادگی", cover: "/covers/ps5/paw-patrol-world.jpg", description: "نسخه کپی‌خور دنیای سگ‌های نگهبان برای PS5 — نصب آفلاین و اجرای تضمینی روی کنسول؛ در فروشگاه دوستان." },
 ];
 
 export const seedGames: Game[] = entries.map((entry, index) => {

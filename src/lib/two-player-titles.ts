@@ -34,7 +34,7 @@ export const TWO_PLAYER_TITLES = [
   "Naruto Shippuden: Ultimate Ninja Storm 4", "Naruto Shippuden: Ultimate Ninja Storm Trilogy", "One Piece: Pirate Warriors 3",
   "One Piece: Pirate Warriors 4", "Persona 4 Arena Ultimax", "Soulcalibur VI", "Street Fighter V", "Street Fighter 6",
   "Street Fighter 30th Anniversary Collection", "Tekken 7", "Tekken 8", "The King of Fighters XIV",
-  "UFC", "UFC 2", "UFC 3", "UFC 4",
+  "UFC", "UFC 2", "UFC 3", "UFC 4", "EA Sports UFC 6",
   // ورزشی
   "FIFA 14", "FIFA 15", "FIFA 16", "FIFA 17", "FIFA 18", "FIFA 19", "FIFA 20", "FIFA 21", "FIFA 22", "FIFA 23",
   "EA Sports FC 24", "EA SPORTS FC 25", "EA Sports FC 26", "EA SPORTS FC 27", "Fc 27", "Fc 27 ps4",
@@ -54,7 +54,7 @@ export const TWO_PLAYER_TITLES = [
   "MX vs ATV All Out", "MX vs ATV Legends", "Monster Jam Showdown", "Road Redemption", "Trials Fusion", "Trials Rising",
   "Rocket League",
   // مهمانی
-  "Rabbids: Party of Legends",
+  "Rabbids: Party of Legends", "PAW Patrol World",
   // تأییدشده با تعداد بازیکن آفلاین PlayStation Store (۲ نفر یا بیشتر)
   "Beyond: Two Souls", "Call of Duty: Vanguard", "Dreams", "God of War: Sons of Sparta", "Halo: Campaign Evolved",
   "Judgment", "Lost Judgment", "Quake", "Quake II", "REANIMAL", "RiMS Racing", "Shadow of the Ninja: Reborn",
