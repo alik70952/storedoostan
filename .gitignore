@@ -8,6 +8,7 @@ data/*
 !data/ps4-cover-failures.json
 !data/ps4-fa-cache.json
 !data/ps4-fa-overrides.json
+!data/removed-games-backup.json
 .env*
 !.env.example
 .env.production

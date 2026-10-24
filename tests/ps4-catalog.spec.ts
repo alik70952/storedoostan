@@ -8,9 +8,9 @@ test("تب PS4 کل کاتالوگ را با کاور استاتیک نشان م
   await page.getByRole("button", { name: /^PS4/ }).click();
   await expect(page.getByRole("heading", { name: "بازی‌های PS4 کپی‌خور" })).toBeVisible();
 
-  // حداقل ۴۰۰ کارت از لیست ۵۰۰ بازی (به‌جز چند عنوان تکراری با seed دستی)
+  // کاتالوگ PS4 = بازی‌های PS4 کانال بله (حدود ۳۸۰ بازی)
   const cards = page.locator(".game-card");
-  expect(await cards.count()).toBeGreaterThan(400);
+  expect(await cards.count()).toBeGreaterThan(350);
 
   // کاور بازی‌های کاتالوگ از مسیر استاتیک خود سایت سرو می‌شود.
   // (بسیاری از بازی‌های کاتالوگ کاور استاتیک دارند؛ برخی هم کاور خارجی/آپلودی seed را دارند.)

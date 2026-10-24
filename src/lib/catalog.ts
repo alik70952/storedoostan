@@ -2,6 +2,7 @@ import type { Game } from "./types";
 import { seedGames } from "./seed";
 import { PS4_PLATFORM, ps4Catalog } from "./ps4-catalog";
 import { TWO_PLAYER_TITLES } from "./two-player-titles";
+import { REMOVED_PS4_IDS } from "./removed-ps4-ids";
 
 // کاتالوگ پروژه = بازی‌های دستی seed + کاتالوگ ۵۰۰ بازی PS4 (src/lib/ps4-catalog.ts).
 //
@@ -121,9 +122,11 @@ export const REMOVED_GAME_IDS = [
   "seed-ps5-2", "seed-ps5-4", "seed-ps5-6", "seed-ps5-7", "seed-ps5-9", "seed-ps5-10", "seed-ps5-19",
   "seed-xbox offline-21", "seed-xbox offline-22", "seed-xbox offline-23", "seed-xbox offline-24",
   "seed-xbox offline-25", "seed-xbox offline-26",
+  ...REMOVED_PS4_IDS,
 ];
+const REMOVED = new Set(REMOVED_GAME_IDS);
 
 /** منبع واحد برای ساخت اولیه جدول و پرکردن ردیف‌های ناقص */
 export const catalogGames: Game[] = [...seedGames, ...ps4CatalogGames]
-  .filter((g) => !REMOVED_GAME_IDS.includes(g.id))
+  .filter((g) => !REMOVED.has(g.id))
   .map((g) => ({ ...g, twoPlayer: isTwoPlayer(g.title), persianSub: hasPersianSub(g) }));
