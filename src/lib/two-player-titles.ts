@@ -40,7 +40,7 @@ export const TWO_PLAYER_TITLES = [
   "EA Sports FC 24", "EA SPORTS FC 25", "EA Sports FC 26", "EA SPORTS FC 27", "Fc 27", "Fc 27 ps4",
   "PES 2017", "PES 2018", "PES 2019", "eFootball PES 2020", "eFootball PES 2021", "eFootball 2024", "Winning Eleven 3: Final Ver.",
   "Captain Tsubasa: Rise of New Champions",
-  "NBA 2K16", "NBA 2K17", "NBA 2K18", "NBA 2K19", "NBA 2K20", "NBA 2K21", "NBA 2K22", "NBA 2K23", "NBA 2K24", "NBA 2K25", "NBA 2K26",
+  "NBA 2K16", "NBA 2K17", "NBA 2K18", "NBA 2K19", "NBA 2K20", "NBA 2K21", "NBA 2K22", "NBA 2K23", "NBA 2K24", "NBA 2K25", "NBA 2K26", "NBA 2K27",
   "WWE 2K16", "WWE 2K17", "WWE 2K18", "WWE 2K19", "WWE 2K20", "WWE 2K22", "WWE 2K23", "WWE 2K24", "WWE 2K26", "WWE 2K Battlegrounds",
   "Madden NFL 19", "Madden NFL 20", "Madden NFL 21", "Madden NFL 22", "Madden NFL 23", "Madden NFL 24",
   "MLB The Show 19", "MLB The Show 20", "MLB The Show 21", "MLB The Show 22", "MLB The Show 23", "MLB The Show 24",

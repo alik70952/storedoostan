@@ -84,6 +84,11 @@ const entries: SeedEntry[] = [
   { title: "Ace Combat 8: Wings of Theve", titleFa: "ایس کامبت ۸: بال‌های تیو", platform: "PS5", genre: "شوتر", cover: "/covers/ps5/ace-combat-8-wings-of-theve.jpg", description: "نسخه کپی‌خور ایس کامبت ۸: بال‌های تیو برای PS5 — نصب آفلاین و اجرای تضمینی روی کنسول؛ در فروشگاه دوستان." },
   { title: "Astro's Playroom", titleFa: "اتاق بازی آسترو", platform: "PS5", genre: "خانوادگی", cover: "/covers/ps5/astros-playroom.jpg", description: "نسخه کپی‌خور اتاق بازی آسترو برای PS5 — نصب آفلاین و اجرای تضمینی روی کنسول؛ در فروشگاه دوستان." },
   { title: "PAW Patrol World", titleFa: "دنیای سگ‌های نگهبان", platform: "PS5", genre: "خانوادگی", cover: "/covers/ps5/paw-patrol-world.jpg", description: "نسخه کپی‌خور دنیای سگ‌های نگهبان برای PS5 — نصب آفلاین و اجرای تضمینی روی کنسول؛ در فروشگاه دوستان." },
+  // بازی‌های جدید PS5 کانال بله — ۵ و ۱۳ آبان ۱۴۰۵
+  { title: "Call of Duty: Black Ops Remastered", titleFa: "ندای وظیفه: بلک اپس ریمستر", platform: "PS5", genre: "شوتر", cover: "/covers/ps5/call-of-duty-black-ops-remastered.jpg", description: "نسخه کپی‌خور ندای وظیفه: بلک اپس ریمستر برای PS5 — نصب آفلاین و اجرای تضمینی روی کنسول؛ در فروشگاه دوستان." },
+  { title: "Call of Duty: Black Ops II Remastered", titleFa: "ندای وظیفه: بلک اپس ۲ ریمستر", platform: "PS5", genre: "شوتر", cover: "/covers/ps5/call-of-duty-black-ops-ii-remastered.jpg", description: "نسخه کپی‌خور ندای وظیفه: بلک اپس ۲ ریمستر برای PS5 — نصب آفلاین و اجرای تضمینی روی کنسول؛ در فروشگاه دوستان." },
+  { title: "NBA 2K27", titleFa: "ان‌بی‌ای ۲K27", platform: "PS5", genre: "ورزشی", cover: "/covers/ps5/nba-2k27.jpg", description: "نسخه کپی‌خور ان‌بی‌ای ۲K27 برای PS5 — نصب آفلاین و اجرای تضمینی روی کنسول؛ در فروشگاه دوستان." },
+  { title: "Grand Theft Auto IV Remaster", titleFa: "جی‌تی‌ای ۴ ریمستر", platform: "PS5", genre: "اکشن و ماجراجویی", cover: "/covers/ps5/gta-iv-remaster.jpg", description: "نسخه کپی‌خور جی‌تی‌ای ۴ ریمستر برای PS5 — نصب آفلاین و اجرای تضمینی روی کنسول؛ در فروشگاه دوستان." },
 ];
 
 export const seedGames: Game[] = entries.map((entry, index) => {
