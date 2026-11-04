@@ -25,7 +25,9 @@ const INSERT_GAME_SQL = `INSERT OR IGNORE INTO games (id,title,titleFa,platform,
 function ensureCatalogRows(connection: DatabaseSync): void {
   const remove = connection.prepare("DELETE FROM games WHERE id = ?");
   for (const id of REMOVED_GAME_IDS) remove.run(id);
-  const rows = connection.prepare("SELECT id FROM games").all() as Array<{ id?: unknown }>;
+  // بازی کاتالوگ که ادمین حذف کرده نباید در اجرای بعدی دوباره درج شود
+  connection.exec("CREATE TABLE IF NOT EXISTS deleted_games (id TEXT PRIMARY KEY)");
+  const rows = connection.prepare("SELECT id FROM games UNION SELECT id FROM deleted_games").all() as Array<{ id?: unknown }>;
   const existingIds = new Set(rows.map((row) => String(row.id ?? "")));
   const missing = catalogGames.filter((g) => !existingIds.has(g.id));
   if (missing.length > 0) {
@@ -182,7 +184,9 @@ export function updateGame(id: string, input: GameInput): Game | null {
 }
 
 export function deleteGame(id: string): boolean {
-  const result = getConnection().prepare("DELETE FROM games WHERE id = ?").run(id);
+  const connection = getConnection();
+  const result = connection.prepare("DELETE FROM games WHERE id = ?").run(id);
+  connection.prepare("INSERT OR IGNORE INTO deleted_games (id) VALUES (?)").run(id);
   return Number(result.changes) > 0;
 }
 

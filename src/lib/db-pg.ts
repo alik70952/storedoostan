@@ -47,7 +47,8 @@ async function insertGames(pool: Pool, games: Game[]): Promise<void> {
  */
 async function ensureCatalogRows(p: Pool): Promise<void> {
   await p.query("DELETE FROM games WHERE id = ANY($1)", [REMOVED_GAME_IDS]);
-  const existingRes = await p.query(`SELECT id FROM games WHERE id LIKE 'ps4-cat-%'`);
+  // بازی کاتالوگ که ادمین حذف کرده (deleted_games) نباید در اجرای بعدی دوباره درج شود
+  const existingRes = await p.query(`SELECT id FROM games WHERE id LIKE 'ps4-cat-%' UNION SELECT id FROM deleted_games`);
   const existing = new Set(existingRes.rows.map((row) => String((row as { id: unknown }).id)));
   const missing = catalogGames.filter((g) => !existing.has(g.id));
   if (missing.length > 0) await insertGames(p, missing);
@@ -119,6 +120,7 @@ async function ensureSchema(): Promise<void> {
       // مهاجرت سبک: دیتابیس‌های قدیمی ستون دسته «دو نفره» را ندارند.
       await p.query(`ALTER TABLE games ADD COLUMN IF NOT EXISTS "twoPlayer" INTEGER NOT NULL DEFAULT 0`);
       await ensurePersianSubColumn(p);
+      await p.query("CREATE TABLE IF NOT EXISTS deleted_games (id TEXT PRIMARY KEY)");
       const count = await p.query("SELECT COUNT(*)::int AS c FROM games");
       if (Number(count.rows[0]?.c ?? 0) === 0) {
         await insertGames(p, catalogGames);
@@ -198,6 +200,7 @@ export const pgBackend = {
   async deleteGame(id: string): Promise<boolean> {
     await ensureSchema();
     const res = await getPool().query("DELETE FROM games WHERE id = $1", [id]);
+    await getPool().query("INSERT INTO deleted_games (id) VALUES ($1) ON CONFLICT (id) DO NOTHING", [id]);
     return (res.rowCount ?? 0) > 0;
   },
   async setGameFeatured(id: string, featured: boolean): Promise<Game | null> {

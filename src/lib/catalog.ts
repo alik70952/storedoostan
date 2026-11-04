@@ -122,6 +122,8 @@ export const REMOVED_GAME_IDS = [
   "seed-ps5-2", "seed-ps5-4", "seed-ps5-6", "seed-ps5-7", "seed-ps5-9", "seed-ps5-10", "seed-ps5-19",
   "seed-xbox offline-21", "seed-xbox offline-22", "seed-xbox offline-23", "seed-xbox offline-24",
   "seed-xbox offline-25", "seed-xbox offline-26",
+  // Crime Boss: Rockay City و NBA 2K26 (PS5) — ۱۴ آبان ۱۴۰۵
+  "seed-ps5-45", "seed-ps5-48",
   ...REMOVED_PS4_IDS,
 ];
 const REMOVED = new Set(REMOVED_GAME_IDS);
