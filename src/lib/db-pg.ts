@@ -1,7 +1,7 @@
 import { Pool } from "pg";
 import { randomUUID } from "node:crypto";
 import type { Game, GameInput, Platform } from "./types";
-import { REMOVED_GAME_IDS, catalogGames, hasPersianSub, isTwoPlayer } from "./catalog";
+import { PS4_COVER_FIXES, REMOVED_GAME_IDS, catalogGames, hasPersianSub, isTwoPlayer } from "./catalog";
 
 // بک‌اند Postgres (Neon/Supabase) برای استقرار روی Vercel.
 // فقط وقتی استفاده می‌شود که DATABASE_URL ست شده باشد.
@@ -127,6 +127,10 @@ async function ensureSchema(): Promise<void> {
       } else {
         await ensureCatalogRows(p);
       }
+      // کاور درست PS4 برای چند ردیف دیتابیس (فقط اگر کاور هنوز همان مقدار اشتباه قبلی است)
+      await runOnce(p, "ps4-cover-fix-1405-08", async () => {
+        for (const f of PS4_COVER_FIXES) await p.query("UPDATE games SET cover = $1 WHERE id = $2 AND cover = $3", [f.to, f.id, f.from]);
+      });
       // دسته «دو نفره» یک بار از روی فهرست بازی‌های دو نفره آفلاین بازسازی می‌شود (شامل ردیف‌های ادمین)
       await runOnce(p, "two-player-v2", async () => {
         const rows = await p.query("SELECT id, title FROM games");

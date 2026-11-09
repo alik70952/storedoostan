@@ -116,6 +116,17 @@ export function isTwoPlayer(title: string): boolean {
  * Battlefield 6 تکراری، و بازی‌های اولیه seed که در کانال بله نیستند (Forza 5 و Starfield ایکس‌باکس
  * نسخه ادمین‌شان می‌ماند). ورودی‌های seed.ts سر جایشان می‌مانند تا شناسه بقیه جابه‌جا نشود.
  */
+/**
+ * کاورهای اشتباه PS4 در ردیف‌های دیتابیس (seed با آدرس بیرونی یا آپلود ادمین) — آبان ۱۴۰۵:
+ * فقط وقتی کاور هنوز همان مقدار قدیمی است عوض می‌شود تا ویرایش بعدی ادمین دست نخورد.
+ */
+export const PS4_COVER_FIXES: { id: string; from: string; to: string }[] = [
+  { id: "c0d7e8af-fb89-4571-86e8-2ca7a5c1e755", from: "/api/covers/47c26eda-93dd-4bf1-8dd2-6eb69ec46a38.webp", to: "/covers/ps4/resident-evil-3-ps4.jpg" }, // Resident Evil 3
+  { id: "e062a82f-2698-4385-b457-a432c68d18eb", from: "/api/covers/db0a5e4c-54cb-402d-b8b0-487a78cd7e59.jpg", to: "/covers/ps4/resident-evil-2-ps4.jpg" }, // Resident Evil 2
+  { id: "seed-ps4-20", from: "https://cdn.cloudflare.steamstatic.com/steam/apps/1811260/library_600x900.jpg", to: "/covers/ps4/fifa-23-ps4.jpg" }, // FIFA 23
+  { id: "seed-ps4-14", from: "https://cdn.cloudflare.steamstatic.com/steam/apps/2531310/library_600x900.jpg", to: "/covers/ps4/the-last-of-us-part-ii-ps4.jpg" }, // The Last of Us Part II
+];
+
 export const REMOVED_GAME_IDS = [
   "52c31811-294a-4a6a-bc9d-82b2af70663f",
   "seed-ps5-2", "seed-ps5-4", "seed-ps5-6", "seed-ps5-7", "seed-ps5-9", "seed-ps5-10", "seed-ps5-19",
