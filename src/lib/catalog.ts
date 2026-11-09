@@ -92,6 +92,8 @@ const PERSIAN_SUB_GAMES = new Set(
     ["PS5", "Silent Hill 2"],
     ["PS5", "Pragmata"],
     ["PS5", "Assassin's Creed Mirage"],
+    ["PS5", "Avowed"],
+    ["PS5", "Clive Barker's Hellraiser: Revival"],
     ["PS4", "Resident Evil 4"],
     ["PS4", "The Last of Us Remastered"],
     ["PS4", "Assassin's Creed Mirage"],

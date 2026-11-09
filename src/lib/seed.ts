@@ -89,6 +89,9 @@ const entries: SeedEntry[] = [
   { title: "Call of Duty: Black Ops II Remastered", titleFa: "ندای وظیفه: بلک اپس ۲ ریمستر", platform: "PS5", genre: "شوتر", cover: "/covers/ps5/call-of-duty-black-ops-ii-remastered.jpg", description: "نسخه کپی‌خور ندای وظیفه: بلک اپس ۲ ریمستر برای PS5 — نصب آفلاین و اجرای تضمینی روی کنسول؛ در فروشگاه دوستان." },
   { title: "NBA 2K27", titleFa: "ان‌بی‌ای ۲K27", platform: "PS5", genre: "ورزشی", cover: "/covers/ps5/nba-2k27.jpg", description: "نسخه کپی‌خور ان‌بی‌ای ۲K27 برای PS5 — نصب آفلاین و اجرای تضمینی روی کنسول؛ در فروشگاه دوستان." },
   { title: "Grand Theft Auto IV Remaster", titleFa: "جی‌تی‌ای ۴ ریمستر", platform: "PS5", genre: "اکشن و ماجراجویی", cover: "/covers/ps5/gta-iv-remaster.jpg", description: "نسخه کپی‌خور جی‌تی‌ای ۴ ریمستر برای PS5 — نصب آفلاین و اجرای تضمینی روی کنسول؛ در فروشگاه دوستان." },
+  // بازی‌های جدید PS5 کانال بله (با زیرنویس فارسی) — ۱۴ و ۱۷ آبان ۱۴۰۵
+  { title: "Avowed", titleFa: "آوود", platform: "PS5", genre: "نقش‌آفرینی", cover: "/covers/ps5/avowed.jpg", description: "نسخه کپی‌خور آوود برای PS5 با زیرنویس فارسی — نصب آفلاین و اجرای تضمینی روی کنسول؛ در فروشگاه دوستان." },
+  { title: "Clive Barker's Hellraiser: Revival", titleFa: "هل‌ریزر: احیا", platform: "PS5", genre: "ترس و بقا", cover: "/covers/ps5/clive-barkers-hellraiser-revival.jpg", description: "نسخه کپی‌خور هل‌ریزر: احیا برای PS5 با زیرنویس فارسی — نصب آفلاین و اجرای تضمینی روی کنسول؛ در فروشگاه دوستان." },
 ];
 
 export const seedGames: Game[] = entries.map((entry, index) => {
