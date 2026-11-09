@@ -16,9 +16,7 @@ export const REMOVED_PS4_IDS = [
   "ps4-cat-477", // Plants vs. Zombies: Garden Warfare 2
   "ps4-cat-476", // Plants vs. Zombies: Garden Warfare
   "ps4-cat-475", // Apex Legends
-  "ps4-cat-474", // Titanfall 2
   "ps4-cat-473", // Battlefield 2042
-  "ps4-cat-463", // Call of Duty: Modern Warfare 2 Campaign Remastered
   "ps4-cat-461", // Call of Duty: Black Ops 4
   "ps4-cat-454", // Destiny 2
   "4a2b006e-3d4d-43f2-b89c-c0bcd70f54fc", // NBA 2K26
@@ -27,7 +25,6 @@ export const REMOVED_PS4_IDS = [
   "ps4-cat-451", // Brawlhalla
   "ps4-cat-450", // Among Us
   "ps4-cat-449", // Fall Guys
-  "ps4-cat-447", // Gang Beasts
   "ps4-cat-441", // Moving Out 2
   "ps4-cat-440", // Moving Out
   "ps4-cat-437", // Payday 2
@@ -38,25 +35,17 @@ export const REMOVED_PS4_IDS = [
   "ps4-cat-430", // Layers of Fear
   "ps4-cat-429", // SOMA
   "ps4-cat-422", // Deathloop
-  "ps4-cat-420", // Dishonored 2
   "ps4-cat-418", // Prey
   "ps4-cat-416", // Quake II
   "ps4-cat-415", // Quake
   "ps4-cat-410", // Wolfenstein: The Old Blood
-  "ps4-cat-408", // Sniper Ghost Warrior Contracts 2
-  "ps4-cat-405", // Sniper Elite 5
   "ps4-cat-402", // Hitman World of Assassination
-  "ps4-cat-401", // Hitman 3
   "ps4-cat-398", // Metal Gear Survive
-  "ps4-cat-395", // Darksiders Genesis
-  "ps4-cat-394", // Darksiders III
-  "ps4-cat-393", // Darksiders II Deathinitive Edition
   "ps4-cat-391", // Prototype 2
   "ps4-cat-386", // Saints Row
   "ps4-cat-385", // Saints Row: Gat out of Hell
   "ps4-cat-384", // Saints Row IV
   "ps4-cat-383", // Bully
-  "ps4-cat-377", // Sifu
   "ps4-cat-376", // Dragon's Dogma: Dark Arisen
   "ps4-cat-375", // Okami HD
   "ps4-cat-374", // Onimusha: Warlords
@@ -75,7 +64,6 @@ export const REMOVED_PS4_IDS = [
   "ps4-cat-346", // Dead Rising 2
   "ps4-cat-345", // Dead Rising
   "ps4-cat-343", // Dead Island Definitive Edition
-  "ps4-cat-342", // Dying Light 2 Stay Human
   "ps4-cat-341", // Dying Light
   "ps4-cat-339", // Skull and Bones
   "ps4-cat-337", // Starlink: Battle for Atlas
@@ -90,10 +78,6 @@ export const REMOVED_PS4_IDS = [
   "ps4-cat-324", // The Division 2
   "ps4-cat-323", // Tom Clancy's The Division
   "ps4-cat-320", // Watch Dogs
-  "ps4-cat-319", // Far Cry 6
-  "ps4-cat-315", // Far Cry 4
-  "ps4-cat-305", // Assassin's Creed IV: Black Flag
-  "ps4-cat-304", // Mount & Blade II: Bannerlord
   "ps4-cat-303", // Kingdom Come: Deliverance
   "ps4-cat-301", // The Elder Scrolls Online
   "ps4-cat-299", // Fallout Shelter
@@ -112,14 +96,9 @@ export const REMOVED_PS4_IDS = [
   "ps4-cat-283", // XCOM 2
   "ps4-cat-282", // Deadpool
   "ps4-cat-281", // Marvel's Midnight Suns
-  "ps4-cat-279", // Marvel's Guardians of the Galaxy
   "ps4-cat-278", // Suicide Squad: Kill the Justice League
   "ps4-cat-277", // Batman: Arkham VR
-  "ps4-cat-272", // Middle-earth: Shadow of Mordor
-  "ps4-cat-263", // LEGO Marvel Super Heroes
   "ps4-cat-262", // LEGO Star Wars: The Skywalker Saga
-  "ps4-cat-261", // Star Wars: Republic Commando
-  "ps4-cat-259", // Star Wars Jedi: Survivor
   "ps4-cat-257", // Star Wars Battlefront II
   "ps4-cat-256", // Star Wars Battlefront
   "ps4-cat-255", // Mass Effect Legendary Edition
@@ -150,7 +129,6 @@ export const REMOVED_PS4_IDS = [
   "ps4-cat-226", // Flower
   "ps4-cat-225", // Abzu
   "ps4-cat-224", // Journey
-  "ps4-cat-220", // Little Nightmares
   "ps4-cat-219", // A Hat in Time
   "ps4-cat-218", // The Binding of Isaac: Rebirth
   "ps4-cat-217", // Enter the Gungeon
@@ -158,9 +136,7 @@ export const REMOVED_PS4_IDS = [
   "ps4-cat-215", // Dead Cells
   "ps4-cat-214", // Ori and the Will of the Wisps
   "ps4-cat-213", // Ori and the Blind Forest
-  "ps4-cat-212", // Hollow Knight
   "ps4-cat-211", // Celeste
-  "ps4-cat-210", // Cuphead
   "ps4-cat-209", // Shovel Knight
   "ps4-cat-208", // Yooka-Laylee and the Impossible Lair
   "ps4-cat-207", // Yooka-Laylee
@@ -170,7 +146,6 @@ export const REMOVED_PS4_IDS = [
   "ps4-cat-190", // Need for Speed
   "ps4-cat-188", // The Crew 2
   "ps4-cat-187", // The Crew
-  "ps4-cat-184", // Assetto Corsa
   "ps4-cat-183", // Project CARS 3
   "ps4-cat-182", // Project CARS 2
   "ps4-cat-181", // Project CARS
@@ -180,11 +155,8 @@ export const REMOVED_PS4_IDS = [
   "ps4-cat-176", // WRC 7
   "ps4-cat-175", // WRC 6
   "ps4-cat-174", // WRC 5
-  "ps4-cat-172", // Dirt 4
   "ps4-cat-170", // Dirt Rally
-  "ps4-cat-169", // F1 24
   "ps4-cat-167", // F1 22
-  "ps4-cat-166", // F1 2021
   "ps4-cat-165", // F1 2020
   "ps4-cat-163", // F1 2018
   "ps4-cat-162", // F1 2017
@@ -208,7 +180,6 @@ export const REMOVED_PS4_IDS = [
   "ps4-cat-141", // NBA 2K18
   "ps4-cat-140", // NBA 2K17
   "ps4-cat-139", // NBA 2K16
-  "ps4-cat-137", // PES 2018
   "ps4-cat-136", // PES 2017
   "seed-ps4-17", // Persona 5 Royal
   "ps4-cat-130", // FIFA 19
@@ -216,26 +187,20 @@ export const REMOVED_PS4_IDS = [
   "ps4-cat-127", // FIFA 16
   "ps4-cat-126", // FIFA 15
   "ps4-cat-125", // FIFA 14
-  "ps4-cat-124", // EA Sports FC 26
   "ps4-cat-119", // UFC 2
   "ps4-cat-118", // UFC
   "ps4-cat-113", // WWE 2K19
   "ps4-cat-111", // WWE 2K17
   "ps4-cat-110", // WWE 2K16
-  "ps4-cat-108", // Injustice: Gods Among Us
   "ps4-cat-105", // Street Fighter 30th Anniversary Collection
   "ps4-cat-102", // Soulcalibur VI
-  "ps4-cat-101", // Jump Force
-  "ps4-cat-100", // My Hero One's Justice 2
   "ps4-cat-99", // My Hero One's Justice
   "ps4-cat-98", // Demon Slayer: The Hinokami Chronicles
-  "ps4-cat-97", // Attack on Titan 2
   "ps4-cat-96", // Attack on Titan
   "ps4-cat-95", // One Piece World Seeker
   "ps4-cat-94", // One Piece: Pirate Warriors 4
   "ps4-cat-93", // One Piece: Pirate Warriors 3
   "ps4-cat-92", // Naruto Shippuden: Ultimate Ninja Storm Trilogy
-  "ps4-cat-91", // Naruto Shippuden: Ultimate Ninja Storm 4
   "ps4-cat-90", // Dragon Ball: The Breakers
   "ps4-cat-87", // Dragon Ball Xenoverse 2
   "ps4-cat-86", // Dragon Ball Xenoverse
@@ -269,12 +234,8 @@ export const REMOVED_PS4_IDS = [
   "ps4-cat-54", // Final Fantasy X/X-2 HD Remaster
   "ps4-cat-53", // Final Fantasy XII: The Zodiac Age
   "ps4-cat-50", // Monster Hunter World: Iceborne
-  "ps4-cat-47", // Nioh
-  "ps4-cat-45", // Dark Souls III
   "ps4-cat-44", // Dark Souls II: Scholar of the First Sin
   "ps4-cat-43", // Dark Souls Remastered
-  "ps4-cat-42", // Elden Ring
-  "ps4-cat-41", // Cyberpunk 2077
   "ps4-cat-38", // MediEvil
   "ps4-cat-37", // Astro Bot Rescue Mission
   "ps4-cat-36", // Everybody's Golf
@@ -282,7 +243,6 @@ export const REMOVED_PS4_IDS = [
   "ps4-cat-32", // Beyond: Two Souls
   "ps4-cat-27", // Concrete Genie
   "ps4-cat-12", // Horizon Forbidden West
-  "seed-ps4-12", // Marvel's Spider-Man Remastered
   "ps4-cat-462", // Call of Duty: Modern Warfare
   "ps4-cat-17", // Death Stranding Director's Cut
   "ps4-cat-358", // Resident Evil Village
@@ -291,4 +251,53 @@ export const REMOVED_PS4_IDS = [
   "ps4-cat-389", // Just Cause 4
   "ps4-cat-197", // Crash Team Racing Nitro-Fueled
   "ps4-cat-46", // Sekiro: Shadows Die Twice
+  // PS4 games not on the store hard drives (games.xlsx) — removed 1405/08/18
+  "ps4-cat-641", // Super Mario Bros. Wonder
+  "ps4-cat-613", // Asterix & Obelix XXL: Romastered
+  "ps4-cat-607", // LEGO Voyagers
+  "ps4-cat-604", // Shinobi: Art of Vengeance
+  "ps4-cat-598", // Grounded
+  "ps4-cat-595", // Season: A Letter to the Future
+  "ps4-cat-591", // Sonic X Shadow Generations
+  "ps4-cat-584", // Wanted: Dead
+  "ps4-cat-580", // The Long Dark
+  "ps4-cat-577", // The Ascent
+  "ps4-cat-575", // Terminator: Resistance
+  "ps4-cat-574", // Sonic Origins Plus
+  "ps4-cat-572", // Song of Horror
+  "ps4-cat-571", // Sonic Colors: Ultimate
+  "seed-ps4-41", // Medal of Honor
+  "ps4-cat-566", // Like a Dragon: Ishin!
+  "ps4-cat-565", // Midnight Fight Express
+  "ps4-cat-563", // eFootball 2024
+  "ps4-cat-550", // Desperados III
+  "ps4-cat-549", // WWE 2K Battlegrounds
+  "ps4-cat-533", // Homefront: The Revolution
+  "ps4-cat-522", // DayZ
+  "ps4-cat-520", // Just Dance 2020
+  "ps4-cat-518", // Tennis World Tour 2
+  "ps4-cat-517", // Metro Exodus
+  "ps4-cat-512", // Wreckfest
+  "ps4-cat-483", // The Quarry
+  "ps4-cat-468", // Call of Duty: Black Ops 6
+  "ps4-cat-467", // Call of Duty: Modern Warfare III
+  "ps4-cat-435", // Back 4 Blood
+  "ps4-cat-425", // Alien: Isolation
+  "ps4-cat-417", // Rage 2
+  "ps4-cat-390", // Prototype Biohazard Bundle
+  "ps4-cat-276", // Batman: Return to Arkham
+  "ps4-cat-206", // New Super Lucky's Tale
+  "ps4-cat-198", // Team Sonic Racing
+  "ps4-cat-173", // Dirt 5
+  "ps4-cat-171", // Dirt Rally 2.0
+  "ps4-cat-168", // F1 23
+  "ps4-cat-164", // F1 2019
+  "ps4-cat-147", // NBA 2K24
+  "ps4-cat-146", // NBA 2K23
+  "ps4-cat-143", // NBA 2K20
+  "ps4-cat-116", // WWE 2K23
+  "ps4-cat-114", // WWE 2K20
+  "ps4-cat-89", // Dragon Ball Z: Kakarot
+  "ps4-cat-75", // Judgment
+  "ps4-cat-62", // Persona 5
 ];

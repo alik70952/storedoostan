@@ -2654,5 +2654,345 @@
   "Mega Man X5": {
     "titleFa": "مگامن X5",
     "genre": "اکشن و ماجراجویی"
+  },
+  "Ben 10: Power Trip": {
+    "titleFa": "بن تن: سفر قدرت",
+    "genre": "خانوادگی"
+  },
+  "Doom 3": {
+    "titleFa": "دووم ۳",
+    "genre": "شوتر"
+  },
+  "Expeditions: A Mudrunner Game": {
+    "titleFa": "اکسپدیشنز: یک بازی مادرانر",
+    "genre": "مسابقه‌ای"
+  },
+  "Five Nights at Freddy's": {
+    "titleFa": "پنج شب در فردی",
+    "genre": "ترس و بقا"
+  },
+  "Five Nights at Freddy's 2": {
+    "titleFa": "پنج شب در فردی ۲",
+    "genre": "ترس و بقا"
+  },
+  "Five Nights at Freddy's 3": {
+    "titleFa": "پنج شب در فردی ۳",
+    "genre": "ترس و بقا"
+  },
+  "Five Nights at Freddy's 4": {
+    "titleFa": "پنج شب در فردی ۴",
+    "genre": "ترس و بقا"
+  },
+  "Five Nights at Freddy's: Sister Location": {
+    "titleFa": "پنج شب در فردی: سیستر لوکیشن",
+    "genre": "ترس و بقا"
+  },
+  "Job Simulator": {
+    "titleFa": "شبیه‌ساز شغل",
+    "genre": "خانوادگی"
+  },
+  "Minecraft Dungeons": {
+    "titleFa": "ماینکرفت دانجنز",
+    "genre": "خانوادگی"
+  },
+  "Poppy Playtime: Chapter 4": {
+    "titleFa": "پاپی پلی‌تایم: فصل ۴",
+    "genre": "ترس و بقا"
+  },
+  "Poppy Playtime: Chapter 5": {
+    "titleFa": "پاپی پلی‌تایم: فصل ۵",
+    "genre": "ترس و بقا"
+  },
+  "Pro Evolution Soccer 2": {
+    "titleFa": "پی‌ای‌اس ۲",
+    "genre": "ورزشی"
+  },
+  "Samurai Warriors 5": {
+    "titleFa": "جنگجویان سامورایی ۵",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Star Wars Episode I: Racer": {
+    "titleFa": "جنگ ستارگان قسمت اول: ریسر",
+    "genre": "مسابقه‌ای"
+  },
+  "Super Mario Bros. Special 35th Anniversary Edition": {
+    "titleFa": "سوپر ماریو: نسخه ویژه ۳۵ سالگی",
+    "genre": "خانوادگی"
+  },
+  "Super Mario Summer Heat Collection 2024": {
+    "titleFa": "مجموعه سوپر ماریو تابستان ۲۰۲۴",
+    "genre": "خانوادگی"
+  },
+  "The Walking Dead: Destinies": {
+    "titleFa": "مردگان متحرک: سرنوشت‌ها",
+    "genre": "ترس و بقا"
+  },
+  "Curse of the Dead Gods": {
+    "titleFa": "نفرین خدایان مرده",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Resident Evil 7: Biohazard": {
+    "titleFa": "رزیدنت اویل ۷: بایوهازارد",
+    "genre": "ترس و بقا"
+  },
+  "Bus Simulator 21": {
+    "titleFa": "شبیه‌ساز اتوبوس ۲۱",
+    "genre": "مسابقه‌ای"
+  },
+  "Oddworld: Stranger's Wrath HD": {
+    "titleFa": "آدورلد: خشم غریبه",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "The Lord of the Rings: Gollum": {
+    "titleFa": "ارباب حلقه‌ها: گالوم",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Train Sim World 3": {
+    "titleFa": "شبیه‌ساز قطار ۳",
+    "genre": "مسابقه‌ای"
+  },
+  "Trine 3: The Artifacts of Power": {
+    "titleFa": "ترین ۳: مصنوعات قدرت",
+    "genre": "خانوادگی"
+  },
+  "Twin Mirror": {
+    "titleFa": "آینه دوقلو",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Vampire: The Masquerade – Swansong": {
+    "titleFa": "ومپایر: د مسکرید – سوان‌سانگ",
+    "genre": "نقش‌آفرینی"
+  },
+  "Army Men: Air Attack 2": {
+    "titleFa": "سربازان پلاستیکی: حمله هوایی ۲",
+    "genre": "شوتر"
+  },
+  "Blowout": {
+    "titleFa": "بلواوت",
+    "genre": "شوتر"
+  },
+  "Call of Duty: Black Ops II": {
+    "titleFa": "ندای وظیفه: بلک اپس ۲",
+    "genre": "شوتر"
+  },
+  "Commandos: Strike Force": {
+    "titleFa": "کماندوز: نیروی ضربت",
+    "genre": "شوتر"
+  },
+  "Fighting Force": {
+    "titleFa": "فایتینگ فورس",
+    "genre": "مبارزه‌ای"
+  },
+  "Ghost Vibration": {
+    "titleFa": "گوست ویبریشن",
+    "genre": "شوتر"
+  },
+  "Grand Theft Auto: Chinatown Wars": {
+    "titleFa": "جی‌تی‌ای: جنگ‌های محله چینی‌ها",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "The Incredible Hulk: Ultimate Destruction": {
+    "titleFa": "هالک شگفت‌انگیز: نابودی نهایی",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Indiana Jones and the Emperor's Tomb": {
+    "titleFa": "ایندیانا جونز و مقبره امپراتور",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Legacy of Kain: Defiance": {
+    "titleFa": "میراث کین: سرپیچی",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "RoboCop vs. The Terminator": {
+    "titleFa": "رباکاپ در برابر ترمیناتور",
+    "genre": "شوتر"
+  },
+  "Rule of Rose": {
+    "titleFa": "قانون رز",
+    "genre": "ترس و بقا"
+  },
+  "Sega Genesis Collection": {
+    "titleFa": "مجموعه سگا جنسیس",
+    "genre": "خانوادگی"
+  },
+  "Shadow the Hedgehog": {
+    "titleFa": "شدو جوجه‌تیغی",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Stranded Deep": {
+    "titleFa": "گرفتار در اعماق",
+    "genre": "ترس و بقا"
+  },
+  "Lies of P": {
+    "titleFa": "دروغ‌های پی",
+    "genre": "نقش‌آفرینی"
+  },
+  "Sonic Superstars": {
+    "titleFa": "سونیک سوپراستارز",
+    "genre": "خانوادگی"
+  },
+  "BioShock: The Collection": {
+    "titleFa": "بایوشاک: مجموعه کامل",
+    "genre": "شوتر"
+  },
+  "Cars 3: Driven to Win": {
+    "titleFa": "ماشین‌ها ۳: رانندگی برای پیروزی",
+    "genre": "مسابقه‌ای"
+  },
+  "Dead Nation: Apocalypse Edition": {
+    "titleFa": "ملت مرده: نسخه آخرالزمان",
+    "genre": "ترس و بقا"
+  },
+  "Farpoint": {
+    "titleFa": "فارپوینت",
+    "genre": "شوتر"
+  },
+  "Grand Theft Auto: San Andreas": {
+    "titleFa": "جی‌تی‌ای: سن آندریاس",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Grid": {
+    "titleFa": "گرید",
+    "genre": "مسابقه‌ای"
+  },
+  "Ice Age Scrat's Nutty Adventure": {
+    "titleFa": "عصر یخبندان: ماجراجویی دیوانه‌وار اسکرت",
+    "genre": "خانوادگی"
+  },
+  "Journey: Collector's Edition": {
+    "titleFa": "جِرنی: نسخه کلکسیونی",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Metal Slug XX": {
+    "titleFa": "متال اسلاگ XX",
+    "genre": "شوتر"
+  },
+  "PlayStation VR Worlds": {
+    "titleFa": "دنیاهای پلی‌استیشن VR",
+    "genre": "خانوادگی"
+  },
+  "Ride 4": {
+    "titleFa": "راید ۴",
+    "genre": "مسابقه‌ای"
+  },
+  "Tintin Reporter: Cigars of the Pharaoh": {
+    "titleFa": "تن‌تن خبرنگار: سیگارهای فرعون",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Until Dawn: Rush of Blood": {
+    "titleFa": "تا سپیده‌دم: هجوم خون",
+    "genre": "ترس و بقا"
+  },
+  "WWE 2K25": {
+    "titleFa": "کشتی کج ۲K25",
+    "genre": "ورزشی"
+  },
+  "Fatal Frame: Maiden of Black Water": {
+    "titleFa": "فیتال فریم: دوشیزه آب سیاه",
+    "genre": "ترس و بقا"
+  },
+  "AO Tennis 2": {
+    "titleFa": "تنیس AO ۲",
+    "genre": "ورزشی"
+  },
+  "SEGA Mega Drive Classics": {
+    "titleFa": "کلاسیک‌های سگا مگادرایو",
+    "genre": "خانوادگی"
+  },
+  "Shadow of the Tomb Raider": {
+    "titleFa": "سایه مهاجم مقبره",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Shenmue III": {
+    "titleFa": "شن‌مو ۳",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Grand Theft Auto III": {
+    "titleFa": "جی‌تی‌ای ۳",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Grand Theft Auto: Vice City": {
+    "titleFa": "جی‌تی‌ای: وایس سیتی",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Kena: Bridge of Spirits": {
+    "titleFa": "کنا: پل ارواح",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Life is Strange: True Colors": {
+    "titleFa": "زندگی عجیب است: رنگ‌های واقعی",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "MechWarrior 5: Mercenaries": {
+    "titleFa": "مک‌واریور ۵: مزدوران",
+    "genre": "شوتر"
+  },
+  "Moss": {
+    "titleFa": "ماس",
+    "genre": "خانوادگی"
+  },
+  "NINJA GAIDEN 3: Razor's Edge": {
+    "titleFa": "نینجا گایدن ۳: لبه تیغ",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "NINJA GAIDEN Σ": {
+    "titleFa": "نینجا گایدن سیگما",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "NINJA GAIDEN Σ2": {
+    "titleFa": "نینجا گایدن سیگما ۲",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Observer: System Redux": {
+    "titleFa": "آبزرور: سیستم ریداکس",
+    "genre": "ترس و بقا"
+  },
+  "Payday 2: Crimewave Edition": {
+    "titleFa": "پی‌دی ۲: نسخه موج جنایت",
+    "genre": "شوتر"
+  },
+  "theHunter: Call of the Wild": {
+    "titleFa": "شکارچی: ندای طبیعت وحشی",
+    "genre": "شوتر"
+  },
+  "Armored Core VI: Fires of Rubicon": {
+    "titleFa": "آرمورد کور ۶: آتش‌های روبیکان",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Asterix & Obelix XXL3": {
+    "titleFa": "آستریکس و اوبلیکس XXL3",
+    "genre": "خانوادگی"
+  },
+  "Goat Simulator: The Bundle": {
+    "titleFa": "شبیه‌ساز بز: مجموعه کامل",
+    "genre": "خانوادگی"
+  },
+  "Hollow Knight: Silksong": {
+    "titleFa": "هالو نایت: سیلک‌سانگ",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Little Nightmares III": {
+    "titleFa": "کابوس‌های کوچک ۳",
+    "genre": "ترس و بقا"
+  },
+  "Maine": {
+    "titleFa": "مِین",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "Slitterhead": {
+    "titleFa": "اسلیترهد",
+    "genre": "ترس و بقا"
+  },
+  "Trine 5: A Clockwork Conspiracy": {
+    "titleFa": "ترین ۵: توطئه کوکی",
+    "genre": "خانوادگی"
+  },
+  "Q.U.B.E. 2": {
+    "titleFa": "کیوب ۲",
+    "genre": "اکشن و ماجراجویی"
+  },
+  "NBA 2K26": {
+    "titleFa": "ان‌بی‌ای ۲K26",
+    "genre": "ورزشی"
   }
 }

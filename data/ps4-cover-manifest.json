@@ -4632,5 +4632,593 @@
     "width": 557,
     "height": 551,
     "bytes": 58045
+  },
+  "Expeditions: A Mudrunner Game": {
+    "file": "/covers/ps4/expeditions-a-mudrunner-game.jpg",
+    "source": "wikipedia-exact",
+    "width": 273,
+    "height": 365,
+    "bytes": 25003
+  },
+  "Doom 3": {
+    "file": "/covers/ps4/doom-3.jpg",
+    "source": "downloadha",
+    "width": 350,
+    "height": 493,
+    "bytes": 31749
+  },
+  "Five Nights at Freddy's": {
+    "file": "/covers/ps4/five-nights-at-freddys.jpg",
+    "source": "manual",
+    "width": 460,
+    "height": 215,
+    "bytes": 16355
+  },
+  "Ben 10: Power Trip": {
+    "file": "/covers/ps4/ben-10-power-trip.jpg",
+    "source": "steam",
+    "width": 300,
+    "height": 450,
+    "bytes": 43600
+  },
+  "Five Nights at Freddy's 2": {
+    "file": "/covers/ps4/five-nights-at-freddys-2.jpg",
+    "source": "manual",
+    "width": 460,
+    "height": 215,
+    "bytes": 16811
+  },
+  "Five Nights at Freddy's 3": {
+    "file": "/covers/ps4/five-nights-at-freddys-3.jpg",
+    "source": "manual",
+    "width": 460,
+    "height": 215,
+    "bytes": 20877
+  },
+  "Five Nights at Freddy's 4": {
+    "file": "/covers/ps4/five-nights-at-freddys-4.jpg",
+    "source": "manual",
+    "width": 460,
+    "height": 215,
+    "bytes": 19172
+  },
+  "Job Simulator": {
+    "file": "/covers/ps4/job-simulator.jpg",
+    "source": "steam",
+    "width": 300,
+    "height": 450,
+    "bytes": 22820
+  },
+  "Minecraft Dungeons": {
+    "file": "/covers/ps4/minecraft-dungeons.jpg",
+    "source": "downloadha",
+    "width": 350,
+    "height": 467,
+    "bytes": 50150
+  },
+  "Five Nights at Freddy's: Sister Location": {
+    "file": "/covers/ps4/five-nights-at-freddys-sister-location.jpg",
+    "source": "duckduckgo",
+    "width": 600,
+    "height": 900,
+    "bytes": 43129
+  },
+  "Poppy Playtime: Chapter 5": {
+    "file": "/covers/ps4/poppy-playtime-chapter-5.jpg",
+    "source": "manual",
+    "width": 460,
+    "height": 215,
+    "bytes": 23212
+  },
+  "Pro Evolution Soccer 2": {
+    "file": "/covers/ps4/pro-evolution-soccer-2.jpg",
+    "source": "duckduckgo",
+    "width": 446,
+    "height": 640,
+    "bytes": 42136
+  },
+  "Poppy Playtime: Chapter 4": {
+    "file": "/covers/ps4/poppy-playtime-chapter-4.jpg",
+    "source": "manual",
+    "width": 460,
+    "height": 215,
+    "bytes": 23212
+  },
+  "Samurai Warriors 5": {
+    "file": "/covers/ps4/samurai-warriors-5.jpg",
+    "source": "downloadha",
+    "width": 350,
+    "height": 436,
+    "bytes": 50045
+  },
+  "Super Mario Bros. Special 35th Anniversary Edition": {
+    "file": "/covers/ps4/super-mario-bros-special-35th-anniversary-edition.jpg",
+    "source": "duckduckgo",
+    "width": 460,
+    "height": 618,
+    "bytes": 85172
+  },
+  "Star Wars Episode I: Racer": {
+    "file": "/covers/ps4/star-wars-episode-i-racer.jpg",
+    "source": "duckduckgo",
+    "width": 600,
+    "height": 854,
+    "bytes": 103458
+  },
+  "Curse of the Dead Gods": {
+    "file": "/covers/ps4/curse-of-the-dead-gods.jpg",
+    "source": "downloadha",
+    "width": 350,
+    "height": 525,
+    "bytes": 41545
+  },
+  "The Walking Dead: Destinies": {
+    "file": "/covers/ps4/the-walking-dead-destinies.jpg",
+    "source": "steam",
+    "width": 300,
+    "height": 450,
+    "bytes": 28846
+  },
+  "Super Mario Summer Heat Collection 2024": {
+    "file": "/covers/ps4/super-mario-summer-heat-collection-2024.jpg",
+    "source": "bing",
+    "width": 600,
+    "height": 600,
+    "bytes": 40851
+  },
+  "Bus Simulator 21": {
+    "file": "/covers/ps4/bus-simulator-21.jpg",
+    "source": "steam",
+    "width": 300,
+    "height": 450,
+    "bytes": 37321
+  },
+  "Resident Evil 7: Biohazard": {
+    "file": "/covers/ps4/resident-evil-7-biohazard.jpg",
+    "source": "downloadha",
+    "width": 380,
+    "height": 391,
+    "bytes": 36177
+  },
+  "The Lord of the Rings: Gollum": {
+    "file": "/covers/ps4/the-lord-of-the-rings-gollum.jpg",
+    "source": "wikipedia-exact",
+    "width": 273,
+    "height": 365,
+    "bytes": 20955
+  },
+  "Oddworld: Stranger's Wrath HD": {
+    "file": "/covers/ps4/oddworld-strangers-wrath-hd.jpg",
+    "source": "steam",
+    "width": 300,
+    "height": 450,
+    "bytes": 31482
+  },
+  "Twin Mirror": {
+    "file": "/covers/ps4/twin-mirror.jpg",
+    "source": "wikipedia-exact",
+    "width": 273,
+    "height": 365,
+    "bytes": 17801
+  },
+  "Train Sim World 3": {
+    "file": "/covers/ps4/train-sim-world-3.jpg",
+    "source": "steam",
+    "width": 300,
+    "height": 450,
+    "bytes": 26823
+  },
+  "Trine 3: The Artifacts of Power": {
+    "file": "/covers/ps4/trine-3-the-artifacts-of-power.jpg",
+    "source": "steam",
+    "width": 300,
+    "height": 450,
+    "bytes": 29513
+  },
+  "Blowout": {
+    "file": "/covers/ps4/blowout.jpg",
+    "source": "manual",
+    "width": 256,
+    "height": 329,
+    "bytes": 18275
+  },
+  "Vampire: The Masquerade – Swansong": {
+    "file": "/covers/ps4/vampire-the-masquerade-swansong.jpg",
+    "source": "bing",
+    "width": 600,
+    "height": 818,
+    "bytes": 58527
+  },
+  "Army Men: Air Attack 2": {
+    "file": "/covers/ps4/army-men-air-attack-2.jpg",
+    "source": "bing",
+    "width": 600,
+    "height": 602,
+    "bytes": 79232
+  },
+  "Call of Duty: Black Ops II": {
+    "file": "/covers/ps4/call-of-duty-black-ops-ii.jpg",
+    "source": "manual",
+    "width": 269,
+    "height": 372,
+    "bytes": 12255
+  },
+  "Commandos: Strike Force": {
+    "file": "/covers/ps4/commandos-strike-force.jpg",
+    "source": "wikipedia",
+    "width": 265,
+    "height": 374,
+    "bytes": 26056
+  },
+  "Fighting Force": {
+    "file": "/covers/ps4/fighting-force.jpg",
+    "source": "steam",
+    "width": 300,
+    "height": 450,
+    "bytes": 24899
+  },
+  "The Incredible Hulk: Ultimate Destruction": {
+    "file": "/covers/ps4/the-incredible-hulk-ultimate-destruction.jpg",
+    "source": "wikipedia-exact",
+    "width": 267,
+    "height": 370,
+    "bytes": 29059
+  },
+  "Indiana Jones and the Emperor's Tomb": {
+    "file": "/covers/ps4/indiana-jones-and-the-emperors-tomb.jpg",
+    "source": "wikipedia-exact",
+    "width": 273,
+    "height": 364,
+    "bytes": 27625
+  },
+  "Grand Theft Auto: Chinatown Wars": {
+    "file": "/covers/ps4/grand-theft-auto-chinatown-wars.jpg",
+    "source": "manual",
+    "width": 284,
+    "height": 351,
+    "bytes": 32876
+  },
+  "Legacy of Kain: Defiance": {
+    "file": "/covers/ps4/legacy-of-kain-defiance.jpg",
+    "source": "steam",
+    "width": 300,
+    "height": 450,
+    "bytes": 28884
+  },
+  "Ghost Vibration": {
+    "file": "/covers/ps4/ghost-vibration.jpg",
+    "source": "bing",
+    "width": 564,
+    "height": 800,
+    "bytes": 62407
+  },
+  "RoboCop vs. The Terminator": {
+    "file": "/covers/ps4/robocop-vs-the-terminator.jpg",
+    "source": "bing",
+    "width": 563,
+    "height": 800,
+    "bytes": 67646
+  },
+  "Rule of Rose": {
+    "file": "/covers/ps4/rule-of-rose.jpg",
+    "source": "bing",
+    "width": 569,
+    "height": 800,
+    "bytes": 75382
+  },
+  "Sega Genesis Collection": {
+    "file": "/covers/ps4/sega-genesis-collection.jpg",
+    "source": "bing",
+    "width": 574,
+    "height": 800,
+    "bytes": 94861
+  },
+  "Stranded Deep": {
+    "file": "/covers/ps4/stranded-deep.jpg",
+    "source": "steam",
+    "width": 300,
+    "height": 450,
+    "bytes": 15085
+  },
+  "Lies of P": {
+    "file": "/covers/ps4/lies-of-p.jpg",
+    "source": "steam",
+    "width": 300,
+    "height": 450,
+    "bytes": 24627
+  },
+  "Shadow the Hedgehog": {
+    "file": "/covers/ps4/shadow-the-hedgehog.jpg",
+    "source": "manual",
+    "width": 266,
+    "height": 375,
+    "bytes": 28328
+  },
+  "Sonic Superstars": {
+    "file": "/covers/ps4/sonic-superstars.jpg",
+    "source": "steam",
+    "width": 300,
+    "height": 450,
+    "bytes": 37904
+  },
+  "Cars 3: Driven to Win": {
+    "file": "/covers/ps4/cars-3-driven-to-win.jpg",
+    "source": "bing",
+    "width": 600,
+    "height": 600,
+    "bytes": 78021
+  },
+  "BioShock: The Collection": {
+    "file": "/covers/ps4/bioshock-the-collection.jpg",
+    "source": "bing",
+    "width": 600,
+    "height": 976,
+    "bytes": 78544
+  },
+  "Dead Nation: Apocalypse Edition": {
+    "file": "/covers/ps4/dead-nation-apocalypse-edition.jpg",
+    "source": "bing",
+    "width": 600,
+    "height": 600,
+    "bytes": 51679
+  },
+  "Farpoint": {
+    "file": "/covers/ps4/farpoint.jpg",
+    "source": "bing",
+    "width": 600,
+    "height": 749,
+    "bytes": 77945
+  },
+  "Grid": {
+    "file": "/covers/ps4/grid.jpg",
+    "source": "manual",
+    "width": 600,
+    "height": 900,
+    "bytes": 61148
+  },
+  "Grand Theft Auto: San Andreas": {
+    "file": "/covers/ps4/grand-theft-auto-san-andreas.jpg",
+    "source": "steam",
+    "width": 300,
+    "height": 450,
+    "bytes": 23015
+  },
+  "Ice Age Scrat's Nutty Adventure": {
+    "file": "/covers/ps4/ice-age-scrats-nutty-adventure.jpg",
+    "source": "steam",
+    "width": 300,
+    "height": 450,
+    "bytes": 30923
+  },
+  "Metal Slug XX": {
+    "file": "/covers/ps4/metal-slug-xx.jpg",
+    "source": "downloadha",
+    "width": 350,
+    "height": 436,
+    "bytes": 47749
+  },
+  "Journey: Collector's Edition": {
+    "file": "/covers/ps4/journey-collectors-edition.jpg",
+    "source": "manual",
+    "width": 600,
+    "height": 900,
+    "bytes": 18991
+  },
+  "PlayStation VR Worlds": {
+    "file": "/covers/ps4/playstation-vr-worlds.jpg",
+    "source": "bing",
+    "width": 600,
+    "height": 750,
+    "bytes": 78984
+  },
+  "Ride 4": {
+    "file": "/covers/ps4/ride-4.jpg",
+    "source": "steam",
+    "width": 300,
+    "height": 450,
+    "bytes": 17742
+  },
+  "Tintin Reporter: Cigars of the Pharaoh": {
+    "file": "/covers/ps4/tintin-reporter-cigars-of-the-pharaoh.jpg",
+    "source": "steam",
+    "width": 300,
+    "height": 450,
+    "bytes": 31482
+  },
+  "WWE 2K25": {
+    "file": "/covers/ps4/wwe-2k25.jpg",
+    "source": "steam",
+    "width": 300,
+    "height": 450,
+    "bytes": 22732
+  },
+  "Until Dawn: Rush of Blood": {
+    "file": "/covers/ps4/until-dawn-rush-of-blood.jpg",
+    "source": "bing",
+    "width": 600,
+    "height": 750,
+    "bytes": 76174
+  },
+  "Fatal Frame: Maiden of Black Water": {
+    "file": "/covers/ps4/fatal-frame-maiden-of-black-water.jpg",
+    "source": "wikipedia",
+    "width": 266,
+    "height": 374,
+    "bytes": 18310
+  },
+  "Shadow of the Tomb Raider": {
+    "file": "/covers/ps4/shadow-of-the-tomb-raider.jpg",
+    "source": "manual",
+    "width": 600,
+    "height": 900,
+    "bytes": 74417
+  },
+  "AO Tennis 2": {
+    "file": "/covers/ps4/ao-tennis-2.jpg",
+    "source": "steam",
+    "width": 300,
+    "height": 450,
+    "bytes": 38382
+  },
+  "Grand Theft Auto III": {
+    "file": "/covers/ps4/grand-theft-auto-iii.jpg",
+    "source": "wikipedia-exact",
+    "width": 280,
+    "height": 362,
+    "bytes": 29759
+  },
+  "Shenmue III": {
+    "file": "/covers/ps4/shenmue-iii.jpg",
+    "source": "downloadha",
+    "width": 350,
+    "height": 431,
+    "bytes": 39662
+  },
+  "SEGA Mega Drive Classics": {
+    "file": "/covers/ps4/sega-mega-drive-classics.jpg",
+    "source": "manual",
+    "width": 600,
+    "height": 900,
+    "bytes": 96395
+  },
+  "Grand Theft Auto: Vice City": {
+    "file": "/covers/ps4/grand-theft-auto-vice-city.jpg",
+    "source": "steam",
+    "width": 300,
+    "height": 450,
+    "bytes": 25283
+  },
+  "MechWarrior 5: Mercenaries": {
+    "file": "/covers/ps4/mechwarrior-5-mercenaries.jpg",
+    "source": "wikipedia-exact",
+    "width": 273,
+    "height": 364,
+    "bytes": 24990
+  },
+  "Kena: Bridge of Spirits": {
+    "file": "/covers/ps4/kena-bridge-of-spirits.jpg",
+    "source": "steam",
+    "width": 300,
+    "height": 450,
+    "bytes": 23783
+  },
+  "Life is Strange: True Colors": {
+    "file": "/covers/ps4/life-is-strange-true-colors.jpg",
+    "source": "steam",
+    "width": 300,
+    "height": 450,
+    "bytes": 32073
+  },
+  "Moss": {
+    "file": "/covers/ps4/moss.jpg",
+    "source": "downloadha",
+    "width": 350,
+    "height": 483,
+    "bytes": 42454
+  },
+  "NINJA GAIDEN Σ": {
+    "file": "/covers/ps4/ninja-gaiden.jpg",
+    "source": "steam",
+    "width": 300,
+    "height": 450,
+    "bytes": 22801
+  },
+  "NINJA GAIDEN 3: Razor's Edge": {
+    "file": "/covers/ps4/ninja-gaiden-3-razors-edge.jpg",
+    "source": "downloadha",
+    "width": 350,
+    "height": 471,
+    "bytes": 36163
+  },
+  "NINJA GAIDEN Σ2": {
+    "file": "/covers/ps4/ninja-gaiden-2.jpg",
+    "source": "steam",
+    "width": 300,
+    "height": 450,
+    "bytes": 22801
+  },
+  "theHunter: Call of the Wild": {
+    "file": "/covers/ps4/thehunter-call-of-the-wild.jpg",
+    "source": "downloadha",
+    "width": 350,
+    "height": 503,
+    "bytes": 40998
+  },
+  "Armored Core VI: Fires of Rubicon": {
+    "file": "/covers/ps4/armored-core-vi-fires-of-rubicon.jpg",
+    "source": "wikipedia-exact",
+    "width": 273,
+    "height": 365,
+    "bytes": 21773
+  },
+  "Observer: System Redux": {
+    "file": "/covers/ps4/observer-system-redux.jpg",
+    "source": "manual",
+    "width": 600,
+    "height": 900,
+    "bytes": 105963
+  },
+  "Payday 2: Crimewave Edition": {
+    "file": "/covers/ps4/payday-2-crimewave-edition.jpg",
+    "source": "manual",
+    "width": 600,
+    "height": 900,
+    "bytes": 96756
+  },
+  "Asterix & Obelix XXL3": {
+    "file": "/covers/ps4/asterix-obelix-xxl3.jpg",
+    "source": "steam",
+    "width": 300,
+    "height": 450,
+    "bytes": 36072
+  },
+  "Hollow Knight: Silksong": {
+    "file": "/covers/ps4/hollow-knight-silksong.jpg",
+    "source": "steam",
+    "width": 300,
+    "height": 450,
+    "bytes": 28974
+  },
+  "Goat Simulator: The Bundle": {
+    "file": "/covers/ps4/goat-simulator-the-bundle.jpg",
+    "source": "bing",
+    "width": 600,
+    "height": 663,
+    "bytes": 89786
+  },
+  "Little Nightmares III": {
+    "file": "/covers/ps4/little-nightmares-iii.jpg",
+    "source": "downloadha",
+    "width": 350,
+    "height": 467,
+    "bytes": 19218
+  },
+  "Slitterhead": {
+    "file": "/covers/ps4/slitterhead.jpg",
+    "source": "downloadha",
+    "width": 350,
+    "height": 467,
+    "bytes": 24048
+  },
+  "Q.U.B.E. 2": {
+    "file": "/covers/ps4/q-u-b-e-2.jpg",
+    "source": "steam",
+    "width": 300,
+    "height": 450,
+    "bytes": 18802
+  },
+  "Trine 5: A Clockwork Conspiracy": {
+    "file": "/covers/ps4/trine-5-a-clockwork-conspiracy.jpg",
+    "source": "steam",
+    "width": 300,
+    "height": 450,
+    "bytes": 37532
+  },
+  "NBA 2K26": {
+    "file": "/covers/ps4/nba-2k26.jpg",
+    "source": "bing",
+    "width": 600,
+    "height": 750,
+    "bytes": 108061
   }
 }
