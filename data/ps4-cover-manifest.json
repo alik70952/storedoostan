@@ -659,10 +659,10 @@
   },
   "Jump Force": {
     "file": "/covers/ps4/jump-force.jpg",
-    "source": "restored",
-    "width": 350,
-    "height": 443,
-    "bytes": 46020
+    "source": "thegamesdb-ps4",
+    "width": 600,
+    "height": 756,
+    "bytes": 34516
   },
   "Soulcalibur VI": {
     "file": "/covers/ps4/soulcalibur-vi.jpg",
@@ -1072,10 +1072,10 @@
   },
   "Assetto Corsa Competizione": {
     "file": "/covers/ps4/assetto-corsa-competizione.jpg",
-    "source": "restored",
-    "width": 350,
-    "height": 444,
-    "bytes": 36076
+    "source": "psstore-ps4 (psprices)",
+    "width": 600,
+    "height": 800,
+    "bytes": 51934
   },
   "Gran Turismo Sport": {
     "file": "/covers/ps4/gran-turismo-sport.jpg",
@@ -1723,10 +1723,10 @@
   },
   "Marvel's Avengers": {
     "file": "/covers/ps4/marvels-avengers.jpg",
-    "source": "restored",
-    "width": 350,
-    "height": 442,
-    "bytes": 40367
+    "source": "thegamesdb-ps4",
+    "width": 600,
+    "height": 748,
+    "bytes": 102420
   },
   "Marvel's Midnight Suns": {
     "file": "/covers/ps4/marvels-midnight-suns.jpg",
@@ -2472,10 +2472,10 @@
   },
   "Darksiders II Deathinitive Edition": {
     "file": "/covers/ps4/darksiders-ii-deathinitive-edition.jpg",
-    "source": "restored",
-    "width": 350,
-    "height": 437,
-    "bytes": 38188
+    "source": "thegamesdb-ps4",
+    "width": 600,
+    "height": 722,
+    "bytes": 103322
   },
   "Darksiders III": {
     "file": "/covers/ps4/darksiders-iii.jpg",
@@ -2563,10 +2563,10 @@
   },
   "Sniper Ghost Warrior 3": {
     "file": "/covers/ps4/sniper-ghost-warrior-3.jpg",
-    "source": "restored",
-    "width": 450,
-    "height": 518,
-    "bytes": 53314
+    "source": "psstore-ps4 (psprices)",
+    "width": 600,
+    "height": 800,
+    "bytes": 96408
   },
   "Sniper Ghost Warrior Contracts": {
     "file": "/covers/ps4/sniper-ghost-warrior-contracts.jpg",
@@ -2605,10 +2605,10 @@
   },
   "Wolfenstein: Youngblood": {
     "file": "/covers/ps4/wolfenstein-youngblood.jpg",
-    "source": "restored",
-    "width": 320,
-    "height": 450,
-    "bytes": 35051
+    "source": "psstore-ps4 (psprices)",
+    "width": 600,
+    "height": 800,
+    "bytes": 72026
   },
   "DOOM": {
     "file": "/covers/ps4/doom.jpg",
@@ -2668,10 +2668,10 @@
   },
   "Dishonored: Death of the Outsider": {
     "file": "/covers/ps4/dishonored-death-of-the-outsider.jpg",
-    "source": "restored",
-    "width": 350,
-    "height": 525,
-    "bytes": 35276
+    "source": "psstore-ps4 (psprices)",
+    "width": 600,
+    "height": 800,
+    "bytes": 62455
   },
   "Deathloop": {
     "file": "/covers/ps4/deathloop.jpg",
@@ -2969,10 +2969,10 @@
   },
   "Call of Duty: Modern Warfare II": {
     "file": "/covers/ps4/call-of-duty-modern-warfare-ii.jpg",
-    "source": "restored",
-    "width": 350,
-    "height": 467,
-    "bytes": 37998
+    "source": "psstore-ps4 (psprices)",
+    "width": 600,
+    "height": 800,
+    "bytes": 78590
   },
   "Call of Duty: Modern Warfare III": {
     "file": "/covers/ps4/call-of-duty-modern-warfare-iii.jpg",
@@ -3445,10 +3445,10 @@
   },
   "UFC 4": {
     "file": "/covers/ps4/ufc-4.jpg",
-    "source": "manual",
-    "width": 303,
-    "height": 329,
-    "bytes": 27104
+    "source": "psstore-ps4 (psprices)",
+    "width": 600,
+    "height": 800,
+    "bytes": 75857
   },
   "WWE 2K20": {
     "file": "/covers/ps4/wwe-2k20.jpg",
@@ -4327,10 +4327,10 @@
   },
   "Shadows of the Damned: Hella Remastered": {
     "file": "/covers/ps4/shadows-of-the-damned-hella-remastered.jpg",
-    "source": "bale-channel",
+    "source": "psstore-ps4 (psprices)",
     "width": 600,
     "height": 800,
-    "bytes": 39434
+    "bytes": 96862
   },
   "Madison": {
     "file": "/covers/ps4/madison.jpg",
@@ -4376,10 +4376,10 @@
   },
   "Disney Epic Mickey: Rebrushed": {
     "file": "/covers/ps4/disney-epic-mickey-rebrushed.jpg",
-    "source": "bale-channel",
-    "width": 554,
-    "height": 554,
-    "bytes": 37386
+    "source": "psstore-ps4 (psprices)",
+    "width": 600,
+    "height": 800,
+    "bytes": 51655
   },
   "Death's Door": {
     "file": "/covers/ps4/death-s-door.jpg",
@@ -4418,10 +4418,10 @@
   },
   "Car Mechanic Simulator 2021": {
     "file": "/covers/ps4/car-mechanic-simulator-2021.jpg",
-    "source": "bale-channel",
-    "width": 466,
-    "height": 659,
-    "bytes": 69129
+    "source": "psstore-ps4 (psprices)",
+    "width": 600,
+    "height": 800,
+    "bytes": 102593
   },
   "Mutant Year Zero: Road to Eden": {
     "file": "/covers/ps4/mutant-year-zero-road-to-eden.jpg",
@@ -4460,10 +4460,10 @@
   },
   "Transformers: Rise of the Dark Spark": {
     "file": "/covers/ps4/transformers-rise-of-the-dark-spark.jpg",
-    "source": "bale-channel",
-    "width": 480,
-    "height": 679,
-    "bytes": 93997
+    "source": "thegamesdb-ps4",
+    "width": 160,
+    "height": 199,
+    "bytes": 11683
   },
   "Super Mario Bros. Wonder": {
     "file": "/covers/ps4/super-mario-bros-wonder.jpg",
@@ -4544,10 +4544,10 @@
   },
   "Brothers in Arms: Road to Hill 30": {
     "file": "/covers/ps4/brothers-in-arms-road-to-hill-30.jpg",
-    "source": "bale-channel",
-    "width": 350,
-    "height": 450,
-    "bytes": 33618
+    "source": "thegamesdb-ps2",
+    "width": 600,
+    "height": 848,
+    "bytes": 98929
   },
   "Barbie in the 12 Dancing Princesses": {
     "file": "/covers/ps4/barbie-in-the-12-dancing-princesses.jpg",
@@ -4565,10 +4565,10 @@
   },
   "Brothers in Arms: Earned in Blood": {
     "file": "/covers/ps4/brothers-in-arms-earned-in-blood.jpg",
-    "source": "bale-channel",
-    "width": 466,
-    "height": 659,
-    "bytes": 61700
+    "source": "thegamesdb-ps2",
+    "width": 600,
+    "height": 844,
+    "bytes": 110589
   },
   "Bugs Bunny & Taz: Time Busters": {
     "file": "/covers/ps4/bugs-bunny-and-taz-time-busters.jpg",
@@ -4642,10 +4642,10 @@
   },
   "Doom 3": {
     "file": "/covers/ps4/doom-3.jpg",
-    "source": "downloadha",
-    "width": 350,
-    "height": 493,
-    "bytes": 31749
+    "source": "psstore-ps4 (psprices)",
+    "width": 600,
+    "height": 800,
+    "bytes": 58924
   },
   "Five Nights at Freddy's": {
     "file": "/covers/ps4/five-nights-at-freddys.jpg",
@@ -4663,24 +4663,24 @@
   },
   "Five Nights at Freddy's 2": {
     "file": "/covers/ps4/five-nights-at-freddys-2.jpg",
-    "source": "manual",
-    "width": 460,
-    "height": 215,
-    "bytes": 16811
+    "source": "psstore-ps4 (psprices)",
+    "width": 600,
+    "height": 800,
+    "bytes": 57363
   },
   "Five Nights at Freddy's 3": {
     "file": "/covers/ps4/five-nights-at-freddys-3.jpg",
-    "source": "manual",
-    "width": 460,
-    "height": 215,
-    "bytes": 20877
+    "source": "psstore-ps4 (psprices)",
+    "width": 600,
+    "height": 800,
+    "bytes": 82311
   },
   "Five Nights at Freddy's 4": {
     "file": "/covers/ps4/five-nights-at-freddys-4.jpg",
-    "source": "manual",
-    "width": 460,
-    "height": 215,
-    "bytes": 19172
+    "source": "psstore-ps4 (psprices)",
+    "width": 600,
+    "height": 800,
+    "bytes": 71475
   },
   "Job Simulator": {
     "file": "/covers/ps4/job-simulator.jpg",
@@ -4705,10 +4705,10 @@
   },
   "Poppy Playtime: Chapter 5": {
     "file": "/covers/ps4/poppy-playtime-chapter-5.jpg",
-    "source": "manual",
-    "width": 460,
-    "height": 215,
-    "bytes": 23212
+    "source": "psstore-ps4 (psprices)",
+    "width": 600,
+    "height": 800,
+    "bytes": 55069
   },
   "Pro Evolution Soccer 2": {
     "file": "/covers/ps4/pro-evolution-soccer-2.jpg",
@@ -4719,10 +4719,10 @@
   },
   "Poppy Playtime: Chapter 4": {
     "file": "/covers/ps4/poppy-playtime-chapter-4.jpg",
-    "source": "manual",
-    "width": 460,
-    "height": 215,
-    "bytes": 23212
+    "source": "psstore-ps4 (psprices)",
+    "width": 600,
+    "height": 800,
+    "bytes": 48872
   },
   "Samurai Warriors 5": {
     "file": "/covers/ps4/samurai-warriors-5.jpg",
@@ -4845,10 +4845,10 @@
   },
   "Commandos: Strike Force": {
     "file": "/covers/ps4/commandos-strike-force.jpg",
-    "source": "wikipedia",
-    "width": 265,
-    "height": 374,
-    "bytes": 26056
+    "source": "thegamesdb-ps2",
+    "width": 500,
+    "height": 707,
+    "bytes": 68655
   },
   "Fighting Force": {
     "file": "/covers/ps4/fighting-force.jpg",
@@ -5139,10 +5139,10 @@
   },
   "theHunter: Call of the Wild": {
     "file": "/covers/ps4/thehunter-call-of-the-wild.jpg",
-    "source": "downloadha",
-    "width": 350,
-    "height": 503,
-    "bytes": 40998
+    "source": "psstore-ps4 (psprices)",
+    "width": 600,
+    "height": 800,
+    "bytes": 78246
   },
   "Armored Core VI: Fires of Rubicon": {
     "file": "/covers/ps4/armored-core-vi-fires-of-rubicon.jpg",
