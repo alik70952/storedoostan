@@ -5,6 +5,7 @@ import type { Game, Platform } from "@/lib/types";
 import { ACCOUNT_PLATFORM, persianNumber } from "@/lib/types";
 import GameCard from "./GameCard";
 import Logo from "./Logo";
+import { ps4PopularRank } from "@/lib/ps4-popular";
 
 type PlatformFilter = Platform | "two-player" | "all";
 type SortKey = "newest" | "oldest" | "alpha" | "featured";
@@ -78,6 +79,8 @@ export default function HomeClient({ games }: { games: Game[] }) {
     }
     const sorted = [...list];
     if (sort === "newest") sorted.sort((a, b) => b.createdAt.localeCompare(a.createdAt) || b.updatedAt.localeCompare(a.updatedAt));
+    // تب PS4: بازی‌های پرطرفدار (GTA V، RDR2، MK11، RE4 و…) اول لیست، بقیه به ترتیب قبلی
+    if (sort === "newest" && platform === "PS4") sorted.sort((a, b) => ps4PopularRank(a.title, a.titleFa) - ps4PopularRank(b.title, b.titleFa));
     if (sort === "oldest") sorted.sort((a, b) => a.createdAt.localeCompare(b.createdAt));
     if (sort === "alpha") sorted.sort((a, b) => (a.titleFa || a.title).localeCompare(b.titleFa || b.title, "fa"));
     if (sort === "featured") sorted.sort((a, b) => Number(b.featured) - Number(a.featured) || b.createdAt.localeCompare(a.createdAt));
