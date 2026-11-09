@@ -85,7 +85,7 @@ export default function Logo({ size = 40 }: { size?: number }) {
         fill="url(#logo-gold)"
         direction="ltr"
       >
-        ☏ 0917716990
+        ☏ 09913087883
       </text>
       <text
         x="120"
