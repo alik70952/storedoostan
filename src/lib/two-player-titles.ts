@@ -2,6 +2,15 @@
 // منبع: تعداد بازیکن آفلاین در PlayStation Store (NO_OF_PLAYERS) + بررسی وب برای موارد حذف‌شده از استور.
 // بازی‌های فقط-آنلاین عمداً اینجا نیستند (کنسول کپی‌خور آفلاین است).
 // مقدار اولیه دسته «دو نفره» است؛ بعد از آن تیک پنل ادمین ملاک است. تطبیق با catalog.ts/normTitle.
+/** اضافه‌شده در بازبینی آبان ۱۴۰۵ (روی ردیف‌های موجود دیتابیس هم یک‌بار اعمال می‌شود) */
+export const TWO_PLAYER_ADDED_1405_08: string[] = [
+  "Mortal Kombat XL", "Overcooked! All You Can Eat", "Tiny Troopers Joint Ops", "Trine 5: A Clockwork Conspiracy", "Trine 3: The Artifacts of Power", "Goat Simulator: The Bundle", "Asterix & Obelix XXL3", "Cars 3: Driven to Win", "Sonic Superstars", "Ben 10: Power Trip", "Ben 10", "WWE 2K25", "AO Tennis 2", "SEGA Mega Drive Classics", "Sega Genesis Collection", "Diablo III: Reaper of Souls – Ultimate Evil Edition", "Dead Nation: Apocalypse Edition", "Fighting Force", "Pro Evolution Soccer 2", "Winning Eleven 3", "Army Men: Air Attack 2", "Burnout Paradise Remastered", "Minecraft Dungeons", "Marsupilami: Hoobadventure", "3D Billiards: Billiards & Snooker", "Shadow the Hedgehog",
+];
+
+/** حذف‌شده: دو نفره فقط آنلاین دارند، نه آفلاین روی یک کنسول */
+export const TWO_PLAYER_REMOVED_1405_08: string[] = ["RiMS Racing", "Call of Duty: Vanguard"];
+
+
 export const TWO_PLAYER_TITLES = [
   // همکاری داستانی و پلتفرمر
   "A Way Out", "It Takes Two", "Split Fiction", "Brothers: A Tale of Two Sons", "Unravel Two", "Big Helmet Heroes",
@@ -56,8 +65,8 @@ export const TWO_PLAYER_TITLES = [
   // مهمانی
   "Rabbids: Party of Legends", "PAW Patrol World",
   // تأییدشده با تعداد بازیکن آفلاین PlayStation Store (۲ نفر یا بیشتر)
-  "Beyond: Two Souls", "Call of Duty: Vanguard", "Dreams", "God of War: Sons of Sparta", "Halo: Campaign Evolved",
-  "Judgment", "Lost Judgment", "Quake", "Quake II", "REANIMAL", "RiMS Racing", "Shadow of the Ninja: Reborn",
+  "Beyond: Two Souls", "Dreams", "God of War: Sons of Sparta", "Halo: Campaign Evolved",
+  "Judgment", "Lost Judgment", "Quake", "Quake II", "REANIMAL", "Shadow of the Ninja: Reborn",
   "Sonic Colors: Ultimate", "SpongeBob SquarePants: Battle for Bikini Bottom - Rehydrated", "Stardew Valley",
   "Star Wars Battlefront II", "Tales of Berseria", "Tales of Zestiria", "The Ascent", "The House of the Dead: Remake",
   "The Smurfs 2: The Prisoner of the Green Stone", "Yooka-Laylee",
@@ -65,4 +74,6 @@ export const TWO_PLAYER_TITLES = [
   // حالت «Movie Night» دست‌به‌دست دسته، آفلاین
   "The Quarry", "The Dark Pictures Anthology: Little Hope", "The Dark Pictures: Little Hope", "The Dark Pictures: Man of Medan",
   "The Dark Pictures: House of Ashes", "The Dark Pictures: The Devil in Me",
+  // بازبینی آبان ۱۴۰۵: بازی‌های کپی‌خور سایت با دو نفره آفلاین (هم‌صفحه/اسپلیت‌اسکرین/نوبتی) که جا افتاده بودند
+  ...TWO_PLAYER_ADDED_1405_08,
 ];

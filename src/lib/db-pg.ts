@@ -1,7 +1,7 @@
 import { Pool } from "pg";
 import { randomUUID } from "node:crypto";
 import type { Game, GameInput, Platform } from "./types";
-import { PS4_COVER_FIXES, REMOVED_GAME_IDS, catalogGames, hasPersianSub, isTwoPlayer } from "./catalog";
+import { PS4_COVER_FIXES, REMOVED_GAME_IDS, catalogGames, hasPersianSub, isTwoPlayer, twoPlayerFix1405 } from "./catalog";
 
 // بک‌اند Postgres (Neon/Supabase) برای استقرار روی Vercel.
 // فقط وقتی استفاده می‌شود که DATABASE_URL ست شده باشد.
@@ -127,6 +127,18 @@ async function ensureSchema(): Promise<void> {
       } else {
         await ensureCatalogRows(p);
       }
+      // بازبینی دو نفره آفلاین (آبان ۱۴۰۵): فقط بازی‌های فهرست اضافه/حذف عوض می‌شوند؛ بقیه تیک‌های ادمین می‌مانند
+      await runOnce(p, "two-player-v3", async () => {
+        const rows = await p.query("SELECT id, title FROM games");
+        const on: string[] = [], off: string[] = [];
+        for (const r of rows.rows as Row[]) {
+          const v = twoPlayerFix1405(String(r.title));
+          if (v === 1) on.push(String(r.id));
+          if (v === 0) off.push(String(r.id));
+        }
+        if (on.length) await p.query(`UPDATE games SET "twoPlayer" = 1 WHERE id = ANY($1)`, [on]);
+        if (off.length) await p.query(`UPDATE games SET "twoPlayer" = 0 WHERE id = ANY($1)`, [off]);
+      });
       // کاور درست PS4 برای چند ردیف دیتابیس (فقط اگر کاور هنوز همان مقدار اشتباه قبلی است)
       await runOnce(p, "ps4-cover-fix-1405-08", async () => {
         for (const f of PS4_COVER_FIXES) await p.query("UPDATE games SET cover = $1 WHERE id = $2 AND cover = $3", [f.to, f.id, f.from]);

@@ -1,7 +1,7 @@
 import type { Game } from "./types";
 import { seedGames } from "./seed";
 import { PS4_PLATFORM, ps4Catalog } from "./ps4-catalog";
-import { TWO_PLAYER_TITLES } from "./two-player-titles";
+import { TWO_PLAYER_ADDED_1405_08, TWO_PLAYER_REMOVED_1405_08, TWO_PLAYER_TITLES } from "./two-player-titles";
 import { REMOVED_PS4_IDS } from "./removed-ps4-ids";
 
 // کاتالوگ پروژه = بازی‌های دستی seed + کاتالوگ ۵۰۰ بازی PS4 (src/lib/ps4-catalog.ts).
@@ -107,6 +107,14 @@ export function hasPersianSub(game: Pick<Game, "platform" | "title">): boolean {
 }
 
 const TWO_PLAYER = new Set(TWO_PLAYER_TITLES.map(normTitle));
+
+const TP_ADDED = new Set(TWO_PLAYER_ADDED_1405_08.map(normTitle));
+const TP_REMOVED = new Set(TWO_PLAYER_REMOVED_1405_08.map(normTitle));
+/** بازبینی آبان ۱۴۰۵ برای ردیف موجود: ۱ = دو نفره شود، ۰ = برداشته شود، null = دست نخورد (تیک ادمین می‌ماند) */
+export function twoPlayerFix1405(title: string): 0 | 1 | null {
+  const k = normTitle(title);
+  return TP_ADDED.has(k) ? 1 : TP_REMOVED.has(k) ? 0 : null;
+}
 
 /** دسته «دو نفره» بر اساس فهرست بازی‌های دو نفره آفلاین (src/lib/two-player-titles.ts) */
 export function isTwoPlayer(title: string): boolean {

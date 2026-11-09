@@ -23,7 +23,7 @@ const PLATFORM_TABS: { value: PlatformFilter; label: string }[] = [
   { value: "PS4", label: "PS4 کپی‌خور" },
   { value: ACCOUNT_PLATFORM, label: ACCOUNT_PLATFORM },
   { value: "Xbox Offline", label: "Xbox آفلاین" },
-  { value: "two-player", label: "دو نفره" },
+  { value: "two-player", label: "دو نفره آفلاین" },
   { value: "all", label: "همه" }
 ];
 
@@ -32,7 +32,7 @@ const PLATFORM_HEADINGS: Record<PlatformFilter, string> = {
   PS4: "بازی‌های PS4 کپی‌خور",
   [ACCOUNT_PLATFORM]: "بازی‌های PS5 اکانتی",
   "Xbox Offline": "بازی‌های Xbox آفلاین",
-  "two-player": "بازی‌های دو نفره",
+  "two-player": "بازی‌های دو نفره آفلاین — کپی‌خور PS5 و PS4",
   all: "همه بازی‌ها"
 };
 
@@ -51,6 +51,9 @@ function SearchIcon() {
   );
 }
 
+/** دسته «دو نفره آفلاین»: فقط بازی‌های کپی‌خور PS5/PS4 که روی یک کنسول و بدون اینترنت دو نفره‌اند (نه اکانتی/ایکس‌باکس) */
+const isOfflineTwoPlayer = (g: Game) => g.twoPlayer && (g.platform === "PS5" || g.platform === "PS4");
+
 export default function HomeClient({ games }: { games: Game[] }) {
   const [query, setQuery] = useState("");
   const [platform, setPlatform] = useState<PlatformFilter>("PS5");
@@ -61,14 +64,14 @@ export default function HomeClient({ games }: { games: Game[] }) {
     const ps4 = games.filter((g) => g.platform === "PS4").length;
     const account = games.filter((g) => g.platform === ACCOUNT_PLATFORM).length;
     const xbox = games.filter((g) => g.platform === "Xbox Offline").length;
-    const twoPlayer = games.filter((g) => g.twoPlayer).length;
+    const twoPlayer = games.filter(isOfflineTwoPlayer).length;
     return { total: games.length, ps5, ps4, account, xbox, twoPlayer };
   }, [games]);
 
   const visible = useMemo(() => {
     const q = query.trim();
     // دسته «دو نفره» عرضی است: بازی‌های دو نفره از همه پلتفرم‌ها (PS5/PS4 و…) را نشان می‌دهد
-    let list = games.filter((g) => (platform === "all" ? true : platform === "two-player" ? g.twoPlayer : g.platform === platform));
+    let list = games.filter((g) => (platform === "all" ? true : platform === "two-player" ? isOfflineTwoPlayer(g) : g.platform === platform));
     if (q) {
       list = list.filter(
         (g) =>
@@ -170,7 +173,7 @@ export default function HomeClient({ games }: { games: Game[] }) {
             </div>
             <div>
               <strong>{persianNumber(stats.twoPlayer)}</strong>
-              <span>دو نفره</span>
+              <span>دو نفره آفلاین</span>
             </div>
             <div>
               <strong>{persianNumber(stats.xbox)}</strong>
