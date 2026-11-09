@@ -300,4 +300,5 @@ export const REMOVED_PS4_IDS = [
   "ps4-cat-89", // Dragon Ball Z: Kakarot
   "ps4-cat-75", // Judgment
   "ps4-cat-62", // Persona 5
+  "ps4-cat-354", // Resident Evil 4 (duplicate — admin version stays)
 ];
