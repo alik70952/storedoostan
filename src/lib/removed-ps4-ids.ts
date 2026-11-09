@@ -243,7 +243,6 @@ export const REMOVED_PS4_IDS = [
   "ps4-cat-32", // Beyond: Two Souls
   "ps4-cat-27", // Concrete Genie
   "ps4-cat-12", // Horizon Forbidden West
-  "ps4-cat-462", // Call of Duty: Modern Warfare
   "ps4-cat-17", // Death Stranding Director's Cut
   "ps4-cat-358", // Resident Evil Village
   "ps4-cat-353", // Resident Evil 3
@@ -301,4 +300,20 @@ export const REMOVED_PS4_IDS = [
   "ps4-cat-75", // Judgment
   "ps4-cat-62", // Persona 5
   "ps4-cat-354", // Resident Evil 4 (duplicate — admin version stays)
+  // replaced by the exact edition on the hard drives (games.xlsx) — 1405/08/18
+  "ps4-cat-484", // The Walking Dead: Season One
+  "ps4-cat-485", // The Walking Dead: Season Two
+  "ps4-cat-486", // The Walking Dead: A New Frontier
+  "ps4-cat-487", // The Walking Dead: The Final Season
+  "ps4-cat-438", // Overcooked
+  "ps4-cat-439", // Overcooked 2
+  "ps4-cat-350", // Resident Evil
+  "ps4-cat-351", // Resident Evil 0
+  "ps4-cat-106", // Mortal Kombat X
+  "ps4-cat-285", // Diablo III: Eternal Collection
+  "ps4-cat-661", // Neighbours from Hell
+  "ps4-cat-632", // Winning Eleven 3: Final Ver.
+  "ps4-cat-618", // Tiny Troopers: Joint Ops XL
+  "ps4-cat-594", // Poppy Playtime
+  "seed-ps4-12", // Marvel's Spider-Man Remastered
 ];

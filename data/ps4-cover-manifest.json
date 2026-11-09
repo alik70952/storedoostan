@@ -5220,5 +5220,68 @@
     "width": 600,
     "height": 750,
     "bytes": 108061
+  },
+  "Diablo III: Reaper of Souls – Ultimate Evil Edition": {
+    "file": "/covers/ps4/diablo-iii-eternal-collection.jpg",
+    "source": "restored",
+    "width": 350,
+    "height": 525,
+    "bytes": 45006
+  },
+  "Neighbours back From Hell": {
+    "file": "/covers/ps4/neighbours-from-hell.jpg",
+    "source": "bale-channel",
+    "width": 294,
+    "height": 400,
+    "bytes": 29106
+  },
+  "Winning Eleven 3": {
+    "file": "/covers/ps4/winning-eleven-3-final-ver.jpg",
+    "source": "bale-channel",
+    "width": 600,
+    "height": 600,
+    "bytes": 95327
+  },
+  "Tiny Troopers Joint Ops": {
+    "file": "/covers/ps4/tiny-troopers-joint-ops-xl.jpg",
+    "source": "bale-channel",
+    "width": 600,
+    "height": 638,
+    "bytes": 62045
+  },
+  "Poppy Playtime: Chapter 1": {
+    "file": "/covers/ps4/poppy-playtime.jpg",
+    "source": "bale-channel",
+    "width": 300,
+    "height": 300,
+    "bytes": 18168
+  },
+  "Resident Evil Origins Collection": {
+    "file": "/covers/ps4/resident-evil-origins-collection.jpg",
+    "source": "manual",
+    "width": 259,
+    "height": 388,
+    "bytes": 21506
+  },
+  "The Walking Dead: The Telltale Definitive Series": {
+    "file": "/covers/ps4/the-walking-dead-the-telltale-definitive-series.jpg",
+    "source": "manual",
+    "width": 600,
+    "height": 900,
+    "bytes": 90404
+  },
+  "Overcooked! All You Can Eat": {
+    "file": "/covers/ps4/overcooked-all-you-can-eat.jpg",
+    "source": "manual",
+    "width": 600,
+    "height": 900,
+    "bytes": 109842
+  },
+  "Mortal Kombat XL": {
+    "file": "/covers/ps4/mortal-kombat-xl.jpg",
+    "source": "manual",
+    "width": 600,
+    "height": 900,
+    "bytes": 68085
   }
 }

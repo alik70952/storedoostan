@@ -31,7 +31,6 @@ function normTitle(value: string): string {
  */
 const SEEDED_PS4_TITLES = new Set([
   "godofwar",
-  "marvelsspiderman",
   "horizonzerodawn",
   "thelastofuspartii",
   "deathstranding",
